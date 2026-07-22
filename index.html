@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insurance underpayment recovery for independent medical practices | Clearia</title>
+  <meta name="description" content="Payer underpayment quietly takes what can amount to a tenth of an independent practice's profit — closed at zero balance, looking paid. Clearia knows the payer playbook, audits your payments against your contracts, and recovers the difference. Paid only from what we recover.">
+  <link rel="canonical" href="https://cleariagroup.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Insurance underpayment recovery for independent medical practices | Clearia">
+  <meta property="og:description" content="Insurers are quietly keeping part of what your practice already earned — every claim closed at zero balance, looking paid. Clearia finds it and recovers it, paid only from what we recover.">
+  <meta property="og:url" content="https://cleariagroup.com/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "Clearia",
+        "legalName": "Clearia, Inc.",
+        "url": "https://cleariagroup.com",
+        "email": "contact@cleariagroup.com",
+        "serviceType": "Insurance underpayment recovery",
+        "description": "Audit of insurer payments against payer contracts for independent medical practices: underpaid claims, downcoded procedures, and wrongly denied line items identified claim by claim and recovered on contingency.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Miami", "addressRegion": "FL", "addressCountry": "US" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What does underpayment recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing upfront, ever. The diagnostic is free, and our fee is a percentage of dollars actually recovered. If we recover nothing, you owe nothing." } },
+          { "@type": "Question", "name": "Is this too good to be true?", "acceptedAnswer": { "@type": "Answer", "text": "No — it's arithmetic. Your payer contracts specify a rate for every code. Your remittances record what was actually paid. We compare the two, line by line — and because underpayment follows payer-specific patterns, one confirmed shortfall usually points to hundreds more like it. We pursue them through each payer's own reconsideration process. The money exists because, in most practices, nobody has ever looked." } },
+          { "@type": "Question", "name": "How is patient data protected?", "acceptedAnswer": { "@type": "Answer", "text": "Every engagement starts with a signed business associate agreement before any data moves. Access is read-only, limited to payment records, and data travels only through HIPAA-covered channels." } },
+          { "@type": "Question", "name": "How much of our staff's time does it take?", "acceptedAnswer": { "@type": "Answer", "text": "About an hour, once. Your administrator sets up read-only access to payment reports and shares your payer contracts — we walk through it together. After that we work independently." } },
+          { "@type": "Question", "name": "Will this create problems with our payers?", "acceptedAnswer": { "@type": "Answer", "text": "No. Underpayment reconsiderations are a routine, contractual process that payers handle every day. We use the dispute mechanisms your contracts already provide, professionally and by the book." } },
+          { "@type": "Question", "name": "Does this replace our biller or billing company?", "acceptedAnswer": { "@type": "Answer", "text": "No. We never touch claim submission, posting, or your billing workflow. Underpayment sits on the payer's side of the ledger — finding it is a different job from billing, and we only do that job. If anything, work moves off your team's plate: the underpayment appeals and payer follow-up your staff currently handles between everything else become ours to prepare, manage, and see through." } },
+          { "@type": "Question", "name": "What if you find nothing?", "acceptedAnswer": { "@type": "Answer", "text": "Then you've verified — from your own payment records — that your payers are paying your contracts correctly, and it cost you nothing. That answer has value too." } },
+          { "@type": "Question", "name": "How long does it take to see results?", "acceptedAnswer": { "@type": "Answer", "text": "The diagnostic takes weeks, not months, once we have access to your remittances and contracts. Recoveries then follow each payer's reconsideration timelines. One constraint is real: payer dispute windows typically run 90 to 180 days, so older claims age out permanently." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED;
+      --ink: #14171F;
+      --muted: #5E5A50;
+      --hairline: #DAD5C8;
+      --card: #F1EDE2;
+      --accent: #5C1F2D;  /* oxblood on cream */
+      --clay: #C08768;    /* clay on ink — approximation; verify vs brand guide PDF in Box */
+      --panel-text: #F3EFE6;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --ease-entrance: cubic-bezier(0, 0, 0.38, 0.9);
+      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+      --dur-micro: 180ms;
+      --dur-reveal: 550ms;
+      --dur-hero: 650ms;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+      line-height: 1.66;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.3rem; }
+    p { margin: 0 0 1.05rem; }
+    b { font-weight: 600; }
+
+    /* ---------- masthead ---------- */
+    .masthead {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .masthead .brand {
+      font-family: var(--serif); font-size: 1.4rem; font-weight: 600;
+      letter-spacing: 0.01em; margin: 0;
+    }
+    .brand span { color: var(--accent); }
+    .masthead .mast-contact {
+      font-size: 0.85rem; color: var(--muted); text-decoration: none;
+      padding: 0.6rem 0; /* tap comfort */
+      transition: color var(--dur-micro) var(--ease-standard);
+    }
+    .masthead .mast-contact:hover { color: var(--ink); }
+
+    /* ---------- hero ---------- */
+    .hero { padding: clamp(3rem, 9vw, 4.8rem) 0 clamp(2.6rem, 7vw, 3.6rem); }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.3rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.05rem, 1.4rem + 3.4vw, 3.05rem);
+      font-weight: 500; line-height: 1.16; letter-spacing: -0.01em;
+      margin: 0 0 1.4rem; text-wrap: balance;
+    }
+    .lede { font-size: clamp(1.11rem, 1.05rem + 0.35vw, 1.2rem); max-width: 62ch; }
+
+    .cta-row { margin: 2rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+    .contact-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 52px; padding: 0.55rem 1.8rem;
+      background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; font-size: 1rem;
+      border-radius: 2px;
+      box-shadow: 0 1px 0 rgba(20,23,31,0.18);
+      transition: transform var(--dur-micro) var(--ease-standard),
+                  box-shadow var(--dur-micro) var(--ease-standard);
+    }
+    .contact-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(92,31,45,0.28); }
+    .contact-btn:active { transform: translateY(0); box-shadow: 0 1px 0 rgba(20,23,31,0.18); }
+    .contact-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .cta-alt { color: var(--muted); font-size: 0.9rem; }
+    .cta-alt a { color: inherit; }
+    @media (max-width: 640px) {
+      .cta-row .contact-btn { width: 100%; }
+    }
+
+    /* hero entrance — once, CSS only */
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .js .hero > * { animation: rise var(--dur-hero) var(--ease-entrance) both; }
+    .js .hero > *:nth-child(1) { animation-delay: 40ms; }
+    .js .hero > *:nth-child(2) { animation-delay: 140ms; }
+    .js .hero > *:nth-child(3) { animation-delay: 240ms; }
+    .js .hero > *:nth-child(4) { animation-delay: 340ms; }
+
+    /* ---------- sections + scroll reveals ---------- */
+    section { padding: clamp(3.2rem, 8vw, 4.2rem) 0 0; }
+    .js .reveal { opacity: 0; transform: translateY(20px);
+      transition: opacity var(--dur-reveal) var(--ease-entrance),
+                  transform var(--dur-reveal) var(--ease-entrance); }
+    .js .reveal.in-view { opacity: 1; transform: none; }
+    /* staggered children inside revealed groups */
+    .js .reveal ul.signs li, .js .reveal ol.steps li {
+      opacity: 0; transform: translateY(14px);
+      transition: opacity var(--dur-reveal) var(--ease-entrance),
+                  transform var(--dur-reveal) var(--ease-entrance);
+    }
+    .js .reveal.in-view ul.signs li, .js .reveal.in-view ol.steps li { opacity: 1; transform: none; }
+    .js .reveal.in-view ul.signs li:nth-child(2), .js .reveal.in-view ol.steps li:nth-child(2) { transition-delay: 80ms; }
+    .js .reveal.in-view ul.signs li:nth-child(3), .js .reveal.in-view ol.steps li:nth-child(3) { transition-delay: 160ms; }
+    .js .reveal.in-view ul.signs li:nth-child(4) { transition-delay: 240ms; }
+
+    h2 {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      font-weight: 600; color: var(--muted); margin: 0 0 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--hairline); }
+    section > p { max-width: 65ch; }
+
+    ul.signs {
+      margin: 0.4rem 0 1.2rem; padding: 0; list-style: none;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem;
+    }
+    ul.signs li {
+      background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.05rem 1.2rem; font-size: 0.98rem; line-height: 1.6;
+    }
+    @media (max-width: 560px) { ul.signs { grid-template-columns: 1fr; } }
+
+    ol.steps { margin: 0.4rem 0 1.2rem; padding: 0; list-style: none; counter-reset: s;
+               display: flex; flex-direction: column; gap: 1.7rem; }
+    ol.steps li { counter-increment: s; display: grid;
+                  grid-template-columns: 3.2rem 1fr; gap: 1rem; }
+    ol.steps li::before {
+      content: counter(s, decimal-leading-zero);
+      font-family: var(--sans); font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.08em; color: var(--muted);
+      border-top: 2px solid var(--ink); padding-top: 0.55rem; margin-top: 0.35rem;
+      font-variant-numeric: tabular-nums;
+    }
+    ol.steps li > span { max-width: 60ch; display: block; }
+
+    .bet {
+      background: var(--ink); color: var(--panel-text);
+      padding: clamp(1.5rem, 4vw, 1.9rem) clamp(1.3rem, 4.5vw, 2rem);
+      margin-top: 0.4rem; border-radius: 2px;
+    }
+    .bet p { max-width: 60ch; }
+    .bet p:last-child { margin-bottom: 0; }
+    .bet b { color: var(--clay); font-weight: 600; }
+    .bet ::selection { background: var(--clay); color: var(--ink); }
+
+    ul.standards { margin: 0 0 1.4rem; padding: 0; list-style: none;
+                   display: flex; flex-direction: column; gap: 0.8rem; }
+    ul.standards li { padding-left: 1.3rem; position: relative; max-width: 62ch; }
+    ul.standards li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--hairline); }
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .faq-item p { margin: 0; max-width: 65ch; }
+
+    .closing { padding-bottom: 1rem; }
+    .closing .close-line {
+      font-family: var(--serif); font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+      font-weight: 500; line-height: 1.3; margin: 0 0 1rem; text-wrap: balance;
+    }
+
+    footer {
+      margin-top: 4.2rem; padding: 1.6rem 0 3rem;
+      border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem;
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+    }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+
+    /* ---------- sticky mobile CTA ---------- */
+    .stickybar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+      background: var(--canvas);
+      border-top: 1px solid var(--hairline);
+      padding: 0.6rem 1.3rem calc(0.6rem + env(safe-area-inset-bottom));
+      transform: translateY(110%);
+      transition: transform 250ms var(--ease-standard);
+    }
+    .stickybar.show { transform: none; }
+    .stickybar .contact-btn { width: 100%; min-height: 50px; box-shadow: none; }
+    @media (min-width: 768px) { .stickybar { display: none; } }
+    @media (max-width: 767px) {
+      body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+    }
+
+    /* ---------- reduced motion: fade only, no movement ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .hero > * { animation: none; }
+      .js .reveal, .js .reveal ul.signs li, .js .reveal ol.steps li {
+        transform: none; transition: opacity 300ms ease;
+      }
+      .contact-btn, .stickybar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand">Clearia<span>.</span></p>
+      <a class="mast-contact" href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a>
+    </div>
+
+    <div class="hero">
+      <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
+      <h1>Insurers are quietly keeping part of what your practice already earned.</h1>
+      <p class="lede">Your payer contracts say one number; the payments say another. The gap — a downcoded procedure here, an underpaid code there — closes at a zero balance, looking paid, so you never see it. Clearia finds it, shows it to you in dollars, and recovers it. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
+      <div class="cta-row" id="hero-cta">
+        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
+        <span class="cta-alt">or write to contact@cleariagroup.com</span>
+      </div>
+    </div>
+
+    <section class="reveal">
+      <h2>The money nobody is watching</h2>
+      <p>Industry analyses put commercial-payer underpayment at 1 to 3 percent of net revenue — and that's the average across all providers, including hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of that range. We've seen what checking actually turns up: <b>one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</b></p>
+      <p>And notice what kind of money it is: <b>pure margin</b>. Recovered underpayment has no cost attached — no staff time to earn it, no supplies, no overhead. The care was already delivered. At typical practice margins, even the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
+      <p>It survives because nothing flags it:</p>
+      <ul class="signs">
+        <li><b>Payments a few percent under the contracted rate</b> — small enough to post without a second look.</li>
+        <li><b>Procedures paid at a lower-valued code</b> than the one your physicians billed.</li>
+        <li><b>Line items bundled or denied</b> that your fee schedule says are payable.</li>
+        <li><b>Renegotiated rates that never reached the payer's system</b> — you signed a better contract; the payments didn't change.</li>
+      </ul>
+      <p>Each claim closes at zero balance. No alert fires. And payer dispute windows run out in 90 to 180 days — what stays unnoticed long enough becomes unrecoverable, permanently.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>Why good billing teams miss it</h2>
+      <p>This is not a gap in your team's work. A biller's job is keeping claims moving — and payer-side shortfalls are built to look like finished business. Catching them means checking every remittance line against the contracted rate for that code, payer by payer, on claims that show nothing owed.</p>
+      <p>No practice of 3 to 15 physicians staffs that job. And chasing a single $180 shortfall never pays for the hour it takes — it only becomes worth doing when someone finds the four hundred claims that follow the same pattern and pursues them as one case. That is the job we built Clearia to do.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>We know the playbook</h2>
+      <p>Here's what makes recovery possible: <b>underpayment isn't random — it's systematic.</b> Payers run on rules, and the same quiet rule fires the same way across thousands of claims: a bundling edit applied where your contract says it shouldn't be, a fee schedule loaded a few percent light, a procedure downcoded on the same pretext, month after month. Each payer has signature behaviors. We study them for a living.</p>
+      <p>That's why we don't just compare payments to contracts — we recognize the patterns behind the shortfalls, and we know which ones payers reverse when challenged correctly. Payers count on no one looking closely enough to see the pattern; when someone does, their own reconsideration process becomes the instrument that pays you back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
+    </section>
+
+    <section class="reveal">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span><b>Free diagnostic.</b> We sign a business associate agreement first. Then, from records you already have — your electronic remittances and payer contracts — we audit what each insurer paid against what it owed, code by code. Your team's part takes about an hour.</span></li>
+        <li><span><b>Findings, in dollars.</b> You get a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window. You decide what we pursue — nothing is filed without your sign-off.</span></li>
+        <li><span><b>Recovery.</b> We pursue the approved underpayments through each payer's own reconsideration process and report every dollar as it lands. Our fee is a percentage of what's actually recovered. Nothing else, ever.</span></li>
+      </ol>
+    </section>
+
+    <section class="reveal">
+      <h2>The bet we're making</h2>
+      <div class="bet">
+        <p><b>If we find nothing, you've spent an hour and paid nothing</b> — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
+        <p><b>If we find money, you pay only out of dollars that actually arrive.</b> No retainer, no hourly fees, no invoice to gamble on. We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>Who this is for — and not for</h2>
+      <p><b>For:</b> independent, procedure-heavy specialty practices — orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers — typically 3 to 15 physicians, running without a revenue-cycle department. <b>Ambulatory surgery centers too:</b> ASC claims carry exactly the kind of complexity where underpayment hides.</p>
+      <p><b>Not for:</b> hospitals and health systems with revenue-cycle teams (good vendors already serve them), or practices looking to outsource billing — we don't do billing. We do one job: find what payers underpaid, and get it back.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>A note for your practice administrator</h2>
+      <p>You'll be the one who makes this work, so here's your part in full: about an hour, once — setting up read-only access to payment reports and sharing the payer contracts, with us beside you. No software to install, no new system for your staff, no interruption to billing or posting. And nothing here audits your team's work: underpayment sits on the payer's side of the ledger.</p>
+      <p><b>After that hour, work comes off your plate — not onto it.</b> The appeals and payer follow-up you currently squeeze in between everything else — pulling documentation, drafting reconsideration letters, chasing payer responses for months — that work is inside our scope. We build the case files, draft the appeals, and track every payer response to the end; your team sends them out under the practice's name and stays in control. The disputes you never had time to fight finally get fought — and not by you. If you're reading this before your physicians are, this page is written to be forwarded.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>The standard we work to</h2>
+      <ul class="standards">
+        <li><b>Read-only.</b> We analyze payment records. We never touch your billing workflow, your claims, or your payer relationships.</li>
+        <li><b>HIPAA-first.</b> A business associate agreement is signed before any data moves; everything travels through covered channels.</li>
+        <li><b>White glove, in person.</b> We work at your practice, not from a call center.</li>
+      </ul>
+      <div class="cta-row">
+        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>Questions practices ask us</h2>
+      <div class="faq-item">
+        <h3>What does underpayment recovery cost?</h3>
+        <p>Nothing upfront, ever. The diagnostic is free, and our fee is a percentage of dollars actually recovered. If we recover nothing, you owe nothing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this too good to be true?</h3>
+        <p>No — it's arithmetic. Your payer contracts specify a rate for every code. Your remittances record what was actually paid. We compare the two, line by line — and because underpayment follows payer-specific patterns, one confirmed shortfall usually points to hundreds more like it. We pursue them through each payer's own reconsideration process. The money exists because, in most practices, nobody has ever looked.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is patient data protected?</h3>
+        <p>Every engagement starts with a signed business associate agreement before any data moves. Access is read-only, limited to payment records, and data travels only through HIPAA-covered channels.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much of our staff's time does it take?</h3>
+        <p>About an hour, once. Your administrator sets up read-only access to payment reports and shares your payer contracts — we walk through it together. After that we work independently.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will this create problems with our payers?</h3>
+        <p>No. Underpayment reconsiderations are a routine, contractual process that payers handle every day. We use the dispute mechanisms your contracts already provide, professionally and by the book.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this replace our biller or billing company?</h3>
+        <p>No. We never touch claim submission, posting, or your billing workflow. Underpayment sits on the payer's side of the ledger — finding it is a different job from billing, and we only do that job. If anything, work moves off your team's plate: the underpayment appeals and payer follow-up your staff currently handles between everything else become ours to prepare, manage, and see through.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if you find nothing?</h3>
+        <p>Then you've verified — from your own payment records — that your payers are paying your contracts correctly, and it cost you nothing. That answer has value too.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does it take to see results?</h3>
+        <p>The diagnostic takes weeks, not months, once we have access to your remittances and contracts. Recoveries then follow each payer's reconsideration timelines. One constraint is real: payer dispute windows typically run 90 to 180 days, so older claims age out permanently.</p>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Find out what you're owed</h2>
+      <p class="close-line">The diagnostic answers the only question that matters — in dollars, from your own payment records.</p>
+      <p>No cost, no obligation, about an hour of your team's time.</p>
+      <div class="cta-row">
+        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
+        <span class="cta-alt">contact@cleariagroup.com</span>
+      </div>
+    </section>
+
+    <footer>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · Miami, Florida</span>
+    </footer>
+
+  </div>
+
+  <div class="stickybar" id="stickybar" aria-hidden="true">
+    <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic" tabindex="-1">Request the free diagnostic</a>
+  </div>
+
+  <script>
+    (function () {
+      // scroll reveals — unobserve after firing
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in-view'); });
+      }
+
+      // sticky mobile CTA — show only after the hero CTA scrolls above the viewport
+      var heroCta = document.getElementById('hero-cta');
+      var bar = document.getElementById('stickybar');
+      if (heroCta && bar && 'IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+          var e = entries[0];
+          var show = !e.isIntersecting && e.boundingClientRect.top < 0;
+          bar.classList.toggle('show', show);
+          bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+          bar.querySelector('a').tabIndex = show ? 0 : -1;
+        });
+        io2.observe(heroCta);
+      }
+    })();
+  </script>
+</body>
+</html>

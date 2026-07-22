@@ -209,6 +209,22 @@
     .faq-item h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem; }
     .faq-item p { margin: 0; max-width: 65ch; }
 
+    /* ---------- diagnostic form ---------- */
+    .diag-form { display: grid; gap: 1rem; max-width: 30rem; margin: 1.6rem 0 0.6rem; }
+    .field label { display: block; font-size: 0.85rem; font-weight: 500;
+                   color: var(--muted); margin-bottom: 0.35rem; }
+    .field .opt { font-weight: 400; opacity: 0.75; }
+    .field input {
+      width: 100%; min-height: 50px; padding: 0.6rem 0.95rem;
+      font: inherit; color: var(--ink);
+      background: #FBF9F2; border: 1px solid var(--hairline); border-radius: 2px;
+    }
+    .field input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+    .diag-form .contact-btn { width: 100%; border: 0; cursor: pointer; font-family: var(--sans); }
+    .hp { position: absolute; left: -9999px; top: -9999px; }
+    .form-note { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .form-success { font-weight: 600; font-size: 1.05rem; margin: 1.4rem 0 0; }
+
     .closing { padding-bottom: 1rem; }
     .closing .close-line {
       font-family: var(--serif); font-size: clamp(1.4rem, 3.4vw, 1.8rem);
@@ -263,7 +279,7 @@
       <h1>Insurers are quietly keeping part of what your practice already earned.</h1>
       <p class="lede">Your payer contracts say one number; the payments say another. The gap — a downcoded procedure here, an underpaid code there — closes at a zero balance, looking paid, so you never see it. Clearia finds it, shows it to you in dollars, and recovers it. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
       <div class="cta-row" id="hero-cta">
-        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
+        <a class="contact-btn" href="#diagnostic">Request the free diagnostic</a>
         <span class="cta-alt">or write to contact@cleariagroup.com</span>
       </div>
     </div>
@@ -331,7 +347,7 @@
         <li><b>White glove, in person.</b> We work at your practice, not from a call center.</li>
       </ul>
       <div class="cta-row">
-        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
+        <a class="contact-btn" href="#diagnostic">Request the free diagnostic</a>
       </div>
     </section>
 
@@ -371,14 +387,30 @@
       </div>
     </section>
 
-    <section class="closing reveal">
+    <section class="closing reveal" id="diagnostic">
       <h2>Find out what you're owed</h2>
       <p class="close-line">The diagnostic answers the only question that matters — in dollars, from your own payment records.</p>
-      <p>No cost, no obligation, about an hour of your team's time.</p>
-      <div class="cta-row">
-        <a class="contact-btn" href="mailto:contact@cleariagroup.com?subject=Free%20underpayment%20diagnostic">Request the free diagnostic</a>
-        <span class="cta-alt">contact@cleariagroup.com</span>
-      </div>
+      <p>Three fields, and we take it from there.</p>
+      <form class="diag-form" id="diag-form" action="https://formsubmit.co/contact@cleariagroup.com" method="POST">
+        <input type="hidden" name="_subject" value="Diagnostic request — cleariagroup.com">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field">
+          <label for="f-name">Your name <span class="opt">(optional)</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-practice">Practice name <span class="opt">(optional)</span></label>
+          <input id="f-practice" name="practice" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <button class="contact-btn" type="submit">Request the free diagnostic</button>
+        <p class="form-note">No cost, no obligation. We reply within one business day. Prefer email? <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></p>
+      </form>
+      <p class="form-success" role="status" hidden>Received — we'll reply within one business day.</p>
     </section>
 
     <footer>
@@ -407,18 +439,53 @@
         reveals.forEach(function (el) { el.classList.add('in-view'); });
       }
 
-      // sticky mobile CTA — show only after the hero CTA scrolls above the viewport
+      // sticky mobile CTA — show after the hero CTA scrolls away, hide while the form is on screen
       var heroCta = document.getElementById('hero-cta');
       var bar = document.getElementById('stickybar');
+      var formSection = document.getElementById('diagnostic');
+      var heroGone = false, formVisible = false;
+      function updateBar() {
+        if (!bar) return;
+        var show = heroGone && !formVisible;
+        bar.classList.toggle('show', show);
+        bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+        bar.querySelector('a').tabIndex = show ? 0 : -1;
+      }
       if (heroCta && bar && 'IntersectionObserver' in window) {
-        var io2 = new IntersectionObserver(function (entries) {
+        new IntersectionObserver(function (entries) {
           var e = entries[0];
-          var show = !e.isIntersecting && e.boundingClientRect.top < 0;
-          bar.classList.toggle('show', show);
-          bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-          bar.querySelector('a').tabIndex = show ? 0 : -1;
+          heroGone = !e.isIntersecting && e.boundingClientRect.top < 0;
+          updateBar();
+        }).observe(heroCta);
+        if (formSection) {
+          new IntersectionObserver(function (entries) {
+            formVisible = entries[0].isIntersecting;
+            updateBar();
+          }, { rootMargin: '0px 0px -20% 0px' }).observe(formSection);
+        }
+      }
+
+      // form: AJAX submit with inline success; native POST as fallback
+      var form = document.getElementById('diag-form');
+      if (form && window.fetch) {
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          var btn = form.querySelector('button[type=submit]');
+          btn.disabled = true; btn.textContent = 'Sending…';
+          fetch('https://formsubmit.co/ajax/contact@cleariagroup.com', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (!r.ok) throw new Error('relay error');
+            form.hidden = true;
+            var ok = document.querySelector('.form-success');
+            ok.hidden = false;
+          }).catch(function () {
+            // relay unreachable — fall back to native POST (programmatic submit skips this handler)
+            form.submit();
+          });
         });
-        io2.observe(heroCta);
       }
     })();
   </script>

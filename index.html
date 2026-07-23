@@ -5,11 +5,11 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Insurance underpayment recovery for independent medical practices | Clearia</title>
-  <meta name="description" content="Payer underpayment quietly takes what can amount to a tenth of an independent practice's profit — closed at zero balance, looking paid. Clearia knows the payer playbook, audits your payments against your contracts, and recovers the difference. Paid only from what we recover.">
+  <meta name="description" content="Recover the money insurers still owe your practice. Clearia audits your paid claims against your payer contracts, finds the underpayments — often a tenth of your profit or more — and gets them back. No upfront fee: we're paid only from what we recover.">
   <link rel="canonical" href="https://cleariagroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Insurance underpayment recovery for independent medical practices | Clearia">
-  <meta property="og:description" content="Insurers are quietly keeping part of what your practice already earned — every claim closed at zero balance, looking paid. Clearia finds it and recovers it, paid only from what we recover.">
+  <meta property="og:description" content="Recover the money insurers still owe your practice. Underpaid and downcoded claims close at zero balance, looking paid — Clearia finds them and gets the money back, paid only from what we recover.">
   <meta property="og:url" content="https://cleariagroup.com/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -107,6 +107,41 @@
     }
     .masthead .mast-contact:hover { color: var(--ink); }
 
+    /* ---------- desktop sticky nav ---------- */
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+      background: var(--canvas);
+      border-bottom: 1px solid var(--hairline);
+      transform: translateY(-110%); visibility: hidden;
+      transition: transform 250ms var(--ease-standard), visibility 0s linear 250ms;
+    }
+    .topnav.show { transform: none; visibility: visible;
+      transition: transform 250ms var(--ease-standard), visibility 0s; }
+    .topnav .row {
+      max-width: 720px; margin: 0 auto; padding: 0 1.3rem;
+      display: flex; align-items: center; gap: 1.3rem; min-height: 54px;
+    }
+    .topnav .nav-brand {
+      font-family: var(--serif); font-weight: 600; font-size: 1.05rem;
+      color: var(--ink); text-decoration: none; margin-right: auto;
+    }
+    .topnav .nav-brand span { color: var(--accent); }
+    .topnav a.sec-link {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      padding: 1.05rem 0 calc(1.05rem - 2px);
+      border-bottom: 2px solid transparent;
+      transition: color var(--dur-micro) var(--ease-standard);
+    }
+    .topnav a.sec-link:hover { color: var(--ink); }
+    .topnav a.sec-link.active { color: var(--ink); border-bottom-color: var(--accent); }
+    .topnav .nav-cta {
+      font-size: 0.78rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; white-space: nowrap; padding: 1.05rem 0;
+    }
+    .topnav .nav-cta:hover { text-decoration: underline; }
+    @media (max-width: 767px) { .topnav { display: none; } }
+
     /* ---------- hero ---------- */
     .hero { padding: clamp(3rem, 9vw, 4.8rem) 0 clamp(2.6rem, 7vw, 3.6rem); }
     .eyebrow {
@@ -150,7 +185,9 @@
     .js .hero > *:nth-child(4) { animation-delay: 340ms; }
 
     /* ---------- sections + scroll reveals ---------- */
-    section { padding: clamp(3.2rem, 8vw, 4.2rem) 0 0; }
+    .wrap { counter-reset: sec; }
+    section { padding: clamp(3.2rem, 8vw, 4.2rem) 0 0;
+              counter-increment: sec; scroll-margin-top: 64px; }
     .js .reveal { opacity: 0; transform: translateY(20px);
       transition: opacity var(--dur-reveal) var(--ease-entrance),
                   transform var(--dur-reveal) var(--ease-entrance); }
@@ -171,6 +208,8 @@
       font-weight: 600; color: var(--muted); margin: 0 0 1.5rem;
       display: flex; align-items: center; gap: 1rem;
     }
+    h2::before { content: counter(sec, decimal-leading-zero);
+                 color: var(--accent); font-variant-numeric: tabular-nums; }
     h2::after { content: ""; flex: 1; height: 1px; background: var(--hairline); }
     section > p { max-width: 65ch; }
 
@@ -196,6 +235,42 @@
       font-variant-numeric: tabular-nums;
     }
     ol.steps li > span { max-width: 60ch; display: block; }
+
+    /* ---------- findings excerpt (document plate, not a screenshot) ---------- */
+    .sample { margin: 2.1rem 0 0.4rem; }
+    .sample-doc {
+      background: #FBF9F2; border: 1px solid var(--hairline);
+      border-top: 2px solid var(--ink);
+      padding: 1.3rem 1.4rem 1.05rem;
+    }
+    .sample-head { display: flex; justify-content: space-between; align-items: baseline;
+                   gap: 0.6rem 1rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+    .sample-title { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; }
+    .sample-meta { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+                   color: var(--muted); }
+    .sample-scroll { overflow-x: auto; }
+    .sample-table { width: 100%; border-collapse: collapse; font-size: 0.88rem;
+                    font-variant-numeric: tabular-nums; min-width: 460px; }
+    .sample-table th {
+      text-align: left; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; padding: 0.4rem 0 0.4rem 0.6rem;
+      border-bottom: 1px solid var(--ink); white-space: nowrap;
+    }
+    .sample-table td { padding: 0.55rem 0 0.55rem 0.6rem;
+                       border-bottom: 1px solid var(--hairline); }
+    .sample-table th:first-child, .sample-table td:first-child { padding-left: 0; white-space: nowrap; }
+    .sample-table th:nth-child(n+2), .sample-table td:nth-child(n+2) { text-align: right; }
+    .sample-table .due { color: var(--accent); font-weight: 600; }
+    .sample-table tfoot td { border-bottom: 0; border-top: 1px solid var(--ink);
+                             font-weight: 600; padding-top: 0.7rem; }
+    .sample figcaption { font-size: 0.82rem; color: var(--muted);
+                         margin-top: 0.85rem; max-width: 62ch; line-height: 1.55; }
+
+    /* ---------- mid-page CTA (quiet ask after a proof block) ---------- */
+    .cta-mid { margin-top: 2.4rem; display: flex; flex-wrap: wrap;
+               align-items: center; gap: 1rem 1.6rem; }
+    .cta-mid .lead { font-family: var(--serif); font-size: 1.12rem; margin: 0; }
+    @media (max-width: 640px) { .cta-mid .contact-btn { width: 100%; } }
 
     .bet {
       background: var(--ink); color: var(--panel-text);
@@ -270,12 +345,23 @@
       .js .reveal, .js .reveal ul.signs li, .js .reveal ol.steps li {
         transform: none; transition: opacity 300ms ease;
       }
-      .contact-btn, .stickybar { transition: none; }
+      .contact-btn, .stickybar, .topnav { transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <nav class="topnav" id="topnav" aria-label="Page sections">
+    <div class="row">
+      <a class="nav-brand" href="#top">Clearia<span>.</span></a>
+      <a class="sec-link" href="#problem">The problem</a>
+      <a class="sec-link" href="#how-it-works">How it works</a>
+      <a class="sec-link" href="#bet">The bet</a>
+      <a class="sec-link" href="#faq">Questions</a>
+      <a class="nav-cta" href="#diagnostic">Request the free diagnostic</a>
+    </div>
+  </nav>
+
+  <div class="wrap" id="top">
 
     <div class="masthead">
       <p class="brand">Clearia<span>.</span></p>
@@ -284,15 +370,15 @@
 
     <div class="hero">
       <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
-      <h1>Insurers are quietly keeping part of what your practice already earned.</h1>
-      <p class="lede">Your payer contracts say one number; the payments say another. The gap — a downcoded procedure here, an underpaid code there — closes at a zero balance, looking paid, so you never see it. Clearia finds it, shows it to you in dollars, and recovers it. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
+      <h1>Recover the money insurers still owe your practice.</h1>
+      <p class="lede">Insurers quietly keep part of what your practice already earned — a downcoded procedure here, an underpaid code there, every claim closed at a zero balance, looking paid. Clearia finds it in your paid claims, shows it to you in dollars, and gets it back. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
       <div class="cta-row" id="hero-cta">
         <a class="contact-btn" href="#diagnostic">Request the free diagnostic</a>
         <span class="cta-alt">or write to contact@cleariagroup.com</span>
       </div>
     </div>
 
-    <section class="reveal">
+    <section class="reveal" id="problem">
       <h2>The money nobody is watching</h2>
       <p>Industry analyses put commercial-payer underpayment at 1 to 3 percent of net revenue — and that's the average across all providers, including hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of that range. We've seen what checking actually turns up: <b>one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</b></p>
       <p>And notice what kind of money it is: <b>pure margin</b>. Recovered underpayment has no cost attached — no staff time to earn it, no supplies, no overhead. The care was already delivered. At typical practice margins, even the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
@@ -318,20 +404,48 @@
       <p>That's why we don't just compare payments to contracts — we recognize the patterns behind the shortfalls, and we know which ones payers reverse when challenged correctly. Payers count on no one looking closely enough to see the pattern; when someone does, their own reconsideration process becomes the instrument that pays you back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
     </section>
 
-    <section class="reveal">
+    <section class="reveal" id="how-it-works">
       <h2>How it works</h2>
       <ol class="steps">
         <li><span><b>Free diagnostic.</b> We sign a business associate agreement first. Then, from records you already have — your electronic remittances and payer contracts — we audit what each insurer paid against what it owed, code by code. Your team's part takes about an hour.</span></li>
         <li><span><b>Findings, in dollars.</b> You get a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window. You decide what we pursue — nothing is filed without your sign-off.</span></li>
         <li><span><b>Recovery.</b> We pursue the approved underpayments through each payer's own reconsideration process and report every dollar as it lands. Our fee is a percentage of what's actually recovered. Nothing else, ever.</span></li>
       </ol>
+      <figure class="sample" aria-label="Anonymized excerpt from a Clearia diagnostic findings report">
+        <div class="sample-doc">
+          <div class="sample-head">
+            <span class="sample-title">Diagnostic findings — excerpt</span>
+            <span class="sample-meta">Payer B · orthopedic practice · illustrative</span>
+          </div>
+          <div class="sample-scroll">
+            <table class="sample-table">
+              <thead>
+                <tr><th scope="col">Code</th><th scope="col">Contract</th><th scope="col">Paid</th><th scope="col">Shortfall</th><th scope="col">Claims in pattern</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>29881</td><td>$2,114</td><td>$1,976</td><td class="due">$138</td><td>212</td></tr>
+                <tr><td>64483</td><td>$887</td><td>$743</td><td class="due">$144</td><td>167</td></tr>
+                <tr><td>99214 → 99213</td><td>$132</td><td>$91</td><td class="due">$41</td><td>438</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3">Recoverable within dispute windows</td><td class="due">$71,262</td><td></td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <figcaption>This is the deliverable, in miniature: every payer-specific pattern, code by code — contracted rate, what was paid, the shortfall, and the claims that follow it. Figures illustrative; your report is built from your own remittances and contracts.</figcaption>
+      </figure>
     </section>
 
-    <section class="reveal">
+    <section class="reveal" id="bet">
       <h2>The bet we're making</h2>
       <div class="bet">
         <p><b>If we find nothing, you've spent an hour and paid nothing</b> — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
         <p><b>If we find money, you pay only out of dollars that actually arrive.</b> No retainer, no hourly fees, no invoice to gamble on. We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
+      </div>
+      <div class="cta-mid">
+        <p class="lead">Find out which side of that bet your data lands on.</p>
+        <a class="contact-btn" href="#diagnostic">Request the free diagnostic</a>
       </div>
     </section>
 
@@ -354,12 +468,13 @@
         <li><b>HIPAA-first.</b> A business associate agreement is signed before any data moves; everything travels through covered channels.</li>
         <li><b>White glove, in person.</b> We work at your practice, not from a call center.</li>
       </ul>
-      <div class="cta-row">
+      <div class="cta-mid">
+        <p class="lead">The next step is an hour, not a commitment.</p>
         <a class="contact-btn" href="#diagnostic">Request the free diagnostic</a>
       </div>
     </section>
 
-    <section class="reveal">
+    <section class="reveal" id="faq">
       <h2>Questions practices ask us</h2>
       <div class="faq-item">
         <h3>What does underpayment recovery cost?</h3>
@@ -451,13 +566,16 @@
       var heroCta = document.getElementById('hero-cta');
       var bar = document.getElementById('stickybar');
       var formSection = document.getElementById('diagnostic');
+      var topnav = document.getElementById('topnav');
       var heroGone = false, formVisible = false;
       function updateBar() {
-        if (!bar) return;
-        var show = heroGone && !formVisible;
-        bar.classList.toggle('show', show);
-        bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-        bar.querySelector('a').tabIndex = show ? 0 : -1;
+        if (bar) {
+          var show = heroGone && !formVisible;
+          bar.classList.toggle('show', show);
+          bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+          bar.querySelector('a').tabIndex = show ? 0 : -1;
+        }
+        if (topnav) topnav.classList.toggle('show', heroGone);
       }
       if (heroCta && bar && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
@@ -471,6 +589,24 @@
             updateBar();
           }, { rootMargin: '0px 0px -20% 0px' }).observe(formSection);
         }
+      }
+
+      // scrollspy — mark the nav link for the section band under the reader
+      var secLinks = document.querySelectorAll('.topnav .sec-link');
+      if (secLinks.length && 'IntersectionObserver' in window) {
+        var byId = {};
+        secLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            secLinks.forEach(function (a) { a.classList.remove('active'); });
+            byId[e.target.id].classList.add('active');
+          });
+        }, { rootMargin: '-20% 0px -65% 0px' });
+        Object.keys(byId).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) spy.observe(el);
+        });
       }
 
       // form: AJAX submit with inline success; native POST as fallback

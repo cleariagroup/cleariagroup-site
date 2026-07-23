@@ -236,14 +236,87 @@
     }
     ol.steps li > span { max-width: 60ch; display: block; }
 
-    /* ---------- engagement dashboard (real product view) ---------- */
-    .sample { margin: 2.1rem 0 0.4rem; }
-    .sample-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .sample img { display: block; width: 100%; height: auto;
-                  border: 1px solid var(--hairline); border-radius: 4px; }
-    @media (max-width: 560px) { .sample img { min-width: 640px; } }
-    .sample figcaption { font-size: 0.82rem; color: var(--muted);
-                         margin-top: 0.85rem; max-width: 62ch; line-height: 1.55; }
+    /* ---------- exhibits: product views rebuilt native from the real artifacts ---------- */
+    .exhibit { margin: 2.4rem 0 0.4rem; }
+    .ex-head { display: flex; justify-content: space-between; align-items: baseline;
+               gap: 0.6rem 1rem; flex-wrap: wrap; margin-bottom: 0.9rem;
+               border-top: 2px solid var(--ink); padding-top: 0.8rem; }
+    .ex-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; }
+    .ex-meta { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .ex-lede { font-size: 0.95rem; max-width: 62ch; margin: 0 0 1rem; }
+    .exhibit .num { font-variant-numeric: tabular-nums; }
+    .exhibit figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 1.1rem;
+                          max-width: 62ch; line-height: 1.55; }
+
+    /* flow: sankey on wide screens, stacked animated bars on narrow */
+    .flow-desktop { display: none; }
+    .js .flow-desktop { display: block; }
+    #site-flow { display: block; width: 100%; height: auto; }
+    @media (min-width: 640px) { .js .mflow { display: none; } }
+    @media (max-width: 639px) { .flow-desktop { display: none !important; } }
+    .mflow .mcat { margin-bottom: 1.2rem; }
+    .mflow .mcat > header { display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.92rem; font-weight: 600; border-bottom: 1px solid var(--ink);
+      padding-bottom: 0.4rem; margin-bottom: 0.55rem; }
+    .mrow { display: grid; grid-template-columns: minmax(7.5rem, 10rem) 1fr auto;
+            gap: 0.7rem; align-items: center; font-size: 0.82rem; padding: 0.32rem 0; }
+    .mrow .bar { height: 10px; background: var(--card); border: 1px solid var(--hairline);
+                 border-radius: 5px; overflow: hidden; }
+    .mrow .bar i { display: block; height: 100%; width: var(--w);
+                   background: var(--fc, var(--accent)); border-radius: 5px; }
+    .js .mrow .bar i { width: 0; transition: width 800ms var(--ease-entrance); }
+    .js .exhibit.in-view .mrow .bar i { width: var(--w); }
+    .js .mcat .mrow:nth-of-type(2) .bar i { transition-delay: 70ms; }
+    .js .mcat .mrow:nth-of-type(3) .bar i { transition-delay: 140ms; }
+    .js .mcat .mrow:nth-of-type(4) .bar i { transition-delay: 210ms; }
+    .js .mcat .mrow:nth-of-type(5) .bar i { transition-delay: 280ms; }
+    .mrow .amt { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+    /* findings: the recovery opportunities */
+    ul.findings { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+    ul.findings li { display: grid; grid-template-columns: 1fr 9rem 5.5rem;
+                     gap: 0.35rem 1.2rem; align-items: center;
+                     padding: 0.9rem 0; border-bottom: 1px solid var(--hairline); }
+    .f-desc b { display: block; font-size: 0.95rem; line-height: 1.4; }
+    .f-desc span { font-size: 0.78rem; color: var(--muted); }
+    .f-rate { text-align: right; }
+    .f-rate .pct { font-family: var(--serif); font-size: 1.3rem; color: var(--accent); line-height: 1.1; }
+    .f-rate .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+    .f-amt { font-family: var(--serif); font-size: 1.08rem; text-align: right; white-space: nowrap; }
+    @media (max-width: 560px) {
+      ul.findings li { grid-template-columns: 1fr auto; }
+      .f-desc { grid-column: 1 / -1; }
+      .f-rate { text-align: left; }
+    }
+
+    /* engagement: stat tiles, recovery curve, pipeline */
+    .stats3 { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 0.8rem; }
+    .stat { background: var(--card); border: 1px solid var(--hairline); padding: 0.95rem 1.05rem; }
+    .stat.main { border-left: 3px solid var(--accent); }
+    .stat .lbl { display: block; font-size: 0.68rem; letter-spacing: 0.14em;
+                 text-transform: uppercase; color: var(--muted); margin-bottom: 0.45rem; }
+    .stat .val { font-family: var(--serif); font-size: 1.65rem; line-height: 1.1; }
+    .stat.main .val { color: var(--accent); }
+    .stat .sub { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 0.35rem; }
+    @media (max-width: 640px) { .stats3 { grid-template-columns: 1fr 1fr; }
+                                .stat.main { grid-column: 1 / -1; } }
+    .spark { margin-top: 1rem; }
+    .spark svg { display: block; width: 100%; height: auto; }
+    .spark .axis { display: flex; justify-content: space-between; font-size: 0.72rem;
+                   color: var(--muted); margin-top: 0.3rem; }
+    .js #spark-line { stroke-dasharray: 1; stroke-dashoffset: 1;
+                      transition: stroke-dashoffset 1300ms var(--ease-entrance) 150ms; }
+    .js .exhibit.in-view #spark-line { stroke-dashoffset: 0; }
+    .js .spark circle, .js .spark text { opacity: 0; transition: opacity 300ms ease 1200ms; }
+    .js .exhibit.in-view .spark circle, .js .exhibit.in-view .spark text { opacity: 1; }
+    .pipe { display: flex; gap: 0.7rem; margin-top: 1.1rem; }
+    .pipe .stage { flex: 1; background: var(--card); border: 1px solid var(--hairline);
+                   border-top: 3px solid var(--sc); padding: 0.7rem 0.8rem; }
+    .pipe .amt { font-family: var(--serif); font-size: 1.02rem; }
+    .pipe .lbl { display: block; font-size: 0.68rem; letter-spacing: 0.1em;
+                 text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+    .pipe .sub2 { display: block; font-size: 0.68rem; color: var(--muted); margin-top: 0.15rem; }
+    @media (max-width: 640px) { .pipe { display: grid; grid-template-columns: 1fr 1fr; } }
 
     /* ---------- mid-page CTA (quiet ask after a proof block) ---------- */
     .cta-mid { margin-top: 2.4rem; display: flex; flex-wrap: wrap;
@@ -325,6 +398,7 @@
         transform: none; transition: opacity 300ms ease;
       }
       .contact-btn, .stickybar, .topnav { transition: none; }
+      .js .mrow .bar i, .js #spark-line, .js .spark circle, .js .spark text { transition: none; }
     }
   </style>
 </head>
@@ -390,19 +464,88 @@
         <li><span><b>Findings, in dollars.</b> You get a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window. You decide what we pursue — nothing is filed without your sign-off.</span></li>
         <li><span><b>Recovery.</b> We pursue the approved underpayments through each payer's own reconsideration process and report every dollar as it lands. Our fee is a percentage of what's actually recovered. Nothing else, ever.</span></li>
       </ol>
-      <figure class="sample" aria-label="Clearia recovery diagnostic — sample report">
-        <div class="sample-scroll">
-          <img src="assets/diagnostic-report.png" width="880" height="705" loading="lazy" decoding="async"
-               alt="Opening page of a Clearia recovery diagnostic: $595,000 net recoverable profit potential, annualized, with the profit impact stated net of Clearia's fee — and zero added cost or staff time to capture it.">
+      <figure class="exhibit reveal" aria-label="From the diagnostic report: where the recoverable dollars come from, and the top recovery opportunities">
+        <div class="ex-head">
+          <span class="ex-title">From the diagnostic report</span>
+          <span class="ex-meta">sample · synthetic data</span>
         </div>
-        <figcaption>Step two, in miniature: the diagnostic report opens with one number — the recoverable dollars identified in your paid claims, annualized, net of our fee — then traces it payer by payer, code by code, down to individual claims. Sample report, synthetic data.</figcaption>
+        <p class="ex-lede">Where the recoverable dollars come from. In this sample quarter, <b class="num">$247,800</b> — traced from its two categories to the specific reason each dollar went unpaid:</p>
+        <div class="flow-desktop">
+          <svg id="site-flow" viewBox="0 0 720 520" role="img" aria-label="Flow of $247,800 recoverable: underpayments $162,300 and non-clinical denials $85,500, splitting into nine payer-behavior reasons from contractual underpayment to eligibility"></svg>
+        </div>
+        <div class="mflow">
+          <div class="mcat">
+            <header><span>Underpayments</span><span class="num">$162.3K</span></header>
+            <div class="mrow"><span>Contractual</span><div class="bar"><i style="--w:100%;--fc:#14171F"></i></div><span class="amt">$92.4K</span></div>
+            <div class="mrow"><span>Downcoding</span><div class="bar"><i style="--w:45%;--fc:#3a3340"></i></div><span class="amt">$41.8K</span></div>
+            <div class="mrow"><span>Bundling reduction</span><div class="bar"><i style="--w:21%;--fc:#5a4450"></i></div><span class="amt">$19.6K</span></div>
+            <div class="mrow"><span>Pricing / quantity</span><div class="bar"><i style="--w:9%;--fc:#7a5a62"></i></div><span class="amt">$8.5K</span></div>
+          </div>
+          <div class="mcat">
+            <header><span>Non-clinical denials</span><span class="num">$85.5K</span></header>
+            <div class="mrow"><span>Authorization</span><div class="bar"><i style="--w:31%;--fc:#5C1F2D"></i></div><span class="amt">$28.9K</span></div>
+            <div class="mrow"><span>Coding / data</span><div class="bar"><i style="--w:23%;--fc:#723240"></i></div><span class="amt">$21.3K</span></div>
+            <div class="mrow"><span>Bundling denial</span><div class="bar"><i style="--w:18%;--fc:#8a4f57"></i></div><span class="amt">$16.8K</span></div>
+            <div class="mrow"><span>Timely filing</span><div class="bar"><i style="--w:11%;--fc:#a36b72"></i></div><span class="amt">$10.2K</span></div>
+            <div class="mrow"><span>Eligibility / COB</span><div class="bar"><i style="--w:9%;--fc:#c4766b"></i></div><span class="amt">$8.3K</span></div>
+          </div>
+        </div>
+        <p class="ex-lede" style="margin-top:1.6rem;">The recovery opportunities behind it — how often each pattern fires, and what it's worth:</p>
+        <ul class="findings">
+          <li>
+            <div class="f-desc"><b>Arthroscopy paid below the contracted rate</b><span>CO-45 · knee &amp; shoulder · multiple payers</span></div>
+            <div class="f-rate"><span class="pct num" data-to="47" data-suffix="%">47%</span><span class="sub">of arthroscopy claims</span></div>
+            <div class="f-amt num">$48.2K</div>
+          </li>
+          <li>
+            <div class="f-desc"><b>Level-4 office visits downcoded to level 3</b><span>99214 → 99213 · documentation supports the billed level</span></div>
+            <div class="f-rate"><span class="pct num" data-to="34" data-suffix="%">34%</span><span class="sub">of 99214 claims</span></div>
+            <div class="f-amt num">$31.6K</div>
+          </li>
+          <li>
+            <div class="f-desc"><b>Same-day procedure bundled into the office visit</b><span>CO-97 · modifier 25 supports separate payment</span></div>
+            <div class="f-rate"><span class="pct num" data-to="38" data-suffix="%">38%</span><span class="sub">of modifier-25 eligible</span></div>
+            <div class="f-amt num">$22.4K</div>
+          </li>
+          <li>
+            <div class="f-desc"><b>Denied for no prior authorization on file</b><span>CARC 197 · administrative, obtainable retroactively</span></div>
+            <div class="f-rate"><span class="pct num" data-to="22" data-suffix="%">22%</span><span class="sub">of auth-required claims</span></div>
+            <div class="f-amt num">$18.9K</div>
+          </li>
+          <li>
+            <div class="f-desc"><b>Denied as missing information</b><span>CO-16 · correctable data defect, resubmit</span></div>
+            <div class="f-rate"><span class="pct num" data-to="19" data-suffix="%">19%</span><span class="sub">of denied claims</span></div>
+            <div class="f-amt num">$14.3K</div>
+          </li>
+        </ul>
+        <figcaption>Step two's deliverable: recoverable dollars identified in paid claims, traced to the payer behavior behind each one — a high rate signals a systematic pattern, not a clerical slip. Sample report, synthetic data.</figcaption>
       </figure>
-      <figure class="sample" aria-label="Clearia recovery dashboard — sample engagement view">
-        <div class="sample-scroll">
-          <img src="assets/engagement-dashboard.png" width="1080" height="860" loading="lazy" decoding="async"
-               alt="Clearia recovery dashboard: $151,840 recovered to date net of fee, 81% of submitted appeals paid, a rising cumulative recovery curve, and the live pipeline — identified, drafted, submitted, recovered.">
+
+      <figure class="exhibit reveal" aria-label="During an engagement: recovered to date, the recovery curve over five months, and the live pipeline">
+        <div class="ex-head">
+          <span class="ex-title">During the engagement</span>
+          <span class="ex-meta">sample · synthetic data</span>
         </div>
-        <figcaption>Step three, ongoing: the engagement view — every recovered dollar as remittances confirm it, what sits in each stage of the pipeline, and the payer patterns behind the findings, down to a claim-by-claim ledger. A window into our work, not software you run. Sample engagement shown.</figcaption>
+        <div class="stats3">
+          <div class="stat main"><span class="lbl">Recovered to date</span><span class="val num" data-to="151840" data-prefix="$">$151,840</span><span class="sub">net of our fee · five months in</span></div>
+          <div class="stat"><span class="lbl">In progress</span><span class="val num" data-to="35580" data-prefix="$">$35,580</span><span class="sub">drafted &amp; submitted, not yet paid</span></div>
+          <div class="stat"><span class="lbl">Recovery rate</span><span class="val num" data-to="81" data-suffix="%">81%</span><span class="sub">of submitted appeals, paid</span></div>
+        </div>
+        <div class="spark">
+          <svg viewBox="0 0 600 170" role="img" aria-label="Cumulative recovery curve rising from $16,240 in month one to $151,840 in month five">
+            <path id="spark-line" pathLength="1" d="M8,147 L154,120 L300,89 L446,52 L592,20" fill="none" stroke="#5C1F2D" stroke-width="2.5"/>
+            <circle cx="8" cy="147" r="3.5" fill="#5C1F2D"/><circle cx="154" cy="120" r="3.5" fill="#5C1F2D"/><circle cx="300" cy="89" r="3.5" fill="#5C1F2D"/><circle cx="446" cy="52" r="3.5" fill="#5C1F2D"/><circle cx="592" cy="20" r="3.5" fill="#5C1F2D"/>
+            <text x="580" y="14" text-anchor="end" font-family="Lora,Georgia,serif" font-size="15" fill="#14171F">$151.8K</text>
+          </svg>
+          <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
+        </div>
+        <div class="pipe">
+          <div class="stage" style="--sc:#cbb7a8"><span class="amt num">$5,980</span><span class="lbl">Identified</span><span class="sub2">live · not yet drafted</span></div>
+          <div class="stage" style="--sc:#bd8d80"><span class="amt num">$11,400</span><span class="lbl">Drafted</span><span class="sub2">live · in review</span></div>
+          <div class="stage" style="--sc:#9a5560"><span class="amt num">$18,200</span><span class="lbl">Submitted</span><span class="sub2">live · awaiting payer</span></div>
+          <div class="stage" style="--sc:#5C1F2D"><span class="amt num">$151,840</span><span class="lbl">Recovered</span><span class="sub2">cumulative, five months</span></div>
+        </div>
+        <figcaption>Step three, ongoing: every recovered dollar as remittances confirm it, and what sits in each stage of the pipeline — a window into our work, not software you run. Sample engagement, synthetic data.</figcaption>
       </figure>
     </section>
 
@@ -518,17 +661,122 @@
 
   <script>
     (function () {
+      var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // count-up numbers (markup holds final values; JS animates toward them on reveal)
+      function fmt(n, pre, suf) { return (pre || '') + Math.round(n).toLocaleString('en-US') + (suf || ''); }
+      function countUp(el) {
+        var to = parseFloat(el.getAttribute('data-to'));
+        var pre = el.getAttribute('data-prefix'), suf = el.getAttribute('data-suffix');
+        if (RM || !window.requestAnimationFrame) { el.textContent = fmt(to, pre, suf); return; }
+        var t0 = null, D = 950;
+        function step(t) {
+          if (!t0) t0 = t;
+          var p = Math.min((t - t0) / D, 1);
+          el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), pre, suf);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // flow chart (sankey) — built in plain SVG from the sample-report data
+      function buildFlow() {
+        var svg = document.getElementById('site-flow');
+        if (!svg || svg.childNodes.length) return svg;
+        var NS = 'http://www.w3.org/2000/svg';
+        var padT = 26, xS = 4, wS = 14, xC = 240, wC = 14, xR = 450, wR = 8;
+        var total = 247800, innerH = 486, gC = 18, gR = 9;
+        var cats = [
+          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F' },
+          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D' }
+        ];
+        var reasons = [
+          ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
+          ['up', 'Bundling reduction', 19600, '#5a4450'], ['up', 'Pricing / quantity', 8500, '#7a5a62'],
+          ['dn', 'Authorization', 28900, '#5C1F2D'], ['dn', 'Coding / data', 21300, '#723240'],
+          ['dn', 'Bundling denial', 16800, '#8a4f57'], ['dn', 'Timely filing', 10200, '#a36b72'],
+          ['dn', 'Eligibility / COB', 8300, '#c4766b']
+        ];
+        var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
+        function add(tag, attrs, delay) {
+          var n = document.createElementNS(NS, tag);
+          for (var k in attrs) n.setAttribute(k, attrs[k]);
+          n.style.opacity = 0;
+          if (!RM) n.style.transition = 'opacity 500ms ease ' + delay + 'ms';
+          svg.appendChild(n); return n;
+        }
+        function ribbon(x0, ya, yb, x1, y1a, y1b) {
+          var mx = (x0 + x1) / 2;
+          return 'M' + x0 + ',' + ya + 'C' + mx + ',' + ya + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a +
+                 'L' + x1 + ',' + y1b + 'C' + mx + ',' + y1b + ' ' + mx + ',' + yb + ' ' + x0 + ',' + yb + 'Z';
+        }
+        var cy = padT; cats.forEach(function (c) { c.y = cy; c.h = c.amt * sc; cy += c.h + gC; });
+        var ry = padT;
+        var rs = reasons.map(function (r) {
+          var o = { cat: r[0], name: r[1], amt: r[2], c: r[3], y: ry, h: r[2] * sr };
+          ry += o.h + gR; return o;
+        });
+        var srcH = cats[0].h + cats[1].h + gC;
+        var cur = padT;
+        cats.forEach(function (c) {
+          add('path', { d: ribbon(xS + wS, cur, cur + c.h, xC, c.y, c.y + c.h), fill: c.c, 'fill-opacity': 0.26 }, 150);
+          cur += c.h;
+        });
+        var catCur = {}; cats.forEach(function (c) { catCur[c.id] = c.y; });
+        rs.forEach(function (r) {
+          var sh = r.amt * sc;
+          add('path', { d: ribbon(xC + wC, catCur[r.cat], catCur[r.cat] + sh, xR, r.y, r.y + r.h), fill: r.c, 'fill-opacity': 0.4 }, 450);
+          catCur[r.cat] += sh;
+        });
+        add('rect', { x: xS, y: padT, width: wS, height: srcH, fill: '#5C1F2D', rx: 2 }, 0);
+        add('text', { x: xS, y: padT - 9, 'font-family': "Lora,Georgia,serif", 'font-size': 14, fill: '#14171F' }, 0)
+          .textContent = '$247.8K recoverable';
+        cats.forEach(function (c) {
+          add('rect', { x: xC, y: c.y, width: wC, height: c.h, fill: c.c, rx: 2 }, 300);
+          add('text', { x: xC + wC + 8, y: c.y + c.h / 2 - 2, 'font-family': "Poppins,sans-serif", 'font-size': 12.5, 'font-weight': 600, fill: '#14171F' }, 300).textContent = c.name;
+          add('text', { x: xC + wC + 8, y: c.y + c.h / 2 + 14, 'font-family': "Lora,Georgia,serif", 'font-size': 12, fill: '#5E5A50' }, 300).textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
+        });
+        rs.forEach(function (r, i) {
+          var d = 600 + i * 45;
+          add('rect', { x: xR, y: r.y, width: wR, height: r.h, fill: r.c, rx: 2 }, d);
+          var t = add('text', { x: xR + wR + 8, y: r.y + r.h / 2 + 4, 'font-family': "Poppins,sans-serif", 'font-size': 11.5, fill: '#14171F' }, d);
+          t.textContent = r.name + ' · ';
+          var ts = document.createElementNS(NS, 'tspan');
+          ts.setAttribute('fill', '#5E5A50');
+          ts.textContent = '$' + (r.amt / 1000).toFixed(1) + 'K';
+          t.appendChild(ts);
+        });
+        return svg;
+      }
+
+      function runExhibit(fig) {
+        fig.querySelectorAll('[data-to]').forEach(countUp);
+        if (fig.querySelector('#site-flow')) {
+          var svg = buildFlow();
+          if (svg) requestAnimationFrame(function () {
+            Array.prototype.forEach.call(svg.querySelectorAll('*'), function (n) { n.style.opacity = 1; });
+          });
+        }
+      }
+
       // scroll reveals — unobserve after firing
       var reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              if (e.target.classList.contains('exhibit')) runExhibit(e.target);
+              io.unobserve(e.target);
+            }
           });
         }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
         reveals.forEach(function (el) { io.observe(el); });
       } else {
-        reveals.forEach(function (el) { el.classList.add('in-view'); });
+        reveals.forEach(function (el) {
+          el.classList.add('in-view');
+          if (el.classList.contains('exhibit')) runExhibit(el);
+        });
       }
 
       // sticky mobile CTA — show after the hero CTA scrolls away, hide while the form is on screen

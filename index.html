@@ -311,6 +311,12 @@
     .js .exhibit.in-view #spark-line { stroke-dashoffset: 0; }
     .js .spark circle, .js .spark text { opacity: 0; transition: opacity 300ms ease 1200ms; }
     .js .exhibit.in-view .spark circle, .js .exhibit.in-view .spark text { opacity: 1; }
+    .funnel-desktop { display: none; margin-top: 1.3rem; }
+    #site-funnel { display: block; width: 100%; height: auto; }
+    @media (min-width: 640px) {
+      .js .funnel-desktop { display: block; }
+      .js .funnel-desktop + .pipe { display: none; }
+    }
     .pipe { display: flex; gap: 0.7rem; margin-top: 1.1rem; }
     .pipe .stage { flex: 1; background: var(--card); border: 1px solid var(--hairline);
                    border-top: 3px solid var(--sc); padding: 0.7rem 0.8rem; }
@@ -541,6 +547,9 @@
           </svg>
           <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
         </div>
+        <div class="funnel-desktop">
+          <svg id="site-funnel" viewBox="0 0 720 224" role="img" aria-label="Recovery pipeline: identified $5,980, drafted $11,400, submitted $18,200, and $151,840 recovered cumulatively over five months"></svg>
+        </div>
         <div class="pipe">
           <div class="stage" style="--sc:#cbb7a8"><span class="amt num">$5,980</span><span class="lbl">Identified</span><span class="sub2">live · not yet drafted</span></div>
           <div class="stage" style="--sc:#bd8d80"><span class="amt num">$11,400</span><span class="lbl">Drafted</span><span class="sub2">live · in review</span></div>
@@ -685,31 +694,9 @@
         requestAnimationFrame(step);
       }
 
-      // flow chart (sankey) — plain SVG from the sample-report data, staged assembly:
-      // source block scales in with a counting total, ribbons wipe across stage by
-      // stage, category blocks (labels inside) grow, reason bars pop with labels
-      // sliding in. All one-shot; reduced-motion renders the finished state.
-      function buildFlow() {
-        var svg = document.getElementById('site-flow');
-        if (!svg || svg.__built) return svg;
-        svg.__built = true;
+      // shared SVG builder: create elements, register staged transitions, fire on go()
+      function svgKit(svg) {
         var NS = 'http://www.w3.org/2000/svg';
-        var H = 560, padT = 30;
-        var sX = 2, sW = 128, cX = 270, cW = 160, rX = 545, rW = 12, lX = 565, aX = 718;
-        var total = 247800, innerH = H - padT - 8, gC = 18, gR = 9;
-        var cats = [
-          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F', ac: '#C08768' },
-          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D', ac: '#E8CDC4' }
-        ];
-        var reasons = [
-          ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
-          ['up', 'Bundling reduction', 19600, '#5a4450'], ['up', 'Pricing / quantity', 8500, '#7a5a62'],
-          ['dn', 'Authorization', 28900, '#5C1F2D'], ['dn', 'Coding / data', 21300, '#723240'],
-          ['dn', 'Bundling denial', 16800, '#8a4f57'], ['dn', 'Timely filing', 10200, '#a36b72'],
-          ['dn', 'Eligibility / COB', 8300, '#c4766b']
-        ];
-        var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
-        svg.setAttribute('viewBox', '0 0 720 ' + H);
         var steps = [];
         var PROP = { opacity: 'opacity', transform: 'transform' };
         function el(tag, attrs, parent) {
@@ -728,6 +715,34 @@
           });
           return n;
         }
+        return { el: el, fx: fx, steps: steps, go: function () { steps.forEach(function (f) { f(); }); } };
+      }
+
+      // flow chart (sankey) — plain SVG from the sample-report data, staged assembly:
+      // source block scales in with a counting total, ribbons wipe across stage by
+      // stage, category blocks (labels inside) grow, reason bars pop with labels
+      // sliding in. All one-shot; reduced-motion renders the finished state.
+      function buildFlow() {
+        var svg = document.getElementById('site-flow');
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
+        var K = svgKit(svg), el = K.el, fx = K.fx;
+        var H = 560, padT = 30;
+        var sX = 2, sW = 128, cX = 270, cW = 160, rX = 545, rW = 12, lX = 565, aX = 718;
+        var total = 247800, innerH = H - padT - 8, gC = 18, gR = 9;
+        var cats = [
+          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F', ac: '#C08768' },
+          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D', ac: '#E8CDC4' }
+        ];
+        var reasons = [
+          ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
+          ['up', 'Bundling reduction', 19600, '#5a4450'], ['up', 'Pricing / quantity', 8500, '#7a5a62'],
+          ['dn', 'Authorization', 28900, '#5C1F2D'], ['dn', 'Coding / data', 21300, '#723240'],
+          ['dn', 'Bundling denial', 16800, '#8a4f57'], ['dn', 'Timely filing', 10200, '#a36b72'],
+          ['dn', 'Eligibility / COB', 8300, '#c4766b']
+        ];
+        var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
+        svg.setAttribute('viewBox', '0 0 720 ' + H);
         function ribbon(x0, ya, yb, x1, y1a, y1b) {
           var mx = (x0 + x1) / 2;
           return 'M' + x0 + ',' + ya + 'C' + mx + ',' + ya + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a +
@@ -745,7 +760,7 @@
         var defs = el('defs', {});
         var wr1 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w1' }, defs));
         var wr2 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w2' }, defs));
-        if (!RM) steps.push(function () {
+        if (!RM) K.steps.push(function () {
           wr1.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 250ms';
           wr1.style.width = '720px';
           wr2.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 1000ms';
@@ -765,32 +780,38 @@
           catCur[r.cat] += sh;
         });
 
-        // source block, total counting up inside
-        var srect = el('rect', { x: sX, y: padT, width: sW, height: srcH, fill: '#5C1F2D', rx: 3 });
-        srect.style.transformBox = 'fill-box'; srect.style.transformOrigin = '0 50%';
-        fx(srect, { transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }, 0, 500);
+        // source: translucent panel + solid accent edge, total counting up inside
+        function panel(x, y, w, h, color, delay, originLeft) {
+          var p = el('rect', { x: x, y: y, width: w, height: h, fill: color, 'fill-opacity': 0.12, rx: 3 });
+          var edge = el('rect', { x: x, y: y, width: 5, height: h, fill: color, rx: 2 });
+          [p, edge].forEach(function (n) {
+            n.style.transformBox = 'fill-box';
+            n.style.transformOrigin = originLeft ? '0 50%' : 'center';
+            fx(n, { transform: originLeft ? 'scaleX(0)' : 'scaleY(0)' },
+                  { transform: originLeft ? 'scaleX(1)' : 'scaleY(1)' }, delay, 480);
+          });
+        }
+        panel(sX, padT, sW, srcH, '#5C1F2D', 0, true);
         var mid = padT + srcH / 2;
-        var sNum = el('text', { x: sX + sW / 2, y: mid - 2, 'text-anchor': 'middle',
-          'font-family': 'Lora,Georgia,serif', 'font-size': 21, fill: '#F7F4ED',
+        var sNum = el('text', { x: sX + 14, y: mid - 2,
+          'font-family': 'Lora,Georgia,serif', 'font-size': 21, fill: '#5C1F2D',
           'data-to': '247.8', 'data-prefix': '$', 'data-suffix': 'K', 'data-dec': '1' });
         sNum.textContent = '$247.8K';
         fx(sNum, { opacity: 0 }, { opacity: 1 }, 150);
-        var sLbl = el('text', { x: sX + sW / 2, y: mid + 18, 'text-anchor': 'middle',
-          'font-family': 'Poppins,sans-serif', 'font-size': 10.5, 'letter-spacing': '0.12em', fill: '#C08768' });
+        var sLbl = el('text', { x: sX + 14, y: mid + 18,
+          'font-family': 'Poppins,sans-serif', 'font-size': 10.5, 'letter-spacing': '0.12em', fill: '#5E5A50' });
         sLbl.textContent = 'RECOVERABLE';
         fx(sLbl, { opacity: 0 }, { opacity: 1 }, 250);
 
-        // category blocks, labels inside
+        // category panels, labels inside in ink
         cats.forEach(function (c) {
-          var rect = el('rect', { x: cX, y: c.y, width: cW, height: c.h, fill: c.c, rx: 3 });
-          rect.style.transformBox = 'fill-box'; rect.style.transformOrigin = 'center';
-          fx(rect, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, 650, 450);
-          var t1 = el('text', { x: cX + 14, y: c.y + c.h / 2 - 3, 'font-family': 'Poppins,sans-serif',
-            'font-size': 12.5, 'font-weight': 600, fill: '#F7F4ED' });
+          panel(cX, c.y, cW, c.h, c.c, 650, false);
+          var t1 = el('text', { x: cX + 16, y: c.y + c.h / 2 - 3, 'font-family': 'Poppins,sans-serif',
+            'font-size': 12.5, 'font-weight': 600, fill: '#14171F' });
           t1.textContent = c.name;
           fx(t1, { opacity: 0 }, { opacity: 1 }, 900);
-          var t2 = el('text', { x: cX + 14, y: c.y + c.h / 2 + 15, 'font-family': 'Lora,Georgia,serif',
-            'font-size': 12.5, fill: c.ac });
+          var t2 = el('text', { x: cX + 16, y: c.y + c.h / 2 + 15, 'font-family': 'Lora,Georgia,serif',
+            'font-size': 12.5, fill: '#5E5A50' });
           t2.textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
           fx(t2, { opacity: 0 }, { opacity: 1 }, 1000);
         });
@@ -811,18 +832,68 @@
           fx(amt, { opacity: 0 }, { opacity: 1 }, d + 180, 420);
         });
 
-        svg.__go = function () { steps.forEach(function (f) { f(); }); };
+        svg.__go = K.go;
+        return svg;
+      }
+
+      // recovery-pipeline funnel — mirrored bands on a spine, from the engagement artifact
+      function buildFunnel() {
+        var svg = document.getElementById('site-funnel');
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
+        var K = svgKit(svg);
+        var stages = [
+          { label: 'Identified', amt: 5980, sub: 'live · not yet drafted', c: '#cbb7a8' },
+          { label: 'Drafted', amt: 11400, sub: 'live · in review', c: '#bd8d80' },
+          { label: 'Submitted', amt: 18200, sub: 'live · awaiting payer', c: '#9a5560' },
+          { label: 'Recovered', amt: 151840, sub: 'cumulative · five months', c: '#5C1F2D' }
+        ];
+        var W = 720, midY = 104, maxHalf = 60, minHalf = 10, bandW = 66, pad = 92;
+        var fmax = stages[3].amt;
+        function cx(i) { return pad + (W - 2 * pad) * (i / (stages.length - 1)); }
+        function half(v) { return minHalf + (v / fmax) * (maxHalf - minHalf); }
+        var spine = K.el('line', { x1: pad - 26, y1: midY, x2: W - pad + 26, y2: midY,
+          stroke: '#C08768', 'stroke-opacity': 0.35, 'stroke-width': 2, pathLength: 1 });
+        if (!RM) {
+          spine.style.strokeDasharray = 1; spine.style.strokeDashoffset = 1;
+          K.steps.push(function () {
+            spine.style.transition = 'stroke-dashoffset 700ms cubic-bezier(0,0,0.38,0.9)';
+            spine.style.strokeDashoffset = 0;
+          });
+        }
+        stages.forEach(function (s, i) {
+          var x = cx(i), h = half(s.amt), d = 250 + i * 160;
+          var band = K.el('rect', { x: x - bandW / 2, y: midY - h, width: bandW, height: 2 * h, rx: 12, fill: s.c });
+          band.style.transformBox = 'fill-box'; band.style.transformOrigin = 'center';
+          K.fx(band, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 450);
+          var amt = K.el('text', { x: x, y: midY - h - 10, 'text-anchor': 'middle',
+            'font-family': 'Lora,Georgia,serif', 'font-size': 14.5, fill: '#14171F',
+            'data-to': String(s.amt), 'data-prefix': '$' });
+          amt.textContent = '$' + s.amt.toLocaleString('en-US');
+          K.fx(amt, { opacity: 0 }, { opacity: 1 }, d + 120, 400);
+          var lbl = K.el('text', { x: x, y: midY + maxHalf + 30, 'text-anchor': 'middle',
+            'font-family': 'Poppins,sans-serif', 'font-size': 13, 'font-weight': 500, fill: '#14171F' });
+          lbl.textContent = s.label;
+          K.fx(lbl, { opacity: 0 }, { opacity: 1 }, d + 160, 400);
+          var sub = K.el('text', { x: x, y: midY + maxHalf + 47, 'text-anchor': 'middle',
+            'font-family': 'Poppins,sans-serif', 'font-size': 10.5, fill: '#5E5A50' });
+          sub.textContent = s.sub;
+          K.fx(sub, { opacity: 0 }, { opacity: 1 }, d + 200, 400);
+        });
+        svg.__go = K.go;
         return svg;
       }
 
       function runExhibit(fig) {
-        var flow = fig.querySelector('#site-flow');
-        if (flow) {
-          buildFlow();
-          requestAnimationFrame(function () { requestAnimationFrame(function () {
-            if (flow.__go) flow.__go();
-          }); });
-        }
+        [['#site-flow', buildFlow], ['#site-funnel', buildFunnel]].forEach(function (pair) {
+          var n = fig.querySelector(pair[0]);
+          if (n) {
+            pair[1]();
+            requestAnimationFrame(function () { requestAnimationFrame(function () {
+              if (n.__go) n.__go();
+            }); });
+          }
+        });
         fig.querySelectorAll('[data-to]').forEach(countUp);
       }
 

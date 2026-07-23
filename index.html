@@ -236,33 +236,12 @@
     }
     ol.steps li > span { max-width: 60ch; display: block; }
 
-    /* ---------- findings excerpt (document plate, not a screenshot) ---------- */
+    /* ---------- engagement dashboard (real product view) ---------- */
     .sample { margin: 2.1rem 0 0.4rem; }
-    .sample-doc {
-      background: #FBF9F2; border: 1px solid var(--hairline);
-      border-top: 2px solid var(--ink);
-      padding: 1.3rem 1.4rem 1.05rem;
-    }
-    .sample-head { display: flex; justify-content: space-between; align-items: baseline;
-                   gap: 0.6rem 1rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
-    .sample-title { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; }
-    .sample-meta { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-                   color: var(--muted); }
-    .sample-scroll { overflow-x: auto; }
-    .sample-table { width: 100%; border-collapse: collapse; font-size: 0.88rem;
-                    font-variant-numeric: tabular-nums; min-width: 460px; }
-    .sample-table th {
-      text-align: left; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted); font-weight: 600; padding: 0.4rem 0 0.4rem 0.6rem;
-      border-bottom: 1px solid var(--ink); white-space: nowrap;
-    }
-    .sample-table td { padding: 0.55rem 0 0.55rem 0.6rem;
-                       border-bottom: 1px solid var(--hairline); }
-    .sample-table th:first-child, .sample-table td:first-child { padding-left: 0; white-space: nowrap; }
-    .sample-table th:nth-child(n+2), .sample-table td:nth-child(n+2) { text-align: right; }
-    .sample-table .due { color: var(--accent); font-weight: 600; }
-    .sample-table tfoot td { border-bottom: 0; border-top: 1px solid var(--ink);
-                             font-weight: 600; padding-top: 0.7rem; }
+    .sample-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .sample img { display: block; width: 100%; height: auto;
+                  border: 1px solid var(--hairline); border-radius: 4px; }
+    @media (max-width: 560px) { .sample img { min-width: 640px; } }
     .sample figcaption { font-size: 0.82rem; color: var(--muted);
                          margin-top: 0.85rem; max-width: 62ch; line-height: 1.55; }
 
@@ -411,29 +390,19 @@
         <li><span><b>Findings, in dollars.</b> You get a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window. You decide what we pursue — nothing is filed without your sign-off.</span></li>
         <li><span><b>Recovery.</b> We pursue the approved underpayments through each payer's own reconsideration process and report every dollar as it lands. Our fee is a percentage of what's actually recovered. Nothing else, ever.</span></li>
       </ol>
-      <figure class="sample" aria-label="Anonymized excerpt from a Clearia diagnostic findings report">
-        <div class="sample-doc">
-          <div class="sample-head">
-            <span class="sample-title">Diagnostic findings — excerpt</span>
-            <span class="sample-meta">Payer B · orthopedic practice · illustrative</span>
-          </div>
-          <div class="sample-scroll">
-            <table class="sample-table">
-              <thead>
-                <tr><th scope="col">Code</th><th scope="col">Contract</th><th scope="col">Paid</th><th scope="col">Shortfall</th><th scope="col">Claims in pattern</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>29881</td><td>$2,114</td><td>$1,976</td><td class="due">$138</td><td>212</td></tr>
-                <tr><td>64483</td><td>$887</td><td>$743</td><td class="due">$144</td><td>167</td></tr>
-                <tr><td>99214 → 99213</td><td>$132</td><td>$91</td><td class="due">$41</td><td>438</td></tr>
-              </tbody>
-              <tfoot>
-                <tr><td colspan="3">Recoverable within dispute windows</td><td class="due">$71,262</td><td></td></tr>
-              </tfoot>
-            </table>
-          </div>
+      <figure class="sample" aria-label="Clearia recovery diagnostic — sample report">
+        <div class="sample-scroll">
+          <img src="assets/diagnostic-report.png" width="880" height="705" loading="lazy" decoding="async"
+               alt="Opening page of a Clearia recovery diagnostic: $595,000 net recoverable profit potential, annualized, with the profit impact stated net of Clearia's fee — and zero added cost or staff time to capture it.">
         </div>
-        <figcaption>This is the deliverable, in miniature: every payer-specific pattern, code by code — contracted rate, what was paid, the shortfall, and the claims that follow it. Figures illustrative; your report is built from your own remittances and contracts.</figcaption>
+        <figcaption>Step two, in miniature: the diagnostic report opens with one number — the recoverable dollars identified in your paid claims, annualized, net of our fee — then traces it payer by payer, code by code, down to individual claims. Sample report, synthetic data.</figcaption>
+      </figure>
+      <figure class="sample" aria-label="Clearia recovery dashboard — sample engagement view">
+        <div class="sample-scroll">
+          <img src="assets/engagement-dashboard.png" width="1080" height="860" loading="lazy" decoding="async"
+               alt="Clearia recovery dashboard: $151,840 recovered to date net of fee, 81% of submitted appeals paid, a rising cumulative recovery curve, and the live pipeline — identified, drafted, submitted, recovered.">
+        </div>
+        <figcaption>Step three, ongoing: the engagement view — every recovered dollar as remittances confirm it, what sits in each stage of the pipeline, and the payer patterns behind the findings, down to a claim-by-claim ledger. A window into our work, not software you run. Sample engagement shown.</figcaption>
       </figure>
     </section>
 

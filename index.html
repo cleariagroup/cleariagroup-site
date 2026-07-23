@@ -252,6 +252,8 @@
     .flow-desktop { display: none; }
     .js .flow-desktop { display: block; }
     #site-flow { display: block; width: 100%; height: auto; }
+    #site-flow path { transition: fill-opacity 250ms var(--ease-standard); }
+    #site-flow path:hover { fill-opacity: 0.55; }
     @media (min-width: 640px) { .js .mflow { display: none; } }
     @media (max-width: 639px) { .flow-desktop { display: none !important; } }
     .mflow .mcat { margin-bottom: 1.2rem; }
@@ -664,31 +666,40 @@
       var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // count-up numbers (markup holds final values; JS animates toward them on reveal)
-      function fmt(n, pre, suf) { return (pre || '') + Math.round(n).toLocaleString('en-US') + (suf || ''); }
+      function fmt(n, pre, suf, dec) {
+        var v = dec > 0 ? n.toFixed(dec) : Math.round(n).toLocaleString('en-US');
+        return (pre || '') + v + (suf || '');
+      }
       function countUp(el) {
         var to = parseFloat(el.getAttribute('data-to'));
         var pre = el.getAttribute('data-prefix'), suf = el.getAttribute('data-suffix');
-        if (RM || !window.requestAnimationFrame) { el.textContent = fmt(to, pre, suf); return; }
+        var dec = parseFloat(el.getAttribute('data-dec')) || 0;
+        if (RM || !window.requestAnimationFrame) { el.textContent = fmt(to, pre, suf, dec); return; }
         var t0 = null, D = 950;
         function step(t) {
           if (!t0) t0 = t;
           var p = Math.min((t - t0) / D, 1);
-          el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), pre, suf);
+          el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), pre, suf, dec);
           if (p < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
       }
 
-      // flow chart (sankey) — built in plain SVG from the sample-report data
+      // flow chart (sankey) — plain SVG from the sample-report data, staged assembly:
+      // source block scales in with a counting total, ribbons wipe across stage by
+      // stage, category blocks (labels inside) grow, reason bars pop with labels
+      // sliding in. All one-shot; reduced-motion renders the finished state.
       function buildFlow() {
         var svg = document.getElementById('site-flow');
-        if (!svg || svg.childNodes.length) return svg;
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
         var NS = 'http://www.w3.org/2000/svg';
-        var padT = 26, xS = 10, wS = 16, xC = 310, wC = 16, xR = 520, wR = 10;
-        var total = 247800, innerH = 486, gC = 18, gR = 9;
+        var H = 560, padT = 30;
+        var sX = 2, sW = 128, cX = 270, cW = 160, rX = 545, rW = 12, lX = 565, aX = 718;
+        var total = 247800, innerH = H - padT - 8, gC = 18, gR = 9;
         var cats = [
-          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F' },
-          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D' }
+          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F', ac: '#C08768' },
+          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D', ac: '#E8CDC4' }
         ];
         var reasons = [
           ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
@@ -698,12 +709,24 @@
           ['dn', 'Eligibility / COB', 8300, '#c4766b']
         ];
         var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
-        function add(tag, attrs, delay) {
+        svg.setAttribute('viewBox', '0 0 720 ' + H);
+        var steps = [];
+        var PROP = { opacity: 'opacity', transform: 'transform' };
+        function el(tag, attrs, parent) {
           var n = document.createElementNS(NS, tag);
           for (var k in attrs) n.setAttribute(k, attrs[k]);
-          n.style.opacity = 0;
-          if (!RM) n.style.transition = 'opacity 500ms ease ' + delay + 'ms';
-          svg.appendChild(n); return n;
+          (parent || svg).appendChild(n); return n;
+        }
+        function fx(n, init, fin, delay, dur) {
+          if (RM) return n;
+          for (var k in init) n.style[k] = init[k];
+          steps.push(function () {
+            n.style.transition = Object.keys(fin).map(function (k) {
+              return PROP[k] + ' ' + (dur || 550) + 'ms cubic-bezier(0,0,0.38,0.9) ' + delay + 'ms';
+            }).join(', ');
+            for (var k2 in fin) n.style[k2] = fin[k2];
+          });
+          return n;
         }
         function ribbon(x0, ya, yb, x1, y1a, y1b) {
           var mx = (x0 + x1) / 2;
@@ -717,46 +740,90 @@
           ry += o.h + gR; return o;
         });
         var srcH = cats[0].h + cats[1].h + gC;
+
+        // ribbon stages, each behind a left-to-right wipe
+        var defs = el('defs', {});
+        var wr1 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w1' }, defs));
+        var wr2 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w2' }, defs));
+        if (!RM) steps.push(function () {
+          wr1.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 250ms';
+          wr1.style.width = '720px';
+          wr2.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 1000ms';
+          wr2.style.width = '720px';
+        });
+        var g1 = el('g', { 'clip-path': 'url(#w1)' });
+        var g2 = el('g', { 'clip-path': 'url(#w2)' });
         var cur = padT;
         cats.forEach(function (c) {
-          add('path', { d: ribbon(xS + wS, cur, cur + c.h, xC, c.y, c.y + c.h), fill: c.c, 'fill-opacity': 0.26 }, 150);
+          el('path', { d: ribbon(sX + sW, cur, cur + c.h, cX, c.y, c.y + c.h), fill: c.c, 'fill-opacity': 0.26 }, g1);
           cur += c.h;
         });
         var catCur = {}; cats.forEach(function (c) { catCur[c.id] = c.y; });
         rs.forEach(function (r) {
           var sh = r.amt * sc;
-          add('path', { d: ribbon(xC + wC, catCur[r.cat], catCur[r.cat] + sh, xR, r.y, r.y + r.h), fill: r.c, 'fill-opacity': 0.4 }, 450);
+          el('path', { d: ribbon(cX + cW, catCur[r.cat], catCur[r.cat] + sh, rX, r.y, r.y + r.h), fill: r.c, 'fill-opacity': 0.4 }, g2);
           catCur[r.cat] += sh;
         });
-        add('rect', { x: xS, y: padT, width: wS, height: srcH, fill: '#5C1F2D', rx: 2 }, 0);
-        add('text', { x: xS, y: padT - 9, 'font-family': "Lora,Georgia,serif", 'font-size': 14, fill: '#14171F' }, 0)
-          .textContent = '$247.8K recoverable';
+
+        // source block, total counting up inside
+        var srect = el('rect', { x: sX, y: padT, width: sW, height: srcH, fill: '#5C1F2D', rx: 3 });
+        srect.style.transformBox = 'fill-box'; srect.style.transformOrigin = '0 50%';
+        fx(srect, { transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }, 0, 500);
+        var mid = padT + srcH / 2;
+        var sNum = el('text', { x: sX + sW / 2, y: mid - 2, 'text-anchor': 'middle',
+          'font-family': 'Lora,Georgia,serif', 'font-size': 21, fill: '#F7F4ED',
+          'data-to': '247.8', 'data-prefix': '$', 'data-suffix': 'K', 'data-dec': '1' });
+        sNum.textContent = '$247.8K';
+        fx(sNum, { opacity: 0 }, { opacity: 1 }, 150);
+        var sLbl = el('text', { x: sX + sW / 2, y: mid + 18, 'text-anchor': 'middle',
+          'font-family': 'Poppins,sans-serif', 'font-size': 10.5, 'letter-spacing': '0.12em', fill: '#C08768' });
+        sLbl.textContent = 'RECOVERABLE';
+        fx(sLbl, { opacity: 0 }, { opacity: 1 }, 250);
+
+        // category blocks, labels inside
         cats.forEach(function (c) {
-          add('rect', { x: xC, y: c.y, width: wC, height: c.h, fill: c.c, rx: 2 }, 300);
-          add('text', { x: xC - 10, y: c.y + c.h / 2 - 2, 'text-anchor': 'end', 'font-family': "Poppins,sans-serif", 'font-size': 13, 'font-weight': 600, fill: '#14171F' }, 300).textContent = c.name;
-          add('text', { x: xC - 10, y: c.y + c.h / 2 + 15, 'text-anchor': 'end', 'font-family': "Lora,Georgia,serif", 'font-size': 12.5, fill: '#5E5A50' }, 300).textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
+          var rect = el('rect', { x: cX, y: c.y, width: cW, height: c.h, fill: c.c, rx: 3 });
+          rect.style.transformBox = 'fill-box'; rect.style.transformOrigin = 'center';
+          fx(rect, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, 650, 450);
+          var t1 = el('text', { x: cX + 14, y: c.y + c.h / 2 - 3, 'font-family': 'Poppins,sans-serif',
+            'font-size': 12.5, 'font-weight': 600, fill: '#F7F4ED' });
+          t1.textContent = c.name;
+          fx(t1, { opacity: 0 }, { opacity: 1 }, 900);
+          var t2 = el('text', { x: cX + 14, y: c.y + c.h / 2 + 15, 'font-family': 'Lora,Georgia,serif',
+            'font-size': 12.5, fill: c.ac });
+          t2.textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
+          fx(t2, { opacity: 0 }, { opacity: 1 }, 1000);
         });
+
+        // reason bars popping in, labels sliding after them
         rs.forEach(function (r, i) {
-          var d = 600 + i * 45;
-          add('rect', { x: xR, y: r.y, width: wR, height: r.h, fill: r.c, rx: 2 }, d);
-          var t = add('text', { x: xR + wR + 8, y: r.y + r.h / 2 + 4, 'font-family': "Poppins,sans-serif", 'font-size': 12, fill: '#14171F' }, d);
-          t.textContent = r.name + ' · ';
-          var ts = document.createElementNS(NS, 'tspan');
-          ts.setAttribute('fill', '#5E5A50');
-          ts.textContent = '$' + (r.amt / 1000).toFixed(1) + 'K';
-          t.appendChild(ts);
+          var d = 1350 + i * 70;
+          var rect = el('rect', { x: rX, y: r.y, width: rW, height: r.h, fill: r.c, rx: 2 });
+          rect.style.transformBox = 'fill-box'; rect.style.transformOrigin = 'center';
+          fx(rect, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 380);
+          var name = el('text', { x: lX, y: r.y + r.h / 2 + 4, 'font-family': 'Poppins,sans-serif',
+            'font-size': 11.5, fill: '#14171F' });
+          name.textContent = r.name;
+          fx(name, { opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'translateX(0px)' }, d + 80, 420);
+          var amt = el('text', { x: aX, y: r.y + r.h / 2 + 4, 'text-anchor': 'end',
+            'font-family': 'Lora,Georgia,serif', 'font-size': 11.5, fill: '#5E5A50' });
+          amt.textContent = '$' + (r.amt / 1000).toFixed(1) + 'K';
+          fx(amt, { opacity: 0 }, { opacity: 1 }, d + 180, 420);
         });
+
+        svg.__go = function () { steps.forEach(function (f) { f(); }); };
         return svg;
       }
 
       function runExhibit(fig) {
-        fig.querySelectorAll('[data-to]').forEach(countUp);
-        if (fig.querySelector('#site-flow')) {
-          var svg = buildFlow();
-          if (svg) requestAnimationFrame(function () {
-            Array.prototype.forEach.call(svg.querySelectorAll('*'), function (n) { n.style.opacity = 1; });
-          });
+        var flow = fig.querySelector('#site-flow');
+        if (flow) {
+          buildFlow();
+          requestAnimationFrame(function () { requestAnimationFrame(function () {
+            if (flow.__go) flow.__go();
+          }); });
         }
+        fig.querySelectorAll('[data-to]').forEach(countUp);
       }
 
       // scroll reveals — unobserve after firing

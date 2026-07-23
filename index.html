@@ -684,7 +684,7 @@
         var svg = document.getElementById('site-flow');
         if (!svg || svg.childNodes.length) return svg;
         var NS = 'http://www.w3.org/2000/svg';
-        var padT = 26, xS = 4, wS = 14, xC = 240, wC = 14, xR = 450, wR = 8;
+        var padT = 26, xS = 10, wS = 16, xC = 310, wC = 16, xR = 520, wR = 10;
         var total = 247800, innerH = 486, gC = 18, gR = 9;
         var cats = [
           { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F' },
@@ -733,13 +733,13 @@
           .textContent = '$247.8K recoverable';
         cats.forEach(function (c) {
           add('rect', { x: xC, y: c.y, width: wC, height: c.h, fill: c.c, rx: 2 }, 300);
-          add('text', { x: xC + wC + 8, y: c.y + c.h / 2 - 2, 'font-family': "Poppins,sans-serif", 'font-size': 12.5, 'font-weight': 600, fill: '#14171F' }, 300).textContent = c.name;
-          add('text', { x: xC + wC + 8, y: c.y + c.h / 2 + 14, 'font-family': "Lora,Georgia,serif", 'font-size': 12, fill: '#5E5A50' }, 300).textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
+          add('text', { x: xC - 10, y: c.y + c.h / 2 - 2, 'text-anchor': 'end', 'font-family': "Poppins,sans-serif", 'font-size': 13, 'font-weight': 600, fill: '#14171F' }, 300).textContent = c.name;
+          add('text', { x: xC - 10, y: c.y + c.h / 2 + 15, 'text-anchor': 'end', 'font-family': "Lora,Georgia,serif", 'font-size': 12.5, fill: '#5E5A50' }, 300).textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
         });
         rs.forEach(function (r, i) {
           var d = 600 + i * 45;
           add('rect', { x: xR, y: r.y, width: wR, height: r.h, fill: r.c, rx: 2 }, d);
-          var t = add('text', { x: xR + wR + 8, y: r.y + r.h / 2 + 4, 'font-family': "Poppins,sans-serif", 'font-size': 11.5, fill: '#14171F' }, d);
+          var t = add('text', { x: xR + wR + 8, y: r.y + r.h / 2 + 4, 'font-family': "Poppins,sans-serif", 'font-size': 12, fill: '#14171F' }, d);
           t.textContent = r.name + ' · ';
           var ts = document.createElementNS(NS, 'tspan');
           ts.setAttribute('fill', '#5E5A50');

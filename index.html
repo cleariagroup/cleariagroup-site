@@ -248,31 +248,12 @@
     .exhibit figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 1.1rem;
                           max-width: 62ch; line-height: 1.55; }
 
-    /* flow: sankey on wide screens, stacked animated bars on narrow */
-    .flow-desktop { display: none; }
-    .js .flow-desktop { display: block; }
+    /* flow: one sankey, geometry adapts to width at build time */
+    .flow-wrap { display: none; }
+    .js .flow-wrap { display: block; }
     #site-flow { display: block; width: 100%; height: auto; }
     #site-flow path { transition: fill-opacity 250ms var(--ease-standard); }
     #site-flow path:hover { fill-opacity: 0.55; }
-    @media (min-width: 640px) { .js .mflow { display: none; } }
-    @media (max-width: 639px) { .flow-desktop { display: none !important; } }
-    .mflow .mcat { margin-bottom: 1.2rem; }
-    .mflow .mcat > header { display: flex; justify-content: space-between; align-items: baseline;
-      font-size: 0.92rem; font-weight: 600; border-bottom: 1px solid var(--ink);
-      padding-bottom: 0.4rem; margin-bottom: 0.55rem; }
-    .mrow { display: grid; grid-template-columns: minmax(7.5rem, 10rem) 1fr auto;
-            gap: 0.7rem; align-items: center; font-size: 0.82rem; padding: 0.32rem 0; }
-    .mrow .bar { height: 10px; background: var(--card); border: 1px solid var(--hairline);
-                 border-radius: 5px; overflow: hidden; }
-    .mrow .bar i { display: block; height: 100%; width: var(--w);
-                   background: var(--fc, var(--accent)); border-radius: 5px; }
-    .js .mrow .bar i { width: 0; transition: width 800ms var(--ease-entrance); }
-    .js .exhibit.in-view .mrow .bar i { width: var(--w); }
-    .js .mcat .mrow:nth-of-type(2) .bar i { transition-delay: 70ms; }
-    .js .mcat .mrow:nth-of-type(3) .bar i { transition-delay: 140ms; }
-    .js .mcat .mrow:nth-of-type(4) .bar i { transition-delay: 210ms; }
-    .js .mcat .mrow:nth-of-type(5) .bar i { transition-delay: 280ms; }
-    .mrow .amt { white-space: nowrap; font-variant-numeric: tabular-nums; }
 
     /* findings: the recovery opportunities */
     ul.findings { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
@@ -341,6 +322,35 @@
     .bet p:last-child { margin-bottom: 0; }
     .bet b { color: var(--clay); font-weight: 600; }
     .bet ::selection { background: var(--clay); color: var(--ink); }
+    .bet .bet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.15rem; }
+    .bet .bet-grid h3 { font-family: var(--serif); color: var(--clay); font-size: 1.08rem;
+                        font-weight: 600; margin: 0 0 0.5rem; }
+    .bet .bet-grid p { margin: 0; }
+    .bet .bet-close { padding-top: 1.05rem; border-top: 1px solid rgba(247,244,237,0.18);
+                      font-size: 0.95rem; }
+    @media (max-width: 600px) { .bet .bet-grid { grid-template-columns: 1fr; } }
+
+    /* stat callouts (section 1) */
+    .statrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 0 0 1.5rem; }
+    @media (max-width: 600px) { .statrow { grid-template-columns: 1fr; } }
+
+    /* named payer patterns */
+    ul.patterns { margin: 0.2rem 0 1.1rem; padding: 0; list-style: none;
+                  display: flex; flex-direction: column; gap: 0.55rem; }
+    ul.patterns li { padding-left: 1.3rem; position: relative; max-width: 62ch; }
+    ul.patterns li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+    /* for / not-for columns */
+    .fornot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 0 0 1.2rem; }
+    .fornot > div { background: var(--card); border: 1px solid var(--hairline); padding: 1.05rem 1.2rem; }
+    .fornot h3 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+                 margin: 0 0 0.75rem; color: var(--accent); }
+    .fornot .not h3 { color: var(--muted); }
+    .fornot ul { margin: 0; padding: 0; list-style: none;
+                 display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; line-height: 1.55; }
+    .fornot li { padding-left: 1.15rem; position: relative; }
+    .fornot li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+    @media (max-width: 640px) { .fornot { grid-template-columns: 1fr; } }
 
     ul.standards { margin: 0 0 1.4rem; padding: 0; list-style: none;
                    display: flex; flex-direction: column; gap: 0.8rem; }
@@ -351,6 +361,16 @@
     .faq-item:last-child { border-bottom: 0; }
     .faq-item h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem; }
     .faq-item p { margin: 0; max-width: 65ch; }
+    /* FAQ collapses to accordions on narrow screens only (answers stay visible on desktop) */
+    @media (max-width: 639px) {
+      .js .faq-item.acc h3 { cursor: pointer; position: relative; padding-right: 1.6rem; margin: 0; }
+      .js .faq-item.acc h3::after { content: "+"; position: absolute; right: 0.2rem; top: 0;
+                                    color: var(--accent); font-weight: 600; }
+      .js .faq-item.acc.open h3 { margin-bottom: 0.5rem; }
+      .js .faq-item.acc.open h3::after { content: "–"; }
+      .js .faq-item.acc p { display: none; }
+      .js .faq-item.acc.open p { display: block; }
+    }
 
     /* ---------- diagnostic form ---------- */
     .diag-form { display: grid; gap: 1rem; max-width: 30rem; margin: 1.6rem 0 0.6rem; }
@@ -406,7 +426,7 @@
         transform: none; transition: opacity 300ms ease;
       }
       .contact-btn, .stickybar, .topnav { transition: none; }
-      .js .mrow .bar i, .js #spark-line, .js .spark circle, .js .spark text { transition: none; }
+      .js #spark-line, .js .spark circle, .js .spark text { transition: none; }
     }
   </style>
 </head>
@@ -441,8 +461,14 @@
 
     <section class="reveal" id="problem">
       <h2>The money nobody is watching</h2>
-      <p>Industry analyses put commercial-payer underpayment at 1 to 3 percent of net revenue — and that's the average across all providers, including hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of that range. We've seen what checking actually turns up: <b>one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</b></p>
-      <p>And notice what kind of money it is: <b>pure margin</b>. Recovered underpayment has no cost attached — no staff time to earn it, no supplies, no overhead. The care was already delivered. At typical practice margins, even the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
+      <div class="statrow">
+        <div class="stat"><span class="val num">1–3%</span><span class="sub">of net revenue underpaid by commercial payers — the industry average</span></div>
+        <div class="stat main"><span class="val num">6%</span><span class="sub">what one $20M practice found when it actually checked</span></div>
+        <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
+      </div>
+      <p><b>That average includes</b> hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of the range.</p>
+      <p><b>We've seen what checking turns up:</b> one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</p>
+      <p><b>And it's pure margin.</b> Recovered underpayment has no cost attached — no staff time, no supplies, no overhead; the care was already delivered. At typical practice margins, the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
       <p>It survives because nothing flags it:</p>
       <ul class="signs">
         <li><b>Payments a few percent under the contracted rate</b> — small enough to post without a second look.</li>
@@ -461,8 +487,13 @@
 
     <section class="reveal">
       <h2>We know the playbook</h2>
-      <p>Here's what makes recovery possible: <b>underpayment isn't random — it's systematic.</b> Payers run on rules, and the same quiet rule fires the same way across thousands of claims: a bundling edit applied where your contract says it shouldn't be, a fee schedule loaded a few percent light, a procedure downcoded on the same pretext, month after month. Each payer has signature behaviors. We study them for a living.</p>
-      <p>That's why we don't just compare payments to contracts — we recognize the patterns behind the shortfalls, and we know which ones payers reverse when challenged correctly. Payers count on no one looking closely enough to see the pattern; when someone does, their own reconsideration process becomes the instrument that pays you back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
+      <p>Here's what makes recovery possible: <b>underpayment isn't random — it's systematic.</b> Payers run on rules, and the same quiet rule fires the same way across thousands of claims. Each payer has signature behaviors. We study them for a living:</p>
+      <ul class="patterns">
+        <li><b>The light fee schedule</b> — rates loaded a few percent under what your contract says, so every claim pays slightly short.</li>
+        <li><b>The misapplied bundling edit</b> — applied where your contract says it shouldn't be, claim after claim.</li>
+        <li><b>The habitual downcode</b> — the same procedure paid at a lower-valued code on the same pretext, month after month.</li>
+      </ul>
+      <p><b>We don't just compare payments to contracts.</b> We recognize the pattern behind each shortfall — and know which ones payers reverse when challenged correctly. Payers count on no one looking closely enough to see it; when someone does, their own reconsideration process becomes the instrument that pays you back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
     </section>
 
     <section class="reveal" id="how-it-works">
@@ -478,25 +509,8 @@
           <span class="ex-meta">sample · synthetic data</span>
         </div>
         <p class="ex-lede">Where the recoverable dollars come from. In this sample quarter, <b class="num">$247,800</b> — traced from its two categories to the specific reason each dollar went unpaid:</p>
-        <div class="flow-desktop">
-          <svg id="site-flow" viewBox="0 0 720 520" role="img" aria-label="Flow of $247,800 recoverable: underpayments $162,300 and non-clinical denials $85,500, splitting into nine payer-behavior reasons from contractual underpayment to eligibility"></svg>
-        </div>
-        <div class="mflow">
-          <div class="mcat">
-            <header><span>Underpayments</span><span class="num">$162.3K</span></header>
-            <div class="mrow"><span>Contractual</span><div class="bar"><i style="--w:100%;--fc:#14171F"></i></div><span class="amt">$92.4K</span></div>
-            <div class="mrow"><span>Downcoding</span><div class="bar"><i style="--w:45%;--fc:#3a3340"></i></div><span class="amt">$41.8K</span></div>
-            <div class="mrow"><span>Bundling reduction</span><div class="bar"><i style="--w:21%;--fc:#5a4450"></i></div><span class="amt">$19.6K</span></div>
-            <div class="mrow"><span>Pricing / quantity</span><div class="bar"><i style="--w:9%;--fc:#7a5a62"></i></div><span class="amt">$8.5K</span></div>
-          </div>
-          <div class="mcat">
-            <header><span>Non-clinical denials</span><span class="num">$85.5K</span></header>
-            <div class="mrow"><span>Authorization</span><div class="bar"><i style="--w:31%;--fc:#5C1F2D"></i></div><span class="amt">$28.9K</span></div>
-            <div class="mrow"><span>Coding / data</span><div class="bar"><i style="--w:23%;--fc:#723240"></i></div><span class="amt">$21.3K</span></div>
-            <div class="mrow"><span>Bundling denial</span><div class="bar"><i style="--w:18%;--fc:#8a4f57"></i></div><span class="amt">$16.8K</span></div>
-            <div class="mrow"><span>Timely filing</span><div class="bar"><i style="--w:11%;--fc:#a36b72"></i></div><span class="amt">$10.2K</span></div>
-            <div class="mrow"><span>Eligibility / COB</span><div class="bar"><i style="--w:9%;--fc:#c4766b"></i></div><span class="amt">$8.3K</span></div>
-          </div>
+        <div class="flow-wrap">
+          <svg id="site-flow" viewBox="0 0 720 560" role="img" aria-label="Flow of $247,800 recoverable: underpayments $162,300 and non-clinical denials $85,500, splitting into nine payer-behavior reasons from contractual underpayment to eligibility"></svg>
         </div>
         <p class="ex-lede" style="margin-top:1.6rem;">The recovery opportunities behind it — how often each pattern fires, and what it's worth:</p>
         <ul class="findings">
@@ -563,8 +577,17 @@
     <section class="reveal" id="bet">
       <h2>The bet we're making</h2>
       <div class="bet">
-        <p><b>If we find nothing, you've spent an hour and paid nothing</b> — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
-        <p><b>If we find money, you pay only out of dollars that actually arrive.</b> No retainer, no hourly fees, no invoice to gamble on. We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
+        <div class="bet-grid">
+          <div>
+            <h3>If we find nothing</h3>
+            <p>You've spent an hour and paid nothing — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
+          </div>
+          <div>
+            <h3>If we find money</h3>
+            <p>You pay only out of dollars that actually arrive. No retainer, no hourly fees, no invoice to gamble on.</p>
+          </div>
+        </div>
+        <p class="bet-close">We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
       </div>
       <div class="cta-mid">
         <p class="lead">Find out which side of that bet your data lands on.</p>
@@ -574,14 +597,31 @@
 
     <section class="reveal">
       <h2>Who this is for — and not for</h2>
-      <p><b>For:</b> independent, procedure-heavy specialty practices — orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers — typically 3 to 15 physicians, running without a revenue-cycle department. <b>Ambulatory surgery centers too:</b> ASC claims carry exactly the kind of complexity where underpayment hides.</p>
-      <p><b>Not for:</b> hospitals and health systems with revenue-cycle teams (good vendors already serve them), or practices looking to outsource billing — we don't do billing. We do one job: find what payers underpaid, and get it back.</p>
+      <div class="fornot">
+        <div class="for">
+          <h3>For</h3>
+          <ul>
+            <li>Independent, procedure-heavy specialty practices — orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers</li>
+            <li>Typically 3 to 15 physicians, running without a revenue-cycle department</li>
+            <li>Ambulatory surgery centers — ASC claims carry exactly the complexity where underpayment hides</li>
+          </ul>
+        </div>
+        <div class="not">
+          <h3>Not for</h3>
+          <ul>
+            <li>Hospitals and health systems with revenue-cycle teams — good vendors already serve them</li>
+            <li>Practices looking to outsource billing — we don't do billing</li>
+          </ul>
+        </div>
+      </div>
+      <p>We do one job: find what payers underpaid, and get it back.</p>
     </section>
 
     <section class="reveal">
       <h2>A note for your practice administrator</h2>
       <p>You'll be the one who makes this work, so here's your part in full: about an hour, once — setting up read-only access to payment reports and sharing the payer contracts, with us beside you. No software to install, no new system for your staff, no interruption to billing or posting. And nothing here audits your team's work: underpayment sits on the payer's side of the ledger.</p>
-      <p><b>After that hour, work comes off your plate — not onto it.</b> The appeals and payer follow-up you currently squeeze in between everything else — pulling documentation, drafting reconsideration letters, chasing payer responses for months — that work is inside our scope. We build the case files, draft the appeals, and track every payer response to the end; your team sends them out under the practice's name and stays in control. The disputes you never had time to fight finally get fought — and not by you. If you're reading this before your physicians are, this page is written to be forwarded.</p>
+      <p><b>After that hour, work comes off your plate — not onto it.</b> The appeals and payer follow-up you currently squeeze in between everything else — pulling documentation, drafting reconsideration letters, chasing payer responses for months — that work is inside our scope.</p>
+      <p><b>We build the case files,</b> draft the appeals, and track every payer response to the end; your team sends them out under the practice's name and stays in control. The disputes you never had time to fight finally get fought — and not by you. If you're reading this before your physicians are, this page is written to be forwarded.</p>
     </section>
 
     <section class="reveal">
@@ -727,12 +767,18 @@
         if (!svg || svg.__built) return svg;
         svg.__built = true;
         var K = svgKit(svg), el = K.el, fx = K.fx;
-        var H = 560, padT = 30;
-        var sX = 2, sW = 128, cX = 270, cW = 160, rX = 545, rW = 12, lX = 565, aX = 718;
-        var total = 247800, innerH = H - padT - 8, gC = 18, gR = 9;
+        // two coordinate systems: narrow screens get their own geometry so text
+        // renders at legible physical size; labels live inside the flow on both
+        var M = (svg.parentElement.clientWidth || 720) < 560;
+        var W = M ? 400 : 720, H = M ? 620 : 560, padT = M ? 26 : 30;
+        var sX = 2, sW = M ? 92 : 128, cX = M ? 150 : 280, cW = M ? 104 : 190,
+            rX = M ? 390 : 700, rW = M ? 8 : 12, lPad = 6;
+        var F = M ? { num: 16, tag: 8.5, cat: 10.5, catAmt: 10.5, rsn: 10.5 }
+                  : { num: 21, tag: 10.5, cat: 12.5, catAmt: 12.5, rsn: 12 };
+        var total = 247800, innerH = H - padT - 8, gC = 18, gR = M ? 8 : 9;
         var cats = [
-          { id: 'up', name: 'Underpayments', amt: 162300, c: '#14171F', ac: '#C08768' },
-          { id: 'dn', name: 'Non-clinical denials', amt: 85500, c: '#5C1F2D', ac: '#E8CDC4' }
+          { id: 'up', name: 'Underpayments', lines: ['Underpayments'], amt: 162300, c: '#14171F' },
+          { id: 'dn', name: 'Non-clinical denials', lines: M ? ['Non-clinical', 'denials'] : ['Non-clinical denials'], amt: 85500, c: '#5C1F2D' }
         ];
         var reasons = [
           ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
@@ -742,7 +788,7 @@
           ['dn', 'Eligibility / COB', 8300, '#c4766b']
         ];
         var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
-        svg.setAttribute('viewBox', '0 0 720 ' + H);
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
         function ribbon(x0, ya, yb, x1, y1a, y1b) {
           var mx = (x0 + x1) / 2;
           return 'M' + x0 + ',' + ya + 'C' + mx + ',' + ya + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a +
@@ -758,13 +804,13 @@
 
         // ribbon stages, each behind a left-to-right wipe
         var defs = el('defs', {});
-        var wr1 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w1' }, defs));
-        var wr2 = el('rect', { x: 0, y: 0, width: RM ? 720 : 0, height: H }, el('clipPath', { id: 'w2' }, defs));
+        var wr1 = el('rect', { x: 0, y: 0, width: RM ? W : 0, height: H }, el('clipPath', { id: 'w1' }, defs));
+        var wr2 = el('rect', { x: 0, y: 0, width: RM ? W : 0, height: H }, el('clipPath', { id: 'w2' }, defs));
         if (!RM) K.steps.push(function () {
           wr1.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 250ms';
-          wr1.style.width = '720px';
+          wr1.style.width = W + 'px';
           wr2.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 1000ms';
-          wr2.style.width = '720px';
+          wr2.style.width = W + 'px';
         });
         var g1 = el('g', { 'clip-path': 'url(#w1)' });
         var g2 = el('g', { 'clip-path': 'url(#w2)' });
@@ -793,43 +839,50 @@
         }
         panel(sX, padT, sW, srcH, '#5C1F2D', 0, true);
         var mid = padT + srcH / 2;
-        var sNum = el('text', { x: sX + 14, y: mid - 2,
-          'font-family': 'Lora,Georgia,serif', 'font-size': 21, fill: '#5C1F2D',
+        var sNum = el('text', { x: sX + 12, y: mid - 2,
+          'font-family': 'Lora,Georgia,serif', 'font-size': F.num, fill: '#5C1F2D',
           'data-to': '247.8', 'data-prefix': '$', 'data-suffix': 'K', 'data-dec': '1' });
         sNum.textContent = '$247.8K';
         fx(sNum, { opacity: 0 }, { opacity: 1 }, 150);
-        var sLbl = el('text', { x: sX + 14, y: mid + 18,
-          'font-family': 'Poppins,sans-serif', 'font-size': 10.5, 'letter-spacing': '0.12em', fill: '#5E5A50' });
+        var sLbl = el('text', { x: sX + 12, y: mid + (M ? 14 : 18),
+          'font-family': 'Poppins,sans-serif', 'font-size': F.tag, 'letter-spacing': '0.12em', fill: '#5E5A50' });
         sLbl.textContent = 'RECOVERABLE';
         fx(sLbl, { opacity: 0 }, { opacity: 1 }, 250);
 
-        // category panels, labels inside in ink
+        // category panels, labels inside in ink (two lines when narrow)
         cats.forEach(function (c) {
           panel(cX, c.y, cW, c.h, c.c, 650, false);
-          var t1 = el('text', { x: cX + 16, y: c.y + c.h / 2 - 3, 'font-family': 'Poppins,sans-serif',
-            'font-size': 12.5, 'font-weight': 600, fill: '#14171F' });
-          t1.textContent = c.name;
-          fx(t1, { opacity: 0 }, { opacity: 1 }, 900);
-          var t2 = el('text', { x: cX + 16, y: c.y + c.h / 2 + 15, 'font-family': 'Lora,Georgia,serif',
-            'font-size': 12.5, fill: '#5E5A50' });
+          var lh = F.cat + 3;
+          var baseY = c.y + c.h / 2 - ((c.lines.length - 1) * lh) / 2 - 3;
+          c.lines.forEach(function (line, li) {
+            var t1 = el('text', { x: cX + 14, y: baseY + li * lh, 'font-family': 'Poppins,sans-serif',
+              'font-size': F.cat, 'font-weight': 600, fill: '#14171F' });
+            t1.textContent = line;
+            fx(t1, { opacity: 0 }, { opacity: 1 }, 900);
+          });
+          var t2 = el('text', { x: cX + 14, y: baseY + c.lines.length * lh + 2, 'font-family': 'Lora,Georgia,serif',
+            'font-size': F.catAmt, fill: '#5E5A50' });
           t2.textContent = '$' + (c.amt / 1000).toFixed(1) + 'K';
           fx(t2, { opacity: 0 }, { opacity: 1 }, 1000);
         });
 
-        // reason bars popping in, labels sliding after them
+        // reason bars at the right edge; labels embedded inside the flow,
+        // right-anchored against each bar
         rs.forEach(function (r, i) {
           var d = 1350 + i * 70;
           var rect = el('rect', { x: rX, y: r.y, width: rW, height: r.h, fill: r.c, rx: 2 });
           rect.style.transformBox = 'fill-box'; rect.style.transformOrigin = 'center';
           fx(rect, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 380);
-          var name = el('text', { x: lX, y: r.y + r.h / 2 + 4, 'font-family': 'Poppins,sans-serif',
-            'font-size': 11.5, fill: '#14171F' });
-          name.textContent = r.name;
-          fx(name, { opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'translateX(0px)' }, d + 80, 420);
-          var amt = el('text', { x: aX, y: r.y + r.h / 2 + 4, 'text-anchor': 'end',
-            'font-family': 'Lora,Georgia,serif', 'font-size': 11.5, fill: '#5E5A50' });
-          amt.textContent = '$' + (r.amt / 1000).toFixed(1) + 'K';
-          fx(amt, { opacity: 0 }, { opacity: 1 }, d + 180, 420);
+          var t = el('text', { x: rX - lPad, y: r.y + r.h / 2 + F.rsn / 3, 'text-anchor': 'end',
+            'font-family': 'Poppins,sans-serif', 'font-size': F.rsn, fill: '#14171F',
+            stroke: '#F7F4ED', 'stroke-width': 3, 'paint-order': 'stroke', 'stroke-linejoin': 'round' });
+          t.textContent = r.name + ' ';
+          var ts = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+          ts.setAttribute('fill', '#5E5A50');
+          ts.setAttribute('font-family', 'Lora,Georgia,serif');
+          ts.textContent = ' $' + (r.amt / 1000).toFixed(1) + 'K';
+          t.appendChild(ts);
+          fx(t, { opacity: 0, transform: 'translateX(8px)' }, { opacity: 1, transform: 'translateX(0px)' }, d + 80, 420);
         });
 
         svg.__go = K.go;
@@ -961,6 +1014,26 @@
         Object.keys(byId).forEach(function (id) {
           var el = document.getElementById(id);
           if (el) spy.observe(el);
+        });
+      }
+
+      // FAQ: accordion behavior on narrow screens only
+      if (matchMedia('(max-width: 639px)').matches) {
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var h = item.querySelector('h3');
+          if (!h) return;
+          item.classList.add('acc');
+          h.setAttribute('role', 'button');
+          h.setAttribute('tabindex', '0');
+          h.setAttribute('aria-expanded', 'false');
+          function toggle() {
+            var open = item.classList.toggle('open');
+            h.setAttribute('aria-expanded', open ? 'true' : 'false');
+          }
+          h.addEventListener('click', toggle);
+          h.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+          });
         });
       }
 

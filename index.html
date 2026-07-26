@@ -252,8 +252,8 @@
     .flow-wrap { display: none; }
     .js .flow-wrap { display: block; }
     #site-flow { display: block; width: 100%; height: auto; }
-    #site-flow path { transition: fill-opacity 250ms var(--ease-standard); }
-    #site-flow path:hover { fill-opacity: 0.55; }
+    #site-flow path { fill-opacity: 0.85; transition: fill-opacity 250ms var(--ease-standard); }
+    #site-flow path:hover { fill-opacity: 1; }
 
     /* findings: the recovery opportunities */
     ul.findings { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
@@ -787,20 +787,23 @@
           ['dn', 'Bundling denial', 16800, '#8a4f57'], ['dn', 'Timely filing', 10200, '#a36b72'],
           ['dn', 'Eligibility / COB', 8300, '#c4766b']
         ];
-        var sc = (innerH - gC) / total, sr = (innerH - gR * (reasons.length - 1)) / total;
+        // one scale for every column so ribbons keep constant thickness end to end;
+        // source/category stacks are shorter (fewer gaps) and center vertically
+        var s = (innerH - gR * (reasons.length - 1)) / total;
+        var vOff = (gR * (reasons.length - 1) - gC) / 2;
         svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
         function ribbon(x0, ya, yb, x1, y1a, y1b) {
           var mx = (x0 + x1) / 2;
           return 'M' + x0 + ',' + ya + 'C' + mx + ',' + ya + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a +
                  'L' + x1 + ',' + y1b + 'C' + mx + ',' + y1b + ' ' + mx + ',' + yb + ' ' + x0 + ',' + yb + 'Z';
         }
-        var cy = padT; cats.forEach(function (c) { c.y = cy; c.h = c.amt * sc; cy += c.h + gC; });
+        var cy = padT + vOff; cats.forEach(function (c) { c.y = cy; c.h = c.amt * s; cy += c.h + gC; });
         var ry = padT;
         var rs = reasons.map(function (r) {
-          var o = { cat: r[0], name: r[1], amt: r[2], c: r[3], y: ry, h: r[2] * sr };
+          var o = { cat: r[0], name: r[1], amt: r[2], c: r[3], y: ry, h: r[2] * s };
           ry += o.h + gR; return o;
         });
-        var srcH = cats[0].h + cats[1].h + gC;
+        var srcH = cats[0].h + cats[1].h, srcY = padT + vOff + gC / 2;
 
         // ribbon stages, each behind a left-to-right wipe
         var defs = el('defs', {});
@@ -812,18 +815,29 @@
           wr2.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 1000ms';
           wr2.style.width = W + 'px';
         });
+        // ribbons fade darker-to-lighter left-to-right, so embedded labels at the
+        // right edge sit on near-cream and stay readable
+        function grad(id, color, x1, x2, o1, o2) {
+          var g = el('linearGradient', { id: id, gradientUnits: 'userSpaceOnUse',
+            x1: x1, y1: 0, x2: x2, y2: 0 }, defs);
+          el('stop', { offset: '0', 'stop-color': color, 'stop-opacity': o1 }, g);
+          el('stop', { offset: '0.5', 'stop-color': color, 'stop-opacity': (o1 * 0.35).toFixed(3) }, g);
+          el('stop', { offset: '1', 'stop-color': color, 'stop-opacity': o2 }, g);
+          return 'url(#' + id + ')';
+        }
         var g1 = el('g', { 'clip-path': 'url(#w1)' });
         var g2 = el('g', { 'clip-path': 'url(#w2)' });
-        var cur = padT;
-        cats.forEach(function (c) {
-          el('path', { d: ribbon(sX + sW, cur, cur + c.h, cX, c.y, c.y + c.h), fill: c.c, 'fill-opacity': 0.26 }, g1);
+        var cur = srcY;
+        cats.forEach(function (c, i) {
+          el('path', { d: ribbon(sX + sW, cur, cur + c.h, cX, c.y, c.y + c.h),
+            fill: grad('gs' + i, c.c, sX + sW, cX, 0.32, 0.12) }, g1);
           cur += c.h;
         });
         var catCur = {}; cats.forEach(function (c) { catCur[c.id] = c.y; });
-        rs.forEach(function (r) {
-          var sh = r.amt * sc;
-          el('path', { d: ribbon(cX + cW, catCur[r.cat], catCur[r.cat] + sh, rX, r.y, r.y + r.h), fill: r.c, 'fill-opacity': 0.4 }, g2);
-          catCur[r.cat] += sh;
+        rs.forEach(function (r, i) {
+          el('path', { d: ribbon(cX + cW, catCur[r.cat], catCur[r.cat] + r.h, rX, r.y, r.y + r.h),
+            fill: grad('gr' + i, r.c, cX + cW, rX, 0.5, 0.07) }, g2);
+          catCur[r.cat] += r.h;
         });
 
         // source: translucent panel + solid accent edge, total counting up inside
@@ -837,8 +851,8 @@
                   { transform: originLeft ? 'scaleX(1)' : 'scaleY(1)' }, delay, 480);
           });
         }
-        panel(sX, padT, sW, srcH, '#5C1F2D', 0, true);
-        var mid = padT + srcH / 2;
+        panel(sX, srcY, sW, srcH, '#5C1F2D', 0, true);
+        var mid = srcY + srcH / 2;
         var sNum = el('text', { x: sX + 12, y: mid - 2,
           'font-family': 'Lora,Georgia,serif', 'font-size': F.num, fill: '#5C1F2D',
           'data-to': '247.8', 'data-prefix': '$', 'data-suffix': 'K', 'data-dec': '1' });

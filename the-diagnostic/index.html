@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <script>document.documentElement.classList.add('js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Insurance underpayment recovery for independent medical practices | Clearia</title>
-  <meta name="description" content="Recover the money your payers kept. Clearia audits your paid claims against your payer contracts, finds the underpayments — often a tenth of your profit or more — and gets them back. No upfront fee: we're paid only from what we recover.">
-  <link rel="canonical" href="https://cleariagroup.com/">
+  <title>The free diagnostic — request an underpayment audit | Clearia</title>
+  <meta name="description" content="Request Clearia's free diagnostic: a line-item audit of what each payer paid against your contracted rates. Findings in dollars, about an hour of your team's time, no cost and no obligation.">
+  <link rel="canonical" href="https://cleariagroup.com/the-diagnostic/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Insurance underpayment recovery for independent medical practices | Clearia">
-  <meta property="og:description" content="Recover the money your payers kept. Underpaid and downcoded claims close at zero balance, looking paid — Clearia finds them and gets the money back, paid only from what we recover.">
-  <meta property="og:url" content="https://cleariagroup.com/">
+  <meta property="og:title" content="The free diagnostic — request an underpayment audit | Clearia">
+  <meta property="og:description" content="A free, line-item audit of what each payer paid against your contracted rates — findings in dollars, about an hour of your team's time, no cost and no obligation.">
+  <meta property="og:url" content="https://cleariagroup.com/the-diagnostic/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
@@ -44,6 +44,90 @@
           "addressRegion": "FL",
           "addressCountry": "US"
         }
+      },
+      {
+        "@type": "Service",
+        "name": "Free underpayment diagnostic",
+        "serviceType": "Payer underpayment diagnostic audit",
+        "provider": {
+          "@id": "https://cleariagroup.com/#org"
+        },
+        "areaServed": "US",
+        "description": "A free, line-item audit of what each payer paid against contracted rates, built from a practice's remittances and payer contracts. Findings delivered in dollars; recovery pursued on contingency only if the practice engages.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does underpayment recovery cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nothing upfront, ever. The diagnostic is free, and our fee is a percentage of dollars actually recovered. If we recover nothing, you owe nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this too good to be true?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — it's arithmetic. Your payer contracts specify a rate for every code. Your remittances record what was actually paid. We compare the two, line by line — and because underpayment follows payer-specific patterns, one confirmed shortfall usually points to hundreds more like it. We pursue them through each payer's own reconsideration process. The money exists because, in most practices, nobody has ever looked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is patient data protected?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every engagement starts with a signed business associate agreement before any data moves. Access is read-only, limited to payment records, and data travels only through HIPAA-covered channels."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much of our staff's time does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "About an hour, once. Your administrator sets up read-only access to payment reports and shares your payer contracts — we walk through it together. After that we work independently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this create problems with our payers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Underpayment reconsiderations are a routine, contractual process that payers handle every day. We use the dispute mechanisms your contracts already provide, professionally and by the book."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this replace our biller or billing company?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We never touch claim submission, posting, or your billing workflow. Underpayment sits on the payer's side of the ledger — finding it is a different job from billing, and we only do that job. If anything, work moves off your team's plate: the underpayment appeals and payer follow-up your staff currently handles between everything else become ours to prepare, manage, and see through."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if you find nothing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Then you've verified — from your own payment records — that your payers are paying your contracts correctly, and it cost you nothing. That answer has value too."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to see results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The diagnostic takes weeks, not months, once we have access to your remittances and contracts. Recoveries then follow each payer's reconsideration timelines. One constraint is real: payer dispute windows typically run 90 to 180 days, so older claims age out permanently."
+            }
+          }
+        ]
       }
     ]
   }
@@ -461,7 +545,7 @@
       <a class="sec-link" href="/how-it-works/">How it works</a>
       <a class="sec-link" href="/who-we-serve/">Who we serve</a>
       <a class="sec-link" href="/about/">About</a>
-      <a class="nav-cta" href="/the-diagnostic/">Request the free diagnostic</a>
+      <a class="nav-cta" href="#request">Request the free diagnostic</a>
     </div>
   </nav>
 
@@ -472,116 +556,126 @@
       <a class="mast-contact" href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a>
     </div>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/" aria-current="page">Home</a>
+      <a href="/">Home</a>
       <a href="/how-it-works/">How it works</a>
       <a href="/who-we-serve/">Who we serve</a>
-      <a href="/the-diagnostic/" class="nav-diag">The diagnostic</a>
+      <a href="/the-diagnostic/" class="nav-diag" aria-current="page">The diagnostic</a>
       <a href="/about/">About</a>
     </nav>
 
-    <div class="hero">
-      <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
-      <h1>Recover the money your payers kept.</h1>
-      <p class="lede">Insurers quietly keep part of what your practice already earned — a downcoded procedure here, an underpaid code there, every claim closed at a zero balance, looking paid. Clearia finds it in your paid claims, shows it to you in dollars, and gets it back. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
+    <div class="hero sub">
+      <p class="eyebrow">The free diagnostic</p>
+      <h1>Find out what your payers kept.</h1>
+      <p class="lede">A free, line-item audit of what each payer paid against your contracted rates — built from records you already have. It ends in a number, and the number decides everything: whether there's a case, and whether you want us to pursue it.</p>
       <div class="cta-row" id="hero-cta">
-        <a class="contact-btn" href="/the-diagnostic/">Request the free diagnostic</a>
+        <a class="contact-btn" href="#request">Request the free diagnostic</a>
         <span class="cta-alt">or write to contact@cleariagroup.com</span>
       </div>
     </div>
 
-    <section class="reveal" id="problem">
-      <h2>The money nobody is watching</h2>
+    <section class="reveal">
+      <h2>What the diagnostic is</h2>
+      <p><b>A contract-versus-payment audit.</b> Your payer contracts specify a rate for every code. Your remittances record what was actually paid. We compare the two, line by line, across a sample period — underpaid codes, downcoded procedures, and bundled or denied line items your fee schedule says are payable.</p>
+      <p><b>Built from records you already have.</b> A business associate agreement is signed before any data moves. Then your administrator sets up read-only access to payment reports and shares your payer contracts — we walk through it together. Your team's part takes about an hour, once.</p>
+      <p><b>Free, with no obligation.</b> The diagnostic costs nothing whether or not you engage us afterward. If it finds nothing, you've verified — from your own payment records — that your payers are paying your contracts correctly.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>What you receive</h2>
+      <div class="ex-head">
+        <span class="ex-title">From the sample diagnostic</span>
+        <span class="ex-meta">sample · synthetic data</span>
+      </div>
       <div class="statrow">
-        <div class="stat"><span class="val num">1–3%</span><span class="sub">of net revenue underpaid by commercial payers — the industry average</span></div>
-        <div class="stat main"><span class="val num">6%</span><span class="sub">what one $20M practice found when it actually checked</span></div>
-        <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
+        <div class="stat main"><span class="val num">$661,000</span><span class="sub">net recoverable identified, annualized — seven-physician orthopedic sample</span></div>
+        <div class="stat"><span class="val num">+40–60%</span><span class="sub">potential profit uplift, net of our fee, at typical practice margins</span></div>
+        <div class="stat"><span class="val num">$0</span><span class="sub">added cost or staff time to capture it — the care was already delivered</span></div>
       </div>
-      <p><b>That average includes</b> hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of the range.</p>
-      <p><b>We've seen what checking turns up:</b> one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</p>
-      <p><b>And it's pure margin.</b> Recovered underpayment has no cost attached — no staff time, no supplies, no overhead; the care was already delivered. At typical practice margins, the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
-      <p>Each underpaid claim closes at zero balance, so no alert fires. And payer dispute windows run out in 90 to 180 days — what stays unnoticed long enough becomes unrecoverable, permanently.</p>
-      <p class="more"><a href="/how-it-works/">How we find it — the full process, with sample reports →</a></p>
+      <p>Your report is a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window — each finding traced to the payer behavior behind it. You decide what we pursue; nothing is filed without your sign-off.</p>
+      <p class="ex-lede" style="color:var(--muted);">Figures above are from a synthetic seven-physician orthopedic sample — they show the report's shape, not a projection for your practice.</p>
+      <p class="more"><a href="/how-it-works/#report">See a full sample report, traced dollar by dollar →</a></p>
     </section>
 
     <section class="reveal">
-      <h2>Why good billing teams miss it</h2>
-      <p>This is not a gap in your team's work. A biller's job is keeping claims moving — and payer-side shortfalls are built to look like finished business. Catching them means checking every remittance line against the contracted rate for that code, payer by payer, on claims that show a zero balance.</p>
-      <p>No practice of 3 to 15 physicians staffs that job. And chasing a single $180 shortfall never pays for the hour it takes — it only becomes worth doing when someone finds the four hundred claims that follow the same pattern and pursues them as one case. That is the job we built Clearia to do.</p>
+      <h2>Process and timeline</h2>
+      <ol class="steps">
+        <li><span><b>Agreement first.</b> A business associate agreement is signed before any data moves. Access is read-only and limited to payment records.</span></li>
+        <li><span><b>The hour.</b> Your administrator sets up access to remittance reports and shares the payer contracts, with us beside you. After that, we work independently.</span></li>
+        <li><span><b>The audit.</b> Weeks, not months. We check what each payer paid against the contracted rate, code by code, and trace every shortfall to the pattern behind it.</span></li>
+        <li><span><b>Findings review.</b> You get the report in dollars and decide what we pursue. If you engage us, recoveries follow each payer's reconsideration timelines — and our fee is a percentage of what's actually recovered. Nothing else, ever.</span></li>
+      </ol>
+      <p>One constraint is real: payer dispute windows typically run 90 to 180 days, so older claims age out permanently.</p>
     </section>
 
-    <section class="reveal">
-      <h2>We know the playbook</h2>
-      <p>Here's what makes recovery possible: <b>underpayment isn't random — it's systematic.</b> Payers run on rules, and the same quiet rule fires the same way across thousands of claims. Each payer has signature behaviors. We study them for a living:</p>
-      <ul class="patterns">
-        <li><b>The light fee schedule</b> — rates loaded a few percent under what your contract says, so every claim pays slightly short.</li>
-        <li><b>The misapplied bundling edit</b> — applied where your contract says it shouldn't be, claim after claim.</li>
-        <li><b>The habitual downcode</b> — the same procedure paid at a lower-valued code on the same pretext, month after month.</li>
-      </ul>
-      <p><b>We don't just compare payments to contracts.</b> We recognize the pattern behind each shortfall — and know which ones payers reverse when challenged correctly. Money written off as paid isn't lost; it's unresearched. Payers count on no one doing the research — and when someone does, their own reconsideration process becomes the instrument that pays it back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
-      <p class="more"><a href="/how-it-works/#report">See the patterns in a sample report →</a></p>
+    <section class="reveal" id="faq">
+      <h2>Questions practices ask us</h2>
+      <div class="faq-item">
+        <h3>What does underpayment recovery cost?</h3>
+        <p>Nothing upfront, ever. The diagnostic is free, and our fee is a percentage of dollars actually recovered. If we recover nothing, you owe nothing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this too good to be true?</h3>
+        <p>No — it's arithmetic. Your payer contracts specify a rate for every code. Your remittances record what was actually paid. We compare the two, line by line — and because underpayment follows payer-specific patterns, one confirmed shortfall usually points to hundreds more like it. We pursue them through each payer's own reconsideration process. The money exists because, in most practices, nobody has ever looked.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is patient data protected?</h3>
+        <p>Every engagement starts with a signed business associate agreement before any data moves. Access is read-only, limited to payment records, and data travels only through HIPAA-covered channels.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much of our staff's time does it take?</h3>
+        <p>About an hour, once. Your administrator sets up read-only access to payment reports and shares your payer contracts — we walk through it together. After that we work independently.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will this create problems with our payers?</h3>
+        <p>No. Underpayment reconsiderations are a routine, contractual process that payers handle every day. We use the dispute mechanisms your contracts already provide, professionally and by the book.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this replace our biller or billing company?</h3>
+        <p>No. We never touch claim submission, posting, or your billing workflow. Underpayment sits on the payer's side of the ledger — finding it is a different job from billing, and we only do that job. If anything, work moves off your team's plate: the underpayment appeals and payer follow-up your staff currently handles between everything else become ours to prepare, manage, and see through.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if you find nothing?</h3>
+        <p>Then you've verified — from your own payment records — that your payers are paying your contracts correctly, and it cost you nothing. That answer has value too.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does it take to see results?</h3>
+        <p>The diagnostic takes weeks, not months, once we have access to your remittances and contracts. Recoveries then follow each payer's reconsideration timelines. One constraint is real: payer dispute windows typically run 90 to 180 days, so older claims age out permanently.</p>
+      </div>
     </section>
 
-    <section class="reveal" id="bet">
-      <h2>The bet we're making</h2>
-      <div class="bet">
-        <div class="bet-grid">
-          <div>
-            <h3>If we find nothing</h3>
-            <p>You've spent an hour and paid nothing — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
-          </div>
-          <div>
-            <h3>If we find money</h3>
-            <p>You pay only out of dollars that actually arrive. No retainer, no hourly fees, no invoice to gamble on.</p>
-          </div>
+    <section class="closing reveal" id="request">
+      <h2>Request the free diagnostic</h2>
+      <p class="close-line">The diagnostic answers the only question that matters — in dollars, from your own payment records.</p>
+      <p>Three fields, and we take it from there.</p>
+      <form class="diag-form" id="diag-form" action="https://formsubmit.co/contact@cleariagroup.com" method="POST">
+        <input type="hidden" name="_subject" value="Diagnostic request — cleariagroup.com">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field">
+          <label for="f-name">Your name <span class="opt">(optional)</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name">
         </div>
-        <p class="bet-close">We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
-      </div>
-      <div class="cta-mid">
-        <p class="lead">Find out which side of that bet your data lands on.</p>
-        <a class="contact-btn" href="/the-diagnostic/">Request the free diagnostic</a>
-      </div>
-    </section>
-
-    <section class="reveal">
-      <h2>Who this is for — and not for</h2>
-      <div class="fornot">
-        <div class="for">
-          <h3>For</h3>
-          <ul>
-            <li>Independent, procedure-heavy specialty practices — orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers</li>
-            <li>Typically 3 to 15 physicians, running without a revenue-cycle department</li>
-            <li>Ambulatory surgery centers — ASC claims carry exactly the complexity where underpayment hides</li>
-          </ul>
+        <div class="field">
+          <label for="f-practice">Practice name <span class="opt">(optional)</span></label>
+          <input id="f-practice" name="practice" type="text" autocomplete="organization">
         </div>
-        <div class="not">
-          <h3>Not for</h3>
-          <ul>
-            <li>Hospitals and health systems with revenue-cycle teams — good vendors already serve them</li>
-            <li>Practices looking to outsource billing — we don't do billing</li>
-          </ul>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
         </div>
-      </div>
-      <p>We do one job: find what payers underpaid, and get it back.</p>
-      <p class="more"><a href="/who-we-serve/">More on who we serve — including the note for your administrator →</a></p>
-    </section>
-
-    <section class="closing reveal">
-      <h2>The next step</h2>
-      <p class="close-line">Find out what your payers kept — in dollars, from your own payment records.</p>
-      <p>The diagnostic is free, takes about an hour of your team's time, and carries no obligation afterward.</p>
-      <div class="cta-row">
-        <a class="contact-btn" href="/the-diagnostic/">Request the free diagnostic</a>
-        <span class="cta-alt">or write to <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
-      </div>
+        <button class="contact-btn" type="submit">Request the free diagnostic</button>
+        <p class="form-note">No cost, no obligation. We reply within one business day. Prefer email? <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></p>
+      </form>
+      <p class="form-success" role="status" hidden>Received — we'll reply within one business day.</p>
     </section>
 
     <footer>
       <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
       <nav class="foot-nav" aria-label="Footer">
-        <a href="/" aria-current="page">Home</a>
+        <a href="/">Home</a>
         <a href="/how-it-works/">How it works</a>
         <a href="/who-we-serve/">Who we serve</a>
-        <a href="/the-diagnostic/">The diagnostic</a>
+        <a href="/the-diagnostic/" aria-current="page">The diagnostic</a>
         <a href="/about/">About</a>
         <a href="/notes/">Notes on payer behavior</a>
       </nav>
@@ -591,7 +685,7 @@
   </div>
 
   <div class="stickybar" id="stickybar" aria-hidden="true">
-    <a class="contact-btn" href="/the-diagnostic/" tabindex="-1">Request the free diagnostic</a>
+    <a class="contact-btn" href="#request" tabindex="-1">Request the free diagnostic</a>
   </div>
 
   <script>
@@ -646,6 +740,50 @@
             updateBar();
           }, { rootMargin: '0px 0px -20% 0px' }).observe(formSection);
         }
+      }
+
+      // FAQ: accordion behavior on narrow screens only
+      if (matchMedia('(max-width: 639px)').matches) {
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var h = item.querySelector('h3');
+          if (!h) return;
+          item.classList.add('acc');
+          h.setAttribute('role', 'button');
+          h.setAttribute('tabindex', '0');
+          h.setAttribute('aria-expanded', 'false');
+          function toggle() {
+            var open = item.classList.toggle('open');
+            h.setAttribute('aria-expanded', open ? 'true' : 'false');
+          }
+          h.addEventListener('click', toggle);
+          h.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+          });
+        });
+      }
+
+      // form: AJAX submit with inline success; native POST as fallback
+      var form = document.getElementById('diag-form');
+      if (form && window.fetch) {
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          var btn = form.querySelector('button[type=submit]');
+          btn.disabled = true; btn.textContent = 'Sending…';
+          fetch('https://formsubmit.co/ajax/contact@cleariagroup.com', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (!r.ok) throw new Error('relay error');
+            form.hidden = true;
+            var ok = document.querySelector('.form-success');
+            ok.hidden = false;
+            if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'diagnostic_form' });
+          }).catch(function () {
+            // relay unreachable — fall back to native POST (programmatic submit skips this handler)
+            form.submit();
+          });
+        });
       }
 
     })();

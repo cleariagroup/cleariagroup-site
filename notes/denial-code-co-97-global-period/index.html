@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CO-97 denials: bundling and global periods | Clearia</title>
+  <meta name="description" content="CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-97-global-period/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CO-97: bundling, global periods, and the remark code that decides">
+  <meta property="og:description" content="CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-97-global-period/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CO-97: bundling, global periods, and the remark code that decides",
+    "description": "CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.",
+    "datePublished": "2026-08-08",
+    "dateModified": "2026-08-08",
+    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-97-global-period/"
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker">Notes on payer behavior</p>
+      <h1>CO-97: bundling, global periods, and the remark code that decides</h1>
+      <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
+
+      <p>CO-97 — "the benefit for this service is included in the payment for another service" — is the bundling code, and it is really two different denials wearing one number. Which one you have is written in the remark code next to it, and the two branches have completely different plays.</p>
+
+      <h2>The remark code decides the branch</h2>
+      <p>The standard requires CO-97 to travel with a remark code (RARC), and the remark is the routing instruction:</p>
+      <ul>
+        <li><b>M144 or N525</b> — the payer says the service falls inside a surgical <b>global period</b>.</li>
+        <li><b>M15, M80, or N19</b> — a code-pair <b>bundling edit</b> (NCCI).</li>
+        <li><b>No corresponding edit on file</b> — a payer-proprietary bundling rule; the play is an appeal citing the payer's own published policy, because there is no national edit behind it.</li>
+      </ul>
+      <p>This read-the-remark discipline generalizes well beyond 97 — <a href="/notes/denial-code-co-16-and-rarcs/">the CO-16 note</a> covers it.</p>
+
+      <h2>Branch one: the global period — win on date math</h2>
+      <p>Surgical procedures carry a global window — commonly 10 or 90 days — inside which related visits and procedures are considered paid with the surgery. Two things go wrong in the payer's favor:</p>
+      <ul>
+        <li><b>The window is miscounted.</b> A 90-day global is really a 92-day window (the day before, the day of, and 90 days after); a 10-day global is an 11-day window with no pre-op day. Payers apply the wrong window; pull each code's global indicator from the Medicare fee-schedule file and count.</li>
+        <li><b>The service wasn't related.</b> The modifier arsenal — 24 (unrelated visit during the global), 25 (significant, separately identifiable same-day visit), 57 (the decision for surgery), 58 (staged procedure), 78 (return to the operating room), 79 (unrelated procedure) — exists precisely to say so. Which modifier fits is a chart question; that they exist is why a global-period denial is a beginning, not an end.</li>
+      </ul>
+      <p>The pattern spans every surgical specialty: cataract surgery in ophthalmology (90-day global, high volume), fracture care in orthopedics and hand surgery, excisions and repairs in dermatology (mostly 10-day globals), ENT and urology procedures alike. Two payer-error patterns worth knowing: modifier 25 does <b>not</b> require a different diagnosis from the procedure — the national edit manual says so, and payers wrongly deny on same-diagnosis grounds anyway. And as of 2025, Medicare requires transfer-of-care modifiers (54/55) on all 90-day globals — surgical care and post-op care split between practices is a new place where correctly billed claims get wrongly bundled.</p>
+
+      <h2>Branch two: bundling edits — check the indicator first</h2>
+      <p>For code-pair edits, one fact controls everything: the edit's <b>modifier indicator</b>. Indicator 1 means a bypass modifier is allowed when the services were genuinely distinct — the play is a corrected claim with the most specific modifier that fits the documentation (the X-modifiers over generic 59). <b>Indicator 0 means no modifier ever bypasses the edit.</b> No appeal changes that; the honest options are a coding correction or acceptance.</p>
+
+      <h2>The add-on-code cousin</h2>
+      <p>A near neighbor of the bundling denial is the add-on code denied because its required primary procedure wasn't found. This is a linkage problem, not a coverage problem, and the fix depends on where the primary went: if the primary was denied upstream, fix the primary and the add-on follows; if the primary paid on a <i>separate</i> claim, appeal citing the paid claim's number and date so the payer links them; if the primary was genuinely omitted, a corrected claim billing both together — properly sequenced — cures it. Endoscopy add-ons in GI, additional-lesion codes in dermatology, and additional-level codes in spine injections all live in this pattern.</p>
+
+      <h2>Which door: corrected claim or appeal</h2>
+      <p>The mode matters as much as the argument. A modifier that should have been on the claim and wasn't goes back as a <b>corrected claim</b> — a replacement referencing the original claim number, not a letter. An appeal is for the case where the modifier was billed correctly and denied anyway, or where the edit is payer-proprietary — then the letter cites the documentation and the payer's own policy. Sending a letter to fix a coding omission, or resubmitting to overturn a judgment call, each wastes a clock you don't get back.</p>
+
+      <h2>When not to appeal</h2>
+      <p>Indicator-0 pairs, and services that genuinely were components of the primary procedure. Appealing correctly bundled services wastes the appeal window and marks every future letter from your practice as noise. The distinct-service claim has to be true in the chart before it goes in a letter.</p>
+      <p>And the shortfall side of bundling — where your contract says a service is separately payable but it paid at zero — is underpayment territory, with <a href="/notes/florida-underpayment-12-month-rule/">a 12-month statutory life in Florida</a> on fully-insured business.</p>
+
+      <div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 means read the remark code</a></li>
+          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes — and when billing the patient is prohibited</a></li>
+          <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
+          <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>Want your bundling denials sorted into the winnable and the correct?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost — we're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/">Request the free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change — verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · Miami, Florida</span>
+    </footer>
+
+  </div>
+</body>
+</html>

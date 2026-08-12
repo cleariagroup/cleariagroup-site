@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>They approved the prior auth. Then they didn't pay the claim. | Clearia</title>
+  <meta name="description" content="Prior authorization approval is not payment. The gap between low PA denial rates and high claim denial rates, the federal rule that says Medicare Advantage plans can't take back an approval, and Florida's 120-day tripwire.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/prior-auth-approved-claim-denied/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="They approved the prior auth. Then they didn't pay the claim.">
+  <meta property="og:description" content="Prior authorization approval is not payment — the two-gate problem, the MA rule that forbids taking back an approval, and Florida's 120-day tripwire.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/prior-auth-approved-claim-denied/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "They approved the prior auth. Then they didn't pay the claim.",
+    "description": "Prior authorization approval is not payment — the two-gate problem, the MA rule that forbids taking back an approval, and Florida's 120-day tripwire.",
+    "datePublished": "2026-08-12",
+    "dateModified": "2026-08-12",
+    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "mainEntityOfPage": "https://cleariagroup.com/notes/prior-auth-approved-claim-denied/"
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/notes/">All notes</a>
+    </header>
+
+    <article>
+      <p class="kicker">Notes · payer behavior</p>
+      <h1>They approved the prior auth. Then they didn't pay the claim.</h1>
+      <p class="meta">Published August 12, 2026 · sources: payer CMS-0057 filings, KFF transparency data, CMS final rule CMS-4201-F, Florida Statutes</p>
+
+      <p>Practices tend to treat a prior authorization approval as the finish line: the payer said yes, the procedure is covered, the money will follow. It often doesn't work that way. Authorization and payment are two separate gates, run by different systems, on different rules — and the second gate is where the dollars actually move.</p>
+
+      <h2>The gap, in the payers' own numbers</h2>
+      <p>Put two public datasets side by side. Florida Blue's own <a href="/notes/florida-prior-authorization-scorecard/">CMS-0057 prior authorization filings</a> report marketplace PA denial rates of roughly <b>1–5%</b>, depending on product. KFF's analysis of federal claims-transparency data puts Florida Blue's in-network <i>claim</i> denial rate on marketplace plans at <b>20% or more</b> — among the higher rates in the dataset.</p>
+      <div class="callout">
+        <p><b>Both numbers are real; they measure different gates.</b> A payer can approve nearly every authorization request and still deny or reduce a large share of the resulting claims — through bundling edits, downcoding, documentation demands, "not a covered benefit" recharacterizations, and payments below the contracted rate. The friendly number is at the gate everyone watches. The unfriendly number is at the gate where money changes hands.</p>
+      </div>
+      <p>The authorization letter usually says so, in the fine print: approval is "not a guarantee of payment." Claims-editing rules are applied at adjudication, typically by processing date — meaning the edit set that prices your claim may not even be the one in force when the authorization was issued.</p>
+
+      <h2>Medicare Advantage: the approval is binding now</h2>
+      <p>For Medicare Advantage, the federal government closed part of this gap. CMS's 2024 rule (CMS-4201-F) added a provision — 42 CFR 422.138(c) — providing that once an MA plan has approved a prior authorization, it <b>may not later deny coverage of that service on the basis of lack of medical necessity</b>. In its rulemaking answers, CMS also rejected the workaround of recharacterizing such a denial as a "payment review."</p>
+      <p>The practical consequence for a practice: <b>a post-payment recoupment or retroactive denial on a service the MA plan itself pre-authorized deserves a challenge, essentially every time.</b> The same rule requires plans to make their internal coverage criteria publicly accessible and to cite the specific unmet criterion in a denial. A denial that can't point to a public criterion is procedurally defective — which is an appeal argument in itself.</p>
+
+      <h2>Florida commercial claims: the clocks are the leverage</h2>
+      <p>For Florida-regulated commercial and HMO business (not self-funded employer plans), the statute book gives the second gate hard edges:</p>
+      <ul>
+        <li><b>The 120-day tripwire.</b> Under §627.6131, Florida Statutes, an insurer that fails to pay or deny a clean electronic claim within 120 days of receipt creates an <b>uncontestable obligation to pay it</b>. A claim aging in "pending" status past that line isn't in limbo — it's crossing into owed.</li>
+        <li><b>The 12-month underpayment window.</b> Paid-but-paid-short claims can be pursued for <a href="/notes/florida-underpayment-12-month-rule/">12 months after payment, with 12% simple interest</a> on overdue amounts — and the statute says these provisions can't be waived by contract.</li>
+        <li><b>The prompt-pay clocks.</b> Electronic claims: pay, deny, or contest within 20 days, resolve within 90. <a href="/notes/florida-prompt-pay-law-guide/">The full clock table is here.</a></li>
+      </ul>
+      <p>None of these depend on the authorization at all. That's the point: once the service is rendered, the fight is a claims fight, and the claims statutes — not the authorization file — are what discipline it.</p>
+
+      <h2>Where authorized dollars actually vanish</h2>
+      <p>When we audit remittances behind an "approved" episode of care, the reductions cluster in a few recognizable shapes:</p>
+      <div class="tablewrap">
+        <table>
+          <tr><th>What you see</th><th>What happened</th><th>Where to look</th></tr>
+          <tr><td>CO-97 on a paid line's sibling</td><td>A billed service was bundled into another as "included"</td><td><a href="/notes/denial-code-co-97-global-period/">Global-period and bundling logic</a> — some of these edits are correct, some conflict with published coding authority</td></tr>
+          <tr><td>Paid amount below contract</td><td>Underpayment against the fee schedule, hidden inside a routine <a href="/notes/denial-code-co-45/">CO-45 adjustment</a></td><td>Recompute the allowed amount line by line against your contract</td></tr>
+          <tr><td>Lower-level code paid than billed</td><td>Downcoding at adjudication</td><td>The remittance must identify the change; on out-of-network NSA claims the plan must disclose downcoding expressly</td></tr>
+          <tr><td>CO-197 despite the auth number</td><td>Authorization on file not matched to the claim</td><td><a href="/notes/denial-code-co-197-authorization/">CO-197 denials</a> with an existing auth are among the most winnable appeals there are</td></tr>
+          <tr><td>Recoupment months later</td><td>Post-payment review reversing the paid claim</td><td>On MA: presumptively challengeable if the service was pre-authorized (422.138(c)); on FL commercial: clawbacks are barred after 12 months absent fraud</td></tr>
+        </table>
+      </div>
+
+      <h2>What to change in your process</h2>
+      <ul>
+        <li><b>Reconcile authorizations to remittances.</b> Most practices file the approval and never compare it to what was ultimately paid. A simple monthly match — every authorized case against its paid claims — surfaces the gap in one report.</li>
+        <li><b>Never write off an authorized service without reading the denial reason.</b> "We approved it and then didn't pay it" is, on Medicare Advantage, close to a contradiction in terms now — and on Florida commercial business it runs into the 120-day and 12-month clocks.</li>
+        <li><b>Appeal recoupments on pre-authorized MA services.</b> Cite the authorization, the date, and the rule. The burden of explaining how the denial squares with 422.138(c) belongs to the plan.</li>
+        <li><b>Watch the aging report for the 120-day line.</b> Claims the payer has neither paid nor denied are accruing toward an uncontestable obligation — but only if someone is counting.</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Payer CMS-0057-F prior authorization disclosures (CY2025), as extracted in <a href="/notes/florida-prior-authorization-scorecard/">our Florida scorecard</a> · <a href="https://www.kff.org/patient-consumer-protections/claims-denials-and-appeals-in-aca-marketplace-plans-in-2024/">KFF, Claims Denials and Appeals in ACA Marketplace Plans</a> · CMS final rule CMS-4201-F and its FAQ guidance; 42 CFR 422.138(c) · §627.6131 and §641.3155, Florida Statutes (prompt pay, underpayment, and recoupment provisions; text via <a href="https://www.flsenate.gov/Laws/Statutes/2025/627.6131">Online Sunshine / flsenate.gov</a>). Statutory provisions described apply to Florida-regulated insurers and HMOs; self-funded employer plans follow ERISA instead. Figures retrieved August 2026.</p>
+
+      <div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/florida-prior-authorization-scorecard/">Florida prior authorization scorecard: what the payers' own 2025 filings show</a></li>
+          <li><a href="/notes/denial-code-co-197-authorization/">CO-197: denied for no authorization — when you had one</a></li>
+          <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
+          <li><a href="/notes/florida-prompt-pay-law-guide/">Florida prompt-pay law: what payers owe your practice</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>How many of your authorized cases were actually paid in full?</b> Clearia's diagnostic answers that question from your remittance data — claim by claim, against contracts, fee schedules, and Florida's deadlines, at no cost. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/">Request the free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutory and regulatory descriptions are summaries; verify current text at the linked primary sources before relying on any provision.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · Miami, Florida</span>
+    </footer>
+
+  </div>
+</body>
+</html>

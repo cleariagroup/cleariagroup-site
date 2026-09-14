@@ -17,8 +17,10 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout site repo
+      - name: Checkout site repo (always the current main, even on a re-run)
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Checkout vault (site folder only)
         uses: actions/checkout@v4
@@ -44,4 +46,7 @@ jobs:
           git config user.name "clearia-sync"
           git config user.email "actions@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || { git commit -m "Sync site from vault"; git push; }
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync site from vault"
+          git pull --rebase origin main
+          git push origin HEAD:main

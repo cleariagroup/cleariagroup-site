@@ -686,6 +686,65 @@
     .closing .cta-row { justify-content: center; }
     .closing p { margin-left: auto; margin-right: auto; }
     .band { background: var(--paper); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(0 -100vmax); padding-bottom: clamp(2.6rem, 6vw, 3.6rem); }
+
+    /* ---------- v6 motion: heartbeat, scanner, deposits, parallax ---------- */
+    @keyframes beat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.055); } 24% { transform: scale(1); } 36% { transform: scale(1.03); } 50% { transform: scale(1); } }
+    @keyframes kpi-beat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.04); } 24% { transform: scale(1); } 36% { transform: scale(1.02); } 50% { transform: scale(1); } }
+    @keyframes halo { 0% { transform: scale(1); opacity: 0.32; } 60% { transform: scale(1.32); opacity: 0; } 100% { transform: scale(1.32); opacity: 0; } }
+    @keyframes halo-dot { 0% { transform: scale(1); opacity: 0.45; } 60% { transform: scale(3); opacity: 0; } 100% { transform: scale(3); opacity: 0; } }
+    @keyframes ring { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(4.5); opacity: 0; } }
+    .js .hero.in-view .kpi > div:first-child .val { display: inline-block; transform-origin: left center; animation: kpi-beat 2.4s ease-in-out 1.3s infinite; }
+    .js .row.in-view .kpi > div:first-child .val { display: inline-block; transform-origin: left center; animation: kpi-beat 2.4s ease-in-out 2.9s infinite; }
+    #site-funnel .beat, #site-accum .beat { animation: beat 2.4s ease-in-out infinite; }
+    #site-funnel .halo { animation: halo 2.4s ease-out infinite; }
+    #site-accum .halo { animation: halo-dot 2.4s ease-out infinite; }
+    #site-accum .ring { animation: ring 900ms ease-out forwards; }
+
+    /* remittance check: a scan line walks the rows, flags pop as it passes, then keeps sweeping softly */
+    .frame .tbl { position: relative; }
+    .frame .scan { position: absolute; left: 0; right: 0; top: 16%; height: 2px; background: var(--accent); opacity: 0; pointer-events: none; box-shadow: 0 0 14px 3px rgba(92,31,45,0.35); }
+    @keyframes scan { 0% { top: 16%; opacity: 0; } 6% { opacity: 1; } 94% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+    @keyframes scanloop { 0% { top: 16%; opacity: 0; } 3% { opacity: 0.45; } 22% { top: 100%; opacity: 0; } 100% { top: 100%; opacity: 0; } }
+    .js .in-view .frame .scan { animation: scan 1500ms linear 200ms 1 both, scanloop 7s linear 3200ms infinite; }
+    .frame .tbl tbody tr { opacity: 0; transform: translateY(6px); transition: opacity 360ms var(--ease-entrance), transform 360ms var(--ease-entrance); }
+    .in-view .frame .tbl tbody tr { opacity: 1; transform: none; }
+    .frame .tbl tbody tr:nth-child(1) { transition-delay: 330ms; } .frame .tbl tbody tr:nth-child(2) { transition-delay: 630ms; }
+    .frame .tbl tbody tr:nth-child(3) { transition-delay: 930ms; } .frame .tbl tbody tr:nth-child(4) { transition-delay: 1230ms; } .frame .tbl tbody tr:nth-child(5) { transition-delay: 1530ms; }
+    @keyframes flagflash { 0% { background-color: rgba(92,31,45,0.22); } 100% { background-color: transparent; } }
+    .js .in-view tr.flag td { animation: flagflash 1100ms ease-out both; }
+    .js .in-view tr.flag:nth-child(1) td { animation-delay: 380ms; } .js .in-view tr.flag:nth-child(2) td { animation-delay: 680ms; }
+    .js .in-view tr.flag:nth-child(3) td { animation-delay: 980ms; } .js .in-view tr.flag:nth-child(4) td { animation-delay: 1280ms; }
+    tr.flag td:first-child { position: relative; }
+    tr.flag td:first-child::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform 320ms var(--ease-standard); }
+    .in-view tr.flag td:first-child::before { transform: scaleY(1); }
+    .in-view tr.flag:nth-child(1) td:first-child::before { transition-delay: 450ms; } .in-view tr.flag:nth-child(2) td:first-child::before { transition-delay: 750ms; }
+    .in-view tr.flag:nth-child(3) td:first-child::before { transition-delay: 1050ms; } .in-view tr.flag:nth-child(4) td:first-child::before { transition-delay: 1350ms; }
+    tr.flag td.diff { text-decoration: underline wavy transparent; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color 300ms ease; }
+    .in-view tr.flag td.diff { text-decoration-color: var(--accent); }
+    .in-view tr.flag:nth-child(2) td.diff { transition-delay: 800ms; } .in-view tr.flag:nth-child(3) td.diff { transition-delay: 1100ms; } .in-view tr.flag:nth-child(4) td.diff { transition-delay: 1400ms; }
+    td.neg > span { display: inline-block; transform-origin: right center; }
+    @keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+    .js tr.flag td.neg > span { opacity: 0; }
+    .js .in-view tr.flag td.neg > span { animation: pop 520ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both; }
+    .js .in-view tr.flag:nth-child(1) td.neg > span { animation-delay: 480ms; } .js .in-view tr.flag:nth-child(2) td.neg > span { animation-delay: 780ms; }
+    .js .in-view tr.flag:nth-child(3) td.neg > span { animation-delay: 1080ms; } .js .in-view tr.flag:nth-child(4) td.neg > span { animation-delay: 1380ms; }
+
+    /* pain cards stagger in */
+    .js .reveal .pain > div { opacity: 0; transform: translateY(14px); transition: opacity 500ms var(--ease-entrance), transform 500ms var(--ease-entrance); }
+    .js .reveal.in-view .pain > div { opacity: 1; transform: none; }
+    .js .reveal.in-view .pain > div:nth-child(2) { transition-delay: 110ms; } .js .reveal.in-view .pain > div:nth-child(3) { transition-delay: 220ms; }
+
+    /* parallax: frames drift slower than the page, text a touch faster (desktop only, JS-driven) */
+    @media (min-width: 861px) { [data-plx] { will-change: transform; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .frame .scan { display: none; }
+      .frame .tbl tbody tr, .js tr.flag td.neg > span, .js .reveal .pain > div { opacity: 1; transform: none; transition: none; }
+      .js .in-view tr.flag td, .js .in-view tr.flag td.neg > span, .js .hero.in-view .kpi > div:first-child .val, .js .row.in-view .kpi > div:first-child .val,
+      #site-funnel .beat, #site-accum .beat, #site-funnel .halo, #site-accum .halo, #site-accum .ring { animation: none; }
+      tr.flag td:first-child::before { transform: scaleY(1); transition: none; }
+      .in-view tr.flag td.diff { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -722,7 +781,7 @@
         <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
       </div>
       <div class="hero-frame">
-        <div class="frame" aria-label="Sample engagement: recovered to date and the recovery pipeline">
+        <div class="frame" data-plx="0.07" aria-label="Sample engagement: recovered to date and the recovery pipeline">
           <div class="bar"><i></i><i></i><i></i><span>Engagement · month 5</span></div>
           <div class="body">
             <div class="kpi">
@@ -750,37 +809,40 @@
     <section class="reveal band" id="how">
       <h2>What we do</h2>
 
-      <div class="row">
-        <div class="txt">
+      <div class="row reveal">
+        <div class="txt" data-plx="0.03">
           <h3>Find the underpayments and denials.</h3>
           <p>We check every remittance line against your contracted rate, then match what we find against our library of insurer behaviors: the light fee schedule, the habitual downcode, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it.</p>
         </div>
         <div>
-          <div class="frame" aria-label="Sample remittance check">
+          <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
             <div class="bar"><i></i><i></i><i></i><span>Remittance check · Coastal Health Plan · Q2</span></div>
             <div class="body">
+              <div class="tbl">
               <table>
                 <thead><tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr></thead>
                 <tbody>
-                <tr><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg">$232</td></tr>
-                <tr><td>99214</td><td>99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg">$44</td></tr>
-                <tr><td>20610 + 99213</td><td>bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg">$168</td></tr>
-                <tr><td>23430</td><td>denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg">$2,140</td></tr>
+                <tr class="flag"><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg"><span>$232</span></td></tr>
+                <tr class="flag"><td>99214</td><td class="diff">99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg"><span>$44</span></td></tr>
+                <tr class="flag"><td>20610 + 99213</td><td class="diff">bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg"><span>$168</span></td></tr>
+                <tr class="flag"><td>23430</td><td class="diff">denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg"><span>$2,140</span></td></tr>
                 <tr><td>27447</td><td>27447</td><td class="r num">$1,860</td><td class="r num">$1,860</td><td class="r num">$0</td></tr>
                 </tbody>
               </table>
+              <div class="scan" aria-hidden="true"></div>
+              </div>
               <div class="foot"><span><span class="num" data-to="412">0</span> lines checked · <span class="num" data-to="47">0</span> flagged</span><span>sample · synthetic data</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row flip">
-        <div class="txt">
+      <div class="row flip reveal">
+        <div class="txt" data-plx="0.03">
           <h3>Show you the number.</h3>
           <p>Which insurer, which codes, how much, and what's still inside the dispute window. You decide what we pursue.</p>
         </div>
-        <div class="frame" aria-label="Sample diagnostic: where the recoverable dollars come from">
+        <div class="frame" data-plx="-0.05" aria-label="Sample diagnostic: where the recoverable dollars come from">
           <div class="bar"><i></i><i></i><i></i><span>Diagnostic report · where the dollars come from</span></div>
           <div class="body">
             <div class="flow-wrap">
@@ -791,14 +853,14 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="txt">
+      <div class="row reveal">
+        <div class="txt" data-plx="0.03">
           <h3>Conquer the systemic, persistent trends.</h3>
           <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We pursue each pattern as one case through the insurer's own process, and the money lands in your account.</p>
           <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
         </div>
         <div>
-          <div class="frame" aria-label="Sample recovery: monthly deposits and the cumulative total">
+          <div class="frame" data-plx="-0.05" aria-label="Sample recovery: monthly deposits and the cumulative total">
             <div class="bar"><i></i><i></i><i></i><span>Recovered · five months</span></div>
             <div class="body">
               <div class="kpi">
@@ -872,11 +934,11 @@
       function svgKit(svg) {
         var NS = 'http://www.w3.org/2000/svg', steps = [], PROP = { opacity: 'opacity', transform: 'transform' };
         function el(tag, attrs, parent) { var n = document.createElementNS(NS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); (parent || svg).appendChild(n); return n; }
-        function fx(n, init, fin, delay, dur) {
+        function fx(n, init, fin, delay, dur, ease) {
           if (RM) return n;
           for (var k in init) n.style[k] = init[k];
           steps.push(function () {
-            n.style.transition = Object.keys(fin).map(function (k) { return PROP[k] + ' ' + (dur || 550) + 'ms cubic-bezier(0,0,0.38,0.9) ' + delay + 'ms'; }).join(', ');
+            n.style.transition = Object.keys(fin).map(function (k) { return PROP[k] + ' ' + (dur || 550) + 'ms ' + (ease || 'cubic-bezier(0,0,0.38,0.9)') + ' ' + delay + 'ms'; }).join(', ');
             for (var k2 in fin) n.style[k2] = fin[k2];
           });
           return n;
@@ -983,11 +1045,23 @@
           K.steps.push(function () { spine.style.transition = 'stroke-dashoffset 700ms cubic-bezier(0,0,0.38,0.9)'; spine.style.strokeDashoffset = 0; }); }
         stages.forEach(function (s, i) {
           var x = cx(i), h = half(s.amt), d = 250 + i * 160;
+          var halo = null;
+          if (i === stages.length - 1 && !RM) {
+            halo = K.el('rect', { x: x - bandW / 2, y: midY - h, width: bandW, height: 2 * h, rx: 12, fill: s.c, opacity: 0 });
+            halo.style.transformBox = 'fill-box'; halo.style.transformOrigin = 'center';
+          }
           var band = K.el('rect', { x: x - bandW / 2, y: midY - h, width: bandW, height: 2 * h, rx: 12, fill: s.c });
           band.style.transformBox = 'fill-box'; band.style.transformOrigin = 'center';
           K.fx(band, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 450);
           var amt = K.el('text', { x: x, y: midY - h - 10, 'text-anchor': 'middle', 'font-family': 'Lora,Georgia,serif', 'font-size': FA, fill: '#14171F' });
           amt.textContent = '$' + s.amt.toLocaleString('en-US'); K.fx(amt, { opacity: 0 }, { opacity: 1 }, d + 120, 400);
+          if (halo) {
+            amt.style.transformBox = 'fill-box'; amt.style.transformOrigin = 'center';
+            K.steps.push(function () { setTimeout(function () {
+              band.style.transition = 'none'; band.style.transform = ''; band.classList.add('beat');
+              amt.classList.add('beat'); halo.classList.add('halo');
+            }, d + 560); });
+          }
           var lbl = K.el('text', { x: x, y: midY + maxHalf + 30, 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FL, 'font-weight': 500, fill: '#14171F' });
           lbl.textContent = s.label; K.fx(lbl, { opacity: 0 }, { opacity: 1 }, d + 160, 400);
           if (FS) { var sub = K.el('text', { x: x, y: midY + maxHalf + 47, 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FS, fill: '#5E5A50' });
@@ -1022,11 +1096,35 @@
           var bh = (d / max) * (base - top) * 1.0;
           var r = el('rect', { x: x(i) - bw / 2, y: base - bh, width: bw, height: bh, fill: '#14171F', 'fill-opacity': 0.22, rx: 2 });
           r.style.transformBox = 'fill-box'; r.style.transformOrigin = 'bottom center';
-          fx(r, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, 150 + i * 220, 500);
-          var dot = el('circle', { cx: x(i), cy: y(cum[i]), r: 4, fill: '#5C1F2D' });
-          fx(dot, { opacity: 0 }, { opacity: 1 }, 500 + i * 300, 300);
+          fx(r, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, 150 + i * 220, 620, 'cubic-bezier(0.2, 0.9, 0.25, 1.25)');
+          var last = i === n - 1, dd = 500 + i * 300;
+          if (last && !RM) {
+            var hd = el('circle', { cx: x(i), cy: y(cum[i]), r: 9, fill: '#5C1F2D', opacity: 0 });
+            hd.style.transformBox = 'fill-box'; hd.style.transformOrigin = 'center';
+          }
+          var ring = el('circle', { cx: x(i), cy: y(cum[i]), r: 6, fill: 'none', stroke: '#5C1F2D', 'stroke-width': 1.5, opacity: 0 });
+          ring.style.transformBox = 'fill-box'; ring.style.transformOrigin = 'center';
+          var dot = el('circle', { cx: x(i), cy: y(cum[i]), r: last ? 5.5 : 4.5, fill: '#5C1F2D' });
+          dot.style.transformBox = 'fill-box'; dot.style.transformOrigin = 'center';
+          fx(dot, { transform: 'scale(0)' }, { transform: 'scale(1)' }, dd, 420, 'cubic-bezier(0.2, 0.9, 0.3, 1.35)');
           var t = el('text', { x: x(i), y: y(cum[i]) - (N ? 16 : 12), 'text-anchor': 'middle', 'font-family': 'Lora,Georgia,serif', 'font-size': FT, fill: '#14171F' });
-          t.textContent = '$' + Math.round(cum[i] / 1000) + 'K'; fx(t, { opacity: 0 }, { opacity: 1 }, 600 + i * 300, 300);
+          t.style.transformBox = 'fill-box'; t.style.transformOrigin = 'center';
+          if (RM) { t.textContent = '$' + Math.round(cum[i] / 1000) + 'K'; }
+          else {
+            t.textContent = '$0K'; t.style.opacity = 0;
+            K.steps.push(function () {
+              setTimeout(function () { ring.style.animationDelay = '0ms'; ring.classList.add('ring'); }, dd);
+              setTimeout(function () {
+                t.style.opacity = 1; var t0 = null, target = cum[i];
+                function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / 700), e = 1 - Math.pow(1 - p, 3);
+                  t.textContent = '$' + Math.round(target * e / 1000) + 'K'; if (p < 1) requestAnimationFrame(step); }
+                requestAnimationFrame(step);
+              }, dd + 60);
+              if (last) setTimeout(function () {
+                dot.style.transition = 'none'; dot.style.transform = ''; dot.classList.add('beat'); t.classList.add('beat'); hd.classList.add('halo');
+              }, dd + 900);
+            });
+          }
           var m = el('text', { x: x(i), y: base + (N ? 26 : 20), 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FM, fill: '#5E5A50' });
           m.textContent = (N ? 'M' : 'Month ') + (i + 1);
           var dl = el('text', { x: x(i), y: base + (N ? 50 : 40), 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FD, fill: '#14171F' });
@@ -1118,6 +1216,32 @@
         }
       }
 
+    })();
+  </script>
+  <script>
+    (function () {
+      // parallax: frames drift a little slower than the page, text a touch faster; desktop only, off under reduced motion
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = [].slice.call(document.querySelectorAll('[data-plx]'));
+      if (!els.length) return;
+      var mq = matchMedia('(min-width: 861px)'), ticking = false;
+      els.forEach(function (el) { el.__y = 0; });
+      function update() {
+        ticking = false;
+        var vh = window.innerHeight;
+        els.forEach(function (el) {
+          if (!mq.matches) { if (el.__y !== 0) { el.__y = 0; el.style.transform = ''; } return; }
+          var r = el.getBoundingClientRect();
+          if (r.bottom < -300 || r.top > vh + 300) return;
+          var c = (r.top + r.height / 2 - el.__y) - vh / 2;
+          var y = Math.round(c * parseFloat(el.dataset.plx) * 10) / 10;
+          if (y !== el.__y) { el.__y = y; el.style.transform = 'translate3d(0,' + y + 'px,0)'; }
+        });
+      }
+      function req() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+      addEventListener('scroll', req, { passive: true });
+      addEventListener('resize', req);
+      update();
     })();
   </script>
 </body>

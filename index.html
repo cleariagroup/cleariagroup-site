@@ -587,6 +587,46 @@
     .pipe .lbl { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
     @media (max-width: 640px) { .pipe { display: grid; grid-template-columns: 1fr 1fr; } }
     @media (prefers-reduced-motion: reduce) { .js #spark-line, .js .spark circle, .js .spark text { transition: none; stroke-dashoffset: 0; opacity: 1; } }
+
+    /* ---------- landing v3 additions ---------- */
+    ul.trust { display: none; }
+    .frame tbody tr { opacity: 0; transform: translateY(6px); transition: opacity 420ms var(--ease-entrance), transform 420ms var(--ease-entrance); }
+    .in-view .frame tbody tr { opacity: 1; transform: none; }
+    .frame tbody tr:nth-child(2) { transition-delay: 120ms; } .frame tbody tr:nth-child(3) { transition-delay: 220ms; }
+    .frame tbody tr:nth-child(4) { transition-delay: 320ms; } .frame tbody tr:nth-child(5) { transition-delay: 420ms; }
+    .funnel { display: grid; gap: 0.45rem; margin-top: 0.8rem; }
+    .funnel > div { display: grid; grid-template-columns: 6.2rem 1fr 5.4rem; align-items: center; gap: 0.6rem; font-size: 0.76rem; }
+    .funnel .lbl { color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.64rem; }
+    .funnel .track { height: 14px; background: rgba(20,23,31,0.06); border-radius: 3px; overflow: hidden; }
+    .funnel .fill { height: 100%; width: 0; background: var(--ink); opacity: 0.55; transition: width 900ms var(--ease-standard); }
+    .funnel > div:nth-child(2) .fill { transition-delay: 150ms; opacity: 0.7; } .funnel > div:nth-child(3) .fill { transition-delay: 300ms; opacity: 0.85; }
+    .funnel > div:nth-child(4) .fill { transition-delay: 450ms; background: var(--accent); opacity: 1; }
+    .in-view .funnel .fill { width: var(--w); }
+    .funnel .amt { text-align: right; font-family: var(--serif); font-size: 0.9rem; }
+    .frame .kpi { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .frame .kpi > div { background: var(--canvas); border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; }
+    .frame .kpi > div:first-child { border-left: 3px solid var(--accent); }
+    .frame .kpi .lbl { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .frame .kpi .val { font-family: var(--serif); font-size: 1.45rem; line-height: 1.1; }
+    .frame .kpi > div:first-child .val { color: var(--accent); }
+    .pbars { display: grid; gap: 0.7rem; margin-top: 0.3rem; }
+    .pbars > div { display: grid; grid-template-columns: 1fr 4.6rem; align-items: end; gap: 0.5rem; font-size: 0.78rem; }
+    .pbars b { display: block; font-weight: 500; margin-bottom: 0.15rem; }
+    .pbars .cap { display: block; margin-bottom: 0.3rem; }
+    .pbars .track { height: 10px; background: rgba(20,23,31,0.06); border-radius: 3px; overflow: hidden; }
+    .pbars .fill { height: 100%; width: 0; background: var(--ink); transition: width 800ms var(--ease-standard); }
+    .pbars > div:nth-child(1) .fill { background: var(--accent); }
+    .pbars > div:nth-child(2) .fill { transition-delay: 100ms; } .pbars > div:nth-child(3) .fill { transition-delay: 200ms; } .pbars > div:nth-child(4) .fill { transition-delay: 300ms; } .pbars > div:nth-child(5) .fill { transition-delay: 400ms; }
+    .in-view .pbars .fill { width: var(--w); }
+    .pbars .amt { display: block; text-align: right; font-family: var(--serif); font-size: 0.95rem; }
+    .pbars .rate { display: block; font-size: 0.66rem; color: var(--muted); text-align: right; }
+    .frame .total { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: 0.7rem; padding-top: 0.6rem; border-top: 2px solid var(--ink); }
+    .frame .total .val { font-family: var(--serif); font-size: 1.4rem; color: var(--accent); }
+    .frame .total .cap { max-width: 24ch; text-align: right; }
+    .js .hero #spark-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1300ms var(--ease-entrance) 500ms; }
+    .js .hero.in-view #spark-line { stroke-dashoffset: 0; }
+    .js .hero .spark circle { opacity: 0; transition: opacity 300ms ease 1500ms; } .js .hero.in-view .spark circle { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { .funnel .fill, .pbars .fill { width: var(--w); transition: none; } .frame tbody tr { opacity: 1; transform: none; transition: none; } .js .hero #spark-line { stroke-dashoffset: 0; transition: none; } .js .hero .spark circle { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -616,7 +656,7 @@
 
     <div class="hero">
       <div>
-        <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
+        <p class="eyebrow">Underpayment and denial recovery for independent specialty practices</p>
         <h1>Recover the money your payers kept.</h1>
         <p class="lede">Most practices we look at have money sitting inside claims that already show as paid. In one full-year audit it came to 30 percent of net payer revenue. We find it in your remittance data, show you the number, and go get it back. <b>No upfront fee, no software to buy, and your billing doesn't change.</b></p>
         <div class="cta-row" id="hero-cta">
@@ -625,66 +665,55 @@
         </div>
       </div>
       <div>
-        <div class="frame" aria-label="Sample diagnostic summary">
-          <div class="bar"><i></i><i></i><i></i><span>Diagnostic report · 12 months</span></div>
+        <div class="frame" aria-label="Sample engagement: recovered to date and the recovery funnel">
+          <div class="bar"><i></i><i></i><i></i><span>Engagement · month 5</span></div>
           <div class="body">
-            <div class="big num">$247,800</div>
-            <div class="cap">recoverable, traced to the reason each dollar went unpaid</div>
-            <div class="bars">
-              <div><b>Paid under contract</b><div class="track"><div class="fill acc" style="width:65%"></div></div><span class="amt num">$162,300</span></div>
-              <div><b>Denied, fixable</b><div class="track"><div class="fill" style="width:35%"></div></div><span class="amt num">$85,500</span></div>
+            <div class="kpi">
+              <div><span class="lbl">Recovered to date</span><span class="val num" data-to="151840" data-prefix="$">$0</span></div>
+              <div><span class="lbl">In progress</span><span class="val num" data-to="35580" data-prefix="$">$0</span></div>
             </div>
-            <table>
-              <tr><th>Payer</th><th class="r">Claims</th><th class="r">Recoverable</th><th class="r">Window left</th></tr>
-              <tr><td>Payer A</td><td class="r num">214</td><td class="r num">$61,400</td><td class="r num">142 days</td></tr>
-              <tr><td>Payer B</td><td class="r num">168</td><td class="r num">$48,200</td><td class="r num">96 days</td></tr>
-              <tr><td>Payer C</td><td class="r num">131</td><td class="r num">$37,900</td><td class="r num">61 days</td></tr>
-            </table>
-            <div class="foot"><span>1,892 claims checked</span><span>sample · synthetic data</span></div>
+            <div class="funnel">
+              <div><span class="lbl">Identified</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="amt num">$211,400</span></div>
+              <div><span class="lbl">Drafted</span><div class="track"><div class="fill" style="--w:89%"></div></div><span class="amt num">$189,200</span></div>
+              <div><span class="lbl">Submitted</span><div class="track"><div class="fill" style="--w:82%"></div></div><span class="amt num">$172,600</span></div>
+              <div><span class="lbl">Recovered</span><div class="track"><div class="fill" style="--w:72%"></div></div><span class="amt num">$151,840</span></div>
+            </div>
+            <div class="spark">
+              <svg viewBox="0 0 600 120" role="img" aria-label="Cumulative recovery curve rising from $16,240 in month one to $151,840 in month five">
+                <path id="spark-line" pathLength="1" d="M8,104 L154,86 L300,62 L446,36 L592,14" fill="none" stroke="#5C1F2D" stroke-width="2.5"/>
+                <circle cx="8" cy="104" r="3.5" fill="#5C1F2D"/><circle cx="154" cy="86" r="3.5" fill="#5C1F2D"/><circle cx="300" cy="62" r="3.5" fill="#5C1F2D"/><circle cx="446" cy="36" r="3.5" fill="#5C1F2D"/><circle cx="592" cy="14" r="3.5" fill="#5C1F2D"/>
+              </svg>
+              <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
+            </div>
+            <div class="foot"><span>paid straight to the practice by each payer</span><span>sample · synthetic data</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <ul class="trust" aria-label="How we work">
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Agreement before data</b>A HIPAA business associate agreement is signed before a single record moves.</span></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg><span><b>Read-only access</b>We read your remittances. Nothing in your billing system changes.</span></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4"/><path d="M8 13h8M8 17h5"/></svg><span><b>Your team approves</b>Every package is reviewed by your billers before it goes to a payer.</span></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h3.5a1.75 1.75 0 010 3.5h-2a1.75 1.75 0 000 3.5H15"/></svg><span><b>Paid from results</b>No retainer, no software fee. Our fee comes only out of dollars that arrive.</span></li>
-    </ul>
-
-    <section class="reveal" id="problem">
-      <h2>The money nobody is watching</h2>
-      <div class="statrow">
-        <div class="stat main"><span class="val num">30%</span><span class="sub">of one year's net payer revenue was underpaid or denied for fixable reasons at a four-physician orthopedic practice in Miami-Dade. 1,892 claims, checked line by line.</span></div>
-        <div class="stat"><span class="val num">1–3%</span><span class="sub">what the industry average says commercial payers underpay. It's held down by hospital systems with teams watching.</span></div>
-        <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
-      </div>
-      <p><b>Yes, thirty percent.</b> An independent practice usually has nobody checking finished business against contracted rates, and payers make a short payment look like a paid claim. It's pure margin, too. The care was already delivered and the staff already paid.</p>
-      <p>And there's a clock. Dispute windows run 90 to 180 days. Whatever sits unnoticed past that is gone for good.</p>
-    </section>
-
     <section class="reveal" id="how">
-      <h2>How it works</h2>
+      <h2>What we actually do</h2>
 
       <div class="row">
         <div class="txt">
-          <h3>First, we read your remittances.</h3>
-          <p>Every line, against the contracted rate for that code, payer by payer. A person on our team does this, with software doing the arithmetic. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to. Chasing one $180 shortfall never pays for the hour. Finding the four hundred like it does.</p>
+          <h3>We read your remittances, line by line.</h3>
+          <p>Every paid claim, against the contracted rate for that code, payer by payer. A person on our team does this, with software doing the arithmetic. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to. One $180 shortfall never pays for the hour. The four hundred like it do.</p>
         </div>
         <div>
           <div class="frame" aria-label="Sample remittance check">
-            <div class="bar"><i></i><i></i><i></i><span>Remittance check · Payer A · Q2</span></div>
+            <div class="bar"><i></i><i></i><i></i><span>Remittance check · Coastal Health Plan · Q2</span></div>
             <div class="body">
               <table>
-                <tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr>
+                <thead><tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr></thead>
+                <tbody>
                 <tr><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg">$232</td></tr>
                 <tr><td>99214</td><td>99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg">$44</td></tr>
                 <tr><td>20610 + 99213</td><td>bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg">$168</td></tr>
                 <tr><td>23430</td><td>denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg">$2,140</td></tr>
                 <tr><td>27447</td><td>27447</td><td class="r num">$1,860</td><td class="r num">$1,860</td><td class="r num">$0</td></tr>
+                </tbody>
               </table>
-              <div class="foot"><span>412 lines checked · 47 flagged</span><span>sample · synthetic data</span></div>
+              <div class="foot"><span><span class="num" data-to="412">0</span> lines checked · <span class="num" data-to="47">0</span> flagged</span><span>sample · synthetic data</span></div>
             </div>
           </div>
         </div>
@@ -692,24 +721,24 @@
 
       <div class="row flip">
         <div class="txt">
-          <h3>Then you get findings, in dollars.</h3>
-          <p>Which payer, which codes, which claims, how much, and what's still inside the dispute window. Underpayment isn't random. It's the same payer rule firing across thousands of claims, so one confirmed shortfall usually points to hundreds like it.</p>
+          <h3>You get the findings, in dollars.</h3>
+          <p>Which payer, which codes, which claims, how much, and what's still inside the dispute window. Underpayment isn't random. It's the same payer rule firing across thousands of claims, so one confirmed shortfall usually points to hundreds like it. You see the list and decide what we pursue.</p>
           <ul>
             <li>The light fee schedule. Rates loaded a few percent under contract.</li>
             <li>The misapplied bundling edit. Applied where your contract says no.</li>
             <li>The habitual downcode. Same procedure, lower code, same pretext.</li>
           </ul>
         </div>
-        <div class="frame" aria-label="Sample findings">
-          <div class="bar"><i></i><i></i><i></i><span>Findings · top patterns</span></div>
+        <div class="frame" aria-label="Sample findings by pattern">
+          <div class="bar"><i></i><i></i><i></i><span>Findings · by pattern · 12 months</span></div>
           <div class="body">
-            <table>
-              <tr><th>Pattern</th><th class="r">Rate</th><th class="r">Value</th></tr>
-              <tr><td>Arthroscopy paid below contract<br><span class="cap">CO-45 · knee &amp; shoulder · 3 payers</span></td><td class="r num">47%</td><td class="r num">$48.2K</td></tr>
-              <tr><td>Level-4 visits downcoded to level 3<br><span class="cap">99214 → 99213 · notes support the level</span></td><td class="r num">34%</td><td class="r num">$31.6K</td></tr>
-              <tr><td>Same-day procedure bundled into the visit<br><span class="cap">CO-97 · modifier 25 supports separate payment</span></td><td class="r num">38%</td><td class="r num">$22.4K</td></tr>
-              <tr><td>Denied for no prior auth on file<br><span class="cap">CARC 197 · obtainable retroactively</span></td><td class="r num">22%</td><td class="r num">$18.9K</td></tr>
-            </table>
+            <div class="pbars">
+              <div><span><b>Arthroscopy paid below contract</b><span class="cap">CO-45 · knee &amp; shoulder · Coastal, Atlantic Mutual, Sunstate</span><div class="track"><div class="fill" style="--w:100%"></div></div></span><span><span class="amt num">$48.2K</span><span class="rate">47% of claims</span></span></div>
+              <div><span><b>Level-4 visits downcoded to level 3</b><span class="cap">99214 → 99213 · Atlantic Mutual</span><div class="track"><div class="fill" style="--w:66%"></div></div></span><span><span class="amt num">$31.6K</span><span class="rate">34% of claims</span></span></div>
+              <div><span><b>Same-day procedure bundled into the visit</b><span class="cap">CO-97 · modifier 25 · Sunstate HMO</span><div class="track"><div class="fill" style="--w:46%"></div></div></span><span><span class="amt num">$22.4K</span><span class="rate">38% of claims</span></span></div>
+              <div><span><b>Denied for no prior auth on file</b><span class="cap">CARC 197 · Coastal Health Plan</span><div class="track"><div class="fill" style="--w:39%"></div></div></span><span><span class="amt num">$18.9K</span><span class="rate">22% of claims</span></span></div>
+              <div><span><b>Workers' comp paid off the state fee schedule</b><span class="cap">Meridian Work Comp · statutory rate</span><div class="track"><div class="fill" style="--w:30%"></div></div></span><span><span class="amt num">$14.3K</span><span class="rate">29% of claims</span></span></div>
+            </div>
             <div class="foot"><span>a high rate means a rule, not a slip</span><span>sample · synthetic data</span></div>
           </div>
         </div>
@@ -717,58 +746,41 @@
 
       <div class="row">
         <div class="txt">
-          <h3>Your team approves every package.</h3>
-          <p>We draft each reopening, corrected claim, or appeal, with the contract language and the payer's own policy attached. Your billers review it and submit it through the channels you already use. Nothing goes to a payer without your say-so. Nothing about this audits your team.</p>
-        </div>
-        <div>
-          <div class="frame" aria-label="Sample review queue">
-            <div class="bar"><i></i><i></i><i></i><span>Review queue · this week</span></div>
-            <div class="body">
-              <table>
-                <tr><th>Package</th><th>Payer</th><th class="r">Claims</th><th class="r">Amount</th><th>Status</th></tr>
-                <tr><td>Arthroscopy underpayment</td><td>Payer A</td><td class="r num">41</td><td class="r num">$9,512</td><td><span class="tag hot">Awaiting your review</span></td></tr>
-                <tr><td>Level-4 downcode</td><td>Payer B</td><td class="r num">26</td><td class="r num">$4,880</td><td><span class="tag">Approved by billing</span></td></tr>
-                <tr><td>Modifier 25 bundling</td><td>Payer C</td><td class="r num">19</td><td class="r num">$3,410</td><td><span class="tag">Submitted 9/12</span></td></tr>
-                <tr><td>Missing information, CO-16</td><td>Payer A</td><td class="r num">12</td><td class="r num">$2,140</td><td><span class="tag">Paid $2,140</span></td></tr>
-              </table>
-              <div class="foot"><span>every submission keeps its proof</span><span>sample · synthetic data</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row flip">
-        <div class="txt">
           <h3>Then the money lands, and you watch it land.</h3>
-          <p>Every recovered dollar shows against the claim it came from. Payers keep paying you exactly as they do today. Our fee comes out of what arrives, and only that. You'll never see an invoice.</p>
+          <p>We build each reopening, correction, or appeal with the contract language attached, and it goes out through the channels you already use. Every recovered dollar shows against the claim it came from. Payers keep paying you exactly as they do today. Our fee settles out of what arrives, and only that. You'll never see an invoice.</p>
           <p class="more"><a href="/how-it-works/">The full process, with the sample reports →</a></p>
         </div>
-        <div class="frame" aria-label="Sample recovery dashboard">
-          <div class="bar"><i></i><i></i><i></i><span>Recovery · month 5</span></div>
-          <div class="body">
-            <div class="stats3">
-              <div class="stat main"><span class="lbl">Recovered to date</span><span class="val num">$151,840</span><span class="sub">net of our fee</span></div>
-              <div class="stat"><span class="lbl">In progress</span><span class="val num">$35,580</span><span class="sub">submitted, not yet paid</span></div>
-              <div class="stat"><span class="lbl">Recovery rate</span><span class="val num">81%</span><span class="sub">of submitted appeals, paid</span></div>
+        <div>
+          <div class="frame" aria-label="Sample recovery statement">
+            <div class="bar"><i></i><i></i><i></i><span>Recovery statement · September</span></div>
+            <div class="body">
+              <table>
+                <thead><tr><th>Date</th><th>Claim</th><th>Payer</th><th class="r">Recovered</th></tr></thead>
+                <tbody>
+                <tr><td>Sep 3</td><td>29827 · 14 claims</td><td>Coastal Health Plan</td><td class="r num">$3,248</td></tr>
+                <tr><td>Sep 9</td><td>99214 · 26 claims</td><td>Atlantic Mutual</td><td class="r num">$1,144</td></tr>
+                <tr><td>Sep 12</td><td>23430 · 3 claims</td><td>Coastal Health Plan</td><td class="r num">$6,420</td></tr>
+                <tr><td>Sep 19</td><td>20610 · 19 claims</td><td>Sunstate HMO</td><td class="r num">$3,192</td></tr>
+                <tr><td>Sep 26</td><td>WC fee schedule · 9 claims</td><td>Meridian Work Comp</td><td class="r num">$4,936</td></tr>
+                </tbody>
+              </table>
+              <div class="total"><span class="val num" data-to="18940" data-prefix="$">$0</span><span class="cap">recovered this month, paid by the payers directly to the practice</span></div>
+              <div class="foot"><span>every line traces to a claim and a proof of submission</span><span>sample · synthetic data</span></div>
             </div>
-            <div class="spark">
-              <svg viewBox="0 0 600 150" role="img" aria-label="Cumulative recovery curve rising from $16,240 in month one to $151,840 in month five">
-                <path id="spark-line" pathLength="1" d="M8,130 L154,106 L300,78 L446,46 L592,18" fill="none" stroke="#5C1F2D" stroke-width="2.5"/>
-                <circle cx="8" cy="130" r="3.5" fill="#5C1F2D"/><circle cx="154" cy="106" r="3.5" fill="#5C1F2D"/><circle cx="300" cy="78" r="3.5" fill="#5C1F2D"/><circle cx="446" cy="46" r="3.5" fill="#5C1F2D"/><circle cx="592" cy="18" r="3.5" fill="#5C1F2D"/>
-                <text x="580" y="12" text-anchor="end" font-family="Lora,Georgia,serif" font-size="15" fill="#14171F">$151.8K</text>
-              </svg>
-              <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
-            </div>
-            <div class="pipe">
-              <div class="stage" style="--sc:#cbb7a8"><span class="amt num">$5,980</span><span class="lbl">Identified</span></div>
-              <div class="stage" style="--sc:#bd8d80"><span class="amt num">$11,400</span><span class="lbl">Drafted</span></div>
-              <div class="stage" style="--sc:#9a5560"><span class="amt num">$18,200</span><span class="lbl">Submitted</span></div>
-              <div class="stage" style="--sc:#5C1F2D"><span class="amt num">$151,840</span><span class="lbl">Recovered</span></div>
-            </div>
-            <div class="foot"><span>five months in</span><span>sample · synthetic data</span></div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="reveal" id="problem">
+      <h2>Why the money is there</h2>
+      <div class="statrow">
+        <div class="stat main"><span class="val num">30%</span><span class="sub">of one year's net payer revenue was underpaid or denied for fixable reasons at a four-physician orthopedic practice in Miami-Dade. 1,892 claims, checked line by line.</span></div>
+        <div class="stat"><span class="val num">1–3%</span><span class="sub">what the industry average says commercial payers underpay. It's held down by hospital systems with teams watching.</span></div>
+        <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
+      </div>
+      <p><b>Yes, thirty percent.</b> An independent practice usually has nobody checking finished business against contracted rates, and payers make a short payment look like a paid claim. It's pure margin, too. The care was already delivered and the staff already paid.</p>
+      <p>And there's a clock. Dispute windows run 90 to 180 days. Whatever sits unnoticed past that is gone for good.</p>
     </section>
 
     <section class="reveal" id="bet">
@@ -811,7 +823,7 @@
           </ul>
         </div>
       </div>
-      <p>We do one job. Find what payers underpaid, get it back.</p>
+      <p>We do one job. Find what payers underpaid or wrongly denied, and get it back.</p>
       <p class="more"><a href="/who-we-serve/">More on who we serve, including the note for your administrator →</a></p>
     </section>
 
@@ -822,7 +834,7 @@
       <div class="aboutgrid">
         <div>
           <h3>A firm, not a software product</h3>
-          <p>People do this work. Someone on our team reads your remittances line by line, builds each appeal package, and tracks the payer until the money lands. There is software behind it, plenty of it, but you never install anything or learn a dashboard. You talk to the person doing the work.</p>
+          <p>People do this work. Someone on our team reads your remittances line by line, finds what was paid short and what was denied for a fixable reason, builds each package, and stays on the payer until the money lands. Finding it is the easy half. Getting it paid is the job. There is software behind it, plenty of it, but you never install anything or learn a dashboard. You talk to the person doing the work.</p>
           <h3>Small, Florida, and picky about engagements</h3>
           <p>Clearia, Inc. is a Florida corporation based in Miami. We work with independent specialty practices in South Florida first, because payer rules, workers' comp fee schedules, and appeal deadlines are state-specific and we know Florida's cold. We take an engagement only when your own data shows real recoverable dollars. If it doesn't, we tell you that and stop.</p>
           <h3>What we will not do</h3>
@@ -886,6 +898,24 @@
   <script>
     (function () {
       var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function fmt(n, dec) { return n.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+      window.countUp = function (root) {
+        root.querySelectorAll('[data-to]').forEach(function (el) {
+          if (el.dataset.done) return; el.dataset.done = 1;
+          var to = parseFloat(el.dataset.to), dec = (el.dataset.to.split('.')[1] || '').length;
+          var pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', t0 = null, dur = 1100;
+          if (RM) { el.textContent = pre + fmt(to, dec) + suf; return; }
+          function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / dur); var e = 1 - Math.pow(1 - p, 3);
+            el.textContent = pre + fmt(to * e, dec) + suf; if (p < 1) requestAnimationFrame(step); }
+          requestAnimationFrame(step);
+        });
+      };
+      window.addEventListener('load', function () { var h = document.querySelector('.hero'); if (h) setTimeout(function () { h.classList.add('in-view'); countUp(h); }, 250); });
+    })();
+  </script>
+  <script>
+    (function () {
+      var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // scroll reveals — unobserve after firing
       var reveals = document.querySelectorAll('.reveal');
@@ -894,6 +924,7 @@
           entries.forEach(function (e) {
             if (e.isIntersecting) {
               e.target.classList.add('in-view');
+              if (window.countUp) countUp(e.target);
               if (e.target.classList.contains('exhibit') && typeof runExhibit === 'function') runExhibit(e.target);
               io.unobserve(e.target);
             }

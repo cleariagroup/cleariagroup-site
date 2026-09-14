@@ -61,6 +61,7 @@
       --accent: #5C1F2D;  /* oxblood on cream */
       --clay: #C08768;    /* clay on ink — approximation; verify vs brand guide PDF in Box */
       --panel-text: #F3EFE6;
+      --paper: #FCFAF5;   /* off-white for frames and alternating bands; never pure white (brand) */
       --serif: 'Lora', Georgia, 'Times New Roman', serif;
       --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
       --ease-entrance: cubic-bezier(0, 0, 0.38, 0.9);
@@ -532,13 +533,16 @@
     @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
     section > p, section .more { max-width: 62ch; }
     .row { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem 3.4rem; align-items: center; margin-top: 1.2rem; }
-    .row.flip > .txt { order: 2; } .row.flip > .frame { order: 1; }
+    .row.flip { grid-template-columns: 1.1fr 0.9fr; } .row.flip > .txt { order: 2; } .row.flip > .frame { order: 1; }
     .row .txt h3 { font-family: var(--serif); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.7rem); line-height: 1.2; margin: 0 0 0.7rem; }
     .row .txt p { max-width: 44ch; }
     .row .txt ul { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.93rem; }
     .row .txt li { margin-bottom: 0.35rem; }
     @media (max-width: 860px) { .row, .row.flip { grid-template-columns: 1fr; } .row.flip > .txt { order: 1; } .row.flip > .frame { order: 2; } }
     .row + .row { margin-top: clamp(2.6rem, 6vw, 4rem); }
+    .row > *, .hero > * { min-width: 0; }
+    .frame { min-width: 0; max-width: 100%; }
+    .frame table { min-width: 100%; }
 
     /* product frame */
     .frame { background: var(--card); border: 1px solid var(--hairline); border-radius: 8px;
@@ -565,7 +569,7 @@
     .frame .bars .amt { text-align: right; font-family: var(--serif); }
     .frame .foot { display: flex; justify-content: space-between; margin-top: 0.7rem; font-size: 0.7rem; color: var(--muted); }
     .frame-note { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin: 0.5rem 0 0; }
-    @media (max-width: 480px) { .frame td, .frame th { padding-left: 0.2rem; padding-right: 0.2rem; } .frame .bars div { grid-template-columns: 7rem 1fr 4rem; } }
+    @media (max-width: 480px) { .frame table { font-size: 0.68rem; } .frame td, .frame th { padding-left: 0.18rem; padding-right: 0.18rem; } .frame td { white-space: normal; } .frame .bars div { grid-template-columns: 7rem 1fr 4rem; } }
 
     /* recovery frame pieces (ported) */
     .stats3 { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 0.6rem; }
@@ -627,6 +631,61 @@
     .js .hero.in-view #spark-line { stroke-dashoffset: 0; }
     .js .hero .spark circle { opacity: 0; transition: opacity 300ms ease 1500ms; } .js .hero.in-view .spark circle { opacity: 1; }
     @media (prefers-reduced-motion: reduce) { .funnel .fill, .pbars .fill { width: var(--w); transition: none; } .frame tbody tr { opacity: 1; transform: none; transition: none; } .js .hero #spark-line { stroke-dashoffset: 0; transition: none; } .js .hero .spark circle { opacity: 1; } }
+
+    /* v4: real exhibits inside frames */
+    .funnel-wrap svg, .flow-wrap svg, .accum-wrap svg { display: block; width: 100%; height: auto; }
+    .funnel-wrap { margin-top: 0.6rem; }
+    .flow-wrap { margin-top: 0.2rem; }
+    .accum-wrap { margin-top: 0.7rem; }
+    .funnel, .pbars, .frame .total { display: none; }
+
+    /* tonal relief: off-white frames and alternating full-bleed bands on the cream canvas */
+    .frame { background: var(--paper); }
+    .frame .bar { background: rgba(20,23,31,0.035); }
+    .frame .kpi > div, .stats3 .stat, .pipe .stage { background: var(--canvas); }
+    section.band { background: var(--paper); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(0 -100vmax); padding-bottom: clamp(2.6rem, 6vw, 3.6rem); }
+    section.band + section { padding-top: clamp(3rem, 7vw, 4rem); }
+    .statrow .stat { background: var(--paper); }
+    .fornot > div { background: var(--paper); }
+
+    /* ---------- landing v5: clean and short ---------- */
+    .wrap { max-width: 1000px; }
+    .hero { display: block; text-align: center; padding-top: clamp(2.6rem, 7vw, 4rem); padding-bottom: 1.2rem; }
+    .hero .eyebrow { margin-bottom: 1rem; }
+    .hero h1 { margin-left: auto; margin-right: auto; max-width: 16ch; font-size: clamp(2.3rem, 1.6rem + 3.2vw, 3.6rem); }
+    .hero .lede { margin: 1.1rem auto 0; max-width: 46ch; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.18rem); }
+    .hero .cta-row { justify-content: center; margin-top: 1.7rem; }
+    .hero .cta-alt a { color: inherit; }
+    .hero-frame { max-width: 720px; margin: 2.4rem auto 0; text-align: left; }
+    h2::before { content: none !important; }
+    section h2 { font-family: var(--serif); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); letter-spacing: 0; text-transform: none; color: var(--ink); border: 0; padding: 0; margin: 0 0 1.2rem; display: block; text-align: center; }
+    section h2::after { content: none !important; }
+    section { padding-top: clamp(2.8rem, 7vw, 4rem); }
+    .pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 0.4rem; }
+    .pain > div { background: var(--paper); border: 1px solid var(--hairline); padding: 1.2rem 1.2rem 1.1rem; }
+    .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
+    .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
+    @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
+    .row .txt h3 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); }
+    .row .txt p { font-size: 1rem; }
+    .row { margin-top: 1.6rem; }
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 0.4rem; text-align: center; }
+    .kpis > div { padding: 0.4rem 0.6rem; }
+    .kpis .val { display: block; font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); line-height: 1.05; }
+    .kpis > div:first-child .val { color: var(--accent); }
+    .kpis .sub { display: block; font-size: 0.86rem; color: var(--muted); margin-top: 0.35rem; max-width: 30ch; margin-left: auto; margin-right: auto; }
+    @media (max-width: 640px) { .kpis { grid-template-columns: 1fr; gap: 1.6rem; } }
+    .faq { max-width: 720px; margin: 0 auto; border-top: 1px solid var(--ink); }
+    .faq details { border-bottom: 1px solid var(--hairline); }
+    .faq summary { cursor: pointer; list-style: none; padding: 1rem 2rem 1rem 0; font-weight: 500; font-size: 1.02rem; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 0.2rem; top: 0.85rem; font-family: var(--serif); font-size: 1.3rem; color: var(--muted); }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { margin: 0 0 1.1rem; max-width: 62ch; color: var(--ink); }
+    .closing { text-align: center; }
+    .closing .cta-row { justify-content: center; }
+    .closing p { margin-left: auto; margin-right: auto; }
+    .band { background: var(--paper); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(0 -100vmax); padding-bottom: clamp(2.6rem, 6vw, 3.6rem); }
   </style>
 </head>
 <body>
@@ -655,49 +714,46 @@
     </nav>
 
     <div class="hero">
-      <div>
-        <p class="eyebrow">Underpayment and denial recovery for independent specialty practices</p>
-        <h1>Recover the money your payers kept.</h1>
-        <p class="lede">Most practices we look at have money sitting inside claims that already show as paid. In one full-year audit it came to 30 percent of net payer revenue. We find it in your remittance data, show you the number, and go get it back. <b>No upfront fee, no software to buy, and your billing doesn't change.</b></p>
-        <div class="cta-row" id="hero-cta">
-          <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
-          <span class="cta-alt">or write to contact@cleariagroup.com</span>
-        </div>
+      <p class="eyebrow">Underpayment and denial recovery for independent practices</p>
+      <h1>Recover the money you've earned.</h1>
+      <p class="lede">Insurers quietly underpay and deny claims your practice already earned. Clearia finds it in your remittance data, and gets it back. No upfront fee. Paid only from what we recover.</p>
+      <div class="cta-row" id="hero-cta">
+        <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
+        <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
       </div>
-      <div>
-        <div class="frame" aria-label="Sample engagement: recovered to date and the recovery funnel">
+      <div class="hero-frame">
+        <div class="frame" aria-label="Sample engagement: recovered to date and the recovery pipeline">
           <div class="bar"><i></i><i></i><i></i><span>Engagement · month 5</span></div>
           <div class="body">
             <div class="kpi">
               <div><span class="lbl">Recovered to date</span><span class="val num" data-to="151840" data-prefix="$">$0</span></div>
               <div><span class="lbl">In progress</span><span class="val num" data-to="35580" data-prefix="$">$0</span></div>
             </div>
-            <div class="funnel">
-              <div><span class="lbl">Identified</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="amt num">$211,400</span></div>
-              <div><span class="lbl">Drafted</span><div class="track"><div class="fill" style="--w:89%"></div></div><span class="amt num">$189,200</span></div>
-              <div><span class="lbl">Submitted</span><div class="track"><div class="fill" style="--w:82%"></div></div><span class="amt num">$172,600</span></div>
-              <div><span class="lbl">Recovered</span><div class="track"><div class="fill" style="--w:72%"></div></div><span class="amt num">$151,840</span></div>
+            <div class="funnel-wrap">
+              <svg id="site-funnel" viewBox="0 0 720 224" role="img" aria-label="Recovery pipeline: identified $5,980, drafted $11,400, submitted $18,200, and $151,840 recovered cumulatively over five months"></svg>
             </div>
-            <div class="spark">
-              <svg viewBox="0 0 600 120" role="img" aria-label="Cumulative recovery curve rising from $16,240 in month one to $151,840 in month five">
-                <path id="spark-line" pathLength="1" d="M8,104 L154,86 L300,62 L446,36 L592,14" fill="none" stroke="#5C1F2D" stroke-width="2.5"/>
-                <circle cx="8" cy="104" r="3.5" fill="#5C1F2D"/><circle cx="154" cy="86" r="3.5" fill="#5C1F2D"/><circle cx="300" cy="62" r="3.5" fill="#5C1F2D"/><circle cx="446" cy="36" r="3.5" fill="#5C1F2D"/><circle cx="592" cy="14" r="3.5" fill="#5C1F2D"/>
-              </svg>
-              <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
-            </div>
-            <div class="foot"><span>paid straight to the practice by each payer</span><span>sample · synthetic data</span></div>
+            <div class="foot"><span>paid straight to the practice by each insurer</span><span>sample · synthetic data</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="reveal" id="how">
-      <h2>What we actually do</h2>
+    <section class="reveal" id="pain">
+      <h2>Three ways insurers keep your money</h2>
+      <div class="pain">
+        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract still posts as paid. No alert fires, so nobody looks.</p></div>
+        <div><b>Denied for fixable reasons.</b><p>Missing information, an authorization that was on file, a timely-filing dispute with proof. Correctable, rarely corrected.</p></div>
+        <div><b>Then the window closes.</b><p>Dispute rights run 90 to 180 days. Whatever nobody chased is gone for good.</p></div>
+      </div>
+    </section>
+
+    <section class="reveal band" id="how">
+      <h2>What we do</h2>
 
       <div class="row">
         <div class="txt">
-          <h3>We read your remittances, line by line.</h3>
-          <p>Every paid claim, against the contracted rate for that code, payer by payer. A person on our team does this, with software doing the arithmetic. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to. One $180 shortfall never pays for the hour. The four hundred like it do.</p>
+          <h3>Find the underpayments and denials.</h3>
+          <p>We check every remittance line against your contracted rate, then match what we find against our library of insurer behaviors: the light fee schedule, the habitual downcode, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it.</p>
         </div>
         <div>
           <div class="frame" aria-label="Sample remittance check">
@@ -721,158 +777,71 @@
 
       <div class="row flip">
         <div class="txt">
-          <h3>You get the findings, in dollars.</h3>
-          <p>Which payer, which codes, which claims, how much, and what's still inside the dispute window. Underpayment isn't random. It's the same payer rule firing across thousands of claims, so one confirmed shortfall usually points to hundreds like it. You see the list and decide what we pursue.</p>
-          <ul>
-            <li>The light fee schedule. Rates loaded a few percent under contract.</li>
-            <li>The misapplied bundling edit. Applied where your contract says no.</li>
-            <li>The habitual downcode. Same procedure, lower code, same pretext.</li>
-          </ul>
+          <h3>Show you the number.</h3>
+          <p>Which insurer, which codes, how much, and what's still inside the dispute window. You decide what we pursue.</p>
         </div>
-        <div class="frame" aria-label="Sample findings by pattern">
-          <div class="bar"><i></i><i></i><i></i><span>Findings · by pattern · 12 months</span></div>
+        <div class="frame" aria-label="Sample diagnostic: where the recoverable dollars come from">
+          <div class="bar"><i></i><i></i><i></i><span>Diagnostic report · where the dollars come from</span></div>
           <div class="body">
-            <div class="pbars">
-              <div><span><b>Arthroscopy paid below contract</b><span class="cap">CO-45 · knee &amp; shoulder · Coastal, Atlantic Mutual, Sunstate</span><div class="track"><div class="fill" style="--w:100%"></div></div></span><span><span class="amt num">$48.2K</span><span class="rate">47% of claims</span></span></div>
-              <div><span><b>Level-4 visits downcoded to level 3</b><span class="cap">99214 → 99213 · Atlantic Mutual</span><div class="track"><div class="fill" style="--w:66%"></div></div></span><span><span class="amt num">$31.6K</span><span class="rate">34% of claims</span></span></div>
-              <div><span><b>Same-day procedure bundled into the visit</b><span class="cap">CO-97 · modifier 25 · Sunstate HMO</span><div class="track"><div class="fill" style="--w:46%"></div></div></span><span><span class="amt num">$22.4K</span><span class="rate">38% of claims</span></span></div>
-              <div><span><b>Denied for no prior auth on file</b><span class="cap">CARC 197 · Coastal Health Plan</span><div class="track"><div class="fill" style="--w:39%"></div></div></span><span><span class="amt num">$18.9K</span><span class="rate">22% of claims</span></span></div>
-              <div><span><b>Workers' comp paid off the state fee schedule</b><span class="cap">Meridian Work Comp · statutory rate</span><div class="track"><div class="fill" style="--w:30%"></div></div></span><span><span class="amt num">$14.3K</span><span class="rate">29% of claims</span></span></div>
+            <div class="flow-wrap">
+              <svg id="site-flow" viewBox="0 0 720 380" role="img" aria-label="Flow of $247,800 recoverable: underpayments $162,300 and non-clinical denials $85,500, splitting into six payer-behavior reasons"></svg>
             </div>
-            <div class="foot"><span>a high rate means a rule, not a slip</span><span>sample · synthetic data</span></div>
+            <div class="foot"><span>every dollar traced to the reason it went unpaid</span><span>sample · synthetic data</span></div>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="txt">
-          <h3>Then the money lands, and you watch it land.</h3>
-          <p>We build each reopening, correction, or appeal with the contract language attached, and it goes out through the channels you already use. Every recovered dollar shows against the claim it came from. Payers keep paying you exactly as they do today. Our fee settles out of what arrives, and only that. You'll never see an invoice.</p>
-          <p class="more"><a href="/how-it-works/">The full process, with the sample reports →</a></p>
+          <h3>Conquer the systemic, persistent trends.</h3>
+          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We pursue each pattern as one case through the insurer's own process, and the money lands in your account.</p>
+          <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
         </div>
         <div>
-          <div class="frame" aria-label="Sample recovery statement">
-            <div class="bar"><i></i><i></i><i></i><span>Recovery statement · September</span></div>
+          <div class="frame" aria-label="Sample recovery: monthly deposits and the cumulative total">
+            <div class="bar"><i></i><i></i><i></i><span>Recovered · five months</span></div>
             <div class="body">
-              <table>
-                <thead><tr><th>Date</th><th>Claim</th><th>Payer</th><th class="r">Recovered</th></tr></thead>
-                <tbody>
-                <tr><td>Sep 3</td><td>29827 · 14 claims</td><td>Coastal Health Plan</td><td class="r num">$3,248</td></tr>
-                <tr><td>Sep 9</td><td>99214 · 26 claims</td><td>Atlantic Mutual</td><td class="r num">$1,144</td></tr>
-                <tr><td>Sep 12</td><td>23430 · 3 claims</td><td>Coastal Health Plan</td><td class="r num">$6,420</td></tr>
-                <tr><td>Sep 19</td><td>20610 · 19 claims</td><td>Sunstate HMO</td><td class="r num">$3,192</td></tr>
-                <tr><td>Sep 26</td><td>WC fee schedule · 9 claims</td><td>Meridian Work Comp</td><td class="r num">$4,936</td></tr>
-                </tbody>
-              </table>
-              <div class="total"><span class="val num" data-to="18940" data-prefix="$">$0</span><span class="cap">recovered this month, paid by the payers directly to the practice</span></div>
-              <div class="foot"><span>every line traces to a claim and a proof of submission</span><span>sample · synthetic data</span></div>
+              <div class="kpi">
+                <div><span class="lbl">Recovered to date</span><span class="val num" data-to="151840" data-prefix="$">$0</span></div>
+                <div><span class="lbl">This month</span><span class="val num" data-to="40400" data-prefix="$">$0</span></div>
+              </div>
+              <div class="accum-wrap">
+                <svg id="site-accum" viewBox="0 0 720 300" role="img" aria-label="Monthly recovered deposits of $16,240, $24,900, $31,600, $38,700 and $40,400, accumulating to $151,840 over five months"></svg>
+              </div>
+              <div class="foot"><span>each deposit lands in the practice's own account</span><span>sample · synthetic data</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="reveal" id="problem">
-      <h2>Why the money is there</h2>
-      <div class="statrow">
-        <div class="stat main"><span class="val num">30%</span><span class="sub">of one year's net payer revenue was underpaid or denied for fixable reasons at a four-physician orthopedic practice in Miami-Dade. 1,892 claims, checked line by line.</span></div>
-        <div class="stat"><span class="val num">1–3%</span><span class="sub">what the industry average says commercial payers underpay. It's held down by hospital systems with teams watching.</span></div>
-        <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
-      </div>
-      <p><b>Yes, thirty percent.</b> An independent practice usually has nobody checking finished business against contracted rates, and payers make a short payment look like a paid claim. It's pure margin, too. The care was already delivered and the staff already paid.</p>
-      <p>And there's a clock. Dispute windows run 90 to 180 days. Whatever sits unnoticed past that is gone for good.</p>
-    </section>
-
-    <section class="reveal" id="bet">
-      <h2>The bet we're making</h2>
-      <div class="bet">
-        <div class="bet-grid">
-          <div>
-            <h3>If we find nothing</h3>
-            <p>You've spent an hour and paid nothing. And you'll know, from your own payment records, that your payers are paying your contracts correctly. That's worth knowing.</p>
-          </div>
-          <div>
-            <h3>If we find money</h3>
-            <p>You pay only out of dollars that actually arrive. No retainer, no hourly fees, no invoice you have to gamble on.</p>
-          </div>
-        </div>
-        <p class="bet-close">We carry the risk of being wrong. That's exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same way. Worst case, you get a free expert read of your payment data.</p>
-      </div>
-      <div class="cta-mid">
-        <p class="lead">Find out which side of that bet your data lands on.</p>
-        <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
+    <section class="reveal" id="numbers">
+      <div class="kpis">
+        <div><span class="val num">30%</span><span class="sub">of one year's net insurance revenue found recoverable at a four-physician orthopedic practice in Miami-Dade</span></div>
+        <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
+        <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
       </div>
     </section>
 
-    <section class="reveal">
-      <h2>Who this is for, and who it isn't</h2>
-      <div class="fornot">
-        <div class="for">
-          <h3>For</h3>
-          <ul>
-            <li>Independent, procedure-heavy specialty practices: orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers</li>
-            <li>Typically 3 to 15 physicians, running without a revenue-cycle department</li>
-            <li>Ambulatory surgery centers. ASC claims carry exactly the complexity where underpayment hides</li>
-          </ul>
-        </div>
-        <div class="not">
-          <h3>Not for</h3>
-          <ul>
-            <li>Hospitals and health systems with revenue-cycle teams. Good vendors already serve them</li>
-            <li>Practices looking to outsource billing. We don't do billing</li>
-          </ul>
-        </div>
+    <section class="reveal" id="faq">
+      <h2>Questions we get</h2>
+      <div class="faq">
+        <details><summary>What is denial recovery?</summary><p>Getting paid on claims an insurer denied for a reason that can be fixed: missing information, an authorization that was on file, a timely-filing dispute you can prove. We build the corrected claim or the appeal, it goes back through the insurer's own process, and the money posts to your account. Clinical denials, where the insurer disputes medical necessity, are a different job and mostly not ours.</p></details>
+        <details><summary>Why don't billing teams make more effort to recover denials?</summary><p>Because their day is keeping new claims moving, and a denied or short-paid claim looks finished. Working one $180 shortfall takes an hour and never pays for itself. It only pays when someone finds the four hundred claims that share the pattern and pursues them together. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to.</p></details>
+        <details><summary>What does it cost?</summary><p>Nothing upfront. We work on contingency: our fee is a percentage of what actually arrives, set in the engagement letter, so we only do well when you do. The diagnostic is free either way, and if it finds nothing, you've confirmed from your own data that your insurers are paying your contracts. That's worth knowing.</p></details>
+        <details><summary>Does anything change for my billing team?</summary><p>No. We work from read-only access to your remittances under a signed business associate agreement. Once you approve the findings, we file the appeals and reconsiderations ourselves, as your authorized representative, through each insurer's own dispute process. Your billers keep their day. Insurers keep paying you exactly as they do today. We never receive or hold your money.</p></details>
+        <details><summary>Is this a collections agency?</summary><p>No. Nothing we do touches patients or patient balances. We work on the insurer side only, through the reconsideration and appeal processes your contracts already provide. We don't practice law.</p></details>
+        <details><summary>Why haven't I heard of you?</summary><p>Because we're a boutique. We work in the background for a small number of practices we choose carefully, and we grow by referral from the physicians we already work with. The free diagnostic is how we decide, together, whether yours should be one of them.</p></details>
+        <details><summary>Who do I actually deal with?</summary><p>The same two or three people from the first call through the last dollar. No handoff to an offshore team, no ticket queue. Clearia, Inc. is a Florida corporation based in Miami.</p></details>
       </div>
-      <p>We do one job. Find what payers underpaid or wrongly denied, and get it back.</p>
-      <p class="more"><a href="/who-we-serve/">More on who we serve, including the note for your administrator →</a></p>
     </section>
-
-
-
-    <section class="reveal" id="about">
-      <h2>About Clearia, for the skeptic</h2>
-      <div class="aboutgrid">
-        <div>
-          <h3>A firm, not a software product</h3>
-          <p>People do this work. Someone on our team reads your remittances line by line, finds what was paid short and what was denied for a fixable reason, builds each package, and stays on the payer until the money lands. Finding it is the easy half. Getting it paid is the job. There is software behind it, plenty of it, but you never install anything or learn a dashboard. You talk to the person doing the work.</p>
-          <h3>Small, Florida, and picky about engagements</h3>
-          <p>Clearia, Inc. is a Florida corporation based in Miami. We work with independent specialty practices in South Florida first, because payer rules, workers' comp fee schedules, and appeal deadlines are state-specific and we know Florida's cold. We take an engagement only when your own data shows real recoverable dollars. If it doesn't, we tell you that and stop.</p>
-          <h3>What we will not do</h3>
-          <ul>
-            <li>Touch your billing, your posting, or your payer contracts.</li>
-            <li>Receive or hold any of your money. Payers keep paying you the same way they do today.</li>
-            <li>Send anything to a payer your team hasn't approved.</li>
-            <li>Ask for patient data by email. Everything runs under a signed business associate agreement with read-only access.</li>
-          </ul>
-        </div>
-        <div class="qa">
-          <b>"Why haven't I heard of you?"</b>
-          <p>Because we're new and small, and we've chosen to grow one practice at a time in one region rather than advertise nationally. That's also why the diagnostic is free: it's how we earn the right to the engagement.</p>
-          <b>"Is this a collections agency?"</b>
-          <p>No. Nothing we do touches patients or patient balances. We work on the payer side only, through the reconsideration and appeal processes your contracts already provide.</p>
-          <b>"What's the catch on the free diagnostic?"</b>
-          <p>There isn't one, and here's the honest logic. Most practices that see the number in their own data want it recovered, so the diagnostic pays for itself often enough. When it shows nothing, you get a clean read of your payers and we move on.</p>
-          <b>"Who do I actually deal with?"</b>
-          <p>The same two or three people from the first call through the last dollar. No handoff to an offshore team, no ticket queue.</p>
-        </div>
-      </div>
-      <p class="more"><a href="/about/">More about how we work →</a></p>
-    </section>
-
-    <div class="standards reveal" aria-label="Standards">
-      <div><span class="k">Business associate</span>Every engagement runs under a HIPAA business associate agreement. No patient data by email, ever.</div>
-      <div><span class="k">Florida corporation</span>Clearia, Inc. is based in Miami and works with Florida practices and Florida payer rules first.</div>
-      <div><span class="k">Your money stays yours</span>Payers keep paying you exactly as they do today. We never receive, hold, or redirect funds.</div>
-      <div><span class="k">Administrative only</span>Reopenings, corrections, and appeals through each payer's own process. We don't practice law.</div>
-    </div>
 
     <section class="closing reveal">
-      <h2>The next step</h2>
-      <p class="close-line">Find out what your payers kept. In dollars, from your own payment records.</p>
-      <p>The diagnostic is free, takes about an hour of your team's time, and there's no obligation afterward.</p>
+      <h2>Find out what your insurers kept.</h2>
+      <p>Free diagnostic. About an hour of your team's time. No obligation.</p>
       <div class="cta-row">
         <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
-        <span class="cta-alt">or write to <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
+        <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
       </div>
     </section>
 
@@ -885,6 +854,8 @@
         <a href="/the-diagnostic/">The diagnostic</a>
         <a href="/about/">About</a>
         <a href="/notes/">Notes on payer behavior</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
       </nav>
       <span class="foot-fine">Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a> · <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
     </footer>
@@ -895,6 +866,184 @@
     <a class="contact-btn" href="/the-diagnostic/#request" tabindex="-1">Request the free diagnostic</a>
   </div>
 
+  <script>
+    (function () {
+      var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function svgKit(svg) {
+        var NS = 'http://www.w3.org/2000/svg', steps = [], PROP = { opacity: 'opacity', transform: 'transform' };
+        function el(tag, attrs, parent) { var n = document.createElementNS(NS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); (parent || svg).appendChild(n); return n; }
+        function fx(n, init, fin, delay, dur) {
+          if (RM) return n;
+          for (var k in init) n.style[k] = init[k];
+          steps.push(function () {
+            n.style.transition = Object.keys(fin).map(function (k) { return PROP[k] + ' ' + (dur || 550) + 'ms cubic-bezier(0,0,0.38,0.9) ' + delay + 'ms'; }).join(', ');
+            for (var k2 in fin) n.style[k2] = fin[k2];
+          });
+          return n;
+        }
+        return { el: el, fx: fx, steps: steps, go: function () { steps.forEach(function (f) { f(); }); } };
+      }
+      function buildFlow() {
+        var svg = document.getElementById('site-flow');
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
+        var K = svgKit(svg), el = K.el, fx = K.fx;
+        var M = (svg.parentElement.clientWidth || 720) < 560;
+        var W = M ? 400 : 720, H = M ? 440 : 380, padT = M ? 22 : 24;
+        var sX = 2, sW = M ? 92 : 128, cX = M ? 150 : 280, cW = M ? 104 : 190, rX = M ? 390 : 700, rW = M ? 8 : 12, lPad = 6;
+        var F = M ? { num: 16, tag: 8.5, cat: 10.5, catAmt: 10.5, rsn: 10.5 } : { num: 21, tag: 10.5, cat: 12.5, catAmt: 12.5, rsn: 12 };
+        var total = 247800, innerH = H - padT - 8, gC = 16, gR = M ? 7 : 8;
+        var cats = [
+          { id: 'up', name: 'Underpayments', lines: ['Underpayments'], amt: 162300, c: '#14171F' },
+          { id: 'dn', name: 'Non-clinical denials', lines: M ? ['Non-clinical', 'denials'] : ['Non-clinical denials'], amt: 85500, c: '#5C1F2D' }
+        ];
+        var reasons = [
+          ['up', 'Contractual', 92400, '#14171F'], ['up', 'Downcoding', 41800, '#3a3340'],
+          ['up', 'Bundling, pricing, other', 28100, '#5a4450'],
+          ['dn', 'Authorization', 28900, '#5C1F2D'], ['dn', 'Coding / data', 21300, '#723240'],
+          ['dn', 'Timely filing, eligibility, other', 35300, '#8a4f57']
+        ];
+        var s = (innerH - gR * (reasons.length - 1)) / total;
+        var vOff = (gR * (reasons.length - 1) - gC) / 2;
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+        function ribbon(x0, ya, yb, x1, y1a, y1b) { var mx = (x0 + x1) / 2;
+          return 'M' + x0 + ',' + ya + 'C' + mx + ',' + ya + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a + 'L' + x1 + ',' + y1b + 'C' + mx + ',' + y1b + ' ' + mx + ',' + yb + ' ' + x0 + ',' + yb + 'Z'; }
+        var cy = padT + vOff; cats.forEach(function (c) { c.y = cy; c.h = c.amt * s; cy += c.h + gC; });
+        var ry = padT;
+        var rs = reasons.map(function (r) { var o = { cat: r[0], name: r[1], amt: r[2], c: r[3], y: ry, h: r[2] * s }; ry += o.h + gR; return o; });
+        var srcH = cats[0].h + cats[1].h, srcY = padT + vOff + gC / 2;
+        var defs = el('defs', {});
+        var wr1 = el('rect', { x: 0, y: 0, width: RM ? W : 0, height: H }, el('clipPath', { id: 'w1' }, defs));
+        var wr2 = el('rect', { x: 0, y: 0, width: RM ? W : 0, height: H }, el('clipPath', { id: 'w2' }, defs));
+        if (!RM) K.steps.push(function () {
+          wr1.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 250ms'; wr1.style.width = W + 'px';
+          wr2.style.transition = 'width 750ms cubic-bezier(0,0,0.38,0.9) 1000ms'; wr2.style.width = W + 'px';
+        });
+        function grad(id, color, x1, x2, o1, o2) {
+          var g = el('linearGradient', { id: id, gradientUnits: 'userSpaceOnUse', x1: x1, y1: 0, x2: x2, y2: 0 }, defs);
+          el('stop', { offset: '0', 'stop-color': color, 'stop-opacity': o1 }, g);
+          el('stop', { offset: '0.5', 'stop-color': color, 'stop-opacity': (o1 * 0.35).toFixed(3) }, g);
+          el('stop', { offset: '1', 'stop-color': color, 'stop-opacity': o2 }, g);
+          return 'url(#' + id + ')';
+        }
+        var g1 = el('g', { 'clip-path': 'url(#w1)' }), g2 = el('g', { 'clip-path': 'url(#w2)' });
+        var cur = srcY;
+        cats.forEach(function (c, i) { el('path', { d: ribbon(sX + sW, cur, cur + c.h, cX, c.y, c.y + c.h), fill: grad('gs' + i, c.c, sX + sW, cX, 0.32, 0.12) }, g1); cur += c.h; });
+        var catCur = {}; cats.forEach(function (c) { catCur[c.id] = c.y; });
+        rs.forEach(function (r, i) { el('path', { d: ribbon(cX + cW, catCur[r.cat], catCur[r.cat] + r.h, rX, r.y, r.y + r.h), fill: grad('gr' + i, r.c, cX + cW, rX, 0.5, 0.07) }, g2); catCur[r.cat] += r.h; });
+        function panel(x, y, w, h, color, delay, originLeft) {
+          var p = el('rect', { x: x, y: y, width: w, height: h, fill: color, 'fill-opacity': 0.12, rx: 3 });
+          var edge = el('rect', { x: x, y: y, width: 5, height: h, fill: color, rx: 2 });
+          [p, edge].forEach(function (n) { n.style.transformBox = 'fill-box'; n.style.transformOrigin = originLeft ? '0 50%' : 'center';
+            fx(n, { transform: originLeft ? 'scaleX(0)' : 'scaleY(0)' }, { transform: originLeft ? 'scaleX(1)' : 'scaleY(1)' }, delay, 480); });
+        }
+        panel(sX, srcY, sW, srcH, '#5C1F2D', 0, true);
+        var mid = srcY + srcH / 2;
+        var sNum = el('text', { x: sX + 12, y: mid - 2, 'font-family': 'Lora,Georgia,serif', 'font-size': F.num, fill: '#5C1F2D' });
+        sNum.textContent = '$247.8K'; fx(sNum, { opacity: 0 }, { opacity: 1 }, 150);
+        var sLbl = el('text', { x: sX + 12, y: mid + (M ? 14 : 18), 'font-family': 'Poppins,sans-serif', 'font-size': F.tag, 'letter-spacing': '0.12em', fill: '#5E5A50' });
+        sLbl.textContent = 'RECOVERABLE'; fx(sLbl, { opacity: 0 }, { opacity: 1 }, 250);
+        cats.forEach(function (c) {
+          panel(cX, c.y, cW, c.h, c.c, 650, false);
+          var lh = F.cat + 3, baseY = c.y + c.h / 2 - ((c.lines.length - 1) * lh) / 2 - 3;
+          c.lines.forEach(function (line, li) { var t1 = el('text', { x: cX + 14, y: baseY + li * lh, 'font-family': 'Poppins,sans-serif', 'font-size': F.cat, 'font-weight': 600, fill: '#14171F' }); t1.textContent = line; fx(t1, { opacity: 0 }, { opacity: 1 }, 900); });
+          var t2 = el('text', { x: cX + 14, y: baseY + c.lines.length * lh + 2, 'font-family': 'Lora,Georgia,serif', 'font-size': F.catAmt, fill: '#5E5A50' });
+          t2.textContent = '$' + (c.amt / 1000).toFixed(1) + 'K'; fx(t2, { opacity: 0 }, { opacity: 1 }, 1000);
+        });
+        rs.forEach(function (r, i) {
+          var d = 1350 + i * 70;
+          var rect = el('rect', { x: rX, y: r.y, width: rW, height: r.h, fill: r.c, rx: 2 });
+          rect.style.transformBox = 'fill-box'; rect.style.transformOrigin = 'center';
+          fx(rect, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 380);
+          var t = el('text', { x: rX - lPad, y: r.y + r.h / 2 + F.rsn / 3, 'text-anchor': 'end', 'font-family': 'Poppins,sans-serif', 'font-size': F.rsn, fill: '#14171F', stroke: '#F1EDE2', 'stroke-width': 3, 'paint-order': 'stroke', 'stroke-linejoin': 'round' });
+          t.textContent = r.name + ' ';
+          var ts = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); ts.setAttribute('fill', '#5E5A50'); ts.setAttribute('font-family', 'Lora,Georgia,serif'); ts.textContent = ' $' + (r.amt / 1000).toFixed(1) + 'K'; t.appendChild(ts);
+          fx(t, { opacity: 0, transform: 'translateX(8px)' }, { opacity: 1, transform: 'translateX(0px)' }, d + 80, 420);
+        });
+        svg.__go = K.go; return svg;
+      }
+      function buildFunnel() {
+        var svg = document.getElementById('site-funnel');
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
+        var K = svgKit(svg);
+        var stages = [
+          { label: 'Identified', amt: 5980, sub: 'live · not yet drafted', c: '#cbb7a8' },
+          { label: 'Drafted', amt: 11400, sub: 'live · in review', c: '#bd8d80' },
+          { label: 'Submitted', amt: 18200, sub: 'live · awaiting payer', c: '#9a5560' },
+          { label: 'Recovered', amt: 151840, sub: 'cumulative · five months', c: '#5C1F2D' }
+        ];
+        var N = (svg.parentElement.clientWidth || 720) < 560;
+        var W = 720, midY = N ? 96 : 100, maxHalf = 58, minHalf = 10, bandW = 72, pad = 96, fmax = stages[3].amt;
+        var FA = N ? 24 : 19, FL = N ? 19 : 16, FS = N ? 0 : 12.5;
+        function cx(i) { return pad + (W - 2 * pad) * (i / (stages.length - 1)); }
+        function half(v) { return minHalf + (v / fmax) * (maxHalf - minHalf); }
+        var spine = K.el('line', { x1: pad - 26, y1: midY, x2: W - pad + 26, y2: midY, stroke: '#C08768', 'stroke-opacity': 0.35, 'stroke-width': 2, pathLength: 1 });
+        if (!RM) { spine.style.strokeDasharray = 1; spine.style.strokeDashoffset = 1;
+          K.steps.push(function () { spine.style.transition = 'stroke-dashoffset 700ms cubic-bezier(0,0,0.38,0.9)'; spine.style.strokeDashoffset = 0; }); }
+        stages.forEach(function (s, i) {
+          var x = cx(i), h = half(s.amt), d = 250 + i * 160;
+          var band = K.el('rect', { x: x - bandW / 2, y: midY - h, width: bandW, height: 2 * h, rx: 12, fill: s.c });
+          band.style.transformBox = 'fill-box'; band.style.transformOrigin = 'center';
+          K.fx(band, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, d, 450);
+          var amt = K.el('text', { x: x, y: midY - h - 10, 'text-anchor': 'middle', 'font-family': 'Lora,Georgia,serif', 'font-size': FA, fill: '#14171F' });
+          amt.textContent = '$' + s.amt.toLocaleString('en-US'); K.fx(amt, { opacity: 0 }, { opacity: 1 }, d + 120, 400);
+          var lbl = K.el('text', { x: x, y: midY + maxHalf + 30, 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FL, 'font-weight': 500, fill: '#14171F' });
+          lbl.textContent = s.label; K.fx(lbl, { opacity: 0 }, { opacity: 1 }, d + 160, 400);
+          if (FS) { var sub = K.el('text', { x: x, y: midY + maxHalf + 47, 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FS, fill: '#5E5A50' });
+          sub.textContent = s.sub; K.fx(sub, { opacity: 0 }, { opacity: 1 }, d + 200, 400); }
+        });
+        svg.__go = K.go; return svg;
+      }
+      // money accumulating: monthly deposits as bars, cumulative total as a filled area drawn left to right
+      function buildAccum() {
+        var svg = document.getElementById('site-accum');
+        if (!svg || svg.__built) return svg;
+        svg.__built = true;
+        var K = svgKit(svg), el = K.el, fx = K.fx;
+        var N = (svg.parentElement.clientWidth || 720) < 560;
+        var W = 720, H = N ? 330 : 300, padL = 16, padR = 16, top = N ? 40 : 26, base = N ? 250 : 236;
+        var FT = N ? 22 : 14, FM = N ? 17 : 11.5, FD = N ? 16 : 11, FC = N ? 0 : 10.5;
+        var dep = [16240, 24900, 31600, 38700, 40400], cum = [], run = 0;
+        dep.forEach(function (d) { run += d; cum.push(run); });
+        var max = cum[cum.length - 1], n = dep.length, slot = (W - padL - padR) / n, bw = slot * 0.42;
+        function x(i) { return padL + slot * i + slot / 2; }
+        function y(v) { return base - (v / max) * (base - top); }
+        var defs = el('defs', {});
+        var clip = el('rect', { x: 0, y: 0, width: RM ? W : 0, height: H }, el('clipPath', { id: 'wa' }, defs));
+        if (!RM) K.steps.push(function () { clip.style.transition = 'width 1500ms cubic-bezier(0,0,0.38,0.9) 350ms'; clip.style.width = W + 'px'; });
+        el('line', { x1: padL, y1: base, x2: W - padR, y2: base, stroke: '#DAD5C8', 'stroke-width': 1 });
+        var g = el('g', { 'clip-path': 'url(#wa)' });
+        var pts = cum.map(function (v, i) { return x(i) + ',' + y(v); });
+        var area = 'M' + x(0) + ',' + base + ' L' + pts.join(' L') + ' L' + x(n - 1) + ',' + base + ' Z';
+        el('path', { d: area, fill: '#5C1F2D', 'fill-opacity': 0.13 }, g);
+        el('path', { d: 'M' + pts.join(' L'), fill: 'none', stroke: '#5C1F2D', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }, g);
+        dep.forEach(function (d, i) {
+          var bh = (d / max) * (base - top) * 1.0;
+          var r = el('rect', { x: x(i) - bw / 2, y: base - bh, width: bw, height: bh, fill: '#14171F', 'fill-opacity': 0.22, rx: 2 });
+          r.style.transformBox = 'fill-box'; r.style.transformOrigin = 'bottom center';
+          fx(r, { transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }, 150 + i * 220, 500);
+          var dot = el('circle', { cx: x(i), cy: y(cum[i]), r: 4, fill: '#5C1F2D' });
+          fx(dot, { opacity: 0 }, { opacity: 1 }, 500 + i * 300, 300);
+          var t = el('text', { x: x(i), y: y(cum[i]) - (N ? 16 : 12), 'text-anchor': 'middle', 'font-family': 'Lora,Georgia,serif', 'font-size': FT, fill: '#14171F' });
+          t.textContent = '$' + Math.round(cum[i] / 1000) + 'K'; fx(t, { opacity: 0 }, { opacity: 1 }, 600 + i * 300, 300);
+          var m = el('text', { x: x(i), y: base + (N ? 26 : 20), 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FM, fill: '#5E5A50' });
+          m.textContent = (N ? 'M' : 'Month ') + (i + 1);
+          var dl = el('text', { x: x(i), y: base + (N ? 50 : 40), 'text-anchor': 'middle', 'font-family': 'Poppins,sans-serif', 'font-size': FD, fill: '#14171F' });
+          dl.textContent = '+$' + (d / 1000).toFixed(1) + 'K'; fx(dl, { opacity: 0 }, { opacity: 1 }, 400 + i * 220, 300);
+        });
+        if (FC) { var cap = el('text', { x: padL, y: H - 6, 'font-family': 'Poppins,sans-serif', 'font-size': FC, fill: '#5E5A50' });
+        cap.textContent = 'bars: recovered each month · line: running total'; }
+        svg.__go = K.go; return svg;
+      }
+      window.runExhibit = function (root) {
+        [['#site-flow', buildFlow], ['#site-funnel', buildFunnel], ['#site-accum', buildAccum]].forEach(function (pair) {
+          var n = root.querySelector ? root.querySelector(pair[0]) : null;
+          if (n && !n.__started) { n.__started = true; pair[1](); requestAnimationFrame(function () { requestAnimationFrame(function () { if (n.__go) n.__go(); }); }); }
+        });
+      };
+    })();
+  </script>
   <script>
     (function () {
       var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -910,7 +1059,7 @@
           requestAnimationFrame(step);
         });
       };
-      window.addEventListener('load', function () { var h = document.querySelector('.hero'); if (h) setTimeout(function () { h.classList.add('in-view'); countUp(h); }, 250); });
+      window.addEventListener('load', function () { var h = document.querySelector('.hero'); if (h) setTimeout(function () { h.classList.add('in-view'); countUp(h); if (window.runExhibit) runExhibit(h); }, 250); });
     })();
   </script>
   <script>
@@ -925,6 +1074,7 @@
             if (e.isIntersecting) {
               e.target.classList.add('in-view');
               if (window.countUp) countUp(e.target);
+              if (window.runExhibit) runExhibit(e.target);
               if (e.target.classList.contains('exhibit') && typeof runExhibit === 'function') runExhibit(e.target);
               io.unobserve(e.target);
             }

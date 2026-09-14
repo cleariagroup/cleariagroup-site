@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <script>document.documentElement.classList.add('js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clearia — insurance underpayment recovery for independent medical practices</title>
-  <meta name="description" content="Recover the money your payers kept. Clearia audits your paid claims against your payer contracts, finds the underpayments — often a tenth of your profit or more — and gets them back. No upfront fee: we're paid only from what we recover.">
+  <title>Clearia: insurance underpayment recovery for independent medical practices</title>
+  <meta name="description" content="Recover the money your payers kept. Clearia audits your paid claims against your payer contracts, finds the underpayments (often a tenth of your profit, sometimes more) and gets them back. No upfront fee. We're paid only from what we recover.">
   <link rel="canonical" href="https://cleariagroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Insurance underpayment recovery for independent medical practices | Clearia">
-  <meta property="og:description" content="Recover the money your payers kept. Underpaid and downcoded claims close at zero balance, looking paid — Clearia finds them and gets the money back, paid only from what we recover.">
+  <meta property="og:description" content="Recover the money your payers kept. Underpaid and downcoded claims close at zero balance and look paid. Clearia finds them and gets the money back. Paid only from what we recover.">
   <meta property="og:url" content="https://cleariagroup.com/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -31,6 +31,7 @@
     "@graph": [
       {
         "@type": "ProfessionalService",
+      "telephone": "+1-786-705-7865",
         "@id": "https://cleariagroup.com/#org",
         "name": "Clearia",
         "legalName": "Clearia, Inc.",
@@ -95,6 +96,7 @@
     }
     .masthead .brand a { color: inherit; text-decoration: none; }
     .brand span { color: var(--accent); }
+    .masthead .mast-contact a { color: inherit; text-decoration: none; }
     .masthead .mast-contact {
       font-size: 0.85rem; color: var(--muted); text-decoration: none;
       padding: 0.6rem 0; /* tap comfort */
@@ -358,7 +360,7 @@
     ul.patterns { margin: 0.2rem 0 1.1rem; padding: 0; list-style: none;
                   display: flex; flex-direction: column; gap: 0.55rem; }
     ul.patterns li { padding-left: 1.3rem; position: relative; max-width: 62ch; }
-    ul.patterns li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+    ul.patterns li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
 
     /* for / not-for columns */
     .fornot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 0 0 1.2rem; }
@@ -369,13 +371,13 @@
     .fornot ul { margin: 0; padding: 0; list-style: none;
                  display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; line-height: 1.55; }
     .fornot li { padding-left: 1.15rem; position: relative; }
-    .fornot li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+    .fornot li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
     @media (max-width: 640px) { .fornot { grid-template-columns: 1fr; } }
 
     ul.standards { margin: 0 0 1.4rem; padding: 0; list-style: none;
                    display: flex; flex-direction: column; gap: 0.8rem; }
     ul.standards li { padding-left: 1.3rem; position: relative; max-width: 62ch; }
-    ul.standards li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+    ul.standards li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
 
     .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--hairline); }
     .faq-item:last-child { border-bottom: 0; }
@@ -511,6 +513,80 @@
     .standards div { font-size: 0.84rem; line-height: 1.45; }
     .standards .k { display: block; font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.2rem; }
     @media (max-width: 760px) { .standards { grid-template-columns: 1fr 1fr; } }
+
+    /* about clearia (for the skeptic) */
+    .aboutgrid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.6rem 2.4rem; margin-top: 0.4rem; }
+    .aboutgrid h3 { font-family: var(--serif); font-size: 1.08rem; margin: 0 0 0.4rem; }
+    .aboutgrid p { margin: 0 0 0.9rem; max-width: 52ch; }
+    .aboutgrid ul { margin: 0; padding-left: 1.1rem; }
+    .aboutgrid li { margin-bottom: 0.45rem; }
+    .aboutgrid .qa { border-left: 2px solid var(--ink); padding-left: 1rem; }
+    .aboutgrid .qa b { display: block; margin-bottom: 0.15rem; }
+    .aboutgrid .qa p { margin-bottom: 1rem; }
+    @media (max-width: 700px) { .aboutgrid { grid-template-columns: 1fr; } }
+
+    /* ---------- landing v2: wide scroll story ---------- */
+    .wrap { max-width: 1060px; }
+    .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2.4rem 3.2rem; align-items: center; }
+    .hero .lede { max-width: 56ch; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+    section > p, section .more { max-width: 62ch; }
+    .row { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem 3.4rem; align-items: center; margin-top: 1.2rem; }
+    .row.flip > .txt { order: 2; } .row.flip > .frame { order: 1; }
+    .row .txt h3 { font-family: var(--serif); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.7rem); line-height: 1.2; margin: 0 0 0.7rem; }
+    .row .txt p { max-width: 44ch; }
+    .row .txt ul { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.93rem; }
+    .row .txt li { margin-bottom: 0.35rem; }
+    @media (max-width: 860px) { .row, .row.flip { grid-template-columns: 1fr; } .row.flip > .txt { order: 1; } .row.flip > .frame { order: 2; } }
+    .row + .row { margin-top: clamp(2.6rem, 6vw, 4rem); }
+
+    /* product frame */
+    .frame { background: var(--card); border: 1px solid var(--hairline); border-radius: 8px;
+             box-shadow: 0 18px 40px rgba(20,23,31,0.10), 0 2px 6px rgba(20,23,31,0.06); overflow: hidden; font-size: 0.82rem; }
+    .frame .bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--hairline); background: rgba(20,23,31,0.03); }
+    .frame .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--hairline); display: inline-block; }
+    .frame .bar span { margin-left: 0.4rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .frame .body { padding: 0.9rem 1rem 1rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .frame .big { font-family: var(--serif); font-size: 1.9rem; line-height: 1.05; }
+    .frame .cap { font-size: 0.72rem; color: var(--muted); }
+    .frame table { width: 100%; border-collapse: collapse; margin-top: 0.4rem; font-variant-numeric: tabular-nums; }
+    .frame th { text-align: left; font-weight: 500; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0.25rem 0.35rem; border-bottom: 1px solid var(--ink); }
+    .frame td { padding: 0.42rem 0.35rem; border-bottom: 1px solid var(--hairline); white-space: nowrap; }
+    .frame td.r, .frame th.r { text-align: right; }
+    .frame td.neg { color: var(--accent); font-weight: 600; }
+    .frame .tag { display: inline-block; border: 1px solid var(--ink); border-radius: 999px; padding: 0.1rem 0.5rem; font-size: 0.66rem; letter-spacing: 0.04em; }
+    .frame .tag.hot { background: var(--ink); color: var(--panel-text); border-color: var(--ink); }
+    .frame .bars { display: grid; gap: 0.5rem; margin: 0.8rem 0 0.2rem; }
+    .frame .bars div { display: grid; grid-template-columns: 11rem 1fr 4.6rem; align-items: center; gap: 0.6rem; font-size: 0.78rem; }
+    .frame .bars b { font-weight: 500; }
+    .frame .bars .track { height: 8px; background: rgba(20,23,31,0.08); border-radius: 4px; overflow: hidden; }
+    .frame .bars .fill { height: 100%; background: var(--ink); }
+    .frame .bars .fill.acc { background: var(--accent); }
+    .frame .bars .amt { text-align: right; font-family: var(--serif); }
+    .frame .foot { display: flex; justify-content: space-between; margin-top: 0.7rem; font-size: 0.7rem; color: var(--muted); }
+    .frame-note { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin: 0.5rem 0 0; }
+    @media (max-width: 480px) { .frame td, .frame th { padding-left: 0.2rem; padding-right: 0.2rem; } .frame .bars div { grid-template-columns: 7rem 1fr 4rem; } }
+
+    /* recovery frame pieces (ported) */
+    .stats3 { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 0.6rem; }
+    .stats3 .stat { padding: 0.7rem 0.8rem; background: var(--canvas); }
+    .stats3 .lbl { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+    .stats3 .val { font-size: 1.35rem; }
+    .stats3 .sub { font-size: 0.68rem; }
+    @media (max-width: 640px) { .stats3 { grid-template-columns: 1fr 1fr; } .stats3 .stat.main { grid-column: 1 / -1; } }
+    .spark { margin-top: 0.8rem; }
+    .spark svg { display: block; width: 100%; height: auto; }
+    .spark .axis { display: flex; justify-content: space-between; font-size: 0.66rem; color: var(--muted); margin-top: 0.2rem; }
+    .js #spark-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1300ms var(--ease-entrance) 150ms; }
+    .js .reveal.in-view #spark-line { stroke-dashoffset: 0; }
+    .js .spark circle, .js .spark text { opacity: 0; transition: opacity 300ms ease 1200ms; }
+    .js .reveal.in-view .spark circle, .js .reveal.in-view .spark text { opacity: 1; }
+    .pipe { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+    .pipe .stage { flex: 1; background: var(--canvas); border: 1px solid var(--hairline); border-top: 3px solid var(--sc); padding: 0.5rem 0.6rem; }
+    .pipe .amt { font-family: var(--serif); font-size: 0.95rem; }
+    .pipe .lbl { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+    @media (max-width: 640px) { .pipe { display: grid; grid-template-columns: 1fr 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .js #spark-line, .js .spark circle, .js .spark text { transition: none; stroke-dashoffset: 0; opacity: 1; } }
   </style>
 </head>
 <body>
@@ -528,7 +604,7 @@
 
     <div class="masthead">
       <p class="brand"><a href="/">Clearia<span>.</span></a></p>
-      <a class="mast-contact" href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a>
+      <span class="mast-contact"><a href="tel:+17867057865">(786) 705-7865</a> · <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
     </div>
     <nav class="site-nav" aria-label="Primary">
       <a href="/" aria-current="page">Home</a>
@@ -539,12 +615,34 @@
     </nav>
 
     <div class="hero">
-      <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
-      <h1>Recover the money your payers kept.</h1>
-      <p class="lede">Insurers quietly keep part of what your practice already earned — a downcoded procedure here, an underpaid code there, every claim closed at a zero balance, looking paid. Clearia finds it in your paid claims, shows it to you in dollars, and gets it back. <b>No upfront fee, no software, no change to how you bill. We're paid only from what we actually recover.</b></p>
-      <div class="cta-row" id="hero-cta">
-        <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
-        <span class="cta-alt">or write to contact@cleariagroup.com</span>
+      <div>
+        <p class="eyebrow">Underpayment recovery for independent specialty practices</p>
+        <h1>Recover the money your payers kept.</h1>
+        <p class="lede">Most practices we look at have money sitting inside claims that already show as paid. In one full-year audit it came to 30 percent of net payer revenue. We find it in your remittance data, show you the number, and go get it back. <b>No upfront fee, no software to buy, and your billing doesn't change.</b></p>
+        <div class="cta-row" id="hero-cta">
+          <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
+          <span class="cta-alt">or write to contact@cleariagroup.com</span>
+        </div>
+      </div>
+      <div>
+        <div class="frame" aria-label="Sample diagnostic summary">
+          <div class="bar"><i></i><i></i><i></i><span>Diagnostic report · 12 months</span></div>
+          <div class="body">
+            <div class="big num">$247,800</div>
+            <div class="cap">recoverable, traced to the reason each dollar went unpaid</div>
+            <div class="bars">
+              <div><b>Paid under contract</b><div class="track"><div class="fill acc" style="width:65%"></div></div><span class="amt num">$162,300</span></div>
+              <div><b>Denied, fixable</b><div class="track"><div class="fill" style="width:35%"></div></div><span class="amt num">$85,500</span></div>
+            </div>
+            <table>
+              <tr><th>Payer</th><th class="r">Claims</th><th class="r">Recoverable</th><th class="r">Window left</th></tr>
+              <tr><td>Payer A</td><td class="r num">214</td><td class="r num">$61,400</td><td class="r num">142 days</td></tr>
+              <tr><td>Payer B</td><td class="r num">168</td><td class="r num">$48,200</td><td class="r num">96 days</td></tr>
+              <tr><td>Payer C</td><td class="r num">131</td><td class="r num">$37,900</td><td class="r num">61 days</td></tr>
+            </table>
+            <div class="foot"><span>1,892 claims checked</span><span>sample · synthetic data</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -558,68 +656,119 @@
     <section class="reveal" id="problem">
       <h2>The money nobody is watching</h2>
       <div class="statrow">
-        <div class="stat"><span class="val num">1–3%</span><span class="sub">of net revenue underpaid by commercial payers — the industry average</span></div>
-        <div class="stat main"><span class="val num">6%</span><span class="sub">what one $20M practice found when it actually checked</span></div>
+        <div class="stat main"><span class="val num">30%</span><span class="sub">of one year's net payer revenue was underpaid or denied for fixable reasons at a four-physician orthopedic practice in Miami-Dade. 1,892 claims, checked line by line.</span></div>
+        <div class="stat"><span class="val num">1–3%</span><span class="sub">what the industry average says commercial payers underpay. It's held down by hospital systems with teams watching.</span></div>
         <div class="stat"><span class="val num">90–180 days</span><span class="sub">until each underpaid claim becomes unrecoverable</span></div>
       </div>
-      <p><b>That average includes</b> hospital systems with entire teams watching for it. Independent practices, where nobody watches, sit at the exposed end of the range.</p>
-      <p><b>We've seen what checking turns up:</b> one $20M independent practice ran the audit on its own data — with us in the room — and found 6 percent.</p>
-      <p><b>And it's pure margin.</b> Recovered underpayment has no cost attached — no staff time, no supplies, no overhead; the care was already delivered. At typical practice margins, the conservative end of the range equals <b>a tenth of your profit</b>. At six percent, it can be a third.</p>
-      <p>Each underpaid claim closes at zero balance, so no alert fires. And payer dispute windows run out in 90 to 180 days — what stays unnoticed long enough becomes unrecoverable, permanently.</p>
-      <p class="more"><a href="/how-it-works/">How we find it — the full process, with sample reports →</a></p>
+      <p><b>Yes, thirty percent.</b> An independent practice usually has nobody checking finished business against contracted rates, and payers make a short payment look like a paid claim. It's pure margin, too. The care was already delivered and the staff already paid.</p>
+      <p>And there's a clock. Dispute windows run 90 to 180 days. Whatever sits unnoticed past that is gone for good.</p>
     </section>
-
-    <section class="reveal">
-      <h2>Why good billing teams miss it</h2>
-      <p>This is not a gap in your team's work. A biller's job is keeping claims moving — and payer-side shortfalls are built to look like finished business. Catching them means checking every remittance line against the contracted rate for that code, payer by payer, on claims that show a zero balance.</p>
-      <p>No practice of 3 to 15 physicians staffs that job. And chasing a single $180 shortfall never pays for the hour it takes — it only becomes worth doing when someone finds the four hundred claims that follow the same pattern and pursues them as one case. That is the job we built Clearia to do.</p>
-    </section>
-
 
     <section class="reveal" id="how">
       <h2>How it works</h2>
-      <ol class="how">
-        <li><span class="n">1</span><b>Free diagnostic</b><p>From records you already have, we audit what each payer paid against your contracted rates.</p><span class="t">about an hour of your team's time</span></li>
-        <li><span class="n">2</span><b>Findings, in dollars</b><p>Which payer, which codes, which claims, how much, and what is still inside the dispute window.</p><span class="t">you decide what we pursue</span></li>
-        <li><span class="n">3</span><b>Recovery</b><p>We build the packages, your billers submit them, and we report every dollar as it lands.</p><span class="t">fee only from recovered dollars</span></li>
-      </ol>
-      <p class="more"><a href="/how-it-works/">The full process, with sample reports →</a></p>
-    </section>
 
-    <section class="reveal">
-      <h2>We know the playbook</h2>
-      <p>Here's what makes recovery possible: <b>underpayment isn't random — it's systematic.</b> Payers run on rules, and the same quiet rule fires the same way across thousands of claims. Each payer has signature behaviors. We study them for a living:</p>
-      <ul class="patterns">
-        <li><b>The light fee schedule</b> — rates loaded a few percent under what your contract says, so every claim pays slightly short.</li>
-        <li><b>The misapplied bundling edit</b> — applied where your contract says it shouldn't be, claim after claim.</li>
-        <li><b>The habitual downcode</b> — the same procedure paid at a lower-valued code on the same pretext, month after month.</li>
-      </ul>
-      <p><b>We don't just compare payments to contracts.</b> We recognize the pattern behind each shortfall — and know which ones payers reverse when challenged correctly. Money written off as paid isn't lost; it's unresearched. Payers count on no one doing the research — and when someone does, their own reconsideration process becomes the instrument that pays it back. <b>We use their rules, their process, and their paper trail — better than they expect anyone to.</b></p>
-      <figure class="exhibit" aria-label="From a diagnostic report: three recovery patterns with their frequency and value">
-        <div class="ex-head">
-          <span class="ex-title">What a finding looks like</span>
-          <span class="ex-meta">sample · synthetic data</span>
+      <div class="row">
+        <div class="txt">
+          <h3>First, we read your remittances.</h3>
+          <p>Every line, against the contracted rate for that code, payer by payer. A person on our team does this, with software doing the arithmetic. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to. Chasing one $180 shortfall never pays for the hour. Finding the four hundred like it does.</p>
         </div>
-        <ul class="findings">
-          <li>
-            <div class="f-desc"><b>Arthroscopy paid below the contracted rate</b><span>CO-45 · knee &amp; shoulder · multiple payers</span></div>
-            <div class="f-rate"><span class="pct num">47%</span><span class="sub">of arthroscopy claims</span></div>
-            <div class="f-amt num">$48.2K</div>
-          </li>
-          <li>
-            <div class="f-desc"><b>Level-4 office visits downcoded to level 3</b><span>99214 → 99213 · documentation supports the billed level</span></div>
-            <div class="f-rate"><span class="pct num">34%</span><span class="sub">of 99214 claims</span></div>
-            <div class="f-amt num">$31.6K</div>
-          </li>
-          <li>
-            <div class="f-desc"><b>Same-day procedure bundled into the office visit</b><span>CO-97 · modifier 25 supports separate payment</span></div>
-            <div class="f-rate"><span class="pct num">38%</span><span class="sub">of modifier-25 eligible</span></div>
-            <div class="f-amt num">$22.4K</div>
-          </li>
-        </ul>
-        <figcaption>Each line is a payer behavior, not a clerical slip: a high rate means the same rule fires on every matching claim. Sample report, synthetic data.</figcaption>
-      </figure>
-      <p class="more"><a href="/how-it-works/#report">See the full sample report →</a></p>
+        <div>
+          <div class="frame" aria-label="Sample remittance check">
+            <div class="bar"><i></i><i></i><i></i><span>Remittance check · Payer A · Q2</span></div>
+            <div class="body">
+              <table>
+                <tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr>
+                <tr><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg">$232</td></tr>
+                <tr><td>99214</td><td>99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg">$44</td></tr>
+                <tr><td>20610 + 99213</td><td>bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg">$168</td></tr>
+                <tr><td>23430</td><td>denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg">$2,140</td></tr>
+                <tr><td>27447</td><td>27447</td><td class="r num">$1,860</td><td class="r num">$1,860</td><td class="r num">$0</td></tr>
+              </table>
+              <div class="foot"><span>412 lines checked · 47 flagged</span><span>sample · synthetic data</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="txt">
+          <h3>Then you get findings, in dollars.</h3>
+          <p>Which payer, which codes, which claims, how much, and what's still inside the dispute window. Underpayment isn't random. It's the same payer rule firing across thousands of claims, so one confirmed shortfall usually points to hundreds like it.</p>
+          <ul>
+            <li>The light fee schedule. Rates loaded a few percent under contract.</li>
+            <li>The misapplied bundling edit. Applied where your contract says no.</li>
+            <li>The habitual downcode. Same procedure, lower code, same pretext.</li>
+          </ul>
+        </div>
+        <div class="frame" aria-label="Sample findings">
+          <div class="bar"><i></i><i></i><i></i><span>Findings · top patterns</span></div>
+          <div class="body">
+            <table>
+              <tr><th>Pattern</th><th class="r">Rate</th><th class="r">Value</th></tr>
+              <tr><td>Arthroscopy paid below contract<br><span class="cap">CO-45 · knee &amp; shoulder · 3 payers</span></td><td class="r num">47%</td><td class="r num">$48.2K</td></tr>
+              <tr><td>Level-4 visits downcoded to level 3<br><span class="cap">99214 → 99213 · notes support the level</span></td><td class="r num">34%</td><td class="r num">$31.6K</td></tr>
+              <tr><td>Same-day procedure bundled into the visit<br><span class="cap">CO-97 · modifier 25 supports separate payment</span></td><td class="r num">38%</td><td class="r num">$22.4K</td></tr>
+              <tr><td>Denied for no prior auth on file<br><span class="cap">CARC 197 · obtainable retroactively</span></td><td class="r num">22%</td><td class="r num">$18.9K</td></tr>
+            </table>
+            <div class="foot"><span>a high rate means a rule, not a slip</span><span>sample · synthetic data</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="txt">
+          <h3>Your team approves every package.</h3>
+          <p>We draft each reopening, corrected claim, or appeal, with the contract language and the payer's own policy attached. Your billers review it and submit it through the channels you already use. Nothing goes to a payer without your say-so. Nothing about this audits your team.</p>
+        </div>
+        <div>
+          <div class="frame" aria-label="Sample review queue">
+            <div class="bar"><i></i><i></i><i></i><span>Review queue · this week</span></div>
+            <div class="body">
+              <table>
+                <tr><th>Package</th><th>Payer</th><th class="r">Claims</th><th class="r">Amount</th><th>Status</th></tr>
+                <tr><td>Arthroscopy underpayment</td><td>Payer A</td><td class="r num">41</td><td class="r num">$9,512</td><td><span class="tag hot">Awaiting your review</span></td></tr>
+                <tr><td>Level-4 downcode</td><td>Payer B</td><td class="r num">26</td><td class="r num">$4,880</td><td><span class="tag">Approved by billing</span></td></tr>
+                <tr><td>Modifier 25 bundling</td><td>Payer C</td><td class="r num">19</td><td class="r num">$3,410</td><td><span class="tag">Submitted 9/12</span></td></tr>
+                <tr><td>Missing information, CO-16</td><td>Payer A</td><td class="r num">12</td><td class="r num">$2,140</td><td><span class="tag">Paid $2,140</span></td></tr>
+              </table>
+              <div class="foot"><span>every submission keeps its proof</span><span>sample · synthetic data</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row flip">
+        <div class="txt">
+          <h3>Then the money lands, and you watch it land.</h3>
+          <p>Every recovered dollar shows against the claim it came from. Payers keep paying you exactly as they do today. Our fee comes out of what arrives, and only that. You'll never see an invoice.</p>
+          <p class="more"><a href="/how-it-works/">The full process, with the sample reports →</a></p>
+        </div>
+        <div class="frame" aria-label="Sample recovery dashboard">
+          <div class="bar"><i></i><i></i><i></i><span>Recovery · month 5</span></div>
+          <div class="body">
+            <div class="stats3">
+              <div class="stat main"><span class="lbl">Recovered to date</span><span class="val num">$151,840</span><span class="sub">net of our fee</span></div>
+              <div class="stat"><span class="lbl">In progress</span><span class="val num">$35,580</span><span class="sub">submitted, not yet paid</span></div>
+              <div class="stat"><span class="lbl">Recovery rate</span><span class="val num">81%</span><span class="sub">of submitted appeals, paid</span></div>
+            </div>
+            <div class="spark">
+              <svg viewBox="0 0 600 150" role="img" aria-label="Cumulative recovery curve rising from $16,240 in month one to $151,840 in month five">
+                <path id="spark-line" pathLength="1" d="M8,130 L154,106 L300,78 L446,46 L592,18" fill="none" stroke="#5C1F2D" stroke-width="2.5"/>
+                <circle cx="8" cy="130" r="3.5" fill="#5C1F2D"/><circle cx="154" cy="106" r="3.5" fill="#5C1F2D"/><circle cx="300" cy="78" r="3.5" fill="#5C1F2D"/><circle cx="446" cy="46" r="3.5" fill="#5C1F2D"/><circle cx="592" cy="18" r="3.5" fill="#5C1F2D"/>
+                <text x="580" y="12" text-anchor="end" font-family="Lora,Georgia,serif" font-size="15" fill="#14171F">$151.8K</text>
+              </svg>
+              <div class="axis"><span>Month 1</span><span>2</span><span>3</span><span>4</span><span>Month 5</span></div>
+            </div>
+            <div class="pipe">
+              <div class="stage" style="--sc:#cbb7a8"><span class="amt num">$5,980</span><span class="lbl">Identified</span></div>
+              <div class="stage" style="--sc:#bd8d80"><span class="amt num">$11,400</span><span class="lbl">Drafted</span></div>
+              <div class="stage" style="--sc:#9a5560"><span class="amt num">$18,200</span><span class="lbl">Submitted</span></div>
+              <div class="stage" style="--sc:#5C1F2D"><span class="amt num">$151,840</span><span class="lbl">Recovered</span></div>
+            </div>
+            <div class="foot"><span>five months in</span><span>sample · synthetic data</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="reveal" id="bet">
@@ -628,14 +777,14 @@
         <div class="bet-grid">
           <div>
             <h3>If we find nothing</h3>
-            <p>You've spent an hour and paid nothing — and you'll know, from your own payment records, that your payers are paying your contracts correctly. That answer is worth having.</p>
+            <p>You've spent an hour and paid nothing. And you'll know, from your own payment records, that your payers are paying your contracts correctly. That's worth knowing.</p>
           </div>
           <div>
             <h3>If we find money</h3>
-            <p>You pay only out of dollars that actually arrive. No retainer, no hourly fees, no invoice to gamble on.</p>
+            <p>You pay only out of dollars that actually arrive. No retainer, no hourly fees, no invoice you have to gamble on.</p>
           </div>
         </div>
-        <p class="bet-close">We carry the risk of being wrong — which is exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same direction: worst case, you get a free expert read of your payment data.</p>
+        <p class="bet-close">We carry the risk of being wrong. That's exactly why we won't take an engagement unless the diagnostic shows real recoverable dollars. Our incentives and yours point the same way. Worst case, you get a free expert read of your payment data.</p>
       </div>
       <div class="cta-mid">
         <p class="lead">Find out which side of that bet your data lands on.</p>
@@ -644,40 +793,71 @@
     </section>
 
     <section class="reveal">
-      <h2>Who this is for — and not for</h2>
+      <h2>Who this is for, and who it isn't</h2>
       <div class="fornot">
         <div class="for">
           <h3>For</h3>
           <ul>
-            <li>Independent, procedure-heavy specialty practices — orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers</li>
+            <li>Independent, procedure-heavy specialty practices: orthopedics, spine, sports medicine, pain management, ENT, gastroenterology, dermatology, cardiology, and their peers</li>
             <li>Typically 3 to 15 physicians, running without a revenue-cycle department</li>
-            <li>Ambulatory surgery centers — ASC claims carry exactly the complexity where underpayment hides</li>
+            <li>Ambulatory surgery centers. ASC claims carry exactly the complexity where underpayment hides</li>
           </ul>
         </div>
         <div class="not">
           <h3>Not for</h3>
           <ul>
-            <li>Hospitals and health systems with revenue-cycle teams — good vendors already serve them</li>
-            <li>Practices looking to outsource billing — we don't do billing</li>
+            <li>Hospitals and health systems with revenue-cycle teams. Good vendors already serve them</li>
+            <li>Practices looking to outsource billing. We don't do billing</li>
           </ul>
         </div>
       </div>
-      <p>We do one job: find what payers underpaid, and get it back.</p>
-      <p class="more"><a href="/who-we-serve/">More on who we serve — including the note for your administrator →</a></p>
+      <p>We do one job. Find what payers underpaid, get it back.</p>
+      <p class="more"><a href="/who-we-serve/">More on who we serve, including the note for your administrator →</a></p>
     </section>
 
+
+
+    <section class="reveal" id="about">
+      <h2>About Clearia, for the skeptic</h2>
+      <div class="aboutgrid">
+        <div>
+          <h3>A firm, not a software product</h3>
+          <p>People do this work. Someone on our team reads your remittances line by line, builds each appeal package, and tracks the payer until the money lands. There is software behind it, plenty of it, but you never install anything or learn a dashboard. You talk to the person doing the work.</p>
+          <h3>Small, Florida, and picky about engagements</h3>
+          <p>Clearia, Inc. is a Florida corporation based in Miami. We work with independent specialty practices in South Florida first, because payer rules, workers' comp fee schedules, and appeal deadlines are state-specific and we know Florida's cold. We take an engagement only when your own data shows real recoverable dollars. If it doesn't, we tell you that and stop.</p>
+          <h3>What we will not do</h3>
+          <ul>
+            <li>Touch your billing, your posting, or your payer contracts.</li>
+            <li>Receive or hold any of your money. Payers keep paying you the same way they do today.</li>
+            <li>Send anything to a payer your team hasn't approved.</li>
+            <li>Ask for patient data by email. Everything runs under a signed business associate agreement with read-only access.</li>
+          </ul>
+        </div>
+        <div class="qa">
+          <b>"Why haven't I heard of you?"</b>
+          <p>Because we're new and small, and we've chosen to grow one practice at a time in one region rather than advertise nationally. That's also why the diagnostic is free: it's how we earn the right to the engagement.</p>
+          <b>"Is this a collections agency?"</b>
+          <p>No. Nothing we do touches patients or patient balances. We work on the payer side only, through the reconsideration and appeal processes your contracts already provide.</p>
+          <b>"What's the catch on the free diagnostic?"</b>
+          <p>There isn't one, and here's the honest logic. Most practices that see the number in their own data want it recovered, so the diagnostic pays for itself often enough. When it shows nothing, you get a clean read of your payers and we move on.</p>
+          <b>"Who do I actually deal with?"</b>
+          <p>The same two or three people from the first call through the last dollar. No handoff to an offshore team, no ticket queue.</p>
+        </div>
+      </div>
+      <p class="more"><a href="/about/">More about how we work →</a></p>
+    </section>
 
     <div class="standards reveal" aria-label="Standards">
       <div><span class="k">Business associate</span>Every engagement runs under a HIPAA business associate agreement. No patient data by email, ever.</div>
       <div><span class="k">Florida corporation</span>Clearia, Inc. is based in Miami and works with Florida practices and Florida payer rules first.</div>
       <div><span class="k">Your money stays yours</span>Payers keep paying you exactly as they do today. We never receive, hold, or redirect funds.</div>
-      <div><span class="k">Administrative only</span>Reopenings, corrections, and appeals through each payer's own process. We do not practice law.</div>
+      <div><span class="k">Administrative only</span>Reopenings, corrections, and appeals through each payer's own process. We don't practice law.</div>
     </div>
 
     <section class="closing reveal">
       <h2>The next step</h2>
-      <p class="close-line">Find out what your payers kept — in dollars, from your own payment records.</p>
-      <p>The diagnostic is free, takes about an hour of your team's time, and carries no obligation afterward.</p>
+      <p class="close-line">Find out what your payers kept. In dollars, from your own payment records.</p>
+      <p>The diagnostic is free, takes about an hour of your team's time, and there's no obligation afterward.</p>
       <div class="cta-row">
         <a class="contact-btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
         <span class="cta-alt">or write to <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
@@ -694,7 +874,7 @@
         <a href="/about/">About</a>
         <a href="/notes/">Notes on payer behavior</a>
       </nav>
-      <span class="foot-fine">Clearia, Inc. · 1000 Brickell Ave Ste 715, PMB 5077, Miami, FL 33131 · <span class="foot-phone" hidden><a href="tel:+1">PHONE</a> · </span><a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
+      <span class="foot-fine">Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a> · <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></span>
     </footer>
 
   </div>

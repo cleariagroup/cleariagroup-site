@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CO-45 denial code: not always a write-off | Clearia</title>
-  <meta name="description" content="CO-45 is the routine contractual adjustment — which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.">
+  <meta name="description" content="CO-45 is the routine contractual adjustment, which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-45/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CO-45 isn't always a write-off">
-  <meta property="og:description" content="CO-45 is the routine contractual adjustment — which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.">
+  <meta property="og:description" content="CO-45 is the routine contractual adjustment, which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.">
   <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-45/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -29,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "CO-45 isn't always a write-off",
-    "description": "CO-45 is the routine contractual adjustment — which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.",
+    "description": "CO-45 is the routine contractual adjustment, which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.",
     "datePublished": "2026-08-08",
     "dateModified": "2026-08-08",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
@@ -111,38 +111,38 @@
       <h1>CO-45 isn't always a write-off</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
-      <p>CO-45 — "charge exceeds fee schedule / maximum allowable or contracted fee arrangement" — is the most common adjustment code in medicine. On an in-network claim it is the routine contractual write-off: the gap between what you billed and what your contract allows. Billing software posts it automatically, the balance goes to zero, and nobody looks again. That is exactly why underpayment hides inside it.</p>
+      <p>CO-45, "charge exceeds fee schedule / maximum allowable or contracted fee arrangement," is the most common adjustment code in medicine. On an in-network claim it's the routine contractual write-off: the gap between what you billed and what your contract allows. The billing software posts it automatically. The balance goes to zero. Nobody looks again. Which is exactly why underpayment hides inside it.</p>
 
       <h2>What the code actually asserts</h2>
-      <p>A CO-45 line is the <b>payer's assertion</b> of what your contract says. The group code matters first: <b>CO</b> (contractual obligation) means the amount is the provider's adjustment — never billable to the patient. <b>PR-45</b> shifts the same amount to patient responsibility, which mostly belongs to out-of-network situations; a PR-45 on an in-network claim deserves a hard look. The full group-code logic is in <a href="/notes/denial-codes-pr-vs-co/">the PR vs CO note</a>.</p>
+      <p>A CO-45 line is the <b>payer's assertion</b> of what your contract says. Start with the group code. <b>CO</b> (contractual obligation) means the amount is the provider's adjustment, never billable to the patient. <b>PR-45</b> shifts the same amount to patient responsibility, which mostly belongs in out-of-network situations. A PR-45 on an in-network claim deserves a hard look. The full group-code logic is in <a href="/notes/denial-codes-pr-vs-co/">the PR vs CO note</a>.</p>
 
       <h2>Where underpayment hides</h2>
-      <p>Nothing about a CO-45 confirms the allowed amount was computed correctly — and posting workflows are built to accept it. The recurring failure modes, across specialties:</p>
+      <p>Nothing about a CO-45 confirms the allowed amount was computed correctly. Posting workflows are built to accept it anyway. The failure modes we see over and over, across specialties:</p>
       <ul>
-        <li><b>Stale fee schedules.</b> The contract was renegotiated; the payer's system pays the old rates. Every line posts a slightly larger CO-45 than it should, indefinitely.</li>
-        <li><b>Percent-level shortfalls.</b> The allowed lands a few percent under the schedule — small enough per line to post without a second look, systematic enough to matter across a year of volume.</li>
+        <li><b>Stale fee schedules.</b> The contract was renegotiated, but the payer's system still pays the old rates. Every line posts a slightly larger CO-45 than it should. Indefinitely.</li>
+        <li><b>Percent-level shortfalls.</b> The allowed lands a few percent under the schedule. Small enough per line to post without a second look, systematic enough to matter across a year of volume.</li>
         <li><b>Downcoding.</b> The remittance pays a lower-valued code than the one billed; the arithmetic on the paid code looks clean while the shortfall sits in the substitution.</li>
-        <li><b>Mis-applied multiple-procedure reductions</b> — the one worth its own section.</li>
+        <li><b>Mis-applied multiple-procedure reductions.</b> This one gets its own section below.</li>
       </ul>
-      <p>The only way to know which lines are which is to recompute: allowed amount versus your contract's rate, line by line. A dermatologist's multi-lesion destruction claim, a gastroenterologist's endoscopy with add-on codes, an ophthalmologist's cataract volume, an orthopedic surgeon's fracture care — the pattern is the same everywhere; only the codes change.</p>
+      <p>The only way to know which lines are which is to recompute: allowed amount versus your contract's rate, line by line. A dermatologist's multi-lesion destruction claim, a gastroenterologist's endoscopy with add-on codes, an ophthalmologist's cataract volume, an orthopedic surgeon's fracture care. Same pattern everywhere. Only the codes change.</p>
 
       <h2>The multiple-procedure ranking audit</h2>
-      <p>Multiple-procedure payment reduction is legitimate — second and subsequent procedures typically pay at 50%. But the ranking must run by <b>fee-schedule value</b>: the highest-valued procedure pays at 100%. A payer that ranks by billed charge, or simply mis-orders the lines, cuts your highest-valued procedure in half — a pure, recomputable shortfall that the remittance presents as a routine reduction.</p>
+      <p>Multiple-procedure payment reduction is legitimate. Second and subsequent procedures typically pay at 50%. But the ranking has to run by <b>fee-schedule value</b>: the highest-valued procedure pays at 100%. A payer that ranks by billed charge, or simply mis-orders the lines, cuts your highest-valued procedure in half. That's a pure, recomputable shortfall, and the remittance presents it as a routine reduction.</p>
 
       <h2>Downcoding: the shortfall that hides in plain sight</h2>
-      <p>The electronic remittance reports both the code you submitted and the code the payer paid. When they differ — a level-4 visit adjudicated as a level-3, a complex repair paid as an intermediate one — the arithmetic on the paid code can look perfectly clean while the shortfall sits in the substitution. Posting workflows rarely compare the two fields, so downcoding stays invisible unless you look for it deliberately: pull the submitted-versus-paid comparison on your highest-volume visit and procedure codes and count the mismatches. A payer that downcodes systematically shows it there first.</p>
+      <p>The electronic remittance reports both the code you submitted and the code the payer paid. When they differ (a level-4 visit adjudicated as a level-3, a complex repair paid as an intermediate one), the arithmetic on the paid code can look perfectly clean while the shortfall sits in the substitution. Posting workflows rarely compare the two fields. So downcoding stays invisible unless you go looking: pull the submitted-versus-paid comparison on your highest-volume visit and procedure codes and count the mismatches. A payer that downcodes systematically shows up there first.</p>
 
       <h2>The recovery play</h2>
-      <p>Where the recompute shows the allowed below contract, the demand is line-level and specific: the contracted amount, the allowed amount, and the difference, per line — with a request for reprocessing at the contract rate. On Florida fully-insured business two statutes sharpen it: <b>12% simple interest</b> on the shortfall, and a <b>12-month, non-waivable window from the payment date</b> that outlives most contractual dispute clauses — the full mechanics are in <a href="/notes/florida-underpayment-12-month-rule/">the 12-month rule note</a> and <a href="/notes/florida-prompt-pay-law-guide/">the prompt-pay guide</a>. Neither applies to self-funded ERISA plans, federal employee plans, or workers' comp — check funding status before citing either.</p>
+      <p>Where the recompute shows the allowed below contract, the demand is line-level and specific: the contracted amount, the allowed amount, and the difference, per line, with a request for reprocessing at the contract rate. On Florida fully-insured business two statutes sharpen it: <b>12% simple interest</b> on the shortfall, and a <b>12-month, non-waivable window from the payment date</b> that outlives most contractual dispute clauses. The full mechanics are in <a href="/notes/florida-underpayment-12-month-rule/">the 12-month rule note</a> and <a href="/notes/florida-prompt-pay-law-guide/">the prompt-pay guide</a>. Neither applies to self-funded ERISA plans, federal employee plans, or workers' comp, so check funding status before citing either.</p>
 
       <h2>When it really is a write-off</h2>
-      <p>Most CO-45s are correct. A contractual adjustment that ties to the fee schedule is the deal you signed — post it and move on. Some reductions that look like shortfalls are lawful and precise: Medicare sequestration, for instance, takes 2% of the Medicare payment amount — not the allowed amount — under its own adjustment code, so recompute it on that basis before questioning it. Disputing correct adjustments burns payer goodwill and buries your legitimate demands in noise. The discipline that makes recovery work is the same one that makes it credible: recompute first, demand only what the contract supports, and let the correct lines go.</p>
+      <p>Most CO-45s are correct. A contractual adjustment that ties to the fee schedule is the deal you signed. Post it and move on. Some reductions that look like shortfalls are lawful and precise: Medicare sequestration, for instance, takes 2% of the Medicare payment amount (not the allowed amount) under its own adjustment code, so recompute it on that basis before questioning it. Disputing correct adjustments burns payer goodwill and buries your legitimate demands in noise. The discipline that makes recovery work is the same one that makes it credible. Recompute first. Demand only what the contract supports. Let the correct lines go.</p>
 
       <div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
-          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes — and when billing the patient is prohibited</a></li>
+          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes, and when billing the patient is prohibited</a></li>
           <li><a href="/notes/denial-code-co-97-global-period/">CO-97: bundling, global periods, and the remark code that decides</a></li>
           <li><a href="/notes/florida-prompt-pay-law-guide/">Florida prompt-pay law: what payers owe your practice</a></li>
         </ul>
@@ -150,14 +150,14 @@
     </article>
 
     <div class="cta">
-      <p><b>Want every CO-45 line in your history recomputed against contract?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost — we're paid only from what we recover.</p>
+      <p><b>Want every CO-45 line in your history recomputed against contract?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost. We're paid only from what we recover.</p>
       <a class="btn" href="/the-diagnostic/">Request the free diagnostic</a>
     </div>
 
     <footer>
-      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change — verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
       <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
-      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715, PMB 5077, Miami, FL 33131<span class="foot-phone" hidden> · <a href="tel:+1">PHONE</a></span></span>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
     </footer>
 
   </div>

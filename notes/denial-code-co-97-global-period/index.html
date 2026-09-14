@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CO-97 denials: bundling and global periods | Clearia</title>
-  <meta name="description" content="CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
+  <meta name="description" content="CO-97 splits into global-period and NCCI branches, and the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-97-global-period/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CO-97: bundling, global periods, and the remark code that decides">
-  <meta property="og:description" content="CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
+  <meta property="og:description" content="CO-97 splits into global-period and NCCI branches, and the remark code decides. The date math, the modifier arsenal, and when no appeal exists.">
   <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-97-global-period/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -29,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "CO-97: bundling, global periods, and the remark code that decides",
-    "description": "CO-97 splits into global-period and NCCI branches — the remark code decides. The date math, the modifier arsenal, and when no appeal exists.",
+    "description": "CO-97 splits into global-period and NCCI branches, and the remark code decides. The date math, the modifier arsenal, and when no appeal exists.",
     "datePublished": "2026-08-08",
     "dateModified": "2026-08-08",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
@@ -111,43 +111,43 @@
       <h1>CO-97: bundling, global periods, and the remark code that decides</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
-      <p>CO-97 — "the benefit for this service is included in the payment for another service" — is the bundling code, and it is really two different denials wearing one number. Which one you have is written in the remark code next to it, and the two branches have completely different plays.</p>
+      <p>CO-97, "the benefit for this service is included in the payment for another service," is the bundling code. It's really two different denials wearing one number. Which one you've got is written in the remark code next to it, and the two branches have completely different plays.</p>
 
       <h2>The remark code decides the branch</h2>
-      <p>The standard requires CO-97 to travel with a remark code (RARC), and the remark is the routing instruction:</p>
+      <p>The standard requires CO-97 to travel with a remark code (RARC). The remark is your routing instruction:</p>
       <ul>
-        <li><b>M144 or N525</b> — the payer says the service falls inside a surgical <b>global period</b>.</li>
-        <li><b>M15, M80, or N19</b> — a code-pair <b>bundling edit</b> (NCCI).</li>
-        <li><b>No corresponding edit on file</b> — a payer-proprietary bundling rule; the play is an appeal citing the payer's own published policy, because there is no national edit behind it.</li>
+        <li><b>M144 or N525:</b> the payer says the service falls inside a surgical <b>global period</b>.</li>
+        <li><b>M15, M80, or N19:</b> a code-pair <b>bundling edit</b> (NCCI).</li>
+        <li><b>No corresponding edit on file:</b> a payer-proprietary bundling rule. The play is an appeal citing the payer's own published policy, because there's no national edit behind it.</li>
       </ul>
-      <p>This read-the-remark discipline generalizes well beyond 97 — <a href="/notes/denial-code-co-16-and-rarcs/">the CO-16 note</a> covers it.</p>
+      <p>This read-the-remark habit applies well beyond 97. <a href="/notes/denial-code-co-16-and-rarcs/">The CO-16 note</a> covers it.</p>
 
-      <h2>Branch one: the global period — win on date math</h2>
-      <p>Surgical procedures carry a global window — commonly 10 or 90 days — inside which related visits and procedures are considered paid with the surgery. Two things go wrong in the payer's favor:</p>
+      <h2>Branch one: the global period, where date math wins</h2>
+      <p>Surgical procedures carry a global window, commonly 10 or 90 days, inside which related visits and procedures are considered paid with the surgery. Two things go wrong, and both are checkable:</p>
       <ul>
-        <li><b>The window is miscounted.</b> A 90-day global is really a 92-day window (the day before, the day of, and 90 days after); a 10-day global is an 11-day window with no pre-op day. Payers apply the wrong window; pull each code's global indicator from the Medicare fee-schedule file and count.</li>
-        <li><b>The service wasn't related.</b> The modifier arsenal — 24 (unrelated visit during the global), 25 (significant, separately identifiable same-day visit), 57 (the decision for surgery), 58 (staged procedure), 78 (return to the operating room), 79 (unrelated procedure) — exists precisely to say so. Which modifier fits is a chart question; that they exist is why a global-period denial is a beginning, not an end.</li>
+        <li><b>The window is miscounted.</b> A 90-day global is really a 92-day window (the day before, the day of, and 90 days after). A 10-day global is an 11-day window with no pre-op day. Payers apply the wrong window more often than you'd think. Pull each code's global indicator from the Medicare fee-schedule file and count.</li>
+        <li><b>The service wasn't related.</b> The modifier arsenal exists precisely to say so: 24 (unrelated visit during the global), 25 (significant, separately identifiable same-day visit), 57 (the decision for surgery), 58 (staged procedure), 78 (return to the operating room), 79 (unrelated procedure). Which modifier fits is a chart question. That they exist at all is why a global-period denial is a beginning, not an end.</li>
       </ul>
-      <p>The pattern spans every surgical specialty: cataract surgery in ophthalmology (90-day global, high volume), fracture care in orthopedics and hand surgery, excisions and repairs in dermatology (mostly 10-day globals), ENT and urology procedures alike. Two payer-error patterns worth knowing: modifier 25 does <b>not</b> require a different diagnosis from the procedure — the national edit manual says so, and payers wrongly deny on same-diagnosis grounds anyway. And as of 2025, Medicare requires transfer-of-care modifiers (54/55) on all 90-day globals — surgical care and post-op care split between practices is a new place where correctly billed claims get wrongly bundled.</p>
+      <p>The pattern spans every surgical specialty: cataract surgery in ophthalmology (90-day global, high volume), fracture care in orthopedics and hand surgery, excisions and repairs in dermatology (mostly 10-day globals), ENT and urology procedures alike. Two payer-error patterns worth knowing. First, modifier 25 does <b>not</b> require a different diagnosis from the procedure. The national edit manual says so, and payers still deny on same-diagnosis grounds anyway. Second, as of 2025, Medicare requires transfer-of-care modifiers (54/55) on all 90-day globals, so surgical care and post-op care split between practices is a new place where correctly billed claims get wrongly bundled.</p>
 
-      <h2>Branch two: bundling edits — check the indicator first</h2>
-      <p>For code-pair edits, one fact controls everything: the edit's <b>modifier indicator</b>. Indicator 1 means a bypass modifier is allowed when the services were genuinely distinct — the play is a corrected claim with the most specific modifier that fits the documentation (the X-modifiers over generic 59). <b>Indicator 0 means no modifier ever bypasses the edit.</b> No appeal changes that; the honest options are a coding correction or acceptance.</p>
+      <h2>Branch two: bundling edits. Check the indicator first</h2>
+      <p>For code-pair edits, one fact controls everything: the edit's <b>modifier indicator</b>. Indicator 1 means a bypass modifier is allowed when the services were genuinely distinct. The play there is a corrected claim with the most specific modifier the documentation supports (the X-modifiers over generic 59). <b>Indicator 0 means no modifier ever bypasses the edit.</b> No appeal changes that. Your honest options are a coding correction or acceptance.</p>
 
       <h2>The add-on-code cousin</h2>
-      <p>A near neighbor of the bundling denial is the add-on code denied because its required primary procedure wasn't found. This is a linkage problem, not a coverage problem, and the fix depends on where the primary went: if the primary was denied upstream, fix the primary and the add-on follows; if the primary paid on a <i>separate</i> claim, appeal citing the paid claim's number and date so the payer links them; if the primary was genuinely omitted, a corrected claim billing both together — properly sequenced — cures it. Endoscopy add-ons in GI, additional-lesion codes in dermatology, and additional-level codes in spine injections all live in this pattern.</p>
+      <p>A near neighbor of the bundling denial is the add-on code denied because its required primary procedure wasn't found. That's a linkage problem, not a coverage problem, and the fix depends on where the primary went. Primary denied upstream? Fix the primary and the add-on follows. Primary paid on a <i>separate</i> claim? Appeal citing the paid claim's number and date so the payer links them. Primary genuinely omitted? A corrected claim billing both together, properly sequenced, cures it. Endoscopy add-ons in GI, additional-lesion codes in dermatology, and additional-level codes in spine injections all live in this pattern.</p>
 
       <h2>Which door: corrected claim or appeal</h2>
-      <p>The mode matters as much as the argument. A modifier that should have been on the claim and wasn't goes back as a <b>corrected claim</b> — a replacement referencing the original claim number, not a letter. An appeal is for the case where the modifier was billed correctly and denied anyway, or where the edit is payer-proprietary — then the letter cites the documentation and the payer's own policy. Sending a letter to fix a coding omission, or resubmitting to overturn a judgment call, each wastes a clock you don't get back.</p>
+      <p>The mode matters as much as the argument. A modifier that should have been on the claim and wasn't goes back as a <b>corrected claim</b>: a replacement referencing the original claim number, not a letter. An appeal is for the case where the modifier was billed correctly and denied anyway, or where the edit is payer-proprietary. Then the letter cites the documentation and the payer's own policy. Send a letter to fix a coding omission, or resubmit to overturn a judgment call, and you've wasted a clock you don't get back.</p>
 
       <h2>When not to appeal</h2>
-      <p>Indicator-0 pairs, and services that genuinely were components of the primary procedure. Appealing correctly bundled services wastes the appeal window and marks every future letter from your practice as noise. The distinct-service claim has to be true in the chart before it goes in a letter.</p>
-      <p>And the shortfall side of bundling — where your contract says a service is separately payable but it paid at zero — is underpayment territory, with <a href="/notes/florida-underpayment-12-month-rule/">a 12-month statutory life in Florida</a> on fully-insured business.</p>
+      <p>Indicator-0 pairs, and services that genuinely were components of the primary procedure. Appealing correctly bundled services wastes the appeal window and teaches the payer to read every future letter from your practice as noise. The distinct-service claim has to be true in the chart before it goes in a letter.</p>
+      <p>And the shortfall side of bundling, where your contract says a service is separately payable but it paid at zero, is underpayment territory. That comes with <a href="/notes/florida-underpayment-12-month-rule/">a 12-month statutory life in Florida</a> on fully-insured business.</p>
 
       <div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 means read the remark code</a></li>
-          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes — and when billing the patient is prohibited</a></li>
+          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes, and when billing the patient is prohibited</a></li>
           <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
         </ul>
@@ -155,14 +155,14 @@
     </article>
 
     <div class="cta">
-      <p><b>Want your bundling denials sorted into the winnable and the correct?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost — we're paid only from what we recover.</p>
+      <p><b>Want your bundling denials sorted into the winnable and the correct?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost. We're paid only from what we recover.</p>
       <a class="btn" href="/the-diagnostic/">Request the free diagnostic</a>
     </div>
 
     <footer>
-      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change — verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
       <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
-      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715, PMB 5077, Miami, FL 33131<span class="foot-phone" hidden> · <a href="tel:+1">PHONE</a></span></span>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
     </footer>
 
   </div>

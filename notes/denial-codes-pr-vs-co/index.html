@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PR vs CO codes: who actually owes | Clearia</title>
-  <meta name="description" content="The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is — and QMB patients can't be billed at all.">
+  <meta name="description" content="The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is, and QMB patients can't be billed at all.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-codes-pr-vs-co/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="PR vs CO: who actually owes — and when billing the patient is prohibited">
-  <meta property="og:description" content="The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is — and QMB patients can't be billed at all.">
+  <meta property="og:title" content="PR vs CO: who actually owes, and when billing the patient is prohibited">
+  <meta property="og:description" content="The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is, and QMB patients can't be billed at all.">
   <meta property="og:url" content="https://cleariagroup.com/notes/denial-codes-pr-vs-co/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -28,8 +28,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "PR vs CO: who actually owes — and when billing the patient is prohibited",
-    "description": "The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is — and QMB patients can't be billed at all.",
+    "headline": "PR vs CO: who actually owes, and when billing the patient is prohibited",
+    "description": "The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is, and QMB patients can't be billed at all.",
     "datePublished": "2026-08-08",
     "dateModified": "2026-08-08",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
@@ -108,43 +108,43 @@
 
     <article>
       <p class="kicker">Notes on payer behavior</p>
-      <h1>PR vs CO: who actually owes — and when billing the patient is prohibited</h1>
+      <h1>PR vs CO: who actually owes, and when billing the patient is prohibited</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
-      <p>Two remittance lines carry the same code — 45. One is a routine write-off; the other is money the patient may genuinely be responsible for. The difference isn't the number. It is the two letters in front of it, and getting them wrong in one direction leaves revenue on the table while the other direction is a compliance violation.</p>
+      <p>Two remittance lines carry the same code: 45. One is a routine write-off. The other is money the patient may genuinely owe. The difference isn't the number. It's the two letters in front of it. Get them wrong one way and you leave revenue on the table. Get them wrong the other way and you've got a compliance problem.</p>
 
       <h2>The group code carries the liability</h2>
-      <p>Every adjustment on an electronic remittance arrives with a group code, and the group code — not the reason code — assigns responsibility:</p>
+      <p>Every adjustment on an electronic remittance arrives with a group code, and the group code (not the reason code) assigns responsibility:</p>
       <ul>
-        <li><b>CO (contractual obligation):</b> the provider absorbs it. A CO amount is <b>never billable to the patient</b> — billing it anyway violates your participation agreement.</li>
+        <li><b>CO (contractual obligation):</b> the provider absorbs it. A CO amount is <b>never billable to the patient</b>. Bill it anyway and you're violating your participation agreement.</li>
         <li><b>PR (patient responsibility):</b> billable to the patient, after the gates below.</li>
-        <li><b>OA (other adjustment):</b> neither party — most commonly OA-23, the arithmetic effect of a prior payer's adjudication on a secondary claim. Not a denial; verify the math ties, and keep it out of your denial statistics.</li>
+        <li><b>OA (other adjustment):</b> neither party. Most commonly OA-23, the arithmetic effect of a prior payer's adjudication on a secondary claim. Not a denial. Verify the math ties, and keep it out of your denial statistics.</li>
       </ul>
 
       <h2>Same number, opposite meaning</h2>
       <ul>
-        <li><b>PR-45 vs CO-45.</b> CO-45 is the in-network contractual adjustment. PR-45 shifts the same amount to the patient — legitimate mostly out-of-network. A PR-45 on an in-network claim deserves a recompute before anyone gets a statement (<a href="/notes/denial-code-co-45/">the CO-45 note</a> covers what to check).</li>
-        <li><b>PR-96 vs CO-96.</b> Non-covered service: PR-96 generally signals the patient accepted liability with proper advance notice — on Medicare, a valid ABN. CO-96 signals the notice requirement wasn't met, and the amount is provider liability. Same service, same code, opposite outcome, decided by paperwork completed before the visit.</li>
-        <li><b>PR-119 vs CO-119.</b> Benefit-maximum denials — visit-limited therapy benefits are the classic case. PR-119 is billable once the maximum is genuinely exhausted; CO-119 is a write-off. Either way, verify the payer's utilization count against your own records first: duplicate postings, wrong dates, and inflated units cause false exhaustion, and a miscounted maximum is payer money, not patient money.</li>
-        <li><b>PR-1, PR-2, PR-3</b> — deductible, coinsurance, copay: the legitimate patient-share codes, subject to the gates below.</li>
+        <li><b>PR-45 vs CO-45.</b> CO-45 is the in-network contractual adjustment. PR-45 shifts the same amount to the patient, which is legitimate mostly out-of-network. A PR-45 on an in-network claim deserves a recompute before anyone gets a statement (<a href="/notes/denial-code-co-45/">the CO-45 note</a> covers what to check).</li>
+        <li><b>PR-96 vs CO-96.</b> Non-covered service. PR-96 generally means the patient accepted liability with proper advance notice (on Medicare, a valid ABN). CO-96 means the notice requirement wasn't met, so the amount is provider liability. Same service, same code, opposite outcome. Decided by paperwork completed before the visit.</li>
+        <li><b>PR-119 vs CO-119.</b> Benefit-maximum denials. Visit-limited therapy benefits are the classic case. PR-119 is billable once the maximum is genuinely exhausted. CO-119 is a write-off. Either way, check the payer's utilization count against your own records first. Duplicate postings, wrong dates, and inflated units all cause false exhaustion, and a miscounted maximum is payer money, not patient money.</li>
+        <li><b>PR-1, PR-2, PR-3.</b> Deductible, coinsurance, copay. These are the legitimate patient-share codes, subject to the gates below.</li>
       </ul>
 
-      <h2>The QMB gate — the hard federal stop</h2>
+      <h2>The QMB gate: the hard federal stop</h2>
       <div class="callout">
-        <p><b>Qualified Medicare Beneficiaries cannot be billed Medicare cost-sharing at all.</b> For QMB and Medicaid-protected patients, federal law prohibits billing deductibles, coinsurance, and copays — regardless of what PR codes appear on the remittance. Remittance signals to watch: remark code N781 and reason code 209. The QMB check runs <i>before</i> any patient statement, every time; the amounts are written off, not billed.</p>
+        <p><b>Qualified Medicare Beneficiaries cannot be billed Medicare cost-sharing at all.</b> For QMB and Medicaid-protected patients, federal law prohibits billing deductibles, coinsurance, and copays, no matter what PR codes show up on the remittance. Remittance signals to watch: remark code N781 and reason code 209. The QMB check runs <i>before</i> any patient statement, every time. The amounts get written off, not billed.</p>
       </div>
 
       <h2>The order of operations before any patient bill</h2>
       <ol>
         <li><b>QMB/Medicaid check.</b> Protected: write off, full stop.</li>
-        <li><b>Secondary and supplement first.</b> Deductible and coinsurance amounts go to the secondary or Medigap plan with the primary remittance before the patient sees a statement — supplement plans exist to pay exactly these amounts. On Medicare, crossover often forwards the claim automatically: check the remittance for a forwarding remark before filing again, because refiling a forwarded claim manufactures a duplicate denial.</li>
-        <li><b>Verify the accumulator.</b> Early-year deductible misapplication is common; if the deductible was already met, the fix is payer reprocessing, not a patient bill.</li>
-        <li><b>Then bill the patient</b> — for what remains, which is often less than the remittance first suggested.</li>
+        <li><b>Secondary and supplement first.</b> Deductible and coinsurance amounts go to the secondary or Medigap plan with the primary remittance before the patient sees a statement. Supplement plans exist to pay exactly these amounts. On Medicare, crossover often forwards the claim automatically, so check the remittance for a forwarding remark before filing again. Refiling a forwarded claim just manufactures a duplicate denial.</li>
+        <li><b>Verify the accumulator.</b> Early-year deductible misapplication is common. If the deductible was already met, the fix is payer reprocessing, not a patient bill.</li>
+        <li><b>Then bill the patient</b> for what remains. It's often less than the remittance first suggested.</li>
       </ol>
 
       <h2>Codes that are never a patient statement</h2>
-      <p>Coordination-of-benefits denials (CO-22) mean another payer may be responsible — the play is refiling to the right payer, not a statement. Coverage-not-yet-effective and coverage-terminated denials get an eligibility recheck and a refile to whatever plan was active before anyone bills the patient. Capitation denials (CO-24) are a redirect in disguise: for a non-capitated fee-for-service practice, the usual reality is that the patient is in a Medicare Advantage plan or an IPA holds the risk — the claim refiles to whoever actually holds it, and neither a write-off nor a patient statement is the answer. And the whole CO family — missing information, timely filing, authorization — is provider-side work by definition.</p>
-      <p>The discipline pays in both directions. Respecting the CO side keeps the practice clean in audits and payer relations; scrutinizing the CO side is where recoverable money lives, because a payer's group-code choice is an assertion like any other — and in Florida, a shortfall found behind a CO adjustment on fully-insured business stays claimable for <a href="/notes/florida-underpayment-12-month-rule/">12 months from the payment date</a>.</p>
+      <p>Coordination-of-benefits denials (CO-22) mean another payer may be responsible. The play is refiling to the right payer, not a statement. Coverage-not-yet-effective and coverage-terminated denials get an eligibility recheck and a refile to whatever plan was active before anyone bills the patient. Capitation denials (CO-24) are a redirect in disguise. For a non-capitated fee-for-service practice, the usual reality is that the patient is in a Medicare Advantage plan or an IPA holds the risk. The claim refiles to whoever actually holds it. Neither a write-off nor a patient statement is the answer. And the whole CO family (missing information, timely filing, authorization) is provider-side work by definition.</p>
+      <p>The discipline pays both ways. Respecting the CO side keeps the practice clean in audits and payer relations. Scrutinizing the CO side is where the recoverable money lives, because a payer's group-code choice is an assertion like any other. And in Florida, a shortfall found behind a CO adjustment on fully-insured business stays claimable for <a href="/notes/florida-underpayment-12-month-rule/">12 months from the payment date</a>.</p>
 
       <div class="related">
         <p>Related notes</p>
@@ -158,14 +158,14 @@
     </article>
 
     <div class="cta">
-      <p><b>Want your patient-billing decisions checked against the group codes?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost — we're paid only from what we recover.</p>
+      <p><b>Want your patient-billing decisions checked against the group codes?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost. We're paid only from what we recover.</p>
       <a class="btn" href="/the-diagnostic/">Request the free diagnostic</a>
     </div>
 
     <footer>
-      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change — verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
       <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
-      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715, PMB 5077, Miami, FL 33131<span class="foot-phone" hidden> · <a href="tel:+1">PHONE</a></span></span>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
     </footer>
 
   </div>

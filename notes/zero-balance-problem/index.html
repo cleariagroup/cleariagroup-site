@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The zero-balance problem: underpaid claims that look paid | Clearia</title>
+  <meta name="description" content="A claim paid below contract still posts to a zero balance. No alert fires. Here is why that happens, what a zero-balance review is, and how to run one without new software.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/zero-balance-problem/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The zero-balance problem: why underpaid claims look paid">
+  <meta property="og:description" content="A claim paid below contract still posts to a zero balance. No alert fires. Here is why that happens, what a zero-balance review is, and how to run one without new software.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/zero-balance-problem/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The zero-balance problem: why underpaid claims look paid",
+    "description": "A claim paid below contract still posts to a zero balance. No alert fires. Here is why that happens, what a zero-balance review is, and how to run one without new software.",
+    "datePublished": "2026-09-15",
+    "dateModified": "2026-09-15",
+    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "mainEntityOfPage": "https://cleariagroup.com/notes/zero-balance-problem/"
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker">Notes on payer behavior</p>
+      <h1>The zero-balance problem: why underpaid claims look paid</h1>
+      <p class="meta">Clearia · September 2026 · the zero-balance problem, defined</p>
+<p>The zero-balance problem is this: a claim that was paid short of your contracted rate closes in your billing system exactly the way a correctly paid claim does. Balance zero. Status paid. No work queue, no flag, no report. The shortfall isn't hidden by anyone. It's hidden by the design of posting itself. Independent practices lose 1 to 3 percent of net revenue this way on average, and no one on the team is doing anything wrong.</p>
+
+<h2>Why a short payment posts as paid</h2>
+<p>Walk through what happens when a remittance arrives. The payer's 835 says: billed $1,412, allowed $1,180, paid $1,180, adjustment $232 with reason code CO-45, "charge exceeds fee schedule or contracted fee arrangement." Your practice management system does what it's built to do. It posts the payment, posts the adjustment as a contractual write-off, and closes the line. The balance is zero.</p>
+<p>Nothing in that workflow asks the one question that matters: was $1,180 the contracted rate? If your contract says $1,412 for that code, the payer just kept $232 and labeled it your write-off. The system accepted the label. That's the whole problem. Posting trusts the payer's arithmetic because checking it, line by line, against a fee schedule, is a different job from posting.</p>
+
+<h2>Why nobody catches it</h2>
+<p>Three reasons, and none of them is a bad biller.</p>
+<ul>
+<li><b>Billers are measured on claims moving.</b> Their day is submitting, fixing rejections, working the denial queue. A paid claim is a finished claim. Reopening finished work is not in the job.</li>
+<li><b>The shortfalls are small per line.</b> Two, four, eight percent under contract. A $44 difference on a $142 visit. Nobody stops for $44. It only matters across a year of volume, and nobody sees the year.</li>
+<li><b>Fee schedules live in a drawer.</b> Most practices of 3 to 15 physicians don't have their contracted rates loaded anywhere a computer can compare them. The contract is a PDF. The remittance is a file. They never meet.</li>
+</ul>
+<p>Hospital systems staff whole teams for this. They call it zero-balance review or payment variance analysis, and it's routine at that scale. Below that scale it mostly doesn't happen, which is why the shortfalls concentrate exactly where no one is watching.</p>
+
+<h2>What a zero-balance review actually is</h2>
+<p>A zero-balance review takes claims that closed at zero and recomputes each line: what did the contract say this code should pay, what did the payer allow, what's the gap. That's it. No clinical judgment, no coding change. Arithmetic against a document you already signed. The output is a list of lines where allowed came in under contract, grouped by payer and by reason.</p>
+<p>The reasons cluster. Across specialties we see the same handful:</p>
+<ul>
+<li><b>A stale fee schedule.</b> You renegotiated; the payer's system still pays last year's rates. Every line is short by the same percentage, indefinitely.</li>
+<li><b>Downcoding.</b> The paid code is one level below the billed code. Clean arithmetic on the wrong code. <a href="/notes/downcoding-99214-paid-as-99213/">Its own note</a>.</li>
+<li><b>Misapplied multiple-procedure reductions.</b> The second procedure cut to 50 percent is fine. The highest-valued procedure cut to 50 percent because the payer ranked by billed charge instead of fee-schedule value is not.</li>
+<li><b>Bundling edits your contract doesn't allow.</b> A payable add-on absorbed into the primary code at $0.</li>
+<li><b>Out-of-network rates on in-network claims.</b> A credentialing hiccup, a wrong tax ID, and a quarter of claims paid off the wrong schedule.</li>
+</ul>
+
+<h2>How to run one without new software</h2>
+<p>You don't need a platform. You need three things and an afternoon.</p>
+<ol>
+<li><b>Your 835 files for the last 12 months.</b> Your clearinghouse or each payer's portal has them. Twelve months matters because that's Florida's non-waivable window for underpayment claims on state-regulated plans (<a href="/notes/florida-underpayment-12-month-rule/">the 12-month rule</a>).</li>
+<li><b>Your fee schedules.</b> The contracted rate per code for each payer. If a payer never gave you one, ask for it in writing. They are required to provide it on request under most contracts and, in Florida, under the prompt-pay statute.</li>
+<li><b>Your top 20 codes by volume.</b> Start there. In an orthopedic or pain practice, twenty codes usually cover 80 percent of the revenue.</li>
+</ol>
+<p>For each payer, pull allowed amount by code from the 835s and set it next to the contract rate. Where allowed is below contract, that's a finding. Sum it. Most practices that do this for the first time find a number that changes the conversation. When we audited a full year of claims at a four-physician orthopedic group in Miami-Dade, 30 percent of net insurance revenue had been paid short or denied for reasons that could have been fixed. That practice had good billers. The money was in the zero balances.</p>
+
+<h2>What to do with the findings</h2>
+<p>Group them by payer and by reason, then pursue each group as one case, not one claim. A stale fee schedule is a single letter with a claim list and the contract page attached. A misapplied multiple-procedure reduction is a single reconsideration with the ranking rule spelled out. The mechanics, deadlines, and what to put in the packet are in <a href="/notes/how-to-appeal-an-underpaid-claim/">how to appeal an underpaid claim</a>. Move fast on the oldest lines. Contractual dispute clauses run 90 to 180 days, and whatever ages past the window is gone.</p>
+
+<h2>The so-what</h2>
+<p>A zero balance is not evidence a claim was paid correctly. It's evidence the posting workflow finished. Until someone recomputes the line, you're taking the payer's word for your own contract. Once a year, for your top codes and top payers, is enough to know whether the word is good. If you'd rather not spend the afternoon, that recompute is exactly what Clearia's diagnostic does, on every line, at no cost.</p>
+      <div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/how-to-spot-insurance-underpayment/">How to tell whether an insurer is underpaying your practice</a></li>
+          <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
+          <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you</a></li>
+          <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule</a></li>
+        </ul>
+      </div>
+    </article>
+    <div class="cta">
+      <p><b>Want every zero-balance line from the last year recomputed against contract?</b> That's the Clearia diagnostic: your remittances against your fee schedules, line by line, findings in dollars, at no cost. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/#request">Request the free diagnostic</a>
+    </div>
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></span>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Clearia
+
+> Clearia, Inc. (also written Clearia Group) is a Miami, Florida service firm that recovers insurance underpayments and fixable claim denials for independent medical practices of 3 to 15 physicians, mainly orthopedics, spine, pain management and sports medicine in South Florida. Free diagnostic, paid only from what is recovered. Not affiliated with other companies or products using the Clearia name.
+
+Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cleariagroup/ · Phone: (786) 705-7865 · Email: contact@cleariagroup.com · Address: 1000 Brickell Ave Ste 715-5077, Miami, FL 33131
+
+## Pages
+- [Home](https://cleariagroup.com/): what Clearia does, the free diagnostic, FAQ
+- [How it works](https://cleariagroup.com/how-it-works/): diagnostic, findings, recovery, with sample reports
+- [Who we serve](https://cleariagroup.com/who-we-serve/): independent specialty practices in South Florida
+- [The diagnostic](https://cleariagroup.com/the-diagnostic/): what the free audit covers and how to request it
+- [About](https://cleariagroup.com/about/): the firm, how it works, incentive structure
+- [Notes on payer behavior](https://cleariagroup.com/notes/): short, sourced notes on how insurers pay independent practices
+
+## Notes
+- [Downcoding: 99214 paid as 99213](https://cleariagroup.com/notes/downcoding-99214-paid-as-99213/)
+- [The zero-balance problem](https://cleariagroup.com/notes/zero-balance-problem/)
+- [How to appeal an underpaid insurance claim](https://cleariagroup.com/notes/how-to-appeal-an-underpaid-claim/)
+- [What an 835 remittance tells you](https://cleariagroup.com/notes/what-is-an-835-remittance/)
+- [What is denial recovery?](https://cleariagroup.com/notes/what-is-denial-recovery/)
+- [How to tell whether an insurer is underpaying your practice](https://cleariagroup.com/notes/how-to-spot-insurance-underpayment/)
+- [Florida payer appeal deadlines table](https://cleariagroup.com/notes/florida-payer-appeal-deadlines/)
+- [Florida's 12-month underpayment rule](https://cleariagroup.com/notes/florida-underpayment-12-month-rule/)
+- [Florida prompt-pay law guide](https://cleariagroup.com/notes/florida-prompt-pay-law-guide/)
+- [Denial codes: CO-16, CO-29, CO-45, CO-97, CO-197, PR vs CO](https://cleariagroup.com/notes/)
+
+## Legal
+- [Terms](https://cleariagroup.com/terms/) · [Privacy](https://cleariagroup.com/privacy/)

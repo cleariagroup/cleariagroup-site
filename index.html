@@ -679,6 +679,9 @@
     .kpis > div:first-child .val { color: var(--accent); }
     .kpis .sub { display: block; font-size: 0.86rem; color: var(--muted); margin-top: 0.35rem; max-width: 30ch; margin-left: auto; margin-right: auto; }
     @media (max-width: 640px) { .kpis { grid-template-columns: 1fr; gap: 1.6rem; } }
+    .case { margin: 2.2rem auto 0; max-width: 62ch; padding: 1.2rem 1.4rem; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .case .case-k { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.5rem; }
+    .case p { margin: 0; }
     .faq { max-width: 720px; margin: 0 auto; border-top: 1px solid var(--ink); }
     .faq details { border-bottom: 1px solid var(--hairline); }
     .faq summary { cursor: pointer; list-style: none; padding: 1rem 2rem 1rem 0; font-weight: 500; font-size: 1.02rem; position: relative; }
@@ -884,9 +887,13 @@
 
     <section class="reveal" id="numbers">
       <div class="kpis">
-        <div><span class="val num">30%</span><span class="sub">of one year's net insurance revenue found recoverable at a four-physician orthopedic practice in Miami-Dade</span></div>
+        <div><span class="val num">30%</span><span class="sub">of one year's net insurance revenue found recoverable at a four-physician hand and upper-extremity orthopedic practice in Miami</span></div>
         <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
         <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
+      </div>
+      <div class="case reveal">
+        <p class="case-k">Measured at a real practice</p>
+        <p><b>A four-physician orthopedic practice in Miami.</b> Hand and upper-extremity surgery, its own billing team, a typical mix of commercial and workers' comp insurers. We audited thirteen months of remittances, about 1,900 claims, line by line against contract. 30 percent of net insurance revenue had been paid short or denied for reasons that could have been fixed. That is 58 percent more than the practice had actually collected. The practice's own billers had done their job. The money was in the closed claims. Recovery is underway.</p>
       </div>
     </section>
 
@@ -898,7 +905,7 @@
         <details><summary>What does it cost?</summary><p>Nothing upfront. We work on contingency: our fee is a percentage of what actually arrives, set in the engagement letter, so we only do well when you do. The diagnostic is free either way, and if it finds nothing, you've confirmed from your own data that your insurers are paying your contracts. That's worth knowing.</p></details>
         <details><summary>Does anything change for my billing team?</summary><p>No. We work from read-only access to your remittances under a signed business associate agreement. Once you approve the findings, we file the appeals and reconsiderations ourselves, as your authorized representative, through each insurer's own dispute process. Your billers keep their day. Insurers keep paying you exactly as they do today. We never receive or hold your money.</p></details>
         <details><summary>Is this a collections agency?</summary><p>No. Nothing we do touches patients or patient balances. We work on the insurer side only, through the reconsideration and appeal processes your contracts already provide. We don't practice law.</p></details>
-        <details><summary>Why haven't I heard of you?</summary><p>Because we're a boutique. We work in the background for a small number of practices we choose carefully, and we grow by referral from the physicians we already work with. The free diagnostic is how we decide, together, whether yours should be one of them.</p></details>
+        <details><summary>Why haven't I heard of you?</summary><p>Because we're a concierge firm. We work in the background for a small number of practices we choose carefully, and we grow by referral from the physicians we already work with. The free diagnostic is how we decide, together, whether yours should be one of them.</p></details>
         <details><summary>Who do I actually deal with?</summary><p>The same two or three people from the first call through the last dollar. No handoff to an offshore team, no ticket queue. Clearia, Inc. is a Florida corporation based in Miami.</p></details>
       </div>
     </section>

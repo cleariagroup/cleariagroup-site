@@ -453,6 +453,8 @@
       .contact-btn, .stickybar, .topnav { transition: none; }
       .js #spark-line, .js .spark circle, .js .spark text { transition: none; }
     }
+    ul.signs li a, ol.steps li a, section > p a { color: inherit; text-decoration: underline; text-decoration-color: var(--hairline); text-underline-offset: 3px; }
+    ul.signs li a:hover, ol.steps li a:hover, section > p a:hover { text-decoration-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -494,12 +496,12 @@
       <h2>What we're looking for</h2>
       <p>Underpayment hangs around for one reason. Nothing flags it:</p>
       <ul class="signs">
-        <li><b>Payments a few percent under the contracted rate</b>, small enough that they post without a second look.</li>
-        <li><b>Procedures paid at a lower-valued code</b> than the one your physicians actually billed.</li>
-        <li><b>Line items bundled or denied</b> even though your fee schedule says they're payable.</li>
-        <li><b>Renegotiated rates that never reached the payer's system</b>: you signed a better contract, and the payments never changed.</li>
+        <li><b><a href="/notes/denial-code-co-45/">Payments a few percent under the contracted rate</a></b>, small enough that they post without a second look.</li>
+        <li><b><a href="/notes/downcoding-99214-paid-as-99213/">Procedures paid at a lower-valued code</a></b> than the one your physicians actually billed.</li>
+        <li><b><a href="/notes/denial-code-co-97-global-period/">Line items bundled or denied</a></b> even though your fee schedule says they're payable.</li>
+        <li><b><a href="/notes/zero-balance-problem/">Renegotiated rates that never reached the payer's system</a></b>: you signed a better contract, and the payments never changed.</li>
       </ul>
-      <p>Each claim closes at zero balance. No alert fires. Nobody's job is to notice. And payer dispute windows run out in 90 to 180 days, so whatever goes unnoticed long enough is gone for good.</p>
+      <p>Each claim closes at zero balance. No alert fires. Nobody's job is to notice. And <a href="/notes/florida-payer-appeal-deadlines/">payer dispute windows run out in 90 to 180 days</a>, so whatever goes unnoticed long enough is gone for good.</p>
     </section>
 
     <section class="reveal" id="process">
@@ -507,7 +509,7 @@
       <ol class="steps">
         <li><span><b>Free diagnostic.</b> We sign a business associate agreement first. Then we take records you already have (your electronic remittances and payer contracts) and check what each insurer paid against the contracted rate, code by code. A person on our side reads your remittances. Your team's part takes about an hour.</span></li>
         <li><span><b>Findings, in dollars.</b> You get a line-item accounting: which payer, which codes, which claims, how much, and what's still inside the dispute window. Then you decide what we pursue, by pattern and by insurer. One approval, and that's the whole engagement.</span></li>
-        <li><span><b>Recovery.</b> We file the appeals and reconsiderations ourselves, as your authorized representative, and tell you about every dollar as it lands. Our fee is a percentage of what actually comes back. Nothing else, ever.</span></li>
+        <li><span><b>Recovery.</b> We <a href="/notes/how-to-appeal-an-underpaid-claim/">file the appeals and reconsiderations</a> ourselves, as your authorized representative, and tell you about every dollar as it lands. Our fee is a percentage of what actually comes back. Nothing else, ever.</span></li>
       </ol>
       <figure class="exhibit reveal" id="report" aria-label="From the diagnostic report: where the recoverable dollars come from, and the top recovery opportunities">
         <div class="ex-head">

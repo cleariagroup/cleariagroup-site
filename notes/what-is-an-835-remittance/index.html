@@ -100,6 +100,8 @@
     footer .foot-legal a { color: inherit; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 560px; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -111,7 +113,7 @@
     </div>
 
     <article>
-      <p class="kicker">Notes on payer behavior</p>
+      <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
       <h1>What an 835 actually tells you (and what your posting software throws away)</h1>
       <p class="meta">Clearia · September 2026 · 835 ERA, explained</p>
 <p>An 835 is the electronic remittance advice: the HIPAA-standard file (ASC X12N 005010X221A1) an insurer sends to explain how it paid, reduced, or denied each claim, line by line. It's the machine-readable version of the paper EOB, and it is the single richest record of payer behavior your practice owns. It's also the record most practices never look at directly, because posting software reads the few fields it needs to close a balance and discards the rest. The discarded part is where underpayment lives.</p>
@@ -163,6 +165,7 @@
           <li><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 denials: read the remark code</a></li>
           <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO codes: who actually owes</a></li>
           <li><a href="/notes/how-to-spot-insurance-underpayment/">How to tell whether an insurer is underpaying your practice</a></li>
+          <li><a href="/notes/downcoding-99214-paid-as-99213/">Downcoding: why your 99214s are paid as 99213s, and how to get the difference back</a></li>
         </ul>
       </div>
     </article>

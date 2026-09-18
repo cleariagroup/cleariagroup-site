@@ -682,6 +682,8 @@
     .case { margin: 2.2rem auto 0; max-width: 62ch; padding: 1.2rem 1.4rem; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
     .case .case-k { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.5rem; }
     .case p { margin: 0; }
+    .pain p a, .row .txt p a, .faq p a, .case p a { color: inherit; text-decoration: underline; text-decoration-color: var(--hairline); text-underline-offset: 3px; }
+    .pain p a:hover, .row .txt p a:hover, .faq p a:hover, .case p a:hover { text-decoration-color: var(--accent); }
     .faq { max-width: 720px; margin: 0 auto; border-top: 1px solid var(--ink); }
     .faq details { border-bottom: 1px solid var(--hairline); }
     .faq summary { cursor: pointer; list-style: none; padding: 1rem 2rem 1rem 0; font-weight: 500; font-size: 1.02rem; position: relative; }
@@ -808,9 +810,9 @@
     <section class="reveal" id="pain">
       <h2>Three ways insurers keep your money</h2>
       <div class="pain">
-        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract still posts as paid. No alert fires, so nobody looks.</p></div>
-        <div><b>Denied for fixable reasons.</b><p>Missing information, an authorization that was on file, a timely-filing dispute with proof. Correctable, rarely corrected.</p></div>
-        <div><b>Then the window closes.</b><p>Dispute rights run 90 to 180 days. Whatever nobody chased is gone for good.</p></div>
+        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract <a href="/notes/zero-balance-problem/">still posts as paid</a>. No alert fires, so nobody looks.</p></div>
+        <div><b>Denied for fixable reasons.</b><p>Missing information, an authorization that was on file, a <a href="/notes/denial-code-co-29-timely-filing/">timely-filing dispute with proof</a>. Correctable, rarely corrected.</p></div>
+        <div><b>Then the window closes.</b><p><a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days</a>. Whatever nobody chased is gone for good.</p></div>
       </div>
     </section>
 
@@ -820,7 +822,7 @@
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
           <h3>Find the underpayments and denials.</h3>
-          <p>We check every remittance line against your contracted rate, then match what we find against our library of insurer behaviors: the light fee schedule, the habitual downcode, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it.</p>
+          <p>We check <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contracted rate, then match what we find against our library of insurer behaviors: the light fee schedule, the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a>, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it.</p>
         </div>
         <div>
           <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
@@ -864,7 +866,7 @@
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
           <h3>Conquer the systemic, persistent trends.</h3>
-          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We pursue each pattern as one case through the insurer's own process, and the money lands in your account.</p>
+          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account.</p>
           <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
         </div>
         <div>
@@ -900,8 +902,8 @@
     <section class="reveal" id="faq">
       <h2>Questions we get</h2>
       <div class="faq">
-        <details><summary>What is denial recovery?</summary><p>Getting paid on claims an insurer denied for a reason that can be fixed: missing information, an authorization that was on file, a timely-filing dispute you can prove. We build the corrected claim or the appeal, it goes back through the insurer's own process, and the money posts to your account. Clinical denials, where the insurer disputes medical necessity, are a different job and mostly not ours.</p></details>
-        <details><summary>Why don't billing teams make more effort to recover denials?</summary><p>Because their day is keeping new claims moving, and a denied or short-paid claim looks finished. Working one $180 shortfall takes an hour and never pays for itself. It only pays when someone finds the four hundred claims that share the pattern and pursues them together. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to.</p></details>
+        <details><summary>What is denial recovery?</summary><p>Getting paid on claims an insurer denied for a reason that can be fixed: missing information, an authorization that was on file, a timely-filing dispute you can prove. We build the corrected claim or the appeal, it goes back through the insurer's own process, and the money posts to your account. Clinical denials, where the insurer disputes medical necessity, are a different job and mostly not ours. <a href="/notes/what-is-denial-recovery/">Which denials are worth chasing, and which aren't</a>.</p></details>
+        <details><summary>Why don't billing teams make more effort to recover denials?</summary><p>Because their day is keeping new claims moving, and a denied or short-paid claim looks finished. Working one $180 shortfall takes an hour and never pays for itself. It only pays when someone finds the four hundred claims that share the pattern and pursues them together. No practice of 3 to 15 doctors staffs that job, and honestly it wouldn't make sense to. <a href="/notes/zero-balance-problem/">Why a short payment looks paid</a>.</p></details>
         <details><summary>What does it cost?</summary><p>Nothing upfront. We work on contingency: our fee is a percentage of what actually arrives, set in the engagement letter, so we only do well when you do. The diagnostic is free either way, and if it finds nothing, you've confirmed from your own data that your insurers are paying your contracts. That's worth knowing.</p></details>
         <details><summary>Does anything change for my billing team?</summary><p>No. We work from read-only access to your remittances under a signed business associate agreement. Once you approve the findings, we file the appeals and reconsiderations ourselves, as your authorized representative, through each insurer's own dispute process. Your billers keep their day. Insurers keep paying you exactly as they do today. We never receive or hold your money.</p></details>
         <details><summary>Is this a collections agency?</summary><p>No. Nothing we do touches patients or patient balances. We work on the insurer side only, through the reconsideration and appeal processes your contracts already provide. We don't practice law.</p></details>

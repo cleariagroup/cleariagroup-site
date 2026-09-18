@@ -476,7 +476,9 @@
     }
 
     /* ---------- diagnostic form ---------- */
-    .diag-form { display: grid; gap: 1rem; max-width: 30rem; margin: 1.6rem 0 0.6rem; }
+    .diag-form { display: grid; gap: 1rem; max-width: 34rem; margin: 1.6rem 0 0.6rem; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
     .field label { display: block; font-size: 0.85rem; font-weight: 500;
                    color: var(--muted); margin-bottom: 0.35rem; }
     .field .opt { font-weight: 400; opacity: 0.75; }
@@ -547,7 +549,7 @@
       <a class="sec-link" href="/how-it-works/">How it works</a>
       <a class="sec-link" href="/who-we-serve/">Who we serve</a>
       <a class="sec-link" href="/about/">About</a>
-      <a class="nav-cta" href="#request">Request the free diagnostic</a>
+      <a class="nav-cta" href="#request">Request your free diagnostic</a>
     </div>
   </nav>
 
@@ -570,7 +572,7 @@
       <h1>Find out what your payers kept.</h1>
       <p class="lede">A free, line-item audit of what each payer paid against your contracted rates, built from records you already have. It ends in a number. That number decides everything: whether there's a case, and whether you want us to go after it.</p>
       <div class="cta-row" id="hero-cta">
-        <a class="contact-btn" href="#request">Request the free diagnostic</a>
+        <a class="contact-btn" href="#request">Request your free diagnostic</a>
         <span class="cta-alt">or write to contact@cleariagroup.com</span>
       </div>
     </div>
@@ -646,29 +648,42 @@
     </section>
 
     <section class="closing reveal" id="request">
-      <h2>Request the free diagnostic</h2>
+      <h2>Request your free diagnostic</h2>
       <p class="close-line">The diagnostic answers the only question that matters, in dollars, from your own payment records.</p>
-      <p>Three fields, and we take it from there.</p>
       <form class="diag-form" id="diag-form" action="https://formsubmit.co/contact@cleariagroup.com" method="POST">
         <input type="hidden" name="_subject" value="Diagnostic request: cleariagroup.com">
         <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_cc" value="neil@cleariagroup.com">
+        <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field">
-          <label for="f-name">Your name <span class="opt">(optional)</span></label>
-          <input id="f-name" name="name" type="text" autocomplete="name">
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">First name</label>
+            <input id="f-name" name="first_name" type="text" required autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="f-last">Last name</label>
+            <input id="f-last" name="last_name" type="text" required autocomplete="family-name">
+          </div>
         </div>
         <div class="field">
-          <label for="f-practice">Practice name <span class="opt">(optional)</span></label>
-          <input id="f-practice" name="practice" type="text" autocomplete="organization">
+          <label for="f-practice">Practice name</label>
+          <input id="f-practice" name="practice" type="text" required autocomplete="organization">
         </div>
-        <div class="field">
-          <label for="f-email">Work email</label>
-          <input id="f-email" name="email" type="email" required autocomplete="email">
+        <div class="field-row">
+          <div class="field">
+            <label for="f-phone">Phone number</label>
+            <input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
         </div>
-        <button class="contact-btn" type="submit">Request the free diagnostic</button>
+        <button class="contact-btn" type="submit">Request your free diagnostic</button>
         <p class="form-note">No cost, no obligation. We reply within one business day. Prefer email? <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></p>
       </form>
-      <p class="form-success" role="status" hidden>Received. We'll reply within one business day.</p>
+      <p class="form-success" role="status" hidden>Thank you for your request. A member of our team will reach out to you shortly.</p>
     </section>
 
     <footer>
@@ -689,7 +704,7 @@
   </div>
 
   <div class="stickybar" id="stickybar" aria-hidden="true">
-    <a class="contact-btn" href="#request" tabindex="-1">Request the free diagnostic</a>
+    <a class="contact-btn" href="#request" tabindex="-1">Request your free diagnostic</a>
   </div>
 
   <script>

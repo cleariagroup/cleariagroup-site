@@ -12,6 +12,11 @@ Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cle
 - [About](https://cleariagroup.com/about/): the firm, how it works, incentive structure
 - [Notes on payer behavior](https://cleariagroup.com/notes/): short, sourced notes on how insurers pay independent practices
 
+## Reference pages (quoted from primary documents, with a verification date)
+- [Florida workers' comp provider handbook: rates, authorization rules, EOBR codes, the 45-day DFS petition](https://cleariagroup.com/notes/florida-workers-comp-provider-handbook/)
+- [Florida Blue payer profile: filing, corrected claims, one-year appeals, offsets, authorization by product](https://cleariagroup.com/notes/florida-blue-provider-profile/)
+- [Florida provider payment rights: sections 627.6131 and 641.3155 clause by clause](https://cleariagroup.com/notes/florida-provider-payment-rights/)
+
 ## Notes
 - [Downcoding: 99214 paid as 99213](https://cleariagroup.com/notes/downcoding-99214-paid-as-99213/)
 - [The zero-balance problem](https://cleariagroup.com/notes/zero-balance-problem/)

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claim denied as out of network when the provider is in network: the fix | Clearia</title>
+  <meta name="description" content="An in-network practice paid at out-of-network rates or denied outright is usually a loading error: wrong NPI, tax ID, location, or an effective date the payer never entered. How to find it, fix it, and reprocess the batch.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claim denied as out of network, but you're in network: where the loading error is">
+  <meta property="og:description" content="An in-network practice paid at out-of-network rates or denied outright is usually a loading error: wrong NPI, tax ID, location, or an effective date the payer never entered. How to find it, fix it, and reprocess the batch.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claim denied as out of network, but you're in network: where the loading error is",
+    "description": "An in-network practice paid at out-of-network rates or denied outright is usually a loading error: wrong NPI, tax ID, location, or an effective date the payer never entered. How to find it, fix it, and reprocess the batch.",
+    "datePublished": "2026-09-20",
+    "dateModified": "2026-09-20",
+    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "mainEntityOfPage": "https://cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/"
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
+    .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
+    .scroll table { min-width: 620px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is my claim denied as out of network when I'm in network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always a loading error in the payer's provider record: a rendering NPI not linked to the group, a changed tax ID, an unlisted location, or a wrong effective date. Occasionally the patient's product isn't in your contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can claims paid out of network be reprocessed once the record is fixed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once the payer corrects the provider record with the right effective date, request reprocessing of every affected claim as a batch. Patients balance-billed in the meantime are owed refunds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is denial code CO-B7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The provider was not certified or eligible to be paid for this service on this date of service. On an in-network practice it usually means a credentialing or enrollment record the payer hasn't loaded correctly."
+      }
+    }
+  ]
+}
+  </script>
+  </head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+<p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
+<h1>Claim denied as out of network, but you're in network: where the loading error is</h1>
+<p class="meta">Clearia · September 2026 · credentialing, network status</p>
+<p>The claim went to a payer you're contracted with, and it came back denied as out of network, or paid at an out-of-network rate with the balance shifted to the patient. Nothing about the care is in dispute. Somewhere between your contract and the payer's claims system, your practice doesn't exist the way you think it does. This is a loading error, it is fixable, and every claim it touched is recoverable once it's fixed.</p>
+
+<h2>What the remittance shows</h2>
+<p>Sometimes a CO-B7 (provider not certified or eligible for this service on this date). Sometimes a PR-45 where you'd expect CO-45, which means the payer priced the claim off its out-of-network schedule and made the patient responsible for the gap. Sometimes a plain denial with a remark code about network status. The tell is the pattern: every claim from one provider, one location, or one date range, all at once.</p>
+
+<h2>The five places the error lives</h2>
+<ul>
+<li><b>The rendering NPI isn't linked to the group.</b> A new physician was credentialed but never attached to the group's contract in the payer's system. Claims under that NPI price out of network.</li>
+<li><b>The tax ID changed.</b> A new entity, a merger, a corporate reorganization. The contract is under the old tax ID; claims are going out under the new one.</li>
+<li><b>The service location isn't on the contract.</b> A second office or an ASC that was never added. The payer sees an address it doesn't recognize.</li>
+<li><b>The effective date is wrong.</b> Credentialing was approved but the payer loaded the effective date a month late, or never loaded it. Every claim in the gap is out of network.</li>
+<li><b>The product isn't in your contract.</b> You're in network for the commercial PPO and the patient has the payer's Medicare Advantage or marketplace plan, which is a different network. This one isn't an error. It's a contract question.</li>
+</ul>
+
+<h2>How to find it</h2>
+<ol>
+<li><b>Pull the affected claims and sort by rendering NPI, tax ID, place of service, and date of service.</b> The error clusters on one of those four fields.</li>
+<li><b>Check the payer's provider directory</b> for the affected physician and location. If the directory is wrong, the claims system is wrong.</li>
+<li><b>Ask the provider representative for the loaded record:</b> NPI, tax ID, locations, effective dates, products. Compare it to your contract and credentialing approvals.</li>
+</ol>
+
+<h2>How to fix it, and get the money back</h2>
+<p>The fix is a corrected provider record on the payer's side, usually through a roster update or a demographic change form, with the credentialing approval letter attached. Ask for the effective date to be set to the date credentialing was approved, not the date the payer fixes the record. Then request reprocessing of every affected claim as a batch, with the claim list and the corrected record reference. Payers reprocess batches when the record is corrected; they rarely go looking for the claims themselves.</p>
+<p>Two things to watch. Patients who were balance-billed on the PR-45 lines are owed refunds once the claims reprocess in network. And timely-filing windows keep running while the record is being fixed; if the fix drags, file the affected claims as reconsiderations before the window closes, citing the pending correction.</p>
+
+<h2>The prevention</h2>
+<p>Every credentialing approval gets a test claim within thirty days, and every payer's loaded record gets checked once a year against the contract. That's an hour of administrator time per payer, and it's the difference between catching a loading error at claim five and at claim five hundred.</p>
+<section class="qa">
+<h2>Questions people ask</h2>
+<h3>Why is my claim denied as out of network when I'm in network?</h3>
+<p>Almost always a loading error in the payer's provider record: a rendering NPI not linked to the group, a changed tax ID, an unlisted location, or a wrong effective date. Occasionally the patient's product isn't in your contract.</p>
+<h3>Can claims paid out of network be reprocessed once the record is fixed?</h3>
+<p>Yes. Once the payer corrects the provider record with the right effective date, request reprocessing of every affected claim as a batch. Patients balance-billed in the meantime are owed refunds.</p>
+<h3>What is denial code CO-B7?</h3>
+<p>The provider was not certified or eligible to be paid for this service on this date of service. On an in-network practice it usually means a credentialing or enrollment record the payer hasn't loaded correctly.</p>
+</section>
+<div class="related">
+<p>Related notes</p>
+<ul>
+<li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes, and when billing the patient is prohibited</a></li>
+<li><a href="/notes/denial-code-co-109-wrong-payer/">CO-109 denial code: sent to the wrong payer</a></li>
+<li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
+<li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+</ul>
+</div>
+</article>
+<div class="cta">
+<p><b>Want a year of your remittances read this way?</b> Clearia's free diagnostic checks every line against your contracts and sorts every denial into fixable and not, in dollars, with the deadlines attached. We're paid only from what we recover.</p>
+<a class="btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
+</div>
+<footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://www.linkedin.com/company/cleariagroup/" rel="me noopener">LinkedIn</a></span>
+    </footer>
+
+  </div>
+</body>
+</html>

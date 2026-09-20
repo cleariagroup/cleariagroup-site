@@ -33,5 +33,12 @@ Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cle
 - [CO-252 denial code: the payer wants documentation before it will pay](https://cleariagroup.com/notes/denial-code-co-252-attachment/)
 - [CO-16, CO-29, CO-45, CO-97, CO-197, PR vs CO notes](https://cleariagroup.com/notes/)
 
+- [Medical billing denials, by type: which ones a practice can get back](https://cleariagroup.com/notes/medical-billing-denials-by-type/)
+- [Appeal letter for a denied medical claim: four templates, by denial type](https://cleariagroup.com/notes/appeal-letter-denied-medical-claim/)
+- [Workers' comp denied your bill in Florida: read the EOBR code first](https://cleariagroup.com/notes/workers-comp-denied-bill-florida-eobr/)
+- [Medicare denied the claim: the appeal levels, deadlines, and the one denial you can't appeal](https://cleariagroup.com/notes/medicare-denied-claim-appeal-process/)
+- [Claim denied as out of network, but you're in network: where the loading error is](https://cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/)
+- [The insurer says it overpaid you: recoupment rules in Florida, and when to say no](https://cleariagroup.com/notes/insurer-overpayment-recoupment-florida/)
+
 ## Legal
 - [Terms](https://cleariagroup.com/terms/) · [Privacy](https://cleariagroup.com/privacy/)

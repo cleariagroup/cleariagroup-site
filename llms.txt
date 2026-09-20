@@ -22,7 +22,16 @@ Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cle
 - [Florida payer appeal deadlines table](https://cleariagroup.com/notes/florida-payer-appeal-deadlines/)
 - [Florida's 12-month underpayment rule](https://cleariagroup.com/notes/florida-underpayment-12-month-rule/)
 - [Florida prompt-pay law guide](https://cleariagroup.com/notes/florida-prompt-pay-law-guide/)
-- [Denial codes: CO-16, CO-29, CO-45, CO-97, CO-197, PR vs CO](https://cleariagroup.com/notes/)
+- [Denial codes, explained (hub)](https://cleariagroup.com/notes/denial-codes/)
+- [CO-4 denial code: the modifier is inconsistent, or missing](https://cleariagroup.com/notes/denial-code-co-4-modifier/)
+- [CO-18 denial code: exact duplicate claim or service](https://cleariagroup.com/notes/denial-code-co-18-duplicate/)
+- [CO-22 denial code: another payer may be responsible](https://cleariagroup.com/notes/denial-code-co-22-coordination-of-benefits/)
+- [CO-50 denial code: not medically necessary, according to the payer](https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/)
+- [CO-96 denial code: non-covered charge, and the remark code that explains why](https://cleariagroup.com/notes/denial-code-co-96-non-covered/)
+- [CO-109 denial code: sent to the wrong payer](https://cleariagroup.com/notes/denial-code-co-109-wrong-payer/)
+- [CO-236 denial code: two procedures the NCCI says can't be billed together](https://cleariagroup.com/notes/denial-code-co-236-ncci/)
+- [CO-252 denial code: the payer wants documentation before it will pay](https://cleariagroup.com/notes/denial-code-co-252-attachment/)
+- [CO-16, CO-29, CO-45, CO-97, CO-197, PR vs CO notes](https://cleariagroup.com/notes/)
 
 ## Legal
 - [Terms](https://cleariagroup.com/terms/) · [Privacy](https://cleariagroup.com/privacy/)

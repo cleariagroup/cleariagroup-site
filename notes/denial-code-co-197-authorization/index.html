@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CO-197 authorization denials: the triage | Clearia</title>
+  <title>CO-197 denial code: no authorization on file, and the three-way triage | Clearia</title>
   <meta name="description" content="CO-197 is three problems: an auth that exists, an emergency exception, or an elective miss. The triage, the timeline levers, and when not to appeal.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-197-authorization/">
   <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
     "headline": "CO-197 authorization denials: the three-way triage",
     "description": "CO-197 is three problems: an auth that exists, an emergency exception, or an elective miss. The triage, the timeline levers, and when not to appeal.",
     "datePublished": "2026-08-08",
-    "dateModified": "2026-08-08",
+    "dateModified": "2026-09-20",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-197-authorization/"
@@ -100,7 +100,43 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does denial code CO-197 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The payer's system found no prior authorization, precertification, or notification for the service. It doesn't mean none exists; it means the claim and the authorization didn't match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a CO-197 denial be overturned?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often. If an authorization exists, match its number, dates, units, and codes to the claim and resubmit. If an emergency exception applies, invoke it with the record. If the authorization was genuinely missed, a retro-authorization request is the only route, and payers grant it selectively."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bill the patient when authorization was missing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally not on in-network claims; the contract puts authorization on the provider and CO makes the amount yours. Check the contract and the group code."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -115,6 +151,7 @@
       <h1>CO-197 authorization denials: the three-way triage</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
+<p class="def"><b>Denial code CO-197</b> is the payer saying: "Precertification/authorization/notification/pre-treatment absent." What that means for your practice, and whether it's worth chasing, below.</p>
       <p>CO-197, precertification or authorization absent, reads like the end of the road. It isn't. It's actually three different problems with three different plays, and the worst thing you can do is treat all three as appeals. Triage first.</p>
 
       <h2>Case one: the authorization exists</h2>
@@ -141,7 +178,16 @@
       <h2>Prevention: where this denial actually gets solved</h2>
       <p>Recovery work salvages cases one and two. The elective miss only ever gets solved upstream. The workflow that ends it is verification at scheduling: confirm before the case that an authorization exists <i>and</i> that it matches the four fields the claim will carry (codes, dates, rendering provider, site), then re-verify whenever the plan changes at reverification or the procedure changes in planning. Practices that treat the auth as a yes/no checkbox keep generating case-one denials. Practices that treat it as a four-field match mostly stop seeing this code at all.</p>
 
-      <div class="related">
+      <section class="qa">
+<h2>Questions people ask about CO-197</h2>
+<h3>What does denial code CO-197 mean?</h3>
+<p>The payer's system found no prior authorization, precertification, or notification for the service. It doesn't mean none exists; it means the claim and the authorization didn't match.</p>
+<h3>Can a CO-197 denial be overturned?</h3>
+<p>Often. If an authorization exists, match its number, dates, units, and codes to the claim and resubmit. If an emergency exception applies, invoke it with the record. If the authorization was genuinely missed, a retro-authorization request is the only route, and payers grant it selectively.</p>
+<h3>Can I bill the patient when authorization was missing?</h3>
+<p>Generally not on in-network claims; the contract puts authorization on the provider and CO makes the amount yours. Check the contract and the group code.</p>
+</section>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-workers-comp-underpayment-2026/">Florida workers' comp now pays 175–210% of Medicare</a></li>
@@ -150,7 +196,8 @@
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
           <li><a href="/notes/what-is-denial-recovery/">What is denial recovery? The denials worth chasing, and the ones that aren't</a></li>
           <li><a href="/notes/prior-auth-approved-claim-denied/">They approved the prior auth. Then they didn't pay the claim.</a></li>
-        </ul>
+        <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+</ul>
       </div>
     </article>
 

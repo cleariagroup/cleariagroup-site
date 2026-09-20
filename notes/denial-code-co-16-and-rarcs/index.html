@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CO-16 denials: read the remark code | Clearia</title>
+  <title>CO-16 denial code: missing information, and the remark code that says what | Clearia</title>
   <meta name="description" content="CO-16 tells you nothing by design. The remark code carries the reason. How RARC routing works, resubmission mechanics, and why a letter is the wrong tool.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-16-and-rarcs/">
   <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
     "headline": "CO-16 means read the remark code",
     "description": "CO-16 tells you nothing by design. The remark code carries the reason. How RARC routing works, resubmission mechanics, and why a letter is the wrong tool.",
     "datePublished": "2026-08-08",
-    "dateModified": "2026-08-08",
+    "dateModified": "2026-09-20",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-16-and-rarcs/"
@@ -100,7 +100,43 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does denial code CO-16 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The claim is missing information or has a submission error. On its own it tells you nothing; the payer must attach a remark code that names the field or error."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you fix a CO-16 denial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Read the remark code, supply or correct the field it names, and resubmit as a corrected claim. A CO-16 is almost never an appeal; it's a resubmission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bill the patient for a CO-16?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CO is a contractual obligation code and the amount is the provider's to fix, not the patient's to pay."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -115,6 +151,7 @@
       <h1>CO-16 means read the remark code</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
+<p class="def"><b>Denial code CO-16</b> is the payer saying: "Claim/service lacks information or has submission/billing error(s)." What that means for your practice, and whether it's worth chasing, below.</p>
       <p>CO-16, "claim/service lacks information which is needed for adjudication," tells you almost nothing. That's on purpose. The code is just the wrapper. The actual reason rides along next to it.</p>
 
       <h2>Why the code is empty on purpose</h2>
@@ -140,7 +177,16 @@
       <p>Corrected-claim windows are often <b>shorter</b> than appeal windows, payer-specific, and poorly documented. Verify per contract rather than assuming the appeal clock applies. The appeal windows themselves are mapped in <a href="/notes/florida-payer-appeal-deadlines/">the working deadlines table</a>. One more thing. A claim that cycles through repeated CO-16s while the filing window runs down is exactly how a fixable denial turns into a timely-filing denial, which is <a href="/notes/denial-code-co-29-timely-filing/">a much worse problem</a>.</p>
       <p>The habit this code teaches is the cheapest upgrade any billing operation can make, in any specialty: <b>route every denial by its remark code, not its reason code.</b> Practices that do this rework a denial once. Practices that don't work the same denial three times.</p>
 
-      <div class="related">
+      <section class="qa">
+<h2>Questions people ask about CO-16</h2>
+<h3>What does denial code CO-16 mean?</h3>
+<p>The claim is missing information or has a submission error. On its own it tells you nothing; the payer must attach a remark code that names the field or error.</p>
+<h3>How do you fix a CO-16 denial?</h3>
+<p>Read the remark code, supply or correct the field it names, and resubmit as a corrected claim. A CO-16 is almost never an appeal; it's a resubmission.</p>
+<h3>Can I bill the patient for a CO-16?</h3>
+<p>No. CO is a contractual obligation code and the amount is the provider's to fix, not the patient's to pay.</p>
+</section>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-97-global-period/">CO-97: bundling, global periods, and the remark code that decides</a></li>
@@ -148,7 +194,8 @@
           <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
           <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
-        </ul>
+        <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+</ul>
       </div>
     </article>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CO-45 denial code: not always a write-off | Clearia</title>
+  <title>CO-45 denial code: the contractual adjustment, and when it hides underpayment | Clearia</title>
   <meta name="description" content="CO-45 is the routine contractual adjustment, which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-45/">
   <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
     "headline": "CO-45 isn't always a write-off",
     "description": "CO-45 is the routine contractual adjustment, which is exactly where underpayment hides. How to recompute it against your contract, and when to let it go.",
     "datePublished": "2026-08-08",
-    "dateModified": "2026-08-08",
+    "dateModified": "2026-09-20",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-45/"
@@ -100,7 +100,43 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does denial code CO-45 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The payer paid the contracted or fee-schedule amount and wrote off the difference between that and your charge. On an in-network claim it's the routine contractual adjustment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a CO-45 adjustment recoverable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only when the allowed amount was below your contracted rate. Recompute allowed against your fee schedule line by line; where it's short, that's an underpayment to reconsider, not a write-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the patient be billed for a CO-45 amount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CO-45 is the provider's contractual write-off. A PR-45 shifts the amount to the patient, which is normal out of network and worth questioning in network."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -115,6 +151,7 @@
       <h1>CO-45 isn't always a write-off</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
+<p class="def"><b>Denial code CO-45</b> is the payer saying: "Charge exceeds fee schedule/maximum allowable or contracted/legislated fee arrangement." What that means for your practice, and whether it's worth chasing, below.</p>
       <p>CO-45, "charge exceeds fee schedule / maximum allowable or contracted fee arrangement," is the most common adjustment code in medicine. On an in-network claim it's the routine contractual write-off: the gap between what you billed and what your contract allows. The billing software posts it automatically. The balance goes to zero. Nobody looks again. Which is exactly why underpayment hides inside it.</p>
 
       <h2>What the code actually asserts</h2>
@@ -142,7 +179,16 @@
       <h2>When it really is a write-off</h2>
       <p>Most CO-45s are correct. A contractual adjustment that ties to the fee schedule is the deal you signed. Post it and move on. Some reductions that look like shortfalls are lawful and precise: Medicare sequestration, for instance, takes 2% of the Medicare payment amount (not the allowed amount) under its own adjustment code, so recompute it on that basis before questioning it. Disputing correct adjustments burns payer goodwill and buries your legitimate demands in noise. The discipline that makes recovery work is the same one that makes it credible. Recompute first. Demand only what the contract supports. Let the correct lines go.</p>
 
-      <div class="related">
+      <section class="qa">
+<h2>Questions people ask about CO-45</h2>
+<h3>What does denial code CO-45 mean?</h3>
+<p>The payer paid the contracted or fee-schedule amount and wrote off the difference between that and your charge. On an in-network claim it's the routine contractual adjustment.</p>
+<h3>Is a CO-45 adjustment recoverable?</h3>
+<p>Only when the allowed amount was below your contracted rate. Recompute allowed against your fee schedule line by line; where it's short, that's an underpayment to reconsider, not a write-off.</p>
+<h3>Can the patient be billed for a CO-45 amount?</h3>
+<p>No. CO-45 is the provider's contractual write-off. A PR-45 shifts the amount to the patient, which is normal out of network and worth questioning in network.</p>
+</section>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
@@ -152,7 +198,8 @@
           <li><a href="/notes/downcoding-99214-paid-as-99213/">Downcoding: why your 99214s are paid as 99213s, and how to get the difference back</a></li>
           <li><a href="/notes/zero-balance-problem/">The zero-balance problem: why underpaid claims look paid</a></li>
           <li><a href="/notes/who-gets-paid-when-your-claim-is-cut/">Who gets paid when your claim is cut? The repricing industry, in its own words</a></li>
-        </ul>
+        <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+</ul>
       </div>
     </article>
 

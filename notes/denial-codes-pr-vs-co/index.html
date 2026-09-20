@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PR vs CO codes: who actually owes | Clearia</title>
+  <title>PR vs CO denial codes: which group code means the patient can be billed | Clearia</title>
   <meta name="description" content="The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is, and QMB patients can't be billed at all.">
   <link rel="canonical" href="https://cleariagroup.com/notes/denial-codes-pr-vs-co/">
   <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
     "headline": "PR vs CO: who actually owes, and when billing the patient is prohibited",
     "description": "The group code, not the denial code, decides who can be billed. CO is never patient money, PR usually is, and QMB patients can't be billed at all.",
     "datePublished": "2026-08-08",
-    "dateModified": "2026-08-08",
+    "dateModified": "2026-09-20",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-codes-pr-vs-co/"
@@ -100,7 +100,43 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between PR and CO on a remittance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The group code. CO amounts are the provider's contractual write-off and can never be billed to the patient. PR amounts are patient responsibility: deductible, coinsurance, copay, or a non-covered service the contract lets you bill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does OA mean on a denial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Other adjustment. The payer isn't assigning the amount to you or the patient; it's usually pointing at another claim or payer, as with duplicate claims and coordination of benefits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a CO amount ever be billed to the patient?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If you believe the amount should be patient responsibility under your contract, the fix is asking the payer to correct the group code to PR, not billing the patient against a CO."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -115,6 +151,7 @@
       <h1>PR vs CO: who actually owes, and when billing the patient is prohibited</h1>
       <p class="meta">Clearia · August 2026 · denial codes, read properly</p>
 
+<p class="def"><b>Group codes on a remittance:</b> CO: Contractual Obligation. PR: Patient Responsibility. OA: Other Adjustment. PI: Payer Initiated Reductions. The group code decides who owes the amount; the reason code decides why.</p>
       <p>Two remittance lines carry the same code: 45. One is a routine write-off. The other is money the patient may genuinely owe. The difference isn't the number. It's the two letters in front of it. Get them wrong one way and you leave revenue on the table. Get them wrong the other way and you've got a compliance problem.</p>
 
       <h2>The group code carries the liability</h2>
@@ -150,7 +187,16 @@
       <p>Coordination-of-benefits denials (CO-22) mean another payer may be responsible. The play is refiling to the right payer, not a statement. Coverage-not-yet-effective and coverage-terminated denials get an eligibility recheck and a refile to whatever plan was active before anyone bills the patient. Capitation denials (CO-24) are a redirect in disguise. For a non-capitated fee-for-service practice, the usual reality is that the patient is in a Medicare Advantage plan or an IPA holds the risk. The claim refiles to whoever actually holds it. Neither a write-off nor a patient statement is the answer. And the whole CO family (missing information, timely filing, authorization) is provider-side work by definition.</p>
       <p>The discipline pays both ways. Respecting the CO side keeps the practice clean in audits and payer relations. Scrutinizing the CO side is where the recoverable money lives, because a payer's group-code choice is an assertion like any other. And in Florida, a shortfall found behind a CO adjustment on fully-insured business stays claimable for <a href="/notes/florida-underpayment-12-month-rule/">12 months from the payment date</a>.</p>
 
-      <div class="related">
+      <section class="qa">
+<h2>Questions people ask about PR vs CO</h2>
+<h3>What is the difference between PR and CO on a remittance?</h3>
+<p>The group code. CO amounts are the provider's contractual write-off and can never be billed to the patient. PR amounts are patient responsibility: deductible, coinsurance, copay, or a non-covered service the contract lets you bill.</p>
+<h3>What does OA mean on a denial?</h3>
+<p>Other adjustment. The payer isn't assigning the amount to you or the patient; it's usually pointing at another claim or payer, as with duplicate claims and coordination of benefits.</p>
+<h3>Can a CO amount ever be billed to the patient?</h3>
+<p>No. If you believe the amount should be patient responsibility under your contract, the fix is asking the payer to correct the group code to PR, not billing the patient against a CO.</p>
+</section>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
@@ -158,7 +204,8 @@
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
           <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
           <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
-        </ul>
+        <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+</ul>
       </div>
     </article>
 

@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -193,6 +196,7 @@
 <h3>Is the Medicare Advantage appeal process the same?</h3>
 <p>No. MA plans run their own process. Contracted providers follow the plan's provider dispute procedure; non-contracted providers get a 60-day reconsideration with a waiver of liability.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/medicare-denied-claim-appeal-process/">Copy link</a> · <a href="mailto:?subject=Medicare%20denied%20the%20claim%3A%20the%20appeal%20levels%2C%20deadlines%2C%20and%20the%20one%20denial%20you%20can%27t%20appeal&body=Worth%20a%20read%3A%20Medicare%20denied%20the%20claim%3A%20the%20appeal%20levels%2C%20deadlines%2C%20and%20the%20one%20denial%20you%20can%27t%20appeal%0Ahttps%3A//cleariagroup.com/notes/medicare-denied-claim-appeal-process/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fmedicare-denied-claim-appeal-process%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -215,5 +219,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

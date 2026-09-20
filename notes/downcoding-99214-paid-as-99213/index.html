@@ -101,6 +101,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -149,7 +152,8 @@
 
 <h2>What it means for your practice</h2>
 <p>If you bill level 4 and 5 visits and take Cigna, Aetna, or any of the plans above, assume some of them are being paid one level down right now. Check one quarter. If the mismatch count is zero, good, you've confirmed it. If it's not, you've found money that closed as paid and is still inside the dispute window. That is exactly the kind of pattern Clearia's diagnostic is built to surface.</p>
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/downcoding-99214-paid-as-99213/">Copy link</a> · <a href="mailto:?subject=Downcoding%3A%20why%20your%2099214s%20are%20paid%20as%2099213s%2C%20and%20how%20to%20get%20the%20difference%20back&body=Worth%20a%20read%3A%20Downcoding%3A%20why%20your%2099214s%20are%20paid%20as%2099213s%2C%20and%20how%20to%20get%20the%20difference%20back%0Ahttps%3A//cleariagroup.com/notes/downcoding-99214-paid-as-99213/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdowncoding-99214-paid-as-99213%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
@@ -173,5 +177,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

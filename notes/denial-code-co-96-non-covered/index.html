@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -183,6 +186,7 @@
 <h3>What's the difference between CO-96 and PR-96?</h3>
 <p>The group code. CO makes the non-covered amount your write-off. PR makes it the patient's responsibility. If the contract says excluded services are patient-pay and the payer sent CO, ask for the group code to be corrected.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-96-non-covered/">Copy link</a> · <a href="mailto:?subject=CO-96%20denial%20code%3A%20non-covered%20charge%2C%20and%20the%20remark%20code%20that%20explains%20why&body=Worth%20a%20read%3A%20CO-96%20denial%20code%3A%20non-covered%20charge%2C%20and%20the%20remark%20code%20that%20explains%20why%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-96-non-covered/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-96-non-covered%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -205,5 +209,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

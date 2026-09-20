@@ -101,6 +101,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -148,7 +151,8 @@
       <h2>Sources</h2>
       <p>MultiPlan / Churchill Capital Corp III merger filings (DEFA14A, 2020) and subsequent annual reports, via <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001793229&amp;type=DEFA14A">SEC EDGAR</a> · <a href="https://patents.google.com/patent/US8103522">US Patent 8,103,522</a> (claim reimbursement recommendations) · Change Healthcare Form 10-K (FY2020), via <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001756497&amp;type=10-K">SEC EDGAR</a> · Cotiviti Holdings Form 10-K (2016) · <a href="https://law.justia.com/cases/nevada/supreme-court/2025/85656.html">UnitedHealthcare Ins. Co. v. Fremont Emergency Services</a>, Nevada Supreme Court No. 85656 (2025) · <a href="https://www.courtlistener.com/docket/69011985/in-re-multiplan-health-insurance-provider-litigation/">In re MultiPlan Health Insurance Provider Litigation</a>, MDL 3121 (N.D. Ill.) · US DOJ Antitrust Division statement of interest (2024) · AMA National Health Insurer Report Card series (2008–2013). Figures retrieved August 2026; SEC figures are as reported for the periods stated in each filing.</p>
 
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/who-gets-paid-when-your-claim-is-cut/">Copy link</a> · <a href="mailto:?subject=Who%20gets%20paid%20when%20your%20claim%20is%20cut%3F%20The%20repricing%20industry%2C%20in%20its%20own%20words&body=Worth%20a%20read%3A%20Who%20gets%20paid%20when%20your%20claim%20is%20cut%3F%20The%20repricing%20industry%2C%20in%20its%20own%20words%0Ahttps%3A//cleariagroup.com/notes/who-gets-paid-when-your-claim-is-cut/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fwho-gets-paid-when-your-claim-is-cut%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-45/">CO-45 isn't always a write-off</a></li>
@@ -173,5 +177,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

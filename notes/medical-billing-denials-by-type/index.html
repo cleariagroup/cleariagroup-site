@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -193,6 +196,7 @@
 <h3>Which denials are worth appealing?</h3>
 <p>The administrative ones: registration, authorization on file, coding and bundling with documentation, and timely filing with proof. Premier found private payers overturned more than 60 percent of denials providers fought.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/medical-billing-denials-by-type/">Copy link</a> · <a href="mailto:?subject=Medical%20billing%20denials%2C%20by%20type%3A%20which%20ones%20a%20practice%20can%20get%20back&body=Worth%20a%20read%3A%20Medical%20billing%20denials%2C%20by%20type%3A%20which%20ones%20a%20practice%20can%20get%20back%0Ahttps%3A//cleariagroup.com/notes/medical-billing-denials-by-type/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fmedical-billing-denials-by-type%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -215,5 +219,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

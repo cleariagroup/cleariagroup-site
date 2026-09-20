@@ -103,6 +103,9 @@
     .scroll table { min-width: 560px; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -148,7 +151,8 @@
 
 <h2>What it means for your practice</h2>
 <p>If your denial rate is anywhere near the industry's 11 to 15 percent, and most of those denials are administrative, and most administrative denials reverse when worked, then there is a pool of earned money sitting in closed claims right now. Its size is knowable. Pull a year of remittances, count the CO-16, CO-29, CO-97, CO-150 and CO-197 lines, and sum them. That count, line by line, with the deadlines attached, is the first thing Clearia's diagnostic produces. It's free, and if the pool turns out to be small, you'll have confirmed it from your own data.</p>
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/what-is-denial-recovery/">Copy link</a> · <a href="mailto:?subject=What%20is%20denial%20recovery%3F%20The%20denials%20worth%20chasing%2C%20and%20the%20ones%20that%20aren%27t&body=Worth%20a%20read%3A%20What%20is%20denial%20recovery%3F%20The%20denials%20worth%20chasing%2C%20and%20the%20ones%20that%20aren%27t%0Ahttps%3A//cleariagroup.com/notes/what-is-denial-recovery/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fwhat-is-denial-recovery%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/denial-code-co-197-authorization/">CO-197 authorization denials: the triage</a></li>
@@ -173,5 +177,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

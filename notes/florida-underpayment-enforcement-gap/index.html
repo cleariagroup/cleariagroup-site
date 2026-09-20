@@ -101,6 +101,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -160,7 +163,8 @@
       <h2>Sources and method</h2>
       <p>Florida OIR insurer compliance reports, 2023–2026 (quarterly and annual editions, published at <a href="https://floir.gov/">floir.gov</a>); fine counts and restitution figures as reported by OIR; we reviewed each report's health-line entries and searched all editions for the four named payers · <a href="https://wpso.dmhc.ca.gov/enfactions/actionSearch.aspx">California DMHC enforcement actions database</a> · <a href="https://ahca.myflorida.com/medicaid/statewide-medicaid-managed-care/compliance-actions">Florida AHCA SMMC compliance actions</a> · CMS No Surprises Act enforcement and complaint reporting (<a href="https://www.cms.gov/nosurprises/policies-and-resources/reports">cms.gov</a>) · §627.6131, §641.3155, §408.7057, §626.9541, Florida Statutes (<a href="https://www.flsenate.gov/Laws/Statutes/">flsenate.gov</a>). Figures retrieved August 2026. "No fine for underpaying physicians" reflects our reading of the published compliance reports for 2023–H1 2026; the reports categorize fines by violation type and we found no entry whose stated basis was physician claim underpayment.</p>
 
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-underpayment-enforcement-gap/">Copy link</a> · <a href="mailto:?subject=Florida%20fined%20120%20insurers%20in%202025.%20Underpaying%20physicians%20wasn%27t%20why.&body=Worth%20a%20read%3A%20Florida%20fined%20120%20insurers%20in%202025.%20Underpaying%20physicians%20wasn%27t%20why.%0Ahttps%3A//cleariagroup.com/notes/florida-underpayment-enforcement-gap/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-underpayment-enforcement-gap%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
@@ -185,5 +189,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

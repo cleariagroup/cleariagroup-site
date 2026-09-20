@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -189,6 +192,7 @@
 <h3>What is denial code CO-B7?</h3>
 <p>The provider was not certified or eligible to be paid for this service on this date of service. On an in-network practice it usually means a credentialing or enrollment record the payer hasn't loaded correctly.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/">Copy link</a> · <a href="mailto:?subject=Claim%20denied%20as%20out%20of%20network%2C%20but%20you%27re%20in%20network%3A%20where%20the%20loading%20error%20is&body=Worth%20a%20read%3A%20Claim%20denied%20as%20out%20of%20network%2C%20but%20you%27re%20in%20network%3A%20where%20the%20loading%20error%20is%0Ahttps%3A//cleariagroup.com/notes/claim-denied-out-of-network-in-network-provider/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fclaim-denied-out-of-network-in-network-provider%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -211,5 +215,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

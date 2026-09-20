@@ -32,7 +32,7 @@
     "headline": "Denial codes, explained: what the payer is saying, and whether it's worth chasing",
     "description": "A plain-language table of the denial codes that matter most to independent practices: what each CARC means, what it usually is in practice, and which ones are recoverable. With the deeper note for each.",
     "datePublished": "2026-09-20",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-09-21",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-codes/"
@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -160,23 +163,27 @@
 <div class="scroll"><table>
 <tr><th>Code</th><th>The payer's words</th><th>What it usually is</th><th>Recoverable?</th><th>Note</th></tr>
 <tr><td><b>CO-4</b></td><td>Procedure code inconsistent with the modifier, or a required modifier is missing</td><td>A modifier mismatch on the claim</td><td>Yes, corrected claim</td><td><a href="/notes/denial-code-co-4-modifier/">The note</a></td></tr>
-<tr><td><b>CO-11</b></td><td>The diagnosis is inconsistent with the procedure</td><td>Diagnosis code doesn't support the CPT on the claim</td><td>Yes if the chart supports a matching diagnosis</td><td>Coming</td></tr>
+<tr><td><b>CO-11</b></td><td>The diagnosis is inconsistent with the procedure</td><td>Diagnosis code doesn't support the CPT on the claim</td><td>Yes if the chart supports a matching diagnosis</td><td><a href="/notes/denial-code-co-11-diagnosis-inconsistent/">The note</a></td></tr>
+<tr><td><b>CO-15</b></td><td>Authorization number missing, invalid, or doesn't apply</td><td>An authorization exists but doesn't match the claim</td><td>Yes, match the five fields or amend the authorization</td><td><a href="/notes/denial-code-co-15-authorization-number/">The note</a></td></tr>
 <tr><td><b>CO-16</b></td><td>Claim lacks information or has billing errors</td><td>A missing or wrong field; the remark code names it</td><td>Yes, resubmission</td><td><a href="/notes/denial-code-co-16-and-rarcs/">The note</a></td></tr>
 <tr><td><b>OA-18</b></td><td>Exact duplicate claim or service</td><td>A true resubmission, or two distinct same-day services collapsed into one</td><td>False duplicates yes; true duplicates no</td><td><a href="/notes/denial-code-co-18-duplicate/">The note</a></td></tr>
 <tr><td><b>CO-22</b></td><td>Care may be covered by another payer</td><td>Coordination-of-benefits hold</td><td>Yes, after the primary payer or a COB update</td><td><a href="/notes/denial-code-co-22-coordination-of-benefits/">The note</a></td></tr>
-<tr><td><b>OA-23</b></td><td>Impact of prior payer's adjudication</td><td>Secondary payer accounting for what the primary paid</td><td>Not a denial; check the math</td><td>Coming</td></tr>
-<tr><td><b>CO-27</b></td><td>Expenses incurred after coverage terminated</td><td>Patient's plan ended before the date of service</td><td>Rarely; verify the term date and any new plan</td><td>Coming</td></tr>
+<tr><td><b>OA-23</b></td><td>Impact of prior payer's adjudication</td><td>Secondary payer accounting for what the primary paid</td><td>Not a denial; check the math</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">The note</a></td></tr>
+<tr><td><b>CO-27</b></td><td>Expenses incurred after coverage terminated</td><td>Patient's plan ended before the date of service</td><td>Rarely; verify the term date and any new plan</td><td><a href="/notes/denial-code-co-27-coverage-terminated/">The note</a></td></tr>
 <tr><td><b>CO-29</b></td><td>The time limit for filing has expired</td><td>Late filing, per the payer's records</td><td>Yes with proof of timely submission or a COB exception</td><td><a href="/notes/denial-code-co-29-timely-filing/">The note</a></td></tr>
 <tr><td><b>CO-45</b></td><td>Charge exceeds the contracted or fee-schedule amount</td><td>The routine contractual write-off</td><td>Only where allowed is below contract</td><td><a href="/notes/denial-code-co-45/">The note</a></td></tr>
 <tr><td><b>CO-50</b></td><td>Not deemed medically necessary by the payer</td><td>A coverage-policy mismatch, or a real clinical dispute</td><td>Mismatches yes; clinical disputes are the physician's appeal</td><td><a href="/notes/denial-code-co-50-medical-necessity/">The note</a></td></tr>
+<tr><td><b>CO-59</b></td><td>Processed under multiple or concurrent procedure rules</td><td>The multiple-procedure reduction</td><td>Yes where misranked, add-ons reduced, or bilateral double-counted</td><td><a href="/notes/denial-code-co-59-multiple-procedure-reduction/">The note</a></td></tr>
 <tr><td><b>CO-96</b></td><td>Non-covered charge</td><td>A category; the remark code says why</td><td>Bundling, setting, frequency and modifier cases yes; true exclusions no</td><td><a href="/notes/denial-code-co-96-non-covered/">The note</a></td></tr>
 <tr><td><b>CO-97</b></td><td>Included in the payment for another service</td><td>Global period or bundling</td><td>Yes when the service was separate</td><td><a href="/notes/denial-code-co-97-global-period/">The note</a></td></tr>
 <tr><td><b>CO-109</b></td><td>Not covered by this payer; send to the correct payer</td><td>Wrong payer</td><td>Yes, at the right payer, inside its window</td><td><a href="/notes/denial-code-co-109-wrong-payer/">The note</a></td></tr>
-<tr><td><b>CO-119</b></td><td>Benefit maximum reached</td><td>Visit or dollar cap for the period</td><td>Only if the count is wrong</td><td>Coming</td></tr>
+<tr><td><b>CO-119</b></td><td>Benefit maximum reached</td><td>Visit or dollar cap for the period</td><td>Only if the count is wrong</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">The note</a></td></tr>
 <tr><td><b>CO-150</b></td><td>Information doesn't support this level of service</td><td>Downcoding</td><td>Yes with the note</td><td><a href="/notes/downcoding-99214-paid-as-99213/">The note</a></td></tr>
-<tr><td><b>CO-151</b></td><td>Information doesn't support this many or this frequency of services</td><td>Units or frequency limit</td><td>Yes when the units are documented</td><td>Coming</td></tr>
+<tr><td><b>CO-151</b></td><td>Information doesn't support this many or this frequency of services</td><td>Units or frequency limit</td><td>Yes when the units are documented</td><td><a href="/notes/denial-code-co-151-frequency-units/">The note</a></td></tr>
+<tr><td><b>CO-170 / 171</b></td><td>Not payable when performed or billed by this provider type (or in this facility)</td><td>An extender enrollment or billing-convention gap</td><td>Yes from the enrollment effective date, or by corrected claim</td><td><a href="/notes/denial-code-co-170-171-provider-type/">The note</a></td></tr>
 <tr><td><b>CO-197</b></td><td>Authorization absent</td><td>No authorization matched to the claim</td><td>Yes if one exists or an exception applies</td><td><a href="/notes/denial-code-co-197-authorization/">The note</a></td></tr>
-<tr><td><b>CO-204</b></td><td>Not covered under the patient's current benefit plan</td><td>A plan exclusion</td><td>Rarely; group code may need correcting</td><td>Coming</td></tr>
+<tr><td><b>CO-204</b></td><td>Not covered under the patient's current benefit plan</td><td>A plan exclusion</td><td>Rarely; group code may need correcting</td><td><a href="/notes/denial-code-co-204-not-covered-benefit-plan/">The note</a></td></tr>
+<tr><td><b>CO-231 / 234</b></td><td>Mutually exclusive procedures; procedure not paid separately</td><td>The other two bundling codes</td><td>231 yes with a valid modifier; 234 yes where the contract prices the code</td><td><a href="/notes/denial-code-co-231-234-mutually-exclusive-not-separately-paid/">The note</a></td></tr>
 <tr><td><b>CO-236</b></td><td>Procedure combination not compatible per NCCI</td><td>A procedure-to-procedure edit</td><td>Indicator-1 pairs yes with a modifier; indicator-0 no</td><td><a href="/notes/denial-code-co-236-ncci/">The note</a></td></tr>
 <tr><td><b>CO-252</b></td><td>Attachment or documentation required</td><td>A pending request for records or an invoice</td><td>Yes, send the document inside the window</td><td><a href="/notes/denial-code-co-252-attachment/">The note</a></td></tr>
 <tr><td><b>CO-B7</b></td><td>Provider not certified or eligible for this service on this date</td><td>Credentialing or enrollment gap</td><td>Yes if the enrollment was effective; otherwise no</td><td><a href="/notes/claim-denied-out-of-network-in-network-provider/">The note</a></td></tr>
@@ -193,6 +200,7 @@
 <h3>Which denial codes are worth appealing?</h3>
 <p>The administrative ones: missing information (16), modifiers (4), duplicates that aren't (18), coordination of benefits (22), timely filing with proof (29), underpayment inside a CO-45, bundling the contract doesn't allow (97, 236), wrong payer (109), documentation requests (252), authorization on file (197), and level of service (150). Medical-necessity disputes (50) and true plan exclusions (96, 204) are a different job.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-codes/">Copy link</a> · <a href="mailto:?subject=Denial%20codes%2C%20explained%3A%20what%20the%20payer%20is%20saying%2C%20and%20whether%20it%27s%20worth%20chasing&body=Worth%20a%20read%3A%20Denial%20codes%2C%20explained%3A%20what%20the%20payer%20is%20saying%2C%20and%20whether%20it%27s%20worth%20chasing%0Ahttps%3A//cleariagroup.com/notes/denial-codes/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-codes%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -216,5 +224,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

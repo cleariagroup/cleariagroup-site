@@ -101,6 +101,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -145,7 +148,8 @@
       <h2>What 45 days means operationally</h2>
       <p>The short clock makes WC recovery <b>forward-looking</b>. EOBRs older than about 45 days from receipt are largely past the petition path, however clear the shortfall. Commercial underpayments are different; they stay open for 12 months under <a href="/notes/florida-underpayment-12-month-rule/">Florida's statutory window</a>. So the discipline here is monitoring. Check each EOBR against the 175%/210% MRAs as it arrives, and petition inside the window. Start today and every claim from today forward is protected. Wait, and the difference keeps going to the carrier.</p>
 
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-workers-comp-underpayment-2026/">Copy link</a> · <a href="mailto:?subject=Florida%20workers%27%20comp%20now%20pays%20175%E2%80%93210%25%20of%20Medicare.%20Is%20your%20practice%20getting%20it%3F&body=Worth%20a%20read%3A%20Florida%20workers%27%20comp%20now%20pays%20175%E2%80%93210%25%20of%20Medicare.%20Is%20your%20practice%20getting%20it%3F%0Ahttps%3A//cleariagroup.com/notes/florida-workers-comp-underpayment-2026/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-workers-comp-underpayment-2026%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
@@ -172,5 +176,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

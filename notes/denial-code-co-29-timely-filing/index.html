@@ -105,6 +105,9 @@
     .def b { font-weight: 600; }
     .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
     .qa p { margin-bottom: 0.6rem; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -196,6 +199,7 @@
 <h3>Who is responsible for a CO-29 denial?</h3>
 <p>The provider. CO means contractual obligation, and the amount cannot be billed to the patient. That's why the date math matters before the claim goes out.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-29-timely-filing/">Copy link</a> · <a href="mailto:?subject=CO-29%20timely%20filing%3A%20run%20the%20date%20math%20before%20anything%20else&body=Worth%20a%20read%3A%20CO-29%20timely%20filing%3A%20run%20the%20date%20math%20before%20anything%20else%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-29-timely-filing/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-29-timely-filing%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
         <p>Related notes</p>
         <ul>
@@ -223,5 +227,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -91,6 +91,9 @@
     .kicker a:hover { color: var(--accent); }
     article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
     article a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -147,7 +150,8 @@
         <li><b>Bring in a recovery firm.</b> Contingency-based firms audit the full remittance history, build the cases, and pursue them at scale, and are typically paid only as a percentage of what's actually recovered. The trade is a share of the recovery for zero internal hours and pattern expertise you'd otherwise build from scratch.</li>
       </ol>
       <p>Whichever route you pick, run the afternoon check first. It costs a few hours, uses records you already own, and turns a vague worry into a number. If the number is real, <a href="/notes/how-to-appeal-an-underpaid-claim/">here is how to appeal it</a>.</p>
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/how-to-spot-insurance-underpayment/">Copy link</a> · <a href="mailto:?subject=How%20to%20tell%20whether%20an%20insurer%20is%20underpaying%20your%20practice&body=Worth%20a%20read%3A%20How%20to%20tell%20whether%20an%20insurer%20is%20underpaying%20your%20practice%0Ahttps%3A//cleariagroup.com/notes/how-to-spot-insurance-underpayment/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fhow-to-spot-insurance-underpayment%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
@@ -170,5 +174,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

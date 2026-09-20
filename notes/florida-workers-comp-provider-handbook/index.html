@@ -121,6 +121,9 @@
     .toc { background: var(--card); border: 1px solid var(--hairline); padding: 0.9rem 1.2rem; margin: 0 0 1.8rem; font-size: 0.9rem; }
     .toc p { margin: 0 0 0.4rem; font-weight: 600; }
     .toc ol { margin: 0; padding-left: 1.2rem; } .toc li { margin-bottom: 0.2rem; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -446,6 +449,7 @@
 <ul class="changelog">
 <li>2026-09-20: First published. Every quotation checked against the primary document in our corpus. Effective date of the 175/210 rates attributed to the FLOIR report, not the statute text. Managed-care question removed: the current petition form does not ask it.</li>
 </ul>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-workers-comp-provider-handbook/">Copy link</a> · <a href="mailto:?subject=Florida%20workers%27%20comp%20for%20treating%20practices%3A%20the%20provider%20handbook%20%282026%29&body=Worth%20a%20read%3A%20Florida%20workers%27%20comp%20for%20treating%20practices%3A%20the%20provider%20handbook%20%282026%29%0Ahttps%3A//cleariagroup.com/notes/florida-workers-comp-provider-handbook/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-workers-comp-provider-handbook%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -469,5 +473,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

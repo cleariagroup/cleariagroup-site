@@ -101,6 +101,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -151,7 +154,8 @@
         <li>Workers' comp never waits: 45 days from EOBR receipt, then the petition path closes.</li>
       </ul>
 
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-payer-appeal-deadlines/">Copy link</a> · <a href="mailto:?subject=Appeal%20deadlines%20at%20Florida%27s%20major%20payers%3A%20the%20working%20table%20%282026%29&body=Worth%20a%20read%3A%20Appeal%20deadlines%20at%20Florida%27s%20major%20payers%3A%20the%20working%20table%20%282026%29%0Ahttps%3A//cleariagroup.com/notes/florida-payer-appeal-deadlines/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-payer-appeal-deadlines%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-provider-payment-rights/">Florida provider payment rights: the statutes, clause by clause (2026)</a></li>
@@ -178,5 +182,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -107,6 +107,9 @@
     .qa p { margin-bottom: 0.6rem; }
     .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1.05rem; }
     .scroll table { min-width: 620px; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
   <script type="application/ld+json">
 {
@@ -195,6 +198,7 @@
 <h3>What is the three-day rule in Florida workers' comp?</h3>
 <p>A carrier that fails to respond to a written authorization request within three business days is deemed to consent to the medical necessity of the treatment. Specialist consultations, surgery, therapy, X-rays, and special diagnostic tests over $1,000 need express authorization unless the carrier fails to respond within ten days to a written request.</p>
 </section>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/workers-comp-denied-bill-florida-eobr/">Copy link</a> · <a href="mailto:?subject=Workers%27%20comp%20denied%20your%20bill%20in%20Florida%3A%20read%20the%20EOBR%20code%20first&body=Worth%20a%20read%3A%20Workers%27%20comp%20denied%20your%20bill%20in%20Florida%3A%20read%20the%20EOBR%20code%20first%0Ahttps%3A//cleariagroup.com/notes/workers-comp-denied-bill-florida-eobr/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fworkers-comp-denied-bill-florida-eobr%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
@@ -218,5 +222,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

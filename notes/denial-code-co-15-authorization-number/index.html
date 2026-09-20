@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CO-50 denial code: medical necessity, and which ones are worth appealing | Clearia</title>
-  <meta name="description" content="Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.">
-  <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">
+  <title>CO-15 denial code: authorization number missing or invalid, and how it differs from CO-197 | Clearia</title>
+  <meta name="description" content="Denial code CO-15 means an authorization exists but the number on the claim is missing, wrong, or doesn't cover this service, date, or provider. Almost always a matching problem, and almost always recoverable.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-15-authorization-number/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="CO-50 denial code: not medically necessary, according to the payer">
-  <meta property="og:description" content="Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.">
-  <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">
+  <meta property="og:title" content="CO-15 denial code: the authorization number is missing, invalid, or doesn't apply">
+  <meta property="og:description" content="Denial code CO-15 means an authorization exists but the number on the claim is missing, wrong, or doesn't cover this service, date, or provider. Almost always a matching problem, and almost always recoverable.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-15-authorization-number/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
@@ -29,13 +29,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "CO-50 denial code: not medically necessary, according to the payer",
-    "description": "Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.",
-    "datePublished": "2026-09-20",
-    "dateModified": "2026-09-20",
+    "headline": "CO-15 denial code: the authorization number is missing, invalid, or doesn't apply",
+    "description": "Denial code CO-15 means an authorization exists but the number on the claim is missing, wrong, or doesn't cover this service, date, or provider. Almost always a matching problem, and almost always recoverable.",
+    "datePublished": "2026-09-21",
+    "dateModified": "2026-09-21",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
-    "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/"
+    "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-15-authorization-number/"
   }
   </script>
   <style>
@@ -118,32 +118,32 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does denial code CO-50 mean?",
+      "name": "What does denial code CO-15 mean?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The payer applied a coverage policy and decided the service wasn't medically necessary for the diagnosis on the claim. Often no clinician reviewed it; the diagnosis code simply wasn't on the policy's covered list."
+        "text": "The payer found an authorization problem with the number itself: it is missing from the claim, invalid, or does not apply to the service, date, units, provider, or setting billed. It differs from CO-197, which means no authorization was found at all."
       }
     },
     {
       "@type": "Question",
-      "name": "Can a CO-50 denial be appealed?",
+      "name": "How do you fix a CO-15 denial?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. If the chart documents a covered diagnosis the claim didn't carry, a corrected claim usually reverses it. If the payer's policy genuinely excludes the service for that condition, the appeal is clinical and comes from the physician with the record."
+        "text": "Match the authorization to the claim on five fields: number, codes, dates, units, and rendering provider. If the number was simply omitted, resubmit with it. If the authorization doesn't cover what was billed, ask the payer's authorization unit to amend it, then reprocess; several payers treat this as a utilization management appeal with the authorization number attached."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I bill the patient for a CO-50 denial?",
+      "name": "Can I bill the patient for a CO-15?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "On Medicare, only if a valid ABN was signed before the service. On commercial plans it depends on the contract and the group code on the remittance; CO amounts are generally not patient-billable."
+        "text": "Not on an in-network claim. CO makes the amount the practice's contractual obligation, and authorization is the provider's responsibility under most participation agreements."
       }
     }
   ]
 }
   </script>
-</head>
+  </head>
 <body>
   <div class="wrap">
 
@@ -154,47 +154,46 @@
 
     <article>
 <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
-<h1>CO-50 denial code: not medically necessary, according to the payer</h1>
+<h1>CO-15 denial code: the authorization number is missing, invalid, or doesn't apply</h1>
 <p class="meta">Clearia · September 2026 · denial codes, read properly</p>
-<p class="def"><b>Denial code CO-50</b> is the payer saying: "These are non-covered services because this is not deemed a 'medical necessity' by the payer." What that means for your practice, and whether it's worth chasing, below.</p>
+<p class="def"><b>Denial code CO-15</b> is the payer saying: "The authorization number is missing, invalid, or does not apply to the billed services or provider." What that means for your practice, and whether it's worth chasing, below.</p>
 <h2>What the payer is asserting</h2>
-<p>CO-50 sounds like a doctor disagreed with you. Usually no doctor was involved. The claim's diagnosis codes were checked against a coverage policy (a Medicare LCD or NCD, or a commercial medical policy), and the combination on the claim wasn't on the list. "Not medically necessary" is the label the system prints when the diagnosis doesn't unlock the procedure. That distinction decides whether this denial is a five-minute fix or a real appeal.</p>
+<p>CO-15 is the cousin of <a href="/notes/denial-code-co-197-authorization/">CO-197</a>, and the difference is the good news. CO-197 says no authorization was found at all. CO-15 says one exists, or one was cited, and it doesn't line up with the claim. The number is missing from the claim, or it is a typo, or the authorization covers a different code, a different date range, a different number of units, a different rendering provider, or a different place of service. The care was approved. The paperwork didn't match.</p>
 
-<h2>Two kinds of CO-50</h2>
-<p><b>The coverage-policy mismatch.</b> The service is covered for the patient's condition, but the claim carried a diagnosis that isn't on the policy's list, or the order of the diagnosis codes put the wrong one first. Common in orthopedics and pain: an injection billed with a symptom code instead of the joint diagnosis, an imaging study with a diagnosis the LCD doesn't recognize, a DME item without the qualifying condition. The chart supports it. The claim didn't say so.</p>
-<p><b>The clinical dispute.</b> The payer's policy genuinely excludes the service for that condition, or requires a step the patient didn't have (conservative treatment first, a failed trial, a specific finding). Here the question is medical, and the appeal is a clinical letter from the physician with the record. That's a different job from recovery work, and an honest firm tells you which pile a denial is in.</p>
-
-<h2>How to tell them apart</h2>
+<h2>The five ways an authorization fails to match</h2>
 <ol>
-<li><b>Pull the policy.</b> Medicare LCDs are public on the CMS coverage database. Commercial medical policies are on the payer's provider site. Find the one for this CPT code.</li>
-<li><b>Compare the covered diagnosis list to the chart,</b> not to the claim. If the chart documents a covered diagnosis that the claim didn't carry, it's a mismatch.</li>
-<li><b>Check the remark code.</b> N115 (LCD), N386 (NCD), M64 and its cousins point at which policy fired. The policy name tells you what to read.</li>
+<li><b>The number never made it onto the claim.</b> The front desk obtained it; the charge-entry template has no field for it, or the field was blank. The payer's system cannot join the two records.</li>
+<li><b>Wrong code.</b> Authorized 29827, performed and billed 29827 plus 29826 plus 29824. The added procedures are outside the authorization, and some payers deny the whole claim rather than the extra lines.</li>
+<li><b>Wrong date.</b> The surgery moved a week and the authorization window closed the day before. Authorizations carry start and end dates; the claim has to fall inside them.</li>
+<li><b>Wrong provider.</b> Authorized under the surgeon's NPI, billed under the group or a partner who covered the case. Some payers tie the authorization to the individual.</li>
+<li><b>Wrong setting or units.</b> Authorized as outpatient, billed from an ASC under a different NPI; authorized twelve therapy visits, billed the fourteenth.</li>
 </ol>
 
-<h2>The fix for a mismatch</h2>
-<p>A corrected claim with the diagnosis the chart supports, in the right position, referencing the original claim. Not a new diagnosis invented for the payer; the one the physician documented. If the documentation supports it and the claim just didn't carry it, this reverses routinely. If the payer's policy is applied wrongly (the diagnosis is on the list and it still denied), that's a reconsideration with the policy page attached.</p>
+<h2>Is it recoverable?</h2>
+<p>Usually, and without a clinical argument. For the first case, resubmit with the number in the right field. For the others, the fix depends on the payer's rules. Many payers will amend an authorization after the fact for a date change or an added procedure that was clinically part of the same operation, if you ask through the authorization unit rather than the claims unit. Florida Blue, for one, routes an "authorization existed but the claim denied" dispute to a utilization management appeal on the clinical appeal form with the authorization number attached, and it warns that professional claims for facility cases can't be matched to the authorization unless the service-facility name and address are on the claim. <a href="/notes/florida-blue-provider-profile/#um">The Florida Blue rules on this.</a></p>
+<p>What doesn't work is arguing medical necessity. The payer already agreed the care was necessary. Arguing it again wastes the appeal and the clock.</p>
 
-<h2>What to leave alone</h2>
-<p>A CO-50 where the chart doesn't support a covered diagnosis is not a recovery case. Changing the diagnosis to match the policy is fraud, and a firm that offers to "work" those denials is a firm to walk away from. The physician can appeal on clinical grounds, and sometimes should. Recovery work stops at the chart.</p>
+<h2>The habit that prevents it</h2>
+<p>Match the authorization to the claim before it goes out, not after it comes back: number, codes, dates, units, rendering NPI, place of service. Five fields. A scrubber rule that holds any claim carrying a procedure that requires authorization until the number is present pays for itself in the first month. And when the surgeon adds a procedure in the operating room, the authorization unit gets a call the next morning, before the claim is coded.</p>
 
-<h2>Deadlines and the ABN question</h2>
-<p>Appeal windows apply as usual (<a href="/notes/florida-payer-appeal-deadlines/">the table</a>). On Medicare, whether the patient can be billed for a CO-50 depends on whether a valid Advance Beneficiary Notice was signed before the service. Without it, the amount is yours to absorb. <a href="/notes/denial-codes-pr-vs-co/">Who can be billed, by group code.</a></p>
+<h2>Workers' comp is different</h2>
+<p>In Florida workers' comp, authorization is a statutory condition of payment, the carrier has three business days to respond to a request, and the higher-value services need express authorization in writing. The denial comes as EOBR code 30 and the dispute goes to the state, not the carrier. <a href="/notes/florida-workers-comp-provider-handbook/#authorization">The three-day and ten-day rules.</a></p>
 <section class="qa">
-<h2>Questions people ask about CO-50</h2>
-<h3>What does denial code CO-50 mean?</h3>
-<p>The payer applied a coverage policy and decided the service wasn't medically necessary for the diagnosis on the claim. Often no clinician reviewed it; the diagnosis code simply wasn't on the policy's covered list.</p>
-<h3>Can a CO-50 denial be appealed?</h3>
-<p>Yes. If the chart documents a covered diagnosis the claim didn't carry, a corrected claim usually reverses it. If the payer's policy genuinely excludes the service for that condition, the appeal is clinical and comes from the physician with the record.</p>
-<h3>Can I bill the patient for a CO-50 denial?</h3>
-<p>On Medicare, only if a valid ABN was signed before the service. On commercial plans it depends on the contract and the group code on the remittance; CO amounts are generally not patient-billable.</p>
+<h2>Questions people ask about CO-15</h2>
+<h3>What does denial code CO-15 mean?</h3>
+<p>The payer found an authorization problem with the number itself: it is missing from the claim, invalid, or does not apply to the service, date, units, provider, or setting billed. It differs from CO-197, which means no authorization was found at all.</p>
+<h3>How do you fix a CO-15 denial?</h3>
+<p>Match the authorization to the claim on five fields: number, codes, dates, units, and rendering provider. If the number was simply omitted, resubmit with it. If the authorization doesn't cover what was billed, ask the payer's authorization unit to amend it, then reprocess; several payers treat this as a utilization management appeal with the authorization number attached.</p>
+<h3>Can I bill the patient for a CO-15?</h3>
+<p>Not on an in-network claim. CO makes the amount the practice's contractual obligation, and authorization is the provider's responsibility under most participation agreements.</p>
 </section>
-<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">Copy link</a> · <a href="mailto:?subject=CO-50%20denial%20code%3A%20not%20medically%20necessary%2C%20according%20to%20the%20payer&body=Worth%20a%20read%3A%20CO-50%20denial%20code%3A%20not%20medically%20necessary%2C%20according%20to%20the%20payer%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-50-medical-necessity/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-50-medical-necessity%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-15-authorization-number/">Copy link</a> · <a href="mailto:?subject=CO-15%20denial%20code%3A%20the%20authorization%20number%20is%20missing%2C%20invalid%2C%20or%20doesn%27t%20apply&body=Worth%20a%20read%3A%20CO-15%20denial%20code%3A%20the%20authorization%20number%20is%20missing%2C%20invalid%2C%20or%20doesn%27t%20apply%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-15-authorization-number/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-15-authorization-number%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
-<li><a href="/notes/denial-code-co-96-non-covered/">denial-code-co-96-non-covered</a></li>
 <li><a href="/notes/denial-code-co-197-authorization/">CO-197 authorization denials: the three-way triage</a></li>
 <li><a href="/notes/prior-auth-approved-claim-denied/">They approved the prior auth. Then they didn't pay the claim.</a></li>
+<li><a href="/notes/florida-prior-authorization-scorecard/">Florida prior authorization scorecard: what the payers' own 2025 filings show</a></li>
 <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
 </ul>
 </div>

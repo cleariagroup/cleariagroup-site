@@ -102,6 +102,9 @@
     footer .foot-legal a { color: inherit; }
     .kicker a { color: inherit; text-decoration: none; }
     .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -184,7 +187,8 @@
       <h2>Sources and method</h2>
       <p>All figures extracted August 10, 2026 from the payers' public CMS-0057 postings: <a href="https://provider.humana.com/coverage-claims/prior-authorizations/prior-authorization-metrics">Humana's prior authorization metrics</a> (per-contract PDFs), <a href="https://www.uhc.com/legal/cms-interoperability-prior-authorization/medicare-advantage">UnitedHealthcare's CMS interoperability disclosures</a> (Medicare Advantage, marketplace, and community plan files), <a href="https://www.floridablue.com/members/tools-resources/prior-authorization-medical-services/metrics">Florida Blue's metrics page</a>, and Aetna's 2025 PA metrics report (PDF posted on aetna.com). Company denial rates are volume-weighted where volumes were disclosed. "Overturned on appeal" is the share of decided appeals that reversed the denial, not the share of all denials. Calendar year 2025 data throughout; reporting timeframes and definitions follow each payer's filing.</p>
 
-      <div class="related">
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-prior-authorization-scorecard/">Copy link</a> · <a href="mailto:?subject=Florida%20prior%20authorization%20scorecard%3A%20what%20the%20payers%27%20own%202025%20filings%20show&body=Worth%20a%20read%3A%20Florida%20prior%20authorization%20scorecard%3A%20what%20the%20payers%27%20own%202025%20filings%20show%0Ahttps%3A//cleariagroup.com/notes/florida-prior-authorization-scorecard/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-prior-authorization-scorecard%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
         <p>Related notes</p>
         <ul>
           <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
@@ -210,5 +214,17 @@
     </footer>
 
   </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
 </body>
 </html>

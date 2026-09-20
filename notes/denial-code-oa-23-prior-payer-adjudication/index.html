@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CO-50 denial code: medical necessity, and which ones are worth appealing | Clearia</title>
-  <meta name="description" content="Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.">
-  <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">
+  <title>OA-23 remittance code: impact of prior payer's adjudication, explained for secondary claims | Clearia</title>
+  <meta name="description" content="OA-23 is not a denial. It's the secondary payer accounting for what the primary already paid and adjusted. The code is where coordination-of-benefits math goes wrong, and where secondary underpayments hide.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/denial-code-oa-23-prior-payer-adjudication/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="CO-50 denial code: not medically necessary, according to the payer">
-  <meta property="og:description" content="Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.">
-  <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">
+  <meta property="og:title" content="OA-23 on a remittance: the prior payer's adjudication, and where secondary claims go wrong">
+  <meta property="og:description" content="OA-23 is not a denial. It's the secondary payer accounting for what the primary already paid and adjusted. The code is where coordination-of-benefits math goes wrong, and where secondary underpayments hide.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/denial-code-oa-23-prior-payer-adjudication/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
@@ -29,13 +29,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "CO-50 denial code: not medically necessary, according to the payer",
-    "description": "Denial code CO-50 says the payer doesn't consider the service medically necessary. Some are clinical disputes. Many are a diagnosis code that didn't match a coverage policy. How to tell, and where the line is.",
-    "datePublished": "2026-09-20",
-    "dateModified": "2026-09-20",
+    "headline": "OA-23 on a remittance: the prior payer's adjudication, and where secondary claims go wrong",
+    "description": "OA-23 is not a denial. It's the secondary payer accounting for what the primary already paid and adjusted. The code is where coordination-of-benefits math goes wrong, and where secondary underpayments hide.",
+    "datePublished": "2026-09-21",
+    "dateModified": "2026-09-21",
     "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
-    "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/"
+    "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-oa-23-prior-payer-adjudication/"
   }
   </script>
   <style>
@@ -118,32 +118,32 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does denial code CO-50 mean?",
+      "name": "What does OA-23 mean on an EOB?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The payer applied a coverage policy and decided the service wasn't medically necessary for the diagnosis on the claim. Often no clinician reviewed it; the diagnosis code simply wasn't on the policy's covered list."
+        "text": "It is the secondary payer's accounting for what the primary payer already paid and adjusted on the claim. It is not a denial and it is not patient responsibility; it is the amount already dealt with by the prior payer, shown so the secondary's own payment can be reconciled."
       }
     },
     {
       "@type": "Question",
-      "name": "Can a CO-50 denial be appealed?",
+      "name": "Can I bill the patient for an OA-23 amount?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. If the chart documents a covered diagnosis the claim didn't carry, a corrected claim usually reverses it. If the payer's policy genuinely excludes the service for that condition, the appeal is clinical and comes from the physician with the record."
+        "text": "No. OA-23 represents the primary payer's payment and contractual adjustments. The patient's responsibility, if any, appears separately as PR amounts after the secondary has processed."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I bill the patient for a CO-50 denial?",
+      "name": "Why is my secondary payment lower than expected?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "On Medicare, only if a valid ABN was signed before the service. On commercial plans it depends on the contract and the group code on the remittance; CO amounts are generally not patient-billable."
+        "text": "Check three things: whether the secondary received the correct primary payment and adjustment figures, which coordination-of-benefits method the plan applies, and whether the primary's remittance was later reprocessed. Any of the three produces a short secondary payment that can be resubmitted or reconsidered."
       }
     }
   ]
 }
   </script>
-</head>
+  </head>
 <body>
   <div class="wrap">
 
@@ -154,47 +154,41 @@
 
     <article>
 <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
-<h1>CO-50 denial code: not medically necessary, according to the payer</h1>
+<h1>OA-23 on a remittance: the prior payer's adjudication, and where secondary claims go wrong</h1>
 <p class="meta">Clearia · September 2026 · denial codes, read properly</p>
-<p class="def"><b>Denial code CO-50</b> is the payer saying: "These are non-covered services because this is not deemed a 'medical necessity' by the payer." What that means for your practice, and whether it's worth chasing, below.</p>
-<h2>What the payer is asserting</h2>
-<p>CO-50 sounds like a doctor disagreed with you. Usually no doctor was involved. The claim's diagnosis codes were checked against a coverage policy (a Medicare LCD or NCD, or a commercial medical policy), and the combination on the claim wasn't on the list. "Not medically necessary" is the label the system prints when the diagnosis doesn't unlock the procedure. That distinction decides whether this denial is a five-minute fix or a real appeal.</p>
+<p class="def"><b>Remittance code OA-23</b> is the payer saying: "The impact of prior payer(s) adjudication including payments and/or adjustments. (Use only with Group Code OA)" What that means for your practice, and whether it's worth chasing, below.</p>
+<h2>What the payer is saying</h2>
+<p>OA-23 is the one code on this list that isn't a denial. When a secondary payer processes a claim, it has to show why it isn't paying the full charge, and part of the answer is "the primary already dealt with this much." OA-23 is that line: the primary's payment plus the primary's contractual adjustment, netted into one amount so the secondary's own allowed amount and payment can be shown against what's left. The group code is OA, other adjustment, because the amount isn't the practice's write-off and isn't the patient's bill. It's bookkeeping.</p>
 
-<h2>Two kinds of CO-50</h2>
-<p><b>The coverage-policy mismatch.</b> The service is covered for the patient's condition, but the claim carried a diagnosis that isn't on the policy's list, or the order of the diagnosis codes put the wrong one first. Common in orthopedics and pain: an injection billed with a symptom code instead of the joint diagnosis, an imaging study with a diagnosis the LCD doesn't recognize, a DME item without the qualifying condition. The chart supports it. The claim didn't say so.</p>
-<p><b>The clinical dispute.</b> The payer's policy genuinely excludes the service for that condition, or requires a step the patient didn't have (conservative treatment first, a failed trial, a specific finding). Here the question is medical, and the appeal is a clinical letter from the physician with the record. That's a different job from recovery work, and an honest firm tells you which pile a denial is in.</p>
+<h2>Why it deserves a page anyway</h2>
+<p>Because the arithmetic behind it is where secondary claims lose money, and because posting software usually treats the whole OA-23 amount as a write-off and moves on. Three things to check when a secondary remittance carries OA-23:</p>
+<ul>
+<li><b>Did the secondary see the right primary numbers?</b> The claim carried the primary's paid amount and adjustments in the COB loops. A typo there, or a primary remittance that was reprocessed after the secondary claim went out, produces an OA-23 that doesn't match reality and a secondary payment that is short.</li>
+<li><b>Which secondary method applied?</b> Plans coordinate differently. Some pay up to their own allowed amount less what the primary paid; some pay the patient's remaining responsibility up to their allowed amount; some pay nothing if the primary's payment already exceeded their allowed. The method is in the plan, and a secondary that used the wrong one underpays quietly. Florida Blue, as secondary, caps combined payments at "100 percent of the rates agreed upon in the provider agreement." <a href="/notes/florida-blue-provider-profile/#cob">Its COB rules.</a></li>
+<li><b>Is the patient balance right?</b> After OA-23 and the secondary's own adjustments, what's left as PR should be the patient's true remaining responsibility. If the secondary shifted the primary's contractual adjustment to the patient, that's a group-code error, and the patient will be billed for money nobody owes.</li>
+</ul>
 
-<h2>How to tell them apart</h2>
-<ol>
-<li><b>Pull the policy.</b> Medicare LCDs are public on the CMS coverage database. Commercial medical policies are on the payer's provider site. Find the one for this CPT code.</li>
-<li><b>Compare the covered diagnosis list to the chart,</b> not to the claim. If the chart documents a covered diagnosis that the claim didn't carry, it's a mismatch.</li>
-<li><b>Check the remark code.</b> N115 (LCD), N386 (NCD), M64 and its cousins point at which policy fired. The policy name tells you what to read.</li>
-</ol>
+<h2>Is there anything to recover?</h2>
+<p>Sometimes. The recoverable cases are the secondary that received wrong primary data (resubmit the secondary claim with the corrected primary remittance attached), the secondary that applied the wrong coordination method (a reconsideration citing the plan's COB provision), and the secondary claim that was never sent at all because the primary's remittance closed the account at zero. That last one is the most common. <a href="/notes/zero-balance-problem/">Why a zero balance isn't the same as paid in full.</a></p>
 
-<h2>The fix for a mismatch</h2>
-<p>A corrected claim with the diagnosis the chart supports, in the right position, referencing the original claim. Not a new diagnosis invented for the payer; the one the physician documented. If the documentation supports it and the claim just didn't carry it, this reverses routinely. If the payer's policy is applied wrongly (the diagnosis is on the list and it still denied), that's a reconsideration with the policy page attached.</p>
-
-<h2>What to leave alone</h2>
-<p>A CO-50 where the chart doesn't support a covered diagnosis is not a recovery case. Changing the diagnosis to match the policy is fraud, and a firm that offers to "work" those denials is a firm to walk away from. The physician can appeal on clinical grounds, and sometimes should. Recovery work stops at the chart.</p>
-
-<h2>Deadlines and the ABN question</h2>
-<p>Appeal windows apply as usual (<a href="/notes/florida-payer-appeal-deadlines/">the table</a>). On Medicare, whether the patient can be billed for a CO-50 depends on whether a valid Advance Beneficiary Notice was signed before the service. Without it, the amount is yours to absorb. <a href="/notes/denial-codes-pr-vs-co/">Who can be billed, by group code.</a></p>
+<h2>The clock on secondary claims</h2>
+<p>On Florida fully insured business the statute guarantees at least 90 days after the primary's final determination to file the secondary claim, and payers cannot set a shorter window. Florida Blue's manual gives no separate secondary window; it says to file after the primary finalizes with the primary's remittance attached. Diary the 90 days from the primary remittance date, per patient, and the secondary claims stop dying of neglect. <a href="/notes/florida-provider-payment-rights/#filing">The statutory filing floors.</a></p>
 <section class="qa">
-<h2>Questions people ask about CO-50</h2>
-<h3>What does denial code CO-50 mean?</h3>
-<p>The payer applied a coverage policy and decided the service wasn't medically necessary for the diagnosis on the claim. Often no clinician reviewed it; the diagnosis code simply wasn't on the policy's covered list.</p>
-<h3>Can a CO-50 denial be appealed?</h3>
-<p>Yes. If the chart documents a covered diagnosis the claim didn't carry, a corrected claim usually reverses it. If the payer's policy genuinely excludes the service for that condition, the appeal is clinical and comes from the physician with the record.</p>
-<h3>Can I bill the patient for a CO-50 denial?</h3>
-<p>On Medicare, only if a valid ABN was signed before the service. On commercial plans it depends on the contract and the group code on the remittance; CO amounts are generally not patient-billable.</p>
+<h2>Questions people ask about OA-23</h2>
+<h3>What does OA-23 mean on an EOB?</h3>
+<p>It is the secondary payer's accounting for what the primary payer already paid and adjusted on the claim. It is not a denial and it is not patient responsibility; it is the amount already dealt with by the prior payer, shown so the secondary's own payment can be reconciled.</p>
+<h3>Can I bill the patient for an OA-23 amount?</h3>
+<p>No. OA-23 represents the primary payer's payment and contractual adjustments. The patient's responsibility, if any, appears separately as PR amounts after the secondary has processed.</p>
+<h3>Why is my secondary payment lower than expected?</h3>
+<p>Check three things: whether the secondary received the correct primary payment and adjustment figures, which coordination-of-benefits method the plan applies, and whether the primary's remittance was later reprocessed. Any of the three produces a short secondary payment that can be resubmitted or reconsidered.</p>
 </section>
-<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-50-medical-necessity/">Copy link</a> · <a href="mailto:?subject=CO-50%20denial%20code%3A%20not%20medically%20necessary%2C%20according%20to%20the%20payer&body=Worth%20a%20read%3A%20CO-50%20denial%20code%3A%20not%20medically%20necessary%2C%20according%20to%20the%20payer%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-50-medical-necessity/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-50-medical-necessity%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-oa-23-prior-payer-adjudication/">Copy link</a> · <a href="mailto:?subject=OA-23%20on%20a%20remittance%3A%20the%20prior%20payer%27s%20adjudication%2C%20and%20where%20secondary%20claims%20go%20wrong&body=Worth%20a%20read%3A%20OA-23%20on%20a%20remittance%3A%20the%20prior%20payer%27s%20adjudication%2C%20and%20where%20secondary%20claims%20go%20wrong%0Ahttps%3A//cleariagroup.com/notes/denial-code-oa-23-prior-payer-adjudication/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-oa-23-prior-payer-adjudication%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>
 <ul>
-<li><a href="/notes/denial-code-co-96-non-covered/">denial-code-co-96-non-covered</a></li>
-<li><a href="/notes/denial-code-co-197-authorization/">CO-197 authorization denials: the three-way triage</a></li>
-<li><a href="/notes/prior-auth-approved-claim-denied/">They approved the prior auth. Then they didn't pay the claim.</a></li>
+<li><a href="/notes/denial-code-co-22-coordination-of-benefits/">CO-22 denial code: another payer may be responsible</a></li>
+<li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes, and when billing the patient is prohibited</a></li>
+<li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
 <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
 </ul>
 </div>

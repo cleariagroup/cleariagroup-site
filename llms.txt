@@ -1,13 +1,13 @@
 # Clearia
 
-> Clearia, Inc. (also written Clearia Group) is a Miami, Florida service firm that recovers insurance underpayments and fixable claim denials for independent medical practices of 3 to 15 physicians, mainly orthopedics, spine, pain management and sports medicine in South Florida. Free diagnostic, paid only from what is recovered. Not affiliated with other companies or products using the Clearia name.
+> Clearia, Inc. (also written Clearia Group) is a Miami, Florida service firm that recovers insurance underpayments and fixable claim denials for independent medical practices across specialties and for ambulatory surgery centers, with Florida statutory depth. Free diagnostic, paid only from what is recovered. Not affiliated with other companies or products using the Clearia name.
 
 Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cleariagroup/ · Phone: (786) 705-7865 · Email: contact@cleariagroup.com · Address: 1000 Brickell Ave Ste 715-5077, Miami, FL 33131
 
 ## Pages
 - [Home](https://cleariagroup.com/): what Clearia does, the free diagnostic, FAQ
 - [How it works](https://cleariagroup.com/how-it-works/): diagnostic, findings, recovery, with sample reports
-- [Who we serve](https://cleariagroup.com/who-we-serve/): independent specialty practices in South Florida
+- [Who we serve](https://cleariagroup.com/who-we-serve/): independent practices and surgery centers, across specialties
 - [The diagnostic](https://cleariagroup.com/the-diagnostic/): what the free audit covers and how to request it
 - [About](https://cleariagroup.com/about/): the firm, how it works, incentive structure
 - [Notes on payer behavior](https://cleariagroup.com/notes/): short, sourced notes on how insurers pay independent practices

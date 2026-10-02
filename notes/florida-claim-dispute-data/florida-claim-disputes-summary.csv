@@ -1,0 +1,75 @@
+year_received,payer,cases,plan_opt_out,dismissed_ineligible,withdrawn,pending_open,provider_default_award,provider_full_award,split_partial_award,plan_prevailed,other
+2018,Aetna,2,1,0,0,0,0,1,0,0,0
+2018,AvMed,3,0,1,2,0,0,0,0,0,0
+2018,Cigna,6,0,1,0,0,0,0,5,0,0
+2018,Humana,4,0,2,0,0,0,0,2,0,0
+2018,Medicaid managed care plans,7,0,4,3,0,0,0,0,0,0
+2018,Other plans,10,0,0,0,0,0,0,10,0,0
+2018,UnitedHealthcare,1,1,0,0,0,0,0,0,0,0
+2019,Aetna,4,3,1,0,0,0,0,0,0,0
+2019,AvMed,1,0,1,0,0,0,0,0,0,0
+2019,Cigna,4,0,1,0,0,0,0,3,0,0
+2019,Florida Blue,9,6,2,1,0,0,0,0,0,0
+2019,Humana,4,0,0,0,0,1,3,0,0,0
+2019,Medicaid managed care plans,14,3,4,1,0,2,4,0,0,0
+2019,UnitedHealthcare,5,2,2,1,0,0,0,0,0,0
+2020,Aetna,8,1,3,1,0,1,1,1,0,0
+2020,Cigna,1,0,1,0,0,0,0,0,0,0
+2020,Florida Blue,10,5,1,4,0,0,0,0,0,0
+2020,Humana,4,3,0,0,0,0,0,0,1,0
+2020,Medicaid managed care plans,29,0,7,14,0,0,4,3,1,0
+2020,Other plans,2,0,1,0,0,0,0,0,1,0
+2020,UnitedHealthcare,11,3,5,0,0,3,0,0,0,0
+2021,Aetna,29,3,24,1,0,0,0,0,1,0
+2021,Cigna,17,2,8,4,0,0,1,1,1,0
+2021,Florida Blue,5,2,2,1,0,0,0,0,0,0
+2021,Humana,1,0,1,0,0,0,0,0,0,0
+2021,Medicaid managed care plans,28,0,6,5,0,4,11,1,1,0
+2021,Oscar,1,1,0,0,0,0,0,0,0,0
+2021,Other plans,9,9,0,0,0,0,0,0,0,0
+2021,UnitedHealthcare,20,7,7,5,0,0,1,0,0,0
+2022,Aetna,18,4,11,1,0,0,1,0,1,0
+2022,AvMed,6,1,2,0,0,0,0,0,3,0
+2022,Cigna,24,4,14,2,0,2,1,0,1,0
+2022,Florida Blue,96,94,2,0,0,0,0,0,0,0
+2022,Humana,1,1,0,0,0,0,0,0,0,0
+2022,Medicaid managed care plans,25,1,5,5,0,4,8,0,2,0
+2022,Oscar,345,148,89,0,0,108,0,0,0,0
+2022,Other plans,11,2,5,0,0,1,1,0,1,1
+2022,UnitedHealthcare,19,12,2,5,0,0,0,0,0,0
+2023,Aetna,2,2,0,0,0,0,0,0,0,0
+2023,AvMed,3,0,3,0,0,0,0,0,0,0
+2023,Cigna,3,0,2,0,0,1,0,0,0,0
+2023,Florida Blue,1,1,0,0,0,0,0,0,0,0
+2023,Humana,1,0,1,0,0,0,0,0,0,0
+2023,Medicaid managed care plans,16,2,3,2,0,0,4,2,3,0
+2023,Oscar,72,0,70,0,0,1,1,0,0,0
+2023,Other plans,5,0,1,0,0,2,1,0,1,0
+2023,UnitedHealthcare,5,4,0,0,0,1,0,0,0,0
+2024,Aetna,8,4,4,0,0,0,0,0,0,0
+2024,Cigna,13,0,5,2,0,4,0,2,0,0
+2024,Florida Blue,7,5,2,0,0,0,0,0,0,0
+2024,Humana,10,8,2,0,0,0,0,0,0,0
+2024,Medicaid managed care plans,17,0,6,3,0,0,4,3,1,0
+2024,Oscar,5,2,2,0,0,1,0,0,0,0
+2024,Other plans,2,0,1,0,0,0,1,0,0,0
+2024,UnitedHealthcare,14,12,1,1,0,0,0,0,0,0
+2025,Aetna,6,2,3,1,0,0,0,0,0,0
+2025,AvMed,1,0,0,0,0,1,0,0,0,0
+2025,Cigna,42,1,3,0,0,0,5,30,2,1
+2025,Florida Blue,20,18,1,0,0,0,0,0,0,1
+2025,Humana,2,0,1,0,0,0,0,0,1,0
+2025,Medicaid managed care plans,41,3,5,7,0,0,20,3,3,0
+2025,Oscar,10,8,2,0,0,0,0,0,0,0
+2025,Other plans,7,1,1,0,0,0,3,0,0,2
+2025,UnitedHealthcare,13,4,8,0,0,0,0,0,0,1
+2026,Aetna,15,14,0,0,0,0,0,0,0,1
+2026,AvMed,1,0,1,0,0,0,0,0,0,0
+2026,Cigna,22,0,3,0,11,0,8,0,0,0
+2026,Florida Blue,9,4,5,0,0,0,0,0,0,0
+2026,Medicaid managed care plans,129,46,2,7,40,3,18,0,13,0
+2026,Oscar,18,13,2,0,2,1,0,0,0,0
+2026,Other plans,54,4,0,0,45,0,0,0,0,5
+2026,UnitedHealthcare,21,4,2,0,9,4,2,0,0,0
+unknown,Oscar,1,0,1,0,0,0,0,0,0,0
+unknown,Other plans,9,0,0,0,0,0,0,0,0,9

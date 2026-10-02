@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florida claim dispute data: who gets paid (2018 to 2026) | Clearia</title>
+  <meta name="description" content="Florida's state claim dispute program, from public records: providers were paid in 89% of decided cases, a third of cases ended in plan opt-outs, and the results vary sharply by payer.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/florida-claim-dispute-data/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What 1,399 Florida claim disputes show about who gets paid (2018 to 2026)">
+  <meta property="og:description" content="Florida's state claim dispute program, from public records: providers were paid in 89% of decided cases, a third of cases ended in plan opt-outs, and the results vary sharply by payer.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/florida-claim-dispute-data/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+    gtag('config', 'G-9V503VM4SE');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "What 1,399 Florida claim disputes show about who gets paid (2018 to 2026)",
+        "description": "Florida's state claim dispute program, from public records: providers were paid in 89% of decided cases, a third of cases ended in plan opt-outs, and the results vary sharply by payer.",
+        "datePublished": "2026-10-02",
+        "dateModified": "2026-10-02",
+        "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
+        "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+        "mainEntityOfPage": "https://cleariagroup.com/notes/florida-claim-dispute-data/"
+      },
+      {
+        "@type": "Dataset",
+        "name": "Florida provider and health plan claim dispute outcomes, 2018 to 2026",
+        "description": "Case-level outcomes of Florida's Statewide Provider and Health Plan Claim Dispute Resolution Program (s. 408.7057, F.S.), compiled by Clearia from Agency for Health Care Administration public records, aggregated by year and health plan.",
+        "url": "https://cleariagroup.com/notes/florida-claim-dispute-data/",
+        "creator": { "@type": "Organization", "name": "Clearia, Inc.", "url": "https://cleariagroup.com" },
+        "temporalCoverage": "2018/2026",
+        "spatialCoverage": "Florida, United States",
+        "isAccessibleForFree": true,
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "distribution": [{ "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://cleariagroup.com/notes/florida-claim-dispute-data/florida-claim-disputes-summary.csv" }]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
+  
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 1.6rem 0 2rem; }
+  .stat { background: var(--card); border: 1px solid var(--hairline); padding: 0.9rem 1rem; }
+  .stat .n { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1.1; }
+  .stat .l { font-size: 0.82rem; color: var(--muted); line-height: 1.4; margin-top: 0.3rem; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker"><a href="/notes/">Notes</a> · Florida data</p>
+      <h1>What 1,399 Florida claim disputes show about who gets paid (2018 to 2026)</h1>
+      <p class="meta">Clearia · October 2026 · Original analysis of public records</p>
+
+      <p>Florida runs a state program for exactly one situation: a provider and a health plan disagree about what a claim should have paid. It's the Statewide Provider and Health Plan Claim Dispute Resolution Program, created by <b>section 408.7057</b> of the Florida Statutes and run by the Agency for Health Care Administration (AHCA) through an independent review organization. Few practices use it. Fewer know how it actually turns out.</p>
+      <p>Our team requested the program's records from AHCA under Florida's public records law and read all of them: the case reports from 2018 to August 2026, 289 case letters, and 88 final orders. Here's what they show.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="n">89%</div><div class="l">of decided cases ended with the provider getting paid (315 of 353)</div></div>
+        <div class="stat"><div class="n">34%</div><div class="l">of all cases closed because the plan opted out (481 of 1,399)</div></div>
+        <div class="stat"><div class="n">84%</div><div class="l">of disputes were about underpayment</div></div>
+        <div class="stat"><div class="n">$15.5M</div><div class="l">awarded to providers in the 87 final orders we could read in full</div></div>
+      </div>
+
+      <h2>1. When a case gets decided, the provider usually gets paid</h2>
+      <p>Of the 353 cases that reached a decision, providers received a full or partial award in <b>315 (89%)</b>. For physician and other professional groups the rate was <b>95%</b>. And 145 of those 315 awards came by default: the health plan didn't respond to the reviewer in time, and the case was decided in the provider's favor.</p>
+
+      <h2>2. Most cases never reach a decision</h2>
+      <p>That 89% only covers cases that got to a reviewer. Most didn't:</p>
+      <ul>
+        <li><b>481 (34%)</b> closed because the health plan chose not to participate. Commercial insurers and HMOs can opt out of this program. Florida Medicaid managed care plans opt out far less often (18% in these records).</li>
+        <li><b>358 (26%)</b> were dismissed as ineligible: most often a self-funded employer plan (federal law, not Florida's), a filing past the 12-month window, or missing paperwork.</li>
+        <li><b>79</b> were withdrawn, usually after a settlement, and <b>107</b> were still open in the latest report.</li>
+      </ul>
+      <p>For physician and professional groups, nearly half of all filings (47%) ended in an opt-out.</p>
+
+      <h2>3. Results vary sharply by health plan</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Health plan</th><th class="num">Cases</th><th class="num">Plan opted out</th><th class="num">Decided</th><th class="num">Provider paid, when decided</th></tr></thead>
+          <tbody>
+            <tr><td>Oscar</td><td class="num">452</td><td class="num">38%</td><td class="num">112</td><td class="num">100%</td></tr>
+            <tr><td>Medicaid managed care plans*</td><td class="num">306</td><td class="num">18%</td><td class="num">122</td><td class="num">80%</td></tr>
+            <tr><td>Florida Blue</td><td class="num">157</td><td class="num">86%</td><td class="num">0</td><td class="num">none decided</td></tr>
+            <tr><td>Cigna</td><td class="num">132</td><td class="num">5%</td><td class="num">67</td><td class="num">94%</td></tr>
+            <tr><td>UnitedHealthcare</td><td class="num">109</td><td class="num">45%</td><td class="num">11</td><td class="num">100%</td></tr>
+            <tr><td>Aetna</td><td class="num">92</td><td class="num">37%</td><td class="num">7</td><td class="num">71%</td></tr>
+            <tr><td>Humana</td><td class="num">27</td><td class="num">44%</td><td class="num">8</td><td class="num">75%</td></tr>
+            <tr><td>All other plans</td><td class="num">124</td><td class="num">14%</td><td class="num">26</td><td class="num">77%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>*Sunshine, Molina, Simply, AmeriHealth, WellCare and others. Plan families are grouped from the names in AHCA's reports, so a parent company's HMO and insurance entities count together. Small counts (UnitedHealthcare, Aetna, Humana decided cases) move a lot with a single case.</p>
+
+      <h2>4. What the final orders say about winning</h2>
+      <p>We read all 88 final orders (87 usable). Providers won outright in 47, got a partial award in 33, and lost 7. Four patterns repeat:</p>
+      <ul>
+        <li><b>Awards are capped at what you ask for.</b> In more than one order the reviewer valued the claims above the amount requested and awarded only the request.</li>
+        <li><b>The clock runs from the plan's final decision,</b> not the date of service. Plans that argued claims were too old were often wrong on the date math.</li>
+        <li><b>Self-funded plan defenses need proof.</b> Where the plan claimed a plan was self-funded but didn't produce the plan documents, reviewers treated the claims as eligible.</li>
+        <li><b>What loses:</b> late original filing, National Correct Coding Initiative edit pairs, mixed batches that include self-funded or out-of-state claims, and single small claims where the review cost exceeds the recovery.</li>
+      </ul>
+
+      <h2>5. Filings are rising again</h2>
+      <p>New cases fell to 76 in 2024, then climbed to 142 in 2025 and 269 in 2026 through mid-August. The reviewer changed in 2024, and the median time to a decision moved from 54 days to 79.</p>
+
+      <h2>What this means for your practice</h2>
+      <ol>
+        <li><b>Check the plan type first.</b> The program only covers fully insured plans regulated by Florida, plus Medicaid managed care. Self-funded employer plans and Medicare Advantage are out. That one check decides whether this path exists at all.</li>
+        <li><b>Use it after the internal appeal, not instead of it.</b> You need the plan's final determination, and you have 12 months from that date to file. Physician disputes have a $500 minimum.</li>
+        <li><b>File in batches.</b> The losing side pays the review cost, typically $750 to about $1,600 per case and more for large batches. A batch of the same issue at the same plan turns a bad trade into a good one.</li>
+        <li><b>Ask for the full amount.</b> The reviewer can't award more than the request.</li>
+        <li><b>Know the plan's track record.</b> With a plan that rarely opts out, this is a real path. With one that almost always does, plan for a different route, such as Florida's prompt-pay and 12-month underpayment rules.</li>
+      </ol>
+
+      <h2>Method and data</h2>
+      <p><b>Source:</b> AHCA's response to our public records request (received September 2026): program case reports from the independent review organizations (MAXIMUS through mid-2023, Capitol Bridge from 2024), AHCA annual reports, case letters and final orders. <b>Coverage gaps:</b> no reports for July 2023 to March 2024 and no 2022 annual report were in the response. Where sources conflicted we used the later one. "Decided" means a full award, a partial award, a default award or a plan win. Outcomes are as reported by the program; we did not re-review any case. Records containing patient information were excluded.</p>
+      <p><b>Download:</b> <a href="/notes/florida-claim-dispute-data/florida-claim-disputes-summary.csv">case outcomes by year and health plan (CSV)</a>. Free to use with credit: "Clearia analysis of Florida AHCA claim dispute program records, 2018 to 2026."</p>
+
+      <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/florida-claim-dispute-data/">Copy link</a> · <a href="mailto:?subject=Florida%20claim%20dispute%20data%3A%20who%20gets%20paid&body=Worth%20a%20read%3A%20https://cleariagroup.com/notes/florida-claim-dispute-data/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fflorida-claim-dispute-data%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/florida-prompt-pay-law-guide/">Florida prompt-pay law: what payers owe your practice (2026)</a></li>
+          <li><a href="/notes/florida-provider-payment-rights/">Florida provider payment rights: the statutes, clause by clause (2026)</a></li>
+          <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
+          <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
+          <li><a href="/notes/how-to-appeal-an-underpaid-claim/">How to appeal an underpaid insurance claim, step by step</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>Want to know which of your claims would qualify?</b> Clearia's diagnostic checks a year of your remittances for underpayments, downcoding and fixable denials, and flags which payer and plan type each one sits with. No cost. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/">Request your free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://www.linkedin.com/company/cleariagroup/" rel="me noopener">LinkedIn</a></span>
+    </footer>
+
+  </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
+</body>
+</html>

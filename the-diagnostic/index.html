@@ -660,6 +660,7 @@
         <input type="hidden" name="_cc" value="neil@cleariagroup.com">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="source" id="f-source" value="website">
         <div class="field-row">
           <div class="field">
             <label for="f-name">First name</label>
@@ -784,6 +785,16 @@
           });
         });
       }
+
+      // source: campaign tags from the link (QR, ads, outreach) ride along with the
+      // request so each lead email says where it came from. Kept for the session.
+      try {
+        var qs = new URLSearchParams(location.search), src = qs.get('utm_source');
+        if (src) sessionStorage.setItem('clearia_source', [src, qs.get('utm_medium'), qs.get('utm_campaign')].filter(Boolean).join(' / '));
+        var saved = sessionStorage.getItem('clearia_source');
+        var fs = document.getElementById('f-source');
+        if (fs) fs.value = saved || (document.referrer ? 'website (from ' + new URL(document.referrer).hostname + ')' : 'website (direct)');
+      } catch (e) {}
 
       // form: AJAX submit with inline success; native POST as fallback
       var form = document.getElementById('diag-form');

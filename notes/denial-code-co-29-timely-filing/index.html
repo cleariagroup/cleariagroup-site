@@ -32,9 +32,9 @@
     "headline": "CO-29 timely filing: run the date math before anything else",
     "description": "Run the date math before drafting anything: the proof hierarchy that overturns CO-29, why Medicare timely-filing can't be appealed, and when to let it go.",
     "datePublished": "2026-08-08",
-    "dateModified": "2026-09-20",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "dateModified": "2026-10-19",
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-29-timely-filing/"
   }
   </script>
@@ -92,6 +92,15 @@
     .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
       min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
       text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
     footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
       color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
       gap: 1rem; flex-wrap: wrap; }
@@ -140,6 +149,9 @@
     }
   ]
 }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Denial codes", "item": "https://cleariagroup.com/notes/denial-codes/"}, {"@type": "ListItem", "position": 4, "name": "CO-29 denial code: timely filing, and what still wins", "item": "https://cleariagroup.com/notes/denial-code-co-29-timely-filing/"}]}
   </script>
 </head>
 <body>
@@ -190,7 +202,8 @@
         <li><b>Prevention beats recovery here.</b> Every specialty has its version of this denial: the dermatology biopsy that sat in a coding queue, the surgical claim that waited on an op note, the trauma claim that waited on injury details. All of them are cheaper to prevent (archived claim-level acceptance reports, known per-payer windows) than to argue after the fact. When information is genuinely missing at submission time, file clean-enough and correct later. The filing clock forgives a correction more readily than an absence.</li>
       </ul>
 
-      <section class="qa">
+      <p>Source: the code descriptions on this page are quoted from the <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 Claim Adjustment Reason Code list</a>, the standard code set every payer remittance uses.</p>
+<section class="qa">
 <h2>Questions people ask about CO-29</h2>
 <h3>What does denial code CO-29 mean?</h3>
 <p>The payer says the claim arrived after its filing deadline. The deadline is set by the contract or the payer's policy, commonly 90 to 180 days from the date of service, and it's measured against the payer's record of receipt.</p>
@@ -199,6 +212,11 @@
 <h3>Who is responsible for a CO-29 denial?</h3>
 <p>The provider. CO means contractual obligation, and the amount cannot be billed to the patient. That's why the date math matters before the claim goes out.</p>
 </section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
 <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-29-timely-filing/">Copy link</a> · <a href="mailto:?subject=CO-29%20timely%20filing%3A%20run%20the%20date%20math%20before%20anything%20else&body=Worth%20a%20read%3A%20CO-29%20timely%20filing%3A%20run%20the%20date%20math%20before%20anything%20else%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-29-timely-filing/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-29-timely-filing%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
         <p>Related notes</p>
@@ -216,7 +234,7 @@
     </article>
 
     <div class="cta">
-      <p><b>Want your timely-filing denials date-checked against the actual windows?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts and Florida's deadlines, findings in dollars, at no cost. We're paid only from what we recover.</p>
+      <p><b>Want your timely-filing denials date-checked against the actual windows?</b> That's Clearia's diagnostic: every claim line checked for underpayments, administrative denials and downcoding against your payer contracts and Florida's deadlines, findings in dollars, at no cost. We're paid only from what we recover.</p>
       <a class="btn" href="/the-diagnostic/">Request your free diagnostic</a>
     </div>
 

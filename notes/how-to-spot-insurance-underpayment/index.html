@@ -33,10 +33,13 @@
     "description": "A practical check any independent practice can run in an afternoon: zero-balance claims, contracted rates, and the three patterns that reveal systematic underpayment.",
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/how-to-spot-insurance-underpayment/"
   }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "How to tell if an insurer is underpaying your practice", "item": "https://cleariagroup.com/notes/how-to-spot-insurance-underpayment/"}]}
   </script>
   <style>
     :root {
@@ -125,7 +128,7 @@
       <h2>The afternoon check</h2>
       <p>You need three things: your remittance data (the payment detail your billing system posts from each payer), the fee schedule from one payer contract, and a spreadsheet. Then:</p>
       <ol>
-        <li><b>Pick your highest-volume commercial payer.</b> Whatever pattern exists will be loudest where the claim count is highest.</li>
+        <li><b>Pick your highest-volume commercial payer.</b> Whatever pattern exists will be loudest where the claim count is highest. (Medicare Advantage lines use a different benchmark depending on contract status: <a href="/notes/medicare-advantage-paid-below-medicare-rates/">what Medicare Advantage plans owe, contracted or not</a>.)</li>
         <li><b>Pull 20 to 30 recent zero-balance claims for your five most-billed procedure codes.</b> Zero-balance matters: you are deliberately auditing claims everyone considers finished.</li>
         <li><b>For each claim line, write down three numbers:</b> what was billed, what the payer <i>allowed</i>, and what the contract's fee schedule says the allowable should be. The allowed-versus-contract comparison is the whole test. Ignore the billed charge beyond confirming the code.</li>
         <li><b>Also note the code the payer paid.</b> If you billed one code and the remittance shows payment at a different, lower-valued one, that line was downcoded. Record it even if the arithmetic on the paid code looks correct.</li>
@@ -164,8 +167,8 @@
     </article>
 
     <div class="cta">
-      <p><b>Want the full version of this check, run on your complete remittance history?</b> That's Clearia's diagnostic: every claim line audited against your payer contracts, findings in dollars, at no cost. We're paid only from what we recover.</p>
-      <a class="btn" href="/#diagnostic">Request your free diagnostic</a>
+      <p><b>Want the full version of this check, run on your complete remittance history?</b> That's Clearia's diagnostic: every claim line checked for underpayments, administrative denials and downcoding against your payer contracts, findings in dollars, at no cost. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
     </div>
 
     <footer>

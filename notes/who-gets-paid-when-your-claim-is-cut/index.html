@@ -33,10 +33,13 @@
     "description": "Claim-repricing vendors earn a percentage of what they cut, documented in their own SEC filings, patents, and a public trial record.",
     "datePublished": "2026-08-12",
     "dateModified": "2026-08-12",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/who-gets-paid-when-your-claim-is-cut/"
   }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Claim repricing vendors: who gets paid when claims are cut", "item": "https://cleariagroup.com/notes/who-gets-paid-when-your-claim-is-cut/"}]}
   </script>
   <style>
     :root {
@@ -134,7 +137,7 @@
 
       <h2>The scale of the editing layer</h2>
       <p>Repricing is one layer. The other is claims editing, the software that bundles, downcodes, and reduces claims at adjudication. Change Healthcare's <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001756497&amp;type=10-K">annual report for fiscal 2020</a> stated that payers using its primary claims-editing product realized on the order of <b>$12 billion per year</b> in savings, and that its out-of-network management services saved payers an average of <b>36% on out-of-network claims</b>. Optum's public product literature for its Claims Edit System quotes savings to payers of roughly <b>$36 to $82 per member per year</b>, depending on configuration.</p>
-      <p>Multiply the per-member figure by a large plan's membership and you get the size of the pool: the editing layer takes tens of billions of dollars a year out of provider payments, across all payers, before anyone looks at an individual claim. Some of those edits are correct applications of coding rules. Some aren't. The American Medical Association's National Health Insurer Report Card (the last public payer-by-payer audit of this behavior, discontinued in 2013) found payers' edit rates on claim lines varied by roughly <b>18-fold</b>, and that payers reported the correct contracted fee-schedule amount only <b>62–87%</b> of the time, depending on the payer.</p>
+      <p>Multiply the per-member figure by a large plan's membership and you get the scale: across all payers, claim edits reduce provider payments by tens of billions of dollars a year, before anyone looks at an individual claim. Some of those edits are correct applications of coding rules. Some aren't. The American Medical Association's National Health Insurer Report Card (the last public payer-by-payer audit of this behavior, discontinued in 2013) found payers' edit rates on claim lines varied by roughly <b>18-fold</b>, and that payers reported the correct contracted fee-schedule amount only <b>62–87%</b> of the time, depending on the payer.</p>
 
       <h2>What happened when it went to trial</h2>
       <p>In 2021, a group of Nevada emergency physician groups (affiliated with TeamHealth) took UnitedHealthcare to trial over systematically reduced out-of-network emergency claims. The jury found for the physicians and awarded <b>$60 million in punitive damages</b> on top of compensatory damages. In 2025, the <a href="https://law.justia.com/cases/nevada/supreme-court/2025/85656.html">Nevada Supreme Court affirmed</a> the compensatory award on an unjust-enrichment theory and reduced the punitive award to a 1:1 ratio. In a separate 2025 ruling, it declined to seal the internal documents that had been admitted at trial. So the trial record, including the payer-side documents describing how out-of-network emergency claims were repriced, is public.</p>
@@ -159,13 +162,14 @@
           <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
           <li><a href="/notes/how-to-spot-insurance-underpayment/">How to spot insurance underpayment in your remittance data</a></li>
           <li><a href="/notes/florida-prior-authorization-scorecard/">Florida prior authorization scorecard: what the payers' own 2025 filings show</a></li>
+          <li><a href="/notes/florida-underpayment-enforcement-gap/">Florida insurer fines, 2023 to 2026: what the regulator enforces, and what your practice recovers itself</a></li>
           <li><a href="/notes/downcoding-99214-paid-as-99213/">Downcoding: why your 99214s are paid as 99213s, and how to get the difference back</a></li>
         </ul>
       </div>
     </article>
 
     <div class="cta">
-      <p><b>The machine on the other side is systematic. Your response can be too.</b> Clearia audits your remittance data claim by claim against contracts, fee schedules, and Florida's deadlines. Findings in dollars, at no cost. We're paid only from what we recover.</p>
+      <p><b>Repriced and edited lines are worth checking the same way they were made: systematically.</b> Clearia audits your remittance data claim by claim for underpayments, administrative denials and downcoding, against contracts, fee schedules, and Florida's deadlines. Findings in dollars, at no cost. We're paid only from what we recover.</p>
       <a class="btn" href="/the-diagnostic/">Request your free diagnostic</a>
     </div>
 

@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remark codes (RARC) decoded: meaning, pairing, and the fix</title>
+  <meta name="description" content="What a remittance remark code (RARC) means, which reason code it pairs with, and the fix. N130, N381, N350, M15, M80, N290, MA130, N479 and more.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/remark-codes-rarc/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Remark codes (RARCs), decoded: what each one means, what it pairs with, and the fix">
+  <meta property="og:description" content="The reason code says what the payer did. The remark code says why. A working table of the RARCs specialty practices see most, with the usual CARC pairing and the fix for each.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/remark-codes-rarc/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+    gtag('config', 'G-9V503VM4SE');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Remark codes (RARCs), decoded: what each one means, what it pairs with, and the fix",
+  "description": "The reason code says what the payer did. The remark code says why. A working table of the RARCs specialty practices see most, with the usual CARC pairing and the fix for each.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "url": "https://cleariagroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "legalName": "Clearia, Inc.",
+    "url": "https://cleariagroup.com"
+  },
+  "mainEntityOfPage": "https://cleariagroup.com/notes/remark-codes-rarc/"
+}
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a remark code on a remittance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A remittance advice remark code (RARC) is a short code that adds detail to a claim adjustment reason code (CARC). The CARC says what the payer did to the line; the RARC says why, or what is missing. CMS maintains the RARC list, and X12 publishes it alongside the reason codes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a CARC and a RARC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CARC is the adjustment itself, like 16 (missing information) or 97 (bundled). The RARC is the explanation that rides with it, like N290 (rendering provider identifier missing or invalid). A CARC can stand alone. Most RARCs can't; they always travel with a CARC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does remark code N130 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "N130 tells you to consult the plan's benefit documents or guidelines for restrictions on the service. It points to a plan policy without naming it. Pull the policy, check whether the service met its criteria, and appeal with the record if it did."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does MA130 mean on a Medicare remittance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MA130 means the claim was returned as unprocessable because information was missing or invalid, so there are no appeal rights. Read the companion remark code to find the field, then submit a new, corrected claim inside the timely filing limit. Don't file a redetermination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I appeal a denial based only on the remark code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The remark code tells you which door to use. Data-error remarks like N290, N382 and MA130 call for a corrected or new claim, not an appeal. Policy and payment remarks like N130, N115 and N381 can support an appeal or a payment dispute when the record or the contract is on your side."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cleariagroup.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://cleariagroup.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Denial codes",
+      "item": "https://cleariagroup.com/notes/denial-codes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Remark codes (RARC) decoded: meaning, pairing, and the fix",
+      "item": "https://cleariagroup.com/notes/remark-codes-rarc/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
+      <h1>Remark codes (RARCs), decoded: what each one means, what it pairs with, and the fix</h1>
+      <p class="meta">Clearia · October 2026 · denial codes, read properly</p>
+
+<p class="def"><b>A remark code (RARC)</b> is the second code on a remittance line. The reason code (CARC) says what the payer did. The remark code says why, or what to fix. Find the remark code in the table below, read the reason code it's paired with, and you know whether the line needs a corrected claim, a record, or a payment dispute.</p>
+
+<p>Billers usually meet a remark code the same way. A line comes back short or denied, the reason code is something generic like CO-16 or CO-96, and the only specific clue is a string like "N290" or "M80" sitting next to it. So you paste it into a search bar. This page is the answer we'd want to find: what the code means in plain terms, what it usually travels with, and what actually fixes it.</p>
+
+<h2>How remark codes pair with reason codes</h2>
+<p>Every adjusted line on an electronic remittance (the 835) carries three things. A <b>group code</b> (CO, PR, OA, PI) says who the amount belongs to. A <b>reason code</b> (CARC) says what happened to it. A <b>remark code</b> (RARC), when present, explains the reason code. Think of the reason code as the envelope and the remark code as the letter inside.</p>
+<p>Some reason codes are close to empty without a remark. CARC 16 ("claim lacks information or has submission or billing errors") is the clearest case: the X12 code list requires at least one remark code that isn't an alert to go with it. CARC 96 (non-covered) and 97 (bundled) behave the same way in practice. The remark carries the real reason, which is why <a href="/notes/denial-code-co-16-and-rarcs/">a CO-16 can't be worked without reading it</a>.</p>
+<p>Three more things worth knowing:</p>
+<ul>
+<li><b>Where they sit.</b> Line-level remarks ride in the LQ segment of the service-line loop. Claim-level remarks sit in the MOA segment on professional claims and MIA on institutional ones. Many practice management systems post the reason code and drop the remark. <a href="/notes/what-is-an-835-remittance/">What each 835 field holds.</a></li>
+<li><b>"Alert" codes are informational.</b> A remark that begins with "Alert" tells you something; it doesn't adjust anything. The money moves on the reason code.</li>
+<li><b>Who maintains them.</b> CMS maintains the remark code list and X12 publishes it with the reason codes, updated several times a year. Commercial payers use the same list, though some apply codes more loosely than Medicare contractors do.</li>
+</ul>
+
+<h2>The remark codes specialty practices see most</h2>
+<p>Short forms below are plain-language summaries of the official descriptions. Pairings are the common ones, not the only ones. Payers vary, so read the exact text on your remit.</p>
+<div class="tablewrap"><table>
+<tr><th>RARC</th><th>What it says, in plain terms</th><th>Usually pairs with</th><th>The fix</th></tr>
+<tr><td><b>N130</b></td><td>Consult the plan's benefit documents or guidelines for restrictions on this service</td><td><a href="/notes/denial-code-co-96-non-covered/">CO-96</a>, <a href="/notes/denial-code-co-204-not-covered-benefit-plan/">CO/PR-204</a>, <a href="/notes/denial-code-co-50-medical-necessity/">CO-50</a></td><td>Find the plan policy behind it. If the service met the criteria, appeal with the record. If it's a true exclusion, check the group code before billing the patient.</td></tr>
+<tr><td><b>N381</b></td><td>Alert: consult your contract for restrictions, billing, or payment information on these charges</td><td><a href="/notes/denial-code-co-45/">CO-45</a>, CO-97 and others</td><td>It points at the contract. Recompute the allowed amount against your fee schedule. If it's short, dispute it and cite the section.</td></tr>
+<tr><td><b>N350</b></td><td>Missing, incomplete, or invalid description of service for a not-otherwise-classified (NOC) code or unlisted procedure</td><td><a href="/notes/denial-code-co-16-and-rarcs/">CO-16</a></td><td>Add the narrative (drug name, dose, route; or what the unlisted procedure was) in the line note, then send a corrected claim.</td></tr>
+<tr><td><b>M15</b></td><td>Separately billed services were bundled as components of the same procedure; no separate payment</td><td><a href="/notes/denial-code-co-97-global-period/">CO-97</a>, <a href="/notes/denial-code-co-231-234-mutually-exclusive-not-separately-paid/">CO-234</a></td><td>Check the NCCI pair and its modifier indicator. If the services were truly distinct and the indicator allows it, correct with the right modifier and documentation. If not, the bundle stands.</td></tr>
+<tr><td><b>M80</b></td><td>Not covered when performed in the same session or on the same date as a service already processed</td><td>CO-97</td><td>Same-day bundling. Often an E/M with a procedure that needed modifier 25, or two distinct procedures that needed 59 or an X modifier.</td></tr>
+<tr><td><b>N19</b></td><td>Procedure code is incidental to the primary procedure</td><td>CO-97</td><td>Confirm against the payer's incidental-procedure policy and NCCI. Reverses only if the service was separate and separately documented.</td></tr>
+<tr><td><b>M144</b> / <b>N525</b></td><td>Pre- or post-operative care is included in the surgery payment / not covered inside another service's global period</td><td>CO-97</td><td>Date math first, then modifiers 24, 25, 57, 58, 78 or 79 if the visit or procedure was unrelated. <a href="/notes/denial-code-co-97-global-period/">The global-period play.</a></td></tr>
+<tr><td><b>N290</b></td><td>Missing, incomplete, or invalid rendering provider primary identifier</td><td>CO-16</td><td>Check the rendering NPI on the claim and that it's linked to the group with this payer. Corrected claim; Medicare treats it as unprocessable, not appealable.</td></tr>
+<tr><td><b>N382</b></td><td>Missing, incomplete, or invalid patient identifier</td><td>CO-16</td><td>Match name and member ID (or MBI for Medicare) to the current card. Resubmit; a front-end rejection goes back as a new claim.</td></tr>
+<tr><td><b>MA130</b></td><td>Claim has incomplete or invalid information and is unprocessable, so no appeal rights; submit a new claim</td><td>CO-16 plus a second remark</td><td>Read the second remark to find the field. Send a new claim, not a redetermination, and watch the filing clock.</td></tr>
+<tr><td><b>M51</b></td><td>Missing, incomplete, or invalid procedure code(s)</td><td>CO-16</td><td>Correct the code or modifier for the date of service. Corrected claim.</td></tr>
+<tr><td><b>N657</b></td><td>This should be billed with the appropriate code for these services</td><td>CO-16, <a href="/notes/denial-code-co-4-modifier/">CO-4</a></td><td>The payer wants a different code or convention (units vs. bilateral modifier, a HCPCS code instead of CPT). Find its coding policy, then send a corrected claim.</td></tr>
+<tr><td><b>N479</b></td><td>Missing explanation of benefits (coordination of benefits or Medicare secondary payer)</td><td>CO-16, <a href="/notes/denial-code-co-22-coordination-of-benefits/">CO-22</a></td><td>Send the primary payer's adjudication with the secondary claim, either in the electronic COB loops or as an attachment.</td></tr>
+<tr><td><b>MA04</b></td><td>Secondary payment can't be considered without the primary payer's identity or payment information</td><td>CO-16, CO-22</td><td>Fix the primary payer data and payer order on the claim. Resubmit with the primary's payment and adjustments. <a href="/notes/denial-code-oa-23-prior-payer-adjudication/">Secondary claim math.</a></td></tr>
+<tr><td><b>M127</b></td><td>Missing patient medical record for this service</td><td>CO-50 (Medicare), <a href="/notes/denial-code-co-252-attachment/">CO-252</a></td><td>A records request went unanswered or arrived late. Send exactly what was asked through the payer's records channel; on Medicare, request redetermination with the records.</td></tr>
+<tr><td><b>N362</b></td><td>The number of days or units of service exceeds the acceptable maximum</td><td><a href="/notes/denial-code-co-151-frequency-units/">CO-151</a></td><td>Usually a medically unlikely edit. Check the units for typos first. Documented units can be appealed unless the edit is a date-of-service absolute limit.</td></tr>
+<tr><td><b>M86</b></td><td>Denied because payment was already made for the same or a similar procedure within a set time frame</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">CO-119</a>, <a href="/notes/denial-code-co-18-duplicate/">CO-18</a></td><td>Check who was paid and when. Another provider's claim, or a period that already reset, is a winnable appeal.</td></tr>
+<tr><td><b>N115</b> / <b>N386</b></td><td>The decision was based on a Local (N115) or National (N386) Coverage Determination</td><td>CO-50, CO-96, CO-151</td><td>Read the LCD or NCD and its article. Missing diagnosis codes and frequency rules are the usual culprits. Correct the claim, or appeal with records that meet the criteria.</td></tr>
+<tr><td><b>N95</b></td><td>This provider type or specialty may not bill this service</td><td><a href="/notes/denial-code-co-170-171-provider-type/">CO-170</a></td><td>A specialty or enrollment mismatch. Check how the provider is enrolled with this payer before anything else.</td></tr>
+<tr><td><b>N781</b></td><td>Patient is a Qualified Medicare Beneficiary; review cost-sharing amounts</td><td>Patient-responsibility lines</td><td>Federal rules bar collecting Medicare cost sharing from QMB patients. Don't send a statement. <a href="/notes/denial-codes-pr-vs-co/">Who actually owes.</a></td></tr>
+<tr><td><b>N211</b></td><td>Alert: you may not appeal this decision</td><td><a href="/notes/denial-code-co-29-timely-filing/">CO-29</a> and others</td><td>Believe it, but check the route. On Medicare, timely-filing denials go to a reopening or a good-cause request, not an appeal. <a href="/notes/medicare-denied-claim-appeal-process/">The Medicare levels.</a></td></tr>
+</table></div>
+
+<h2>Three kinds of remark code, three different jobs</h2>
+<p>Once you've read a few hundred, remark codes sort into three piles. The pile decides the work.</p>
+<ol>
+<li><b>Fix and resubmit.</b> N290, N382, N350, M51, MA130, N479, MA04, N657. Something on the claim was wrong or missing. Nobody needs to be persuaded. A corrected claim (replacement, frequency code 7) for anything that was adjudicated; a new original for anything rejected at the front end. A letter here just burns days.</li>
+<li><b>Send the record.</b> M127, N115, N386, and many N130s. The payer wants proof that the service met a written policy. The appeal is the chart, organized around the policy's own criteria.</li>
+<li><b>Dispute the payment.</b> N381, M15, M80, N19, M144, N525, M86. These are payer rules applied to a clean claim. Some are right. A good share aren't: the wrong bundle, a modifier the edit ignored, a global window counted wrong, a contract rate that wasn't loaded. These are where payment disputes are won.</li>
+</ol>
+<p>Pile one is fast and cheap. Pile three is where the money is, because it's where a payer rule fires the same way on hundreds of lines.</p>
+
+<h2>Read the remark, then count it</h2>
+<p>One N381 on one line is a curiosity. Two hundred N381s from the same payer on the same visit code, all allowed at the same short amount, is a contract-loading problem. One fix stops it for every future claim, and the past lines go back in one dispute. The same goes for M80 on every E/M billed with a minor procedure. Same with M15 on one recurring code pair.</p>
+<p>So the most useful report a billing team can run is a count: remark code by payer by month, with dollars. Most practice systems can't produce it, because the remark was never stored. The raw 835 files still have it. That's usually where we start.</p>
+
+<h2>What it means for your practice</h2>
+<p>Route every denial by its remark code, not just its reason code. It tells you whether the line needs a corrected claim, a record, or an argument, and choosing wrong costs weeks against a filing clock. Then look for remark codes that repeat. Repetition means a rule. A rule that's wrong is one dispute, not a thousand. That's the work our team does in Clearia's diagnostic, across underpayments, administrative denials and downcoding.</p>
+
+<h2>Sources</h2>
+<p><a href="https://x12.org/codes/remittance-advice-remark-codes" rel="noopener">X12, Remittance Advice Remark Codes</a> and <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">Claim Adjustment Reason Codes</a> (official code lists; CARC 16 usage note) · Noridian Medicare denial-resolution pages for <a href="https://med.noridianmedicare.com/web/jeb/topics/claim-submission/reason-code-guidance/missing-incorrect-req-npi-info" rel="noopener">N290</a>, <a href="https://med.noridianmedicare.com/web/jadme/topics/ra/denial-resolution/m127-50" rel="noopener">M127</a>, <a href="https://med.noridianmedicare.com/web/jadme/topics/ra/denial-resolution/m80-97" rel="noopener">M80</a> and <a href="https://med.noridianmedicare.com/web/jeb/topics/claim-submission/reason-code-guidance/mue-service-exceeds-max" rel="noopener">N362 / MUE</a> · CGS Medicare, <a href="https://cgsmedicare.com/partb/education/cse_data.html" rel="noopener">claim submission errors and MA130</a> · First Coast Service Options, <a href="https://medicare.fcso.com/appeals/what-you-should-do-claims-returned-unprocessable" rel="noopener">claims returned as unprocessable</a> and <a href="https://medicare.fcso.com/claims/tips-prevent-claim-adjustment-reason-code-carc-co-97" rel="noopener">CO-97 tips</a> · CMS transmittal <a href="https://www.cms.gov/Regulations-and-Guidance/Guidance/Transmittals/Downloads/R663PI.pdf" rel="noopener">R663PI</a> (CARC 50 with M127 for undelivered documentation) · Noridian, <a href="https://med.noridianmedicare.com/web/jadme/topics/ra/denial-resolution/n382-16" rel="noopener">CO-16 with N382</a>. Descriptions summarized October 2026; check the current list for exact wording.</p>
+
+<section class="qa">
+<h2>Questions people ask about remark codes</h2>
+<h3>What is a remark code on a remittance?</h3>
+<p>A remittance advice remark code (RARC) is a short code that adds detail to a claim adjustment reason code (CARC). The CARC says what the payer did to the line; the RARC says why, or what is missing. CMS maintains the RARC list, and X12 publishes it alongside the reason codes.</p>
+<h3>What is the difference between a CARC and a RARC?</h3>
+<p>The CARC is the adjustment itself, like 16 (missing information) or 97 (bundled). The RARC is the explanation that rides with it, like N290 (rendering provider identifier missing or invalid). A CARC can stand alone. Most RARCs can't; they always travel with a CARC.</p>
+<h3>What does remark code N130 mean?</h3>
+<p>N130 tells you to consult the plan's benefit documents or guidelines for restrictions on the service. It points to a plan policy without naming it. Pull the policy, check whether the service met its criteria, and appeal with the record if it did.</p>
+<h3>What does MA130 mean on a Medicare remittance?</h3>
+<p>MA130 means the claim was returned as unprocessable because information was missing or invalid, so there are no appeal rights. Read the companion remark code to find the field, then submit a new, corrected claim inside the timely filing limit. Don't file a redetermination.</p>
+<h3>Can I appeal a denial based only on the remark code?</h3>
+<p>The remark code tells you which door to use. Data-error remarks like N290, N382 and MA130 call for a corrected or new claim, not an appeal. Policy and payment remarks like N130, N115 and N381 can support an appeal or a payment dispute when the record or the contract is on your side.</p>
+</section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/remark-codes-rarc/">Copy link</a> · <a href="mailto:?subject=Remark%20codes%20%28RARCs%29%2C%20decoded%3A%20what%20each%20one%20means%2C%20what%20it%20pairs%20with%2C%20and%20the%20fix&body=Worth%20a%20read%3A%20Remark%20codes%20%28RARCs%29%2C%20decoded%3A%20what%20each%20one%20means%2C%20what%20it%20pairs%20with%2C%20and%20the%20fix%0Ahttps%3A//cleariagroup.com/notes/remark-codes-rarc/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fremark-codes-rarc%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/denial-codes/">Denial codes, explained: what the payer is saying, and whether it's worth chasing</a></li>
+          <li><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 means read the remark code</a></li>
+          <li><a href="/notes/denial-code-co-97-global-period/">CO-97: bundling, global periods, and the remark code that decides</a></li>
+          <li><a href="/notes/denial-code-co-96-non-covered/">CO-96 denial code: non-covered charge, and the remark code that explains why</a></li>
+          <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
+          <li><a href="/notes/denial-codes-pr-vs-co/">PR vs CO: who actually owes, and when billing the patient is prohibited</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>Want every remark code on a year of remits sorted into fix, send, or dispute?</b> Clearia's free diagnostic reads your 835s line by line, routes each one by its remark code, and reports underpayments, administrative denials and downcoding in dollars, with deadlines. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://www.linkedin.com/company/cleariagroup/" rel="me noopener">LinkedIn</a></span>
+    </footer>
+
+  </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
+</body>
+</html>

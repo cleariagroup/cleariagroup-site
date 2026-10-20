@@ -32,9 +32,9 @@
     "headline": "CO-109 denial code: sent to the wrong payer",
     "description": "Denial code CO-109 means this payer isn't the one that owes. Medicare Advantage instead of Medicare, a carve-out vendor, a TPA, workers' comp. How to find the right payer fast, before the real one's window closes.",
     "datePublished": "2026-09-20",
-    "dateModified": "2026-10-11",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "dateModified": "2026-10-19",
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-109-wrong-payer/"
   }
   </script>
@@ -92,6 +92,15 @@
     .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
       min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
       text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
     footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
       color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
       gap: 1rem; flex-wrap: wrap; }
@@ -143,6 +152,9 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Denial codes", "item": "https://cleariagroup.com/notes/denial-codes/"}, {"@type": "ListItem", "position": 4, "name": "CO-109 denial code: wrong payer, and where to send it", "item": "https://cleariagroup.com/notes/denial-code-co-109-wrong-payer/"}]}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -184,6 +196,7 @@
 
 <h2>The pattern to watch</h2>
 <p>CO-109 clusters by cause. A run of them after January means plan changes the front desk missed. A run tied to one service line means a carve-out vendor nobody set up in the system. Either way it's a registration fix, and the denied claims are a batch to redirect together before their windows close.</p>
+<p>Source: the code descriptions on this page are quoted from the <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 Claim Adjustment Reason Code list</a>, the standard code set every payer remittance uses.</p>
 <section class="qa">
 <h2>Questions people ask about CO-109</h2>
 <h3>What does denial code CO-109 mean?</h3>
@@ -193,6 +206,11 @@
 <h3>Does a CO-109 extend my filing deadline with the correct payer?</h3>
 <p>Usually not. The correct payer's timely-filing window runs from the date of service. Some payers accept the wrong payer's denial as good cause for a late filing; don't count on it. Redirect quickly.</p>
 </section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
 <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-code-co-109-wrong-payer/">Copy link</a> · <a href="mailto:?subject=CO-109%20denial%20code%3A%20sent%20to%20the%20wrong%20payer&body=Worth%20a%20read%3A%20CO-109%20denial%20code%3A%20sent%20to%20the%20wrong%20payer%0Ahttps%3A//cleariagroup.com/notes/denial-code-co-109-wrong-payer/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-code-co-109-wrong-payer%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>

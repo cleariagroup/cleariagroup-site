@@ -33,8 +33,8 @@
     "description": "How a Medicare Part B denial is appealed: redetermination in 120 days, reconsideration in 180, then the ALJ. Why timely-filing denials can't be appealed, how reopenings work, and how Medicare Advantage differs.",
     "datePublished": "2026-09-20",
     "dateModified": "2026-09-20",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/medicare-denied-claim-appeal-process/"
   }
   </script>
@@ -143,6 +143,9 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Medicare claim denial appeal process and deadlines (2026)", "item": "https://cleariagroup.com/notes/medicare-denied-claim-appeal-process/"}]}
+  </script>
   </head>
 <body>
   <div class="wrap">
@@ -183,7 +186,7 @@
 <p>Medicare's remittance carries the reason and remark codes like any other 835. <a href="/notes/denial-codes/">The denial codes table</a> sorts them.</p>
 
 <h2>Medicare Advantage is different</h2>
-<p>A Medicare Advantage plan runs its own appeal process, not the MAC ladder. For a contracted provider, disputes follow the plan's provider dispute procedure in the contract. For a non-contracted provider, the plan must offer a reconsideration within 60 days of the denial, with a waiver of liability that protects the patient. MA plans also carry a rule that matters for pre-authorized services: under 42 CFR 422.138(c), a plan may not later deny coverage for lack of medical necessity on a service it pre-authorized. <a href="/notes/prior-auth-approved-claim-denied/">The approved-then-denied pattern.</a></p>
+<p>A Medicare Advantage plan runs its own appeal process, not the MAC ladder. For a contracted provider, disputes follow the plan's provider dispute procedure in the contract. For a non-contracted provider, the plan must offer a reconsideration within 60 days of the denial, with a waiver of liability that protects the patient. MA plans also carry a rule that matters for pre-authorized services: under 42 CFR 422.138(c), a plan may not later deny coverage for lack of medical necessity on a service it pre-authorized. <a href="/notes/prior-auth-approved-claim-denied/">The approved-then-denied pattern.</a> When the plan pays but pays short, see <a href="/notes/medicare-advantage-paid-below-medicare-rates/">what Medicare Advantage plans owe contracted and non-contracted providers</a>.</p>
 
 <h2>The ABN question</h2>
 <p>Whether a denied service can be billed to the patient depends on whether a valid Advance Beneficiary Notice was signed before the service, and on the group code the remittance carries. Without an ABN on a usually-covered service, the amount is the practice's to absorb. <a href="/notes/denial-codes-pr-vs-co/">Who can be billed, by group code.</a></p>

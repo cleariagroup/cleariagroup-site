@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E/M downcoding by payers: how to spot it and reverse it</title>
+  <meta name="description" content="How payers lower E/M visit levels, how to tell a payer downcode from a coding error, what MDM or time must show, and how to request reconsideration.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/em-downcoding-by-payers/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="E/M downcoding by payers: how to spot it, tell it from a coding error, and reverse it">
+  <meta property="og:description" content="When a payer pays your E/M visit at a lower level than billed. The remittance signals, the test that separates a payer downcode from your own coding error, what the MDM and time rules require, and how to get the level reprocessed.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/em-downcoding-by-payers/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+    gtag('config', 'G-9V503VM4SE');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "E/M downcoding by payers: how to spot it, tell it from a coding error, and reverse it",
+  "description": "When a payer pays your E/M visit at a lower level than billed. The remittance signals, the test that separates a payer downcode from your own coding error, what the MDM and time rules require, and how to get the level reprocessed.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "url": "https://cleariagroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "legalName": "Clearia, Inc.",
+    "url": "https://cleariagroup.com"
+  },
+  "mainEntityOfPage": "https://cleariagroup.com/notes/em-downcoding-by-payers/"
+}
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is E/M downcoding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's when a payer pays an evaluation and management visit at a lower level than the one billed, for example a 99215 paid as 99214. Some payers do it by claims algorithm before anyone reads the note; others do it after a records review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if a payer downcoded my claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the code paid to the code billed on the 835. When the payer changes the code, the remittance reports your submitted code next to the one it paid. A CARC 150 adjustment, or an allowed amount that lands exactly on the lower level's rate, are the other two signals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does denial code 150 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CARC 150 means the payer deems the information submitted does not support this level of service. On E/M claims it's the usual downcoding signal. It's a documentation dispute, so the reconsideration is the note."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I appeal an E/M downcode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the documentation supports the billed level. Under the 2021 office visit rules, the level rests on medical decision making or total time on the date of the encounter. Say which one you used, show it in the note, and ask for reprocessing at the billed level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is every lower payment on an E/M visit a downcode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If the note supports only the lower level, the payer's correction is right, and the fix is coding education, not an appeal. And if the paid code matches the billed code but the allowed amount is short, that's an underpayment against the fee schedule, a different dispute."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cleariagroup.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://cleariagroup.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "E/M downcoding by payers: how to spot it and reverse it",
+      "item": "https://cleariagroup.com/notes/em-downcoding-by-payers/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
+      <h1>E/M downcoding by payers: how to spot it, tell it from a coding error, and reverse it</h1>
+      <p class="meta">Clearia · October 2026 · downcoding, E/M, appeals</p>
+
+<p class="def"><b>E/M downcoding</b> is when a payer pays an evaluation and management visit at a lower level than the one billed. A 99215 is paid as 99214, or a 99204 as 99203. It shows on the remittance as a changed procedure code or a CARC 150 adjustment. When the note supports the billed level, it's reversible.</p>
+
+<p>Payers lower visit levels in a few different ways. Some run claims algorithms that read the diagnosis codes and claim history and pay one level down when the claim doesn't "look" like a level 4 or 5. Others review records before or after payment. Either way the paid line usually posts as clean, which is why most practices never count it. This is the broad guide. For the specific 99214-to-99213 pattern and the 2025 payer programs behind it, see <a href="/notes/downcoding-99214-paid-as-99213/">our note on 99214s paid as 99213s</a>.</p>
+
+<h2>Where E/M downcodes come from</h2>
+<ul>
+<li><b>Automated level policies.</b> Several large commercial payers now adjust level 4 and 5 E/M claims automatically when claim data doesn't appear to support the level. Cigna's R49 policy and Aetna's 2025 program are the best known. The adjustment happens before payment, with no records request. <a href="/notes/downcoding-99214-paid-as-99213/">The details, payer by payer.</a></li>
+<li><b>Records review.</b> The payer asks for the note, reviews it, and pays the level it thinks the note supports. Medicare contractors do this through medical review. CMS's claims manual makes medical necessity the overarching criterion for the level, on top of the CPT requirements, and says documentation volume shouldn't drive the level billed.</li>
+<li><b>Out-of-network claims under the No Surprises Act.</b> When a plan bases the qualifying payment amount on a downcoded service code or modifier, federal rules since October 2022 require it to say so with the initial payment, explain why, and state what the amount would have been without the downcode.</li>
+</ul>
+
+<h2>How it shows on the remittance</h2>
+<div class="tablewrap"><table>
+<tr><th>What you see</th><th>What it usually means</th><th>What to check</th></tr>
+<tr><td>Paid code differs from billed code on the line</td><td>The payer changed the level. The 835 reports your submitted code in a separate field when it differs from the paid one.</td><td>Pull submitted vs. paid for every E/M line. Most posting software shows only the paid code.</td></tr>
+<tr><td>CARC 150 on the line</td><td>"Payer deems the information submitted does not support this level of service"</td><td>The remark code next to it, and whether the note supports the level.</td></tr>
+<tr><td>Allowed amount equals the lower level's contract rate, with only a CO-45</td><td>A silent recode, or a fee-schedule load error</td><td>Your contracted rate for both levels. If the code didn't change but the rate is short, it's an <a href="/notes/how-to-spot-insurance-underpayment/">underpayment</a>, not a downcode.</td></tr>
+<tr><td>Payer letter or portal notice of a level adjustment</td><td>An automated policy notice, sometimes sent after the fact</td><td>The policy number and effective date, against your contract.</td></tr>
+<tr><td>Out-of-network claim with a downcode statement</td><td>No Surprises Act disclosure</td><td>The stated reason and the amount without the downcode. That's your number for open negotiation.</td></tr>
+</table></div>
+<p>Remark codes vary by payer here, so read the actual text on your remit. <a href="/notes/remark-codes-rarc/">The remark code table</a> covers the common ones.</p>
+
+<h2>Downcode or coding error? Four questions</h2>
+<p>Not every lower payment is the payer's mistake. Before you build a packet, run four questions. They take minutes per claim, and much less once you're doing it by pattern.</p>
+<ol>
+<li><b>Who changed the code?</b> If the 835 shows your billed code and a different paid code, the payer changed it. If you billed the lower code yourself, there's nothing to appeal; the question is internal.</li>
+<li><b>Does the note support the billed level?</b> Score it honestly against the 2021 rules below, by MDM or by time. If it supports only the lower level, the payer is right. Accept it and fix the habit.</li>
+<li><b>Did the claim carry the complexity?</b> Algorithms read the claim, not the chart. A visit that managed three chronic conditions but listed one diagnosis looks like a lower-level visit to a machine. If the note documents conditions the claim left off, that's a claim-quality fix, and future claims should carry every condition addressed.</li>
+<li><b>Is it concentrated?</b> Downcodes that cluster on one payer point to a payer rule. Downcodes spread across every payer for one provider point to documentation. The first is a dispute. The second is training.</li>
+</ol>
+
+<h2>What the 2021 and later E/M rules require</h2>
+<p>Since January 1, 2021, office and outpatient visits (99202 to 99205, 99212 to 99215) are leveled by <b>medical decision making</b> or by <b>total time on the date of the encounter</b>, whichever the note supports. History and exam must be medically appropriate, but they no longer set the level. CMS adopted the same framework for Medicare, and in 2023 the AMA extended it to most other E/M families, including hospital and consult codes.</p>
+<p><b>By MDM.</b> The level is set by two of three elements: the number and complexity of problems addressed, the amount and complexity of data reviewed and analyzed, and the risk of complications from patient management.</p>
+<div class="tablewrap"><table>
+<tr><th>Level (new / established)</th><th>MDM</th><th>What typically gets there</th></tr>
+<tr><td>99202 / 99212</td><td>Straightforward</td><td>One self-limited or minor problem; minimal data; minimal risk</td></tr>
+<tr><td>99203 / 99213</td><td>Low</td><td>Two or more minor problems, one stable chronic illness, or an acute uncomplicated illness; limited data; low risk</td></tr>
+<tr><td>99204 / 99214</td><td>Moderate</td><td>One or more chronic illnesses with exacerbation or progression, two or more stable chronic illnesses, or an undiagnosed new problem with uncertain prognosis; moderate data; moderate risk, such as prescription drug management</td></tr>
+<tr><td>99205 / 99215</td><td>High</td><td>A chronic illness with severe exacerbation, or an acute or chronic illness posing a threat to life or bodily function; extensive data; high risk, such as a decision about hospitalization</td></tr>
+</table></div>
+<p><b>By time.</b> Total time is the physician's or other qualified professional's time on the date of the visit, face to face and not: reviewing records and tests, examining, counseling, ordering, documenting, coordinating care. It doesn't include clinical staff time or separately billed services. Since 2024, the CPT thresholds are minimums to be met or exceeded:</p>
+<div class="tablewrap"><table>
+<tr><th>New patient</th><th>Minimum time</th><th>Established patient</th><th>Minimum time</th></tr>
+<tr><td>99202</td><td>15 minutes</td><td>99212</td><td>10 minutes</td></tr>
+<tr><td>99203</td><td>30 minutes</td><td>99213</td><td>20 minutes</td></tr>
+<tr><td>99204</td><td>45 minutes</td><td>99214</td><td>30 minutes</td></tr>
+<tr><td>99205</td><td>60 minutes</td><td>99215</td><td>40 minutes</td></tr>
+</table></div>
+<p>Time-based notes need the total minutes and what filled them. "Spent 45 minutes" with nothing else is the note that loses on review.</p>
+
+<h2>How to request reconsideration</h2>
+<p>An E/M downcode is a documentation dispute, so the reconsideration is the note, organized so a reviewer can verify the level in two minutes.</p>
+<ol>
+<li><b>Identify the claim.</b> Claim number, date of service, code billed, code paid, dollar difference.</li>
+<li><b>Name the basis.</b> "Level supported by moderate MDM: two stable chronic illnesses, prescription drug management" or "Level supported by 42 minutes total time on the date of the encounter." One basis, stated plainly.</li>
+<li><b>Attach the note and mark it.</b> Highlight the problems addressed, the data, the risk, or the time statement. Payers reverse on the record, not on the letter.</li>
+<li><b>Ask for reprocessing</b> at the billed level and payment of the difference. On Florida fully insured commercial and HMO plans, add the 12% simple interest due on underpayments under §627.6131 and §641.3155.</li>
+</ol>
+<p>Use the payer's reconsideration or claim-dispute channel first; it's faster and keeps the formal appeal in reserve. Medicare Part B downcodes follow the redetermination path, 120 days from receipt of the remittance. Commercial windows at Florida's major payers run from about 120 days to a year, depending on payer and contract. <a href="/notes/florida-payer-appeal-deadlines/">The Florida payer table</a> has the numbers, and <a href="/notes/appeal-letter-denied-medical-claim/">our appeal letter templates</a> include the layout.</p>
+<p>Then batch. One downcode is worth the gap between two levels and an hour of staff time. Fifty from the same payer on the same rule, in one packet with a claim list and a sample of notes, is a conversation worth having. Payers that reverse the first ten often reprocess the list.</p>
+
+<h2>What it means for your practice</h2>
+<p>If you bill level 4 and 5 visits, some of them are probably being paid a level down right now, and your posting software is calling them paid. Pull one quarter of submitted-versus-paid codes by payer. Separate the true coding errors, which are a training job, from the payer downcodes your notes support, which are money still inside the dispute window. That split is part of what our team reports in Clearia's diagnostic, next to underpayments and administrative denials.</p>
+
+<h2>Sources</h2>
+<p>AMA, <a href="https://www.ama-assn.org/practice-management/cpt/implementing-cpt-evaluation-and-management-em-revisions" rel="noopener">implementing the CPT E/M revisions</a> and <a href="https://www.ama-assn.org/practice-management/cpt/understanding-landmark-em-office-visit-changes" rel="noopener">the 2021 office visit changes</a> (MDM, time, 2023 expansion, 2024 time thresholds) · CMS, <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/eval-mgmt-serv-guide-icn006764.pdf" rel="noopener">MLN Evaluation and Management Services Guide</a> · CMS, <a href="https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c12.pdf" rel="noopener">Medicare Claims Processing Manual, Chapter 12</a>, §30.6.1 (medical necessity as the overarching criterion) · <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 Claim Adjustment Reason Codes</a> (CARC 150) · <a href="https://www.federalregister.gov/documents/2022/08/26/2022-18202/requirements-related-to-surprise-billing" rel="noopener">Requirements Related to Surprise Billing, final rule, 87 FR 52618</a> and <a href="https://www.ecfr.gov/current/title-45/section-149.140" rel="noopener">45 CFR 149.140</a> (downcoding disclosure) · <a href="https://www.ecfr.gov/current/title-42/section-405.942" rel="noopener">42 CFR 405.942</a> (Medicare redetermination timing) · <a href="https://www.flsenate.gov/Laws/Statutes/2025/627.6131" rel="noopener">§627.6131</a> and <a href="https://www.flsenate.gov/Laws/Statutes/2025/641.3155" rel="noopener">§641.3155</a>, Florida Statutes · Payer program details as cited in <a href="/notes/downcoding-99214-paid-as-99213/">our 99214-to-99213 downcoding note</a>. Retrieved October 2026.</p>
+
+<section class="qa">
+<h2>Questions people ask about E/M downcoding</h2>
+<h3>What is E/M downcoding?</h3>
+<p>It's when a payer pays an evaluation and management visit at a lower level than the one billed, for example a 99215 paid as 99214. Some payers do it by claims algorithm before anyone reads the note; others do it after a records review.</p>
+<h3>How do I know if a payer downcoded my claim?</h3>
+<p>Compare the code paid to the code billed on the 835. When the payer changes the code, the remittance reports your submitted code next to the one it paid. A CARC 150 adjustment, or an allowed amount that lands exactly on the lower level's rate, are the other two signals.</p>
+<h3>What does denial code 150 mean?</h3>
+<p>CARC 150 means the payer deems the information submitted does not support this level of service. On E/M claims it's the usual downcoding signal. It's a documentation dispute, so the reconsideration is the note.</p>
+<h3>Can I appeal an E/M downcode?</h3>
+<p>Yes, if the documentation supports the billed level. Under the 2021 office visit rules, the level rests on medical decision making or total time on the date of the encounter. Say which one you used, show it in the note, and ask for reprocessing at the billed level.</p>
+<h3>Is every lower payment on an E/M visit a downcode?</h3>
+<p>No. If the note supports only the lower level, the payer's correction is right, and the fix is coding education, not an appeal. And if the paid code matches the billed code but the allowed amount is short, that's an underpayment against the fee schedule, a different dispute.</p>
+</section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/em-downcoding-by-payers/">Copy link</a> · <a href="mailto:?subject=E%2FM%20downcoding%20by%20payers%3A%20how%20to%20spot%20it%2C%20tell%20it%20from%20a%20coding%20error%2C%20and%20reverse%20it&body=Worth%20a%20read%3A%20E%2FM%20downcoding%20by%20payers%3A%20how%20to%20spot%20it%2C%20tell%20it%20from%20a%20coding%20error%2C%20and%20reverse%20it%0Ahttps%3A//cleariagroup.com/notes/em-downcoding-by-payers/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fem-downcoding-by-payers%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/downcoding-99214-paid-as-99213/">Downcoding: why your 99214s are paid as 99213s, and how to get the difference back</a></li>
+          <li><a href="/notes/appeal-letter-denied-medical-claim/">Appeal letter for a denied medical claim: four templates, by denial type</a></li>
+          <li><a href="/notes/what-is-an-835-remittance/">What an 835 actually tells you (and what your posting software throws away)</a></li>
+          <li><a href="/notes/remark-codes-rarc/">Remark codes (RARCs), decoded: what each one means, what it pairs with, and the fix</a></li>
+          <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
+          <li><a href="/notes/florida-underpayment-12-month-rule/">Florida's 12-month underpayment rule: the deadline most practices miss</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>How many of your visits were paid one level down last quarter?</b> Clearia's free diagnostic compares every billed code to every paid code across your remittances and reports downcoding, underpayments and administrative denials in dollars, by payer, with deadlines. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://www.linkedin.com/company/cleariagroup/" rel="me noopener">LinkedIn</a></span>
+    </footer>
+
+  </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
+</body>
+</html>

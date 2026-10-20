@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicare Advantage paid below Medicare rates: what's owed</title>
+  <meta name="description" content="What Medicare Advantage plans owe contracted and non-contracted providers, how to spot a short MA payment on the 835, and the dispute path and deadlines.">
+  <link rel="canonical" href="https://cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Medicare Advantage paid you below Medicare rates. What you're actually owed, and how to dispute it">
+  <meta property="og:description" content="Non-contracted providers are generally owed what original Medicare would pay. Contracted providers are owed the contract. How to tell which applies, how to spot the shortfall on the 835, and where each dispute goes, with the Florida specifics.">
+  <meta property="og:url" content="https://cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F7F4ED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F7F4ED'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='600' text-anchor='middle' fill='%2314171F'%3EC%3C/text%3E%3Ccircle cx='51' cy='44' r='5' fill='%235C1F2D'/%3E%3C/svg%3E">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXE9DKZNPV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BXE9DKZNPV');
+    gtag('config', 'G-9V503VM4SE');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Medicare Advantage paid you below Medicare rates. What you're actually owed, and how to dispute it",
+  "description": "Non-contracted providers are generally owed what original Medicare would pay. Contracted providers are owed the contract. How to tell which applies, how to spot the shortfall on the 835, and where each dispute goes, with the Florida specifics.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "url": "https://cleariagroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cleariagroup.com/#org",
+    "name": "Clearia",
+    "legalName": "Clearia, Inc.",
+    "url": "https://cleariagroup.com"
+  },
+  "mainEntityOfPage": "https://cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/"
+}
+  </script>
+  <style>
+    :root {
+      --canvas: #F7F4ED; --ink: #14171F; --muted: #5E5A50;
+      --hairline: #DAD5C8; --card: #F1EDE2; --accent: #5C1F2D;
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --sans: 'Poppins', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink);
+      font-family: var(--sans); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: var(--canvas); }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.3rem; }
+    .masthead { display: flex; align-items: baseline; justify-content: space-between;
+      padding: 1.5rem 0 1.15rem; border-bottom: 1px solid var(--hairline); }
+    .masthead .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0; }
+    .brand span { color: var(--accent); }
+    .masthead a.home { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; }
+    .masthead a.home:hover { color: var(--ink); }
+    .masthead .brand a { color: inherit; text-decoration: none; }
+
+    article { padding: 3rem 0 1rem; }
+    .kicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin: 0 0 1.1rem; }
+    h1 { font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 2.6vw, 2.5rem);
+      font-weight: 500; line-height: 1.2; margin: 0 0 1rem; text-wrap: balance; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 2.2rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600;
+      line-height: 1.3; margin: 2.6rem 0 0.9rem; }
+    p { margin: 0 0 1.05rem; max-width: 65ch; }
+    b { font-weight: 600; }
+    ol, ul { margin: 0 0 1.05rem; padding-left: 1.4rem; max-width: 62ch; }
+    li { margin-bottom: 0.55rem; }
+    article a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    article a:hover { color: var(--accent); }
+    .callout { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 1.4rem 0; max-width: 100%; }
+    .callout p:last-child { margin-bottom: 0; }
+    .tablewrap { overflow-x: auto; margin: 1.4rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; line-height: 1.5; }
+    th, td { border: 1px solid var(--hairline); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+    th { background: var(--card); font-weight: 600; }
+    .related { background: var(--card); border: 1px solid var(--hairline);
+      padding: 1.1rem 1.3rem; margin: 2.6rem 0 0; }
+    .related p { margin: 0 0 0.45rem; font-weight: 600; }
+    .related ul { margin: 0; padding-left: 1.2rem; }
+    .related li { margin-bottom: 0.35rem; }
+
+    .cta { margin: 3rem 0 0; padding: 1.6rem 1.5rem; background: var(--ink); color: #F3EFE6; }
+    .cta p { max-width: 60ch; }
+    .cta b { color: #C08768; }
+    .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
+    footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
+      color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; }
+    footer .brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0; }
+    footer .fineprint { flex-basis: 100%; margin: 0 0 0.4rem; font-size: 0.8rem; max-width: none; }
+    footer .foot-legal { display: block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--muted); }
+    footer .foot-legal a { color: inherit; }
+    .kicker a { color: inherit; text-decoration: none; }
+    .kicker a:hover { color: var(--accent); }
+    .def { background: var(--card); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0 0 1.4rem; }
+    .def b { font-weight: 600; }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
+    .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
+    .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
+    .share a { color: var(--ink); }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do Medicare Advantage plans have to pay Medicare rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For non-contracted providers, generally yes. Federal rules require the plan to pay what original Medicare would have paid, less the patient's plan cost sharing. For contracted providers, the contract sets the rate, and it can lawfully be above or below Medicare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a non-contracted provider balance bill a Medicare Advantage patient?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A non-contracted provider must accept the original Medicare amount as payment in full and can collect only the plan's cost sharing from the patient. The shortfall, if there is one, is a dispute with the plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a non-contracted provider dispute a low Medicare Advantage payment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through the plan's provider payment dispute process, with the Medicare fee schedule amount for your locality and date of service as the benchmark. A denial that paid nothing is different: it goes through reconsideration, requested within 60 days with a signed waiver of liability, and the plan must forward an upheld denial to the independent review entity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Florida's prompt-pay law apply to Medicare Advantage claims?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Federal Medicare Advantage rules supersede state law other than licensing and solvency, so Florida's prompt-pay clocks and 12-month underpayment window don't govern MA claims. Federal prompt-pay rules do: plans must pay 95 percent of clean non-contracted claims within 30 days, with interest after that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Medicare rate should a Florida practice compare an MA payment against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Medicare physician fee schedule amount for the date of service, in your payment locality, for the right setting. Florida has three: locality 04 for Miami-Dade and Monroe, locality 03 for Broward, Palm Beach and five other counties, and locality 99 for the rest of the state."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cleariagroup.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://cleariagroup.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medicare Advantage paid below Medicare rates: what's owed",
+      "item": "https://cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="masthead">
+      <p class="brand"><a href="/">Clearia<span>.</span></a></p>
+      <a class="home" href="/">cleariagroup.com</a>
+    </div>
+
+    <article>
+      <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
+      <h1>Medicare Advantage paid you below Medicare rates. What you're actually owed, and how to dispute it</h1>
+      <p class="meta">Clearia · October 2026 · Medicare Advantage, underpayments, appeals</p>
+
+<p class="def"><b>A Medicare Advantage underpayment</b> is an MA plan paying less than it owes. What it owes depends on one fact. If you have no contract with the plan, federal rules generally require it to pay what original Medicare would have paid, less the patient's cost sharing. If you're contracted, the contract sets the rate, even when that rate is below Medicare.</p>
+
+<p>That one fact, contracted or not, decides everything else: what the right number is, which document proves it, where the dispute goes, and how long you have. Practices get this wrong in both directions. Some contracted practices dispute payments that match a below-Medicare contract. More often, non-contracted practices accept a plan's "out-of-network rate" that comes in under the Medicare fee schedule, because nobody checked the fee schedule.</p>
+
+<h2>Contracted or not: the question that decides the rest</h2>
+<p>Contract status is plan by plan, and sometimes product by product. A practice can be in network for a payer's commercial plans and out of network for its MA plan, or contracted for the HMO and not the PPO. Check the specific MA plan on the claim before anything else.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Non-contracted with the MA plan</th><th>Contracted with the MA plan</th></tr>
+<tr><td><b>What you're owed</b></td><td>Generally the amount original Medicare would pay, less the plan's cost sharing (42 CFR 422.214)</td><td>The contract rate, often written as a percentage of the Medicare fee schedule</td></tr>
+<tr><td><b>Can you bill the patient the gap?</b></td><td>No. Only plan cost sharing</td><td>No. Only plan cost sharing, per your contract</td></tr>
+<tr><td><b>Short payment goes to</b></td><td>The plan's provider payment dispute process</td><td>The dispute process in your contract and the plan's provider manual</td></tr>
+<tr><td><b>Zero-pay denial goes to</b></td><td>Reconsideration with a signed waiver of liability, then the independent review entity</td><td>The contract's appeal process</td></tr>
+<tr><td><b>Prompt pay</b></td><td>95% of clean claims within 30 days, with interest after (42 CFR 422.520)</td><td>The prompt-pay terms in your contract</td></tr>
+</table></div>
+
+<h2>What "the original Medicare amount" actually means</h2>
+<p>For a non-contracted physician practice, the benchmark is what a Medicare contractor would have allowed for the same claim. That's more specific than "the Medicare rate." It means:</p>
+<ul>
+<li><b>The right year.</b> The fee schedule in effect on the date of service, including mid-year updates.</li>
+<li><b>The right locality.</b> Medicare pays different amounts by geographic locality. Florida's are below.</li>
+<li><b>The right setting.</b> Non-facility rates for the office, facility rates for hospital and surgery-center settings, driven by the place of service on the claim.</li>
+<li><b>Your Medicare status.</b> A Medicare-participating physician is measured against the participating amount. A non-participating physician is measured against the lower non-participating amount.</li>
+<li><b>The same payment rules.</b> Multiple-procedure reductions, bilateral rules, and other original Medicare logic apply, just as they would on a Medicare claim.</li>
+</ul>
+<p>Then subtract the patient's MA cost sharing, which the plan's benefit sets, not original Medicare's. CMS publishes a payment guide for plans on out-of-network payments, and its dispute-resolution page expects plans to resolve these disputes promptly. If a plan's out-of-network payment doesn't reconcile to the fee schedule, ask for its pricing in writing.</p>
+<p>For contracted practices the check is different. Read the reimbursement clause. "100% of the current Medicare fee schedule" and "100% of the 2024 Medicare fee schedule" pay very different amounts by 2026. Common contract-side errors: an outdated fee-schedule year, the wrong locality, facility rates applied to office visits, or a percentage loaded wrong.</p>
+
+<h2>Florida's three Medicare payment localities</h2>
+<p>Florida's physician fee schedule has three payment localities, published by First Coast Service Options, the state's Medicare contractor. Payment differs among them for the same code.</p>
+<div class="tablewrap"><table>
+<tr><th>Locality</th><th>Counties</th></tr>
+<tr><td><b>04</b> (Miami)</td><td>Miami-Dade, Monroe</td></tr>
+<tr><td><b>03</b> (Fort Lauderdale)</td><td>Broward, Collier, Indian River, Lee, Martin, Palm Beach, St. Lucie</td></tr>
+<tr><td><b>99</b> (rest of Florida)</td><td>All other counties</td></tr>
+</table></div>
+<p>The so-what is simple. A Miami-Dade practice priced off locality 99 is underpaid on every line, by the same percentage, every month. That's a pattern finding, not a claim-by-claim one, and it's the first thing worth checking on an MA remittance from a South Florida practice.</p>
+
+<h2>How to spot it on the 835</h2>
+<ol>
+<li><b>Isolate the MA lines.</b> Sort remittances by payer and plan. An MA plan can pay under a different payer ID than the same company's commercial plans.</li>
+<li><b>Price the benchmark.</b> For each code, pull the fee schedule amount for the date of service and your locality from <a href="https://medicare.fcso.com/Fee_Archives/" rel="noopener">First Coast's fee schedule files</a>, or the contract rate if you're contracted.</li>
+<li><b>Compare the allowed amount, not the paid amount.</b> Allowed is paid plus patient cost sharing. The gap between allowed and the benchmark is the underpayment. It usually hides inside a routine <a href="/notes/denial-code-co-45/">CO-45 adjustment</a>, so the line looks closed.</li>
+<li><b>Read the other adjustments.</b> A 2% sequestration line (CARC 253) is worth checking against your contract. A CARC 150 or a changed procedure code is a downcode, a separate dispute (<a href="/notes/em-downcoding-by-payers/">E/M downcoding, explained</a>). Remark codes like N381 point you back to the contract (<a href="/notes/remark-codes-rarc/">remark codes, decoded</a>).</li>
+<li><b>Count by pattern.</b> Same plan, same code, same shortfall percentage. One rule is producing it, and one dispute can address it.</li>
+</ol>
+
+<h2>The dispute path</h2>
+<p><b>Non-contracted, paid but short.</b> This is a payment dispute, not an appeal. File it with the plan's provider payment dispute process, in writing, with the claim, the plan's remittance, and your calculation of the original Medicare amount for the date of service and locality. Cite 42 CFR 422.214. CMS used to run an independent payment dispute contractor for these cases; plan materials report that it stopped accepting them after January 31, 2014, so the plan's own process is the main route now. Check CMS's current "Provider Payment Dispute Resolution for Non-Contracted Providers" page before relying on that.</p>
+<p><b>Non-contracted, denied with zero payment.</b> This is an appeal. Request a reconsideration within 60 days of the notice, with a signed waiver of liability, which protects the patient from being billed. If the plan upholds its denial, the rules require it to send the case to CMS's independent review entity. The payment dispute process can't be used for zero-pay denials.</p>
+<p><b>Contracted.</b> Your contract governs. Use the dispute and appeal steps in the agreement and the plan's provider manual, and calculate against the contract's rate clause, not against Medicare. Federal law bars CMS from interfering in rate negotiations between plans and providers, so CMS won't referee a contract rate. Check whether your agreement ends in arbitration if the internal levels fail.</p>
+<div class="tablewrap"><table>
+<tr><th>Situation</th><th>Deadline</th><th>Source</th></tr>
+<tr><td>Non-contracted, reconsideration of a denial</td><td>60 days from receipt of the notice</td><td>42 CFR 422.582</td></tr>
+<tr><td>Non-contracted, payment amount dispute</td><td>Set by the plan; read the remittance and dispute notice</td><td>Plan's provider dispute procedure</td></tr>
+<tr><td>Non-participating with Florida Blue's MA plans, appeal</td><td>60 calendar days from the remittance date</td><td><a href="/notes/florida-blue-provider-profile/">Florida Blue provider manual</a></td></tr>
+<tr><td>Contracted</td><td>Set by the contract and manual</td><td>Your agreement; see <a href="/notes/florida-payer-appeal-deadlines/">the Florida payer table</a></td></tr>
+</table></div>
+
+<h2>The Florida angle</h2>
+<p>Florida's provider-payment statutes don't reach Medicare Advantage. Federal MA rules supersede state law other than licensing and solvency laws (42 CFR 422.402), and Florida Blue's own manual says Medicare Advantage claims are not subject to sections 627.6131 and 641.3155. So the 20, 90 and 120-day clocks, the 12% interest, and the 12-month underpayment window in <a href="/notes/florida-underpayment-12-month-rule/">§627.6131</a> don't apply to MA lines. Florida's state claim dispute program at AHCA also excludes plans the state doesn't regulate.</p>
+<p>What applies instead: 42 CFR 422.214 for what you're owed if you're out of network, 42 CFR 422.520 for prompt payment and interest, the federal appeal rules for denials, and your contract for everything else. Fewer tools than on a fully insured commercial claim. Still enough to recover a locality or fee-schedule error, because the arithmetic is public.</p>
+
+<h2>What it means for your practice</h2>
+<p>Start with a list: every MA plan you're paid by, and whether you're contracted with each one. For the non-contracted plans, reprice a quarter of lines against the fee schedule for your locality. For the contracted ones, reprice against the contract clause and check the fee-schedule year. Either way, a short payment repeats, and a repeated one is worth a dispute. That reprice is part of what our team runs in Clearia's diagnostic, along with administrative denials and downcoding.</p>
+
+<h2>Sources</h2>
+<p><a href="https://www.ecfr.gov/current/title-42/section-422.214" rel="noopener">42 CFR 422.214</a> (services furnished by noncontract providers) · <a href="https://www.ecfr.gov/current/title-42/section-422.520" rel="noopener">42 CFR 422.520</a> (prompt payment) · <a href="https://www.ecfr.gov/current/title-42/section-422.582" rel="noopener">42 CFR 422.582</a> and <a href="https://www.ecfr.gov/current/title-42/section-422.590" rel="noopener">422.590</a> (reconsideration requests and forwarding to the independent entity) · <a href="https://www.ecfr.gov/current/title-42/section-422.402" rel="noopener">42 CFR 422.402</a> (federal preemption of state law) · <a href="https://www.ssa.gov/OP_Home/ssact/title18/1854.htm" rel="noopener">Social Security Act §1854(a)(6)(B)(iii)</a> (noninterference in plan and provider negotiations) · CMS, <a href="https://www.cms.gov/medicare/enrollment-renewal/health-plans/dispute-resolution" rel="noopener">Provider Payment Dispute Resolution for Non-Contracted Providers</a> (with the MA Payment Guide for Out of Network Payments) · First Coast Service Options, <a href="https://medicare.fcso.com/es/fee-schedules/florida-payment-localities-county" rel="noopener">Florida payment localities by county</a> and <a href="https://medicare.fcso.com/Fee_Archives/" rel="noopener">fee schedules</a> · <a href="https://www.floridablue.com/providers/provider-manual" rel="noopener">Florida Blue Manual for Physicians and Providers</a> (Medicare Advantage appeals; Florida-law applicability), summarized in <a href="/notes/florida-blue-provider-profile/">our Florida Blue payer profile</a> · <a href="https://www.flsenate.gov/Laws/Statutes/2025/408.7057" rel="noopener">§408.7057</a> and <a href="https://www.flsenate.gov/Laws/Statutes/2025/627.6131" rel="noopener">§627.6131</a>, Florida Statutes. Retrieved October 2026.</p>
+
+<section class="qa">
+<h2>Questions people ask about Medicare Advantage payment</h2>
+<h3>Do Medicare Advantage plans have to pay Medicare rates?</h3>
+<p>For non-contracted providers, generally yes. Federal rules require the plan to pay what original Medicare would have paid, less the patient's plan cost sharing. For contracted providers, the contract sets the rate, and it can lawfully be above or below Medicare.</p>
+<h3>Can a non-contracted provider balance bill a Medicare Advantage patient?</h3>
+<p>No. A non-contracted provider must accept the original Medicare amount as payment in full and can collect only the plan's cost sharing from the patient. The shortfall, if there is one, is a dispute with the plan.</p>
+<h3>How does a non-contracted provider dispute a low Medicare Advantage payment?</h3>
+<p>Through the plan's provider payment dispute process, with the Medicare fee schedule amount for your locality and date of service as the benchmark. A denial that paid nothing is different: it goes through reconsideration, requested within 60 days with a signed waiver of liability, and the plan must forward an upheld denial to the independent review entity.</p>
+<h3>Does Florida's prompt-pay law apply to Medicare Advantage claims?</h3>
+<p>No. Federal Medicare Advantage rules supersede state law other than licensing and solvency, so Florida's prompt-pay clocks and 12-month underpayment window don't govern MA claims. Federal prompt-pay rules do: plans must pay 95 percent of clean non-contracted claims within 30 days, with interest after that.</p>
+<h3>Which Medicare rate should a Florida practice compare an MA payment against?</h3>
+<p>The Medicare physician fee schedule amount for the date of service, in your payment locality, for the right setting. Florida has three: locality 04 for Miami-Dade and Monroe, locality 03 for Broward, Palm Beach and five other counties, and locality 99 for the rest of the state.</p>
+</section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
+<div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/">Copy link</a> · <a href="mailto:?subject=Medicare%20Advantage%20paid%20you%20below%20Medicare%20rates.%20What%20you%27re%20actually%20owed%2C%20and%20how%20to%20dispute%20it&body=Worth%20a%20read%3A%20Medicare%20Advantage%20paid%20you%20below%20Medicare%20rates.%20What%20you%27re%20actually%20owed%2C%20and%20how%20to%20dispute%20it%0Ahttps%3A//cleariagroup.com/notes/medicare-advantage-paid-below-medicare-rates/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fmedicare-advantage-paid-below-medicare-rates%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
+<div class="related">
+        <p>Related notes</p>
+        <ul>
+          <li><a href="/notes/medicare-denied-claim-appeal-process/">Medicare denied the claim: the appeal levels, deadlines, and the one denial you can't appeal</a></li>
+          <li><a href="/notes/how-to-spot-insurance-underpayment/">How to tell whether an insurer is underpaying your practice</a></li>
+          <li><a href="/notes/how-to-appeal-an-underpaid-claim/">How to appeal an underpaid insurance claim, step by step</a></li>
+          <li><a href="/notes/florida-payer-appeal-deadlines/">Appeal deadlines at Florida's major payers: the working table</a></li>
+          <li><a href="/notes/prior-auth-approved-claim-denied/">They approved the prior auth. Then they didn't pay the claim.</a></li>
+          <li><a href="/notes/florida-blue-provider-profile/">Florida Blue payer profile: claims, appeals, recoupment, and what the manual leaves out</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cta">
+      <p><b>Are your Medicare Advantage lines paid at the rate you're owed?</b> Clearia's free diagnostic reprices every MA line against your contract, or against the Medicare fee schedule for your locality when you're out of network, and reports underpayments, administrative denials and downcoding in dollars, with deadlines. We're paid only from what we recover.</p>
+      <a class="btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
+    </div>
+
+    <footer>
+      <p class="fineprint">This is general information, not legal advice. Statutes, rules, and payer policies change. Verify the current text and your own contracts before acting on any deadline or rate cited here.</p>
+      <p class="brand">Clearia<span style="color:var(--accent)">.</span></p>
+      <span>Clearia, Inc. · 1000 Brickell Ave Ste 715-5077, Miami, FL 33131 · <a href="tel:+17867057865">(786) 705-7865</a></span>
+      <span class="foot-legal"><a href="/">Home</a> · <a href="/notes/">Notes</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://www.linkedin.com/company/cleariagroup/" rel="me noopener">LinkedIn</a></span>
+    </footer>
+
+  </div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = a.getAttribute('data-copy');
+    if (!navigator.clipboard) { window.prompt('Copy this link', url); return; }
+    navigator.clipboard.writeText(url).then(function () {
+      a.textContent = 'Link copied'; setTimeout(function () { a.textContent = 'Copy link'; }, 1800);
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -32,9 +32,9 @@
     "headline": "Denial codes, explained: what the payer is saying, and whether it's worth chasing",
     "description": "A plain-language table of the denial codes that matter most to independent practices: what each CARC means, what it usually is in practice, and which ones are recoverable. With the deeper note for each.",
     "datePublished": "2026-09-20",
-    "dateModified": "2026-10-11",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "dateModified": "2026-10-19",
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-codes/"
   }
   </script>
@@ -92,6 +92,15 @@
     .cta a.btn { display: inline-flex; align-items: center; justify-content: center;
       min-height: 50px; padding: 0.55rem 1.7rem; background: var(--accent); color: var(--canvas);
       text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.4rem; }
+    .cta-biller { margin: 2.6rem 0 0; padding: 1.3rem 1.4rem 1.4rem; background: var(--card);
+      border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .cta-biller .cta-biller-h { font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+      line-height: 1.3; margin: 0 0 0.5rem; }
+    .cta-biller p { max-width: 60ch; }
+    article .cta-biller a.btn { display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.55rem 1.5rem; background: var(--accent); color: var(--canvas);
+      text-decoration: none; font-weight: 500; border-radius: 2px; margin-top: 0.2rem; }
+    article .cta-biller a.btn:hover { background: var(--ink); color: var(--canvas); }
     footer { margin-top: 3.5rem; padding: 1.5rem 0 3rem; border-top: 1px solid var(--hairline);
       color: var(--muted); font-size: 0.875rem; display: flex; justify-content: space-between;
       gap: 1rem; flex-wrap: wrap; }
@@ -143,6 +152,9 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Denial codes explained: meaning and what's recoverable", "item": "https://cleariagroup.com/notes/denial-codes/"}]}
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -158,51 +170,58 @@
 <p class="meta">Clearia · September 2026 · denial codes, read properly</p>
 <p>Every reduced or denied line on a remittance carries a code. The code is the payer's one-line explanation, written for machines, and most billing systems post it without anyone reading it. Read properly, the codes sort a year of denials into two piles: the ones that reverse with a document or a corrected claim, and the ones that don't. The table below is the sorting key. Each row links to the deeper note where we've written one.</p>
 <h2>How to read a code</h2>
-<p>Three parts. The <b>group code</b> (CO, PR, OA, PI) says who the amount belongs to: contractual write-off, patient, another payer, or a payer-initiated reduction. <a href="/notes/denial-codes-pr-vs-co/">That's the first thing to check</a>, because it decides whether you can bill the patient at all. The <b>reason code</b> is the number, from the X12 list. The <b>remark code</b>, when present, is the specific reason behind a generic number; codes like 16, 96 and 252 are unreadable without one. <a href="/notes/what-is-an-835-remittance/">Where each sits in the 835.</a></p>
+<p>Three parts. The <b>group code</b> (CO, PR, OA, PI) says who the amount belongs to: contractual write-off, patient, another payer, or a payer-initiated reduction. <a href="/notes/denial-codes-pr-vs-co/">That's the first thing to check</a>, because it decides whether you can bill the patient at all. The <b>reason code</b> is the number, from the X12 list. The <b>remark code</b>, when present, is the specific reason behind a generic number; codes like 16, 96 and 252 are unreadable without one. <a href="/notes/what-is-an-835-remittance/">Where each sits in the 835.</a> <a href="/notes/remark-codes-rarc/">The common remark codes (RARCs), decoded.</a></p>
 <h2>The codes that matter most to an independent practice</h2>
 <div class="scroll"><table>
 <tr><th>Code</th><th>The payer's words</th><th>What it usually is</th><th>Recoverable?</th><th>Note</th></tr>
-<tr><td><b>CO-4</b></td><td>Procedure code inconsistent with the modifier, or a required modifier is missing</td><td>A modifier mismatch on the claim</td><td>Yes, corrected claim</td><td><a href="/notes/denial-code-co-4-modifier/">The note</a></td></tr>
-<tr><td><b>CO-11</b></td><td>The diagnosis is inconsistent with the procedure</td><td>Diagnosis code doesn't support the CPT on the claim</td><td>Yes if the chart supports a matching diagnosis</td><td><a href="/notes/denial-code-co-11-diagnosis-inconsistent/">The note</a></td></tr>
-<tr><td><b>CO-15</b></td><td>Authorization number missing, invalid, or doesn't apply</td><td>An authorization exists but doesn't match the claim</td><td>Yes, match the five fields or amend the authorization</td><td><a href="/notes/denial-code-co-15-authorization-number/">The note</a></td></tr>
-<tr><td><b>CO-16</b></td><td>Claim lacks information or has billing errors</td><td>A missing or wrong field; the remark code names it</td><td>Yes, resubmission</td><td><a href="/notes/denial-code-co-16-and-rarcs/">The note</a></td></tr>
-<tr><td><b>OA-18</b></td><td>Exact duplicate claim or service</td><td>A true resubmission, or two distinct same-day services collapsed into one</td><td>False duplicates yes; true duplicates no</td><td><a href="/notes/denial-code-co-18-duplicate/">The note</a></td></tr>
-<tr><td><b>CO-22</b></td><td>Care may be covered by another payer</td><td>Coordination-of-benefits hold</td><td>Yes, after the primary payer or a COB update</td><td><a href="/notes/denial-code-co-22-coordination-of-benefits/">The note</a></td></tr>
-<tr><td><b>OA-23</b></td><td>Impact of prior payer's adjudication</td><td>Secondary payer accounting for what the primary paid</td><td>Not a denial; check the math</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">The note</a></td></tr>
-<tr><td><b>CO-27</b></td><td>Expenses incurred after coverage terminated</td><td>Patient's plan ended before the date of service</td><td>Rarely; verify the term date and any new plan</td><td><a href="/notes/denial-code-co-27-coverage-terminated/">The note</a></td></tr>
-<tr><td><b>CO-29</b></td><td>The time limit for filing has expired</td><td>Late filing, per the payer's records</td><td>Yes with proof of timely submission or a COB exception</td><td><a href="/notes/denial-code-co-29-timely-filing/">The note</a></td></tr>
-<tr><td><b>CO-45</b></td><td>Charge exceeds the contracted or fee-schedule amount</td><td>The routine contractual write-off</td><td>Only where allowed is below contract</td><td><a href="/notes/denial-code-co-45/">The note</a></td></tr>
-<tr><td><b>CO-50</b></td><td>Not deemed medically necessary by the payer</td><td>A coverage-policy mismatch, or a real clinical dispute</td><td>Mismatches yes; clinical disputes are the physician's appeal</td><td><a href="/notes/denial-code-co-50-medical-necessity/">The note</a></td></tr>
-<tr><td><b>CO-59</b></td><td>Processed under multiple or concurrent procedure rules</td><td>The multiple-procedure reduction</td><td>Yes where misranked, add-ons reduced, or bilateral double-counted</td><td><a href="/notes/denial-code-co-59-multiple-procedure-reduction/">The note</a></td></tr>
-<tr><td><b>CO-96</b></td><td>Non-covered charge</td><td>A category; the remark code says why</td><td>Bundling, setting, frequency and modifier cases yes; true exclusions no</td><td><a href="/notes/denial-code-co-96-non-covered/">The note</a></td></tr>
-<tr><td><b>CO-97</b></td><td>Included in the payment for another service</td><td>Global period or bundling</td><td>Yes when the service was separate</td><td><a href="/notes/denial-code-co-97-global-period/">The note</a></td></tr>
-<tr><td><b>CO-109</b></td><td>Not covered by this payer; send to the correct payer</td><td>Wrong payer</td><td>Yes, at the right payer, inside its window</td><td><a href="/notes/denial-code-co-109-wrong-payer/">The note</a></td></tr>
-<tr><td><b>CO-119</b></td><td>Benefit maximum reached</td><td>Visit or dollar cap for the period</td><td>Only if the count is wrong</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">The note</a></td></tr>
-<tr><td><b>CO-150</b></td><td>Information doesn't support this level of service</td><td>Downcoding</td><td>Yes with the note</td><td><a href="/notes/downcoding-99214-paid-as-99213/">The note</a></td></tr>
-<tr><td><b>CO-151</b></td><td>Information doesn't support this many or this frequency of services</td><td>Units or frequency limit</td><td>Yes when the units are documented</td><td><a href="/notes/denial-code-co-151-frequency-units/">The note</a></td></tr>
-<tr><td><b>CO-170 / 171</b></td><td>Not payable when performed or billed by this provider type (or in this facility)</td><td>An extender enrollment or billing-convention gap</td><td>Yes from the enrollment effective date, or by corrected claim</td><td><a href="/notes/denial-code-co-170-171-provider-type/">The note</a></td></tr>
-<tr><td><b>CO-197</b></td><td>Authorization absent</td><td>No authorization matched to the claim</td><td>Yes if one exists or an exception applies</td><td><a href="/notes/denial-code-co-197-authorization/">The note</a></td></tr>
-<tr><td><b>CO-204</b></td><td>Not covered under the patient's current benefit plan</td><td>A plan exclusion</td><td>Rarely; group code may need correcting</td><td><a href="/notes/denial-code-co-204-not-covered-benefit-plan/">The note</a></td></tr>
-<tr><td><b>CO-231 / 234</b></td><td>Mutually exclusive procedures; procedure not paid separately</td><td>The other two bundling codes</td><td>231 yes with a valid modifier; 234 yes where the contract prices the code</td><td><a href="/notes/denial-code-co-231-234-mutually-exclusive-not-separately-paid/">The note</a></td></tr>
-<tr><td><b>CO-236</b></td><td>Procedure combination not compatible per NCCI</td><td>A procedure-to-procedure edit</td><td>Indicator-1 pairs yes with a modifier; indicator-0 no</td><td><a href="/notes/denial-code-co-236-ncci/">The note</a></td></tr>
-<tr><td><b>CO-252</b></td><td>Attachment or documentation required</td><td>A pending request for records or an invoice</td><td>Yes, send the document inside the window</td><td><a href="/notes/denial-code-co-252-attachment/">The note</a></td></tr>
-<tr><td><b>CO-B7</b></td><td>Provider not certified or eligible for this service on this date</td><td>Credentialing or enrollment gap</td><td>Yes if the enrollment was effective; otherwise no</td><td><a href="/notes/claim-denied-out-of-network-in-network-provider/">The note</a></td></tr>
+<tr><td><b>CO-4</b></td><td>Procedure code inconsistent with the modifier, or a required modifier is missing</td><td>A modifier mismatch on the claim</td><td>Yes, corrected claim</td><td><a href="/notes/denial-code-co-4-modifier/">CO-4 denial code, explained</a></td></tr>
+<tr><td><b>CO-11</b></td><td>The diagnosis is inconsistent with the procedure</td><td>Diagnosis code doesn't support the CPT on the claim</td><td>Yes if the chart supports a matching diagnosis</td><td><a href="/notes/denial-code-co-11-diagnosis-inconsistent/">CO-11 denial code, explained</a></td></tr>
+<tr><td><b>CO-15</b></td><td>Authorization number missing, invalid, or doesn't apply</td><td>An authorization exists but doesn't match the claim</td><td>Yes, match the five fields or amend the authorization</td><td><a href="/notes/denial-code-co-15-authorization-number/">CO-15 denial code, explained</a></td></tr>
+<tr><td><b>CO-16</b></td><td>Claim lacks information or has billing errors</td><td>A missing or wrong field; the remark code names it</td><td>Yes, resubmission</td><td><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 denial code, explained</a></td></tr>
+<tr><td><b>OA-18</b></td><td>Exact duplicate claim or service</td><td>A true resubmission, or two distinct same-day services collapsed into one</td><td>False duplicates yes; true duplicates no</td><td><a href="/notes/denial-code-co-18-duplicate/">OA-18 denial code, explained</a></td></tr>
+<tr><td><b>CO-22</b></td><td>Care may be covered by another payer</td><td>Coordination-of-benefits hold</td><td>Yes, after the primary payer or a COB update</td><td><a href="/notes/denial-code-co-22-coordination-of-benefits/">CO-22 denial code, explained</a></td></tr>
+<tr><td><b>OA-23</b></td><td>Impact of prior payer's adjudication</td><td>Secondary payer accounting for what the primary paid</td><td>Not a denial; check the math</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">OA-23 remittance code, explained</a></td></tr>
+<tr><td><b>CO-27</b></td><td>Expenses incurred after coverage terminated</td><td>Patient's plan ended before the date of service</td><td>Rarely; verify the term date and any new plan</td><td><a href="/notes/denial-code-co-27-coverage-terminated/">CO-27 denial code, explained</a></td></tr>
+<tr><td><b>CO-29</b></td><td>The time limit for filing has expired</td><td>Late filing, per the payer's records</td><td>Yes with proof of timely submission or a COB exception</td><td><a href="/notes/denial-code-co-29-timely-filing/">CO-29 denial code, explained</a></td></tr>
+<tr><td><b>CO-45</b></td><td>Charge exceeds the contracted or fee-schedule amount</td><td>The routine contractual write-off</td><td>Only where allowed is below contract</td><td><a href="/notes/denial-code-co-45/">CO-45 denial code, explained</a></td></tr>
+<tr><td><b>CO-50</b></td><td>Not deemed medically necessary by the payer</td><td>A coverage-policy mismatch, or a real clinical dispute</td><td>Mismatches yes; clinical disputes are the physician's appeal</td><td><a href="/notes/denial-code-co-50-medical-necessity/">CO-50 denial code, explained</a></td></tr>
+<tr><td><b>CO-59</b></td><td>Processed under multiple or concurrent procedure rules</td><td>The multiple-procedure reduction</td><td>Yes where misranked, add-ons reduced, or bilateral double-counted</td><td><a href="/notes/denial-code-co-59-multiple-procedure-reduction/">CO-59 denial code, explained</a></td></tr>
+<tr><td><b>CO-96</b></td><td>Non-covered charge</td><td>A category; the remark code says why</td><td>Bundling, setting, frequency and modifier cases yes; true exclusions no</td><td><a href="/notes/denial-code-co-96-non-covered/">CO-96 denial code, explained</a></td></tr>
+<tr><td><b>CO-97</b></td><td>Included in the payment for another service</td><td>Global period or bundling</td><td>Yes when the service was separate</td><td><a href="/notes/denial-code-co-97-global-period/">CO-97 denial code, explained</a></td></tr>
+<tr><td><b>CO-109</b></td><td>Not covered by this payer; send to the correct payer</td><td>Wrong payer</td><td>Yes, at the right payer, inside its window</td><td><a href="/notes/denial-code-co-109-wrong-payer/">CO-109 denial code, explained</a></td></tr>
+<tr><td><b>CO-119</b></td><td>Benefit maximum reached</td><td>Visit or dollar cap for the period</td><td>Only if the count is wrong</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">CO-119 denial code, explained</a></td></tr>
+<tr><td><b>CO-150</b></td><td>Information doesn't support this level of service</td><td>Downcoding</td><td>Yes with the note</td><td><a href="/notes/downcoding-99214-paid-as-99213/">CO-150 and downcoding, explained</a> · <a href="/notes/em-downcoding-by-payers/">E/M downcoding by payers</a></td></tr>
+<tr><td><b>CO-151</b></td><td>Information doesn't support this many or this frequency of services</td><td>Units or frequency limit</td><td>Yes when the units are documented</td><td><a href="/notes/denial-code-co-151-frequency-units/">CO-151 denial code, explained</a></td></tr>
+<tr><td><b>CO-170 / 171</b></td><td>Not payable when performed or billed by this provider type (or in this facility)</td><td>An extender enrollment or billing-convention gap</td><td>Yes from the enrollment effective date, or by corrected claim</td><td><a href="/notes/denial-code-co-170-171-provider-type/">CO-170 and CO-171 denial codes, explained</a></td></tr>
+<tr><td><b>CO-197</b></td><td>Authorization absent</td><td>No authorization matched to the claim</td><td>Yes if one exists or an exception applies</td><td><a href="/notes/denial-code-co-197-authorization/">CO-197 denial code, explained</a></td></tr>
+<tr><td><b>CO-204</b></td><td>Not covered under the patient's current benefit plan</td><td>A plan exclusion</td><td>Rarely; group code may need correcting</td><td><a href="/notes/denial-code-co-204-not-covered-benefit-plan/">CO-204 denial code, explained</a></td></tr>
+<tr><td><b>CO-231 / 234</b></td><td>Mutually exclusive procedures; procedure not paid separately</td><td>The other two bundling codes</td><td>231 yes with a valid modifier; 234 yes where the contract prices the code</td><td><a href="/notes/denial-code-co-231-234-mutually-exclusive-not-separately-paid/">CO-231 and CO-234 denial codes, explained</a></td></tr>
+<tr><td><b>CO-236</b></td><td>Procedure combination not compatible per NCCI</td><td>A procedure-to-procedure edit</td><td>Indicator-1 pairs yes with a modifier; indicator-0 no</td><td><a href="/notes/denial-code-co-236-ncci/">CO-236 denial code, explained</a></td></tr>
+<tr><td><b>CO-252</b></td><td>Attachment or documentation required</td><td>A pending request for records or an invoice</td><td>Yes, send the document inside the window</td><td><a href="/notes/denial-code-co-252-attachment/">CO-252 denial code, explained</a></td></tr>
+<tr><td><b>CO-B7</b></td><td>Provider not certified or eligible for this service on this date</td><td>Credentialing or enrollment gap</td><td>Yes if the enrollment was effective; otherwise no</td><td><a href="/notes/claim-denied-out-of-network-in-network-provider/">CO-B7 and network-status denials, explained</a></td></tr>
 </table></div>
 <p>"Recoverable" here means the fix is documentary: a corrected claim, a document, a contract page, a reprocessing request. Where the answer is a clinical argument, the physician appeals, and a recovery firm should say so rather than take the case.</p>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
+
 <h2 id="abbreviated">Abbreviated remit text, decoded</h2>
 <p>Printed remittances and some practice-management systems squeeze the payer's reason into a short string. Here are the ones practices search for most, mapped to the code and the note.</p>
 <div class="scroll"><table>
 <tr><th>What the remit says</th><th>Code</th><th>Meaning</th><th>Note</th></tr>
-<tr><td><b>119-BENFT MAX 4 TIME PD/OCCURNCE PASSED</b></td><td>CO-119 (or PR-119)</td><td>Benefit maximum reached</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">The note</a></td></tr>
-<tr><td><b>204-SVC/EQUIP/DRUG NOT CVD UNDER PLAN</b></td><td>CO-204 (or PR-204)</td><td>Not covered under the current plan</td><td><a href="/notes/denial-code-co-204-not-covered-benefit-plan/">The note</a></td></tr>
-<tr><td><b>170-DNIED, WHN PERF/BILLED BY PRVD TYPE</b></td><td>CO-170</td><td>Denied for this provider type</td><td><a href="/notes/denial-code-co-170-171-provider-type/">The note</a></td></tr>
-<tr><td><b>59-RDCD/DENIED, MULT CONCURRNT PX RULES</b></td><td>CO-59</td><td>Multiple procedure reduction</td><td><a href="/notes/denial-code-co-59-multiple-procedure-reduction/">The note</a></td></tr>
-<tr><td><b>109-NOT CVD BY PAYOR. SND TO CRRCT PAYOR</b></td><td>CO-109</td><td>Wrong payer</td><td><a href="/notes/denial-code-co-109-wrong-payer/">The note</a></td></tr>
-<tr><td><b>ADJ, IMPCT OF PRIOR PAYOR ADJUD</b></td><td>OA-23</td><td>Prior payer already adjudicated (secondary claims)</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">The note</a></td></tr>
+<tr><td><b>119-BENFT MAX 4 TIME PD/OCCURNCE PASSED</b></td><td>CO-119 (or PR-119)</td><td>Benefit maximum reached</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">CO-119 denial code, explained</a></td></tr>
+<tr><td><b>204-SVC/EQUIP/DRUG NOT CVD UNDER PLAN</b></td><td>CO-204 (or PR-204)</td><td>Not covered under the current plan</td><td><a href="/notes/denial-code-co-204-not-covered-benefit-plan/">CO-204 denial code, explained</a></td></tr>
+<tr><td><b>170-DNIED, WHN PERF/BILLED BY PRVD TYPE</b></td><td>CO-170</td><td>Denied for this provider type</td><td><a href="/notes/denial-code-co-170-171-provider-type/">CO-170 denial code, explained</a></td></tr>
+<tr><td><b>59-RDCD/DENIED, MULT CONCURRNT PX RULES</b></td><td>CO-59</td><td>Multiple procedure reduction</td><td><a href="/notes/denial-code-co-59-multiple-procedure-reduction/">CO-59 denial code, explained</a></td></tr>
+<tr><td><b>109-NOT CVD BY PAYOR. SND TO CRRCT PAYOR</b></td><td>CO-109</td><td>Wrong payer</td><td><a href="/notes/denial-code-co-109-wrong-payer/">CO-109 denial code, explained</a></td></tr>
+<tr><td><b>ADJ, IMPCT OF PRIOR PAYOR ADJUD</b></td><td>OA-23</td><td>Prior payer already adjudicated (secondary claims)</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">OA-23 remittance code, explained</a></td></tr>
 </table></div>
 
 <h2>The pattern behind the codes</h2>
 <p>One denial is a chore. Four hundred with the same code from the same payer in the same quarter are a single rule firing the same way, and a single reconsideration with a claim list reverses them together. That's the entire economics of denial recovery, and it's why the count by code, by payer, by month is the first report worth running on a year of remittances. <a href="/notes/what-is-denial-recovery/">What denial recovery is, and which denials are worth chasing.</a></p>
+<p>Source: the code descriptions on this page are quoted or paraphrased from the <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 Claim Adjustment Reason Code list</a>, the standard code set every payer remittance uses.</p>
 <section class="qa">
 <h2>Questions people ask about denial codes</h2>
 <h3>What is a denial code?</h3>
@@ -212,6 +231,11 @@
 <h3>Which denial codes are worth appealing?</h3>
 <p>The administrative ones: missing information (16), modifiers (4), duplicates that aren't (18), coordination of benefits (22), timely filing with proof (29), underpayment inside a CO-45, bundling the contract doesn't allow (97, 236), wrong payer (109), documentation requests (252), authorization on file (197), and level of service (150). Medical-necessity disputes (50) and true plan exclusions (96, 204) are a different job.</p>
 </section>
+<aside class="cta-biller" aria-label="Request a diagnostic">
+<p class="cta-biller-h">See it in your own numbers.</p>
+<p>You read these codes on the remits every day. Our team checks every payment line for underpayments, administrative denials and downcoding, then hands back one list ranked by dollars and deadline. No cost. No commitment.</p>
+<a class="btn" href="/the-diagnostic/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=biller-cta#request">Request your diagnostic</a>
+</aside>
 <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/denial-codes/">Copy link</a> · <a href="mailto:?subject=Denial%20codes%2C%20explained%3A%20what%20the%20payer%20is%20saying%2C%20and%20whether%20it%27s%20worth%20chasing&body=Worth%20a%20read%3A%20Denial%20codes%2C%20explained%3A%20what%20the%20payer%20is%20saying%2C%20and%20whether%20it%27s%20worth%20chasing%0Ahttps%3A//cleariagroup.com/notes/denial-codes/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fdenial-codes%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
 <p>Related notes</p>

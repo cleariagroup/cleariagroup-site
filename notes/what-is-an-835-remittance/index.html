@@ -33,10 +33,13 @@
     "description": "The electronic remittance carries the billed code, the paid code, the allowed amount, every adjustment reason, and the provider-level offsets. Most of it never reaches your reports. Here is what to read.",
     "datePublished": "2026-09-15",
     "dateModified": "2026-09-15",
-    "author": { "@type": "Organization", "name": "Clearia", "url": "https://cleariagroup.com" },
-    "publisher": { "@type": "Organization", "name": "Clearia, Inc." },
+    "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
+    "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/what-is-an-835-remittance/"
   }
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "What is an 835 remittance? Fields that show underpayment", "item": "https://cleariagroup.com/notes/what-is-an-835-remittance/"}]}
   </script>
   <style>
     :root {
@@ -134,10 +137,10 @@
 
 <h2>The five fields that reveal underpayment</h2>
 <ol>
-<li><b>The submitted procedure code (SVC06).</b> When the payer changes your code, the original goes in this field. Your software posts the paid code (SVC01). If they differ, you were downcoded or recoded, and the line looks clean. <a href="/notes/downcoding-99214-paid-as-99213/">Downcoding, explained</a>.</li>
+<li><b>The submitted procedure code (SVC06).</b> When the payer changes your code, the original goes in this field. Your software posts the paid code (SVC01). If they differ, you were downcoded or recoded, and the line looks clean. <a href="/notes/downcoding-99214-paid-as-99213/">Downcoding, explained</a>, and <a href="/notes/em-downcoding-by-payers/">E/M downcoding by payers, the broader guide</a>.</li>
 <li><b>The allowed amount (AMT with qualifier B6).</b> This is the payer's assertion of your contract rate. It's the number to compare against your fee schedule. Paid amount tells you about the patient's deductible; allowed tells you whether the contract was honored.</li>
 <li><b>The adjustment group and reason codes (CAS).</b> CO means contractual, your write-off. PR means patient responsibility. OA means other. Each comes with a reason code from the <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 CARC list</a>: 45 for fee schedule, 97 for bundling, 150 for level of service, 197 for authorization, 29 for timely filing. A CO adjustment is the payer telling you what you agreed to. It's often right. It's worth checking.</li>
-<li><b>The remark codes (LQ / RARC).</b> The reason code says what; the remark code often says why, and sometimes names the policy. <a href="/notes/denial-code-co-16-and-rarcs/">CO-16 is unreadable without them</a>.</li>
+<li><b>The remark codes (LQ / RARC).</b> The reason code says what; the remark code often says why, and sometimes names the policy. <a href="/notes/denial-code-co-16-and-rarcs/">CO-16 is unreadable without them</a>. <a href="/notes/remark-codes-rarc/">The common remark codes, decoded</a>.</li>
 <li><b>The provider-level adjustments (PLB).</b> Recoupments for "overpayments" identified months later, offsets against unrelated claims, and, on Florida fully insured plans, the 12 percent prompt-pay interest you're owed. Posting software routinely dumps PLB amounts into an unapplied bucket. That bucket is worth a quarterly look.</li>
 </ol>
 

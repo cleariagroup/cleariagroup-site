@@ -32,7 +32,7 @@
     "headline": "CO-11 denial code: the diagnosis doesn't match the procedure",
     "description": "Denial code CO-11 means the payer's edit says the diagnosis on the claim doesn't support the procedure. Usually a linkage or specificity error, sometimes a coverage policy in disguise. How to tell, and what to resubmit.",
     "datePublished": "2026-09-21",
-    "dateModified": "2026-10-19",
+    "dateModified": "2026-10-26",
     "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-code-co-11-diagnosis-inconsistent/"
@@ -167,8 +167,8 @@
     <article>
 <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
 <h1>CO-11 denial code: the diagnosis doesn't match the procedure</h1>
-<p class="meta">Clearia · September 2026 · denial codes, read properly</p>
-<p class="def"><b>Denial code CO-11</b> is the payer saying: "The diagnosis is inconsistent with the procedure." What that means for your practice, and whether it's worth chasing, below.</p>
+<p class="meta">Clearia · Updated October 26, 2026 · denial codes, read properly</p>
+<p class="def"><b>Denial code CO-11</b> is the payer saying: "The diagnosis is inconsistent with the procedure." <b>In short:</b> Usually the diagnosis on the claim doesn't support the procedure. Recoverable when the chart supports a matching diagnosis.</p>
 <h2>What the payer is asserting</h2>
 <p>A CO-11 is an automated edit. The payer's system compared the diagnosis pointer on the line to a table of diagnoses it accepts for that procedure and found no match. Nobody read the chart. That matters, because the same code covers three situations that have nothing in common: a claim-entry error, a diagnosis that is too vague for the payer's table, and a coverage policy the payer is enforcing without saying so.</p>
 
@@ -188,6 +188,7 @@
 
 <h2>Stop it recurring</h2>
 <p>Forty CO-11s on the same procedure from the same payer in a quarter is one charge-entry template or one payer table, not forty mistakes. Fix the template, load the payer's diagnosis list into the scrubber for that code, and recover the denied batch in one corrected-claim run. <a href="/notes/denial-codes/">The sorting key for the rest of the codes.</a></p>
+<p>If the diagnosis code itself wasn't valid on the date of service, for example retired in the October 1 update or billed without all its characters, the denial is <a href="/notes/denial-code-co-181-182-146-invalid-on-date-of-service/">CO-146, a diagnosis invalid for the date of service</a>, and the fix is a corrected claim rather than a documentation argument.</p>
 <p>Source: the code descriptions on this page are quoted from the <a href="https://x12.org/codes/claim-adjustment-reason-codes" rel="noopener">X12 Claim Adjustment Reason Code list</a>, the standard code set every payer remittance uses.</p>
 <section class="qa">
 <h2>Questions people ask about CO-11</h2>

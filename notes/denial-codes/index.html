@@ -32,7 +32,7 @@
     "headline": "Denial codes, explained: what the payer is saying, and whether it's worth chasing",
     "description": "A plain-language table of the denial codes that matter most to independent practices: what each CARC means, what it usually is in practice, and which ones are recoverable. With the deeper note for each.",
     "datePublished": "2026-09-20",
-    "dateModified": "2026-10-19",
+    "dateModified": "2026-10-26",
     "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/denial-codes/"
@@ -167,7 +167,7 @@
     <article>
 <p class="kicker"><a href="/notes/">Notes</a> on payer behavior</p>
 <h1>Denial codes, explained: what the payer is saying, and whether it's worth chasing</h1>
-<p class="meta">Clearia · September 2026 · denial codes, read properly</p>
+<p class="meta">Clearia · Updated October 26, 2026 · denial codes, read properly</p>
 <p>Every reduced or denied line on a remittance carries a code. The code is the payer's one-line explanation, written for machines, and most billing systems post it without anyone reading it. Read properly, the codes sort a year of denials into two piles: the ones that reverse with a document or a corrected claim, and the ones that don't. The table below is the sorting key. Each row links to the deeper note where we've written one.</p>
 <h2>How to read a code</h2>
 <p>Three parts. The <b>group code</b> (CO, PR, OA, PI) says who the amount belongs to: contractual write-off, patient, another payer, or a payer-initiated reduction. <a href="/notes/denial-codes-pr-vs-co/">That's the first thing to check</a>, because it decides whether you can bill the patient at all. The <b>reason code</b> is the number, from the X12 list. The <b>remark code</b>, when present, is the specific reason behind a generic number; codes like 16, 96 and 252 are unreadable without one. <a href="/notes/what-is-an-835-remittance/">Where each sits in the 835.</a> <a href="/notes/remark-codes-rarc/">The common remark codes (RARCs), decoded.</a></p>
@@ -175,11 +175,13 @@
 <div class="scroll"><table>
 <tr><th>Code</th><th>The payer's words</th><th>What it usually is</th><th>Recoverable?</th><th>Note</th></tr>
 <tr><td><b>CO-4</b></td><td>Procedure code inconsistent with the modifier, or a required modifier is missing</td><td>A modifier mismatch on the claim</td><td>Yes, corrected claim</td><td><a href="/notes/denial-code-co-4-modifier/">CO-4 denial code, explained</a></td></tr>
+<tr><td><b>CO-5</b></td><td>The procedure code or type of bill is inconsistent with the place of service</td><td>The place of service on the claim is wrong, or the code isn't billable in that setting</td><td>Yes, corrected claim with the right setting</td><td><a href="/notes/denial-code-co-5-place-of-service/">CO-5 denial code, explained</a></td></tr>
 <tr><td><b>CO-11</b></td><td>The diagnosis is inconsistent with the procedure</td><td>Diagnosis code doesn't support the CPT on the claim</td><td>Yes if the chart supports a matching diagnosis</td><td><a href="/notes/denial-code-co-11-diagnosis-inconsistent/">CO-11 denial code, explained</a></td></tr>
 <tr><td><b>CO-15</b></td><td>Authorization number missing, invalid, or doesn't apply</td><td>An authorization exists but doesn't match the claim</td><td>Yes, match the five fields or amend the authorization</td><td><a href="/notes/denial-code-co-15-authorization-number/">CO-15 denial code, explained</a></td></tr>
 <tr><td><b>CO-16</b></td><td>Claim lacks information or has billing errors</td><td>A missing or wrong field; the remark code names it</td><td>Yes, resubmission</td><td><a href="/notes/denial-code-co-16-and-rarcs/">CO-16 denial code, explained</a></td></tr>
 <tr><td><b>OA-18</b></td><td>Exact duplicate claim or service</td><td>A true resubmission, or two distinct same-day services collapsed into one</td><td>False duplicates yes; true duplicates no</td><td><a href="/notes/denial-code-co-18-duplicate/">OA-18 denial code, explained</a></td></tr>
 <tr><td><b>CO-22</b></td><td>Care may be covered by another payer</td><td>Coordination-of-benefits hold</td><td>Yes, after the primary payer or a COB update</td><td><a href="/notes/denial-code-co-22-coordination-of-benefits/">CO-22 denial code, explained</a></td></tr>
+<tr><td><b>CO-26</b></td><td>Expenses incurred prior to coverage</td><td>The service came before the plan's start date</td><td>Yes if the start date is wrong or coverage is made retroactive</td><td><a href="/notes/denial-code-co-26-expenses-prior-to-coverage/">CO-26 denial code, explained</a></td></tr>
 <tr><td><b>OA-23</b></td><td>Impact of prior payer's adjudication</td><td>Secondary payer accounting for what the primary paid</td><td>Not a denial; check the math</td><td><a href="/notes/denial-code-oa-23-prior-payer-adjudication/">OA-23 remittance code, explained</a></td></tr>
 <tr><td><b>CO-27</b></td><td>Expenses incurred after coverage terminated</td><td>Patient's plan ended before the date of service</td><td>Rarely; verify the term date and any new plan</td><td><a href="/notes/denial-code-co-27-coverage-terminated/">CO-27 denial code, explained</a></td></tr>
 <tr><td><b>CO-29</b></td><td>The time limit for filing has expired</td><td>Late filing, per the payer's records</td><td>Yes with proof of timely submission or a COB exception</td><td><a href="/notes/denial-code-co-29-timely-filing/">CO-29 denial code, explained</a></td></tr>
@@ -190,6 +192,7 @@
 <tr><td><b>CO-97</b></td><td>Included in the payment for another service</td><td>Global period or bundling</td><td>Yes when the service was separate</td><td><a href="/notes/denial-code-co-97-global-period/">CO-97 denial code, explained</a></td></tr>
 <tr><td><b>CO-109</b></td><td>Not covered by this payer; send to the correct payer</td><td>Wrong payer</td><td>Yes, at the right payer, inside its window</td><td><a href="/notes/denial-code-co-109-wrong-payer/">CO-109 denial code, explained</a></td></tr>
 <tr><td><b>CO-119</b></td><td>Benefit maximum reached</td><td>Visit or dollar cap for the period</td><td>Only if the count is wrong</td><td><a href="/notes/denial-code-co-119-benefit-maximum/">CO-119 denial code, explained</a></td></tr>
+<tr><td><b>CO-146 / 181 / 182</b></td><td>Diagnosis, procedure code or modifier invalid on the date of service</td><td>A retired, not-yet-effective or incomplete code</td><td>Yes, corrected claim with the code valid on that date</td><td><a href="/notes/denial-code-co-181-182-146-invalid-on-date-of-service/">CO-181, CO-182 and CO-146, explained</a></td></tr>
 <tr><td><b>CO-150</b></td><td>Information doesn't support this level of service</td><td>Downcoding</td><td>Yes with the note</td><td><a href="/notes/downcoding-99214-paid-as-99213/">CO-150 and downcoding, explained</a> · <a href="/notes/em-downcoding-by-payers/">E/M downcoding by payers</a></td></tr>
 <tr><td><b>CO-151</b></td><td>Information doesn't support this many or this frequency of services</td><td>Units or frequency limit</td><td>Yes when the units are documented</td><td><a href="/notes/denial-code-co-151-frequency-units/">CO-151 denial code, explained</a></td></tr>
 <tr><td><b>CO-170 / 171</b></td><td>Not payable when performed or billed by this provider type (or in this facility)</td><td>An extender enrollment or billing-convention gap</td><td>Yes from the enrollment effective date, or by corrected claim</td><td><a href="/notes/denial-code-co-170-171-provider-type/">CO-170 and CO-171 denial codes, explained</a></td></tr>

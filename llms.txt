@@ -13,6 +13,9 @@ Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cle
 - [Notes on payer behavior](https://cleariagroup.com/notes/): short, sourced notes on how insurers pay independent practices
 
 ## Reference pages (quoted from primary documents, with a verification date)
+- [UnitedHealthcare payer profile for Florida: 12-month combined appeal window, corrected claims, overpayments](https://cleariagroup.com/notes/unitedhealthcare-florida-provider-profile/)
+- [Aetna payer profile for Florida: reconsideration and appeal windows, the Florida 12-month exception, precertification, recoupment](https://cleariagroup.com/notes/aetna-florida-provider-profile/)
+- [Cigna payer profile for Florida: 90-day filing, 180-day appeals, eviCore authorization, R49, recoupment](https://cleariagroup.com/notes/cigna-florida-provider-profile/)
 - [What 1,399 Florida claim disputes show about who gets paid (2018 to 2026): original analysis of AHCA public records, with CSV](https://cleariagroup.com/notes/florida-claim-dispute-data/)
 - [Florida workers' comp provider handbook: rates, authorization rules, EOBR codes, the 60-day DFS petition](https://cleariagroup.com/notes/florida-workers-comp-provider-handbook/)
 - [Florida Blue payer profile: filing, corrected claims, one-year appeals, offsets, authorization by product](https://cleariagroup.com/notes/florida-blue-provider-profile/)
@@ -21,6 +24,9 @@ Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cle
 - [Florida insurer fines, 2023 to 2026: what the regulator enforces, and what a practice recovers itself](https://cleariagroup.com/notes/florida-underpayment-enforcement-gap/)
 
 ## Notes
+- [CO-26 denial code: expenses incurred prior to coverage](https://cleariagroup.com/notes/denial-code-co-26-expenses-prior-to-coverage/)
+- [CO-5 denial code: procedure and place of service mismatch](https://cleariagroup.com/notes/denial-code-co-5-place-of-service/)
+- [CO-181, CO-182 and CO-146 denial codes: a code invalid on the date of service](https://cleariagroup.com/notes/denial-code-co-181-182-146-invalid-on-date-of-service/)
 - [Downcoding: 99214 paid as 99213](https://cleariagroup.com/notes/downcoding-99214-paid-as-99213/)
 - [The zero-balance problem](https://cleariagroup.com/notes/zero-balance-problem/)
 - [How to appeal an underpaid insurance claim](https://cleariagroup.com/notes/how-to-appeal-an-underpaid-claim/)

@@ -685,6 +685,36 @@
     .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
     .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
     @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
+    /* pattern record chart (#expertise) */
+    #pattern-frame { max-width: 780px; margin: 1.6rem auto 0; text-align: left; }
+    #pattern-frame .tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.9rem; }
+    #pattern-frame .tabs button { font: inherit; font-size: 0.78rem; padding: 0.35rem 0.8rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
+    #pattern-frame .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+    #pattern-frame .tabs button:focus-visible, #pattern-frame .prow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    #pattern-frame .axis { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 4.2rem; gap: 0.8rem; font-size: 0.66rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 0.5rem 0.3rem; }
+    #pattern-frame .prow { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 4.2rem; gap: 0.8rem; align-items: center; padding: 0.5rem; border-radius: 6px; cursor: pointer; border-left: 3px solid transparent; }
+    #pattern-frame .prow:hover { background: var(--paper); }
+    #pattern-frame .prow.sel { background: var(--paper); border-left-color: var(--accent); }
+    #pattern-frame .pname { font-size: 0.86rem; color: var(--ink); line-height: 1.3; }
+    #pattern-frame .ptrack { position: relative; height: 12px; border-left: 1px solid var(--muted); background: repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), var(--hairline) calc(25% - 1px) 25%); }
+    #pattern-frame .pbar { height: 100%; width: 0; background: var(--accent); border-radius: 0 4px 4px 0; transition: width 650ms var(--ease-entrance); }
+    #pattern-frame .pval { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+    #pattern-frame .pval small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--muted); }
+    #pattern-frame .detail { margin-top: 0.8rem; padding: 0.8rem 0.9rem; background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; min-height: 6.4rem; }
+    #pattern-frame .detail .dv { font-family: var(--serif); font-size: 1.35rem; line-height: 1.1; color: var(--ink); }
+    #pattern-frame .detail .dn { font-size: 0.78rem; color: var(--muted); margin: 0.15rem 0 0.5rem; }
+    #pattern-frame .detail p { margin: 0.2rem 0 0; font-size: 0.82rem; color: var(--ink); }
+    #pattern-frame .detail b { font-weight: 600; }
+    #pattern-frame { position: relative; }
+    #pattern-frame table.sr { position: absolute; left: 0; top: 0; width: 1px !important; min-width: 0 !important; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; margin: 0; }
+    #pattern-frame .foot { gap: 1rem; flex-wrap: wrap; }
+    #pattern-frame .foot span:last-child { margin-left: auto; }
+    @media (max-width: 600px) {
+      #pattern-frame .axis { display: none; }
+      #pattern-frame .prow { grid-template-columns: 1fr 3.6rem; grid-template-areas: "n v" "t t"; row-gap: 0.35rem; }
+      #pattern-frame .pname { grid-area: n; } #pattern-frame .pval { grid-area: v; } #pattern-frame .ptrack { grid-area: t; }
+    }
+    @media (prefers-reduced-motion: reduce) { #pattern-frame .pbar { transition: none; } }
     #admin-note .pain { grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 720px) { #admin-note .pain { grid-template-columns: 1fr; } }
     #admin-note .intro, #expertise .intro { max-width: 62ch; margin: 0 auto 1.2rem; text-align: center; }
@@ -909,6 +939,17 @@
     <section class="reveal" id="expertise">
       <h2>Expertise, with the citations to prove it.</h2>
       <p class="intro">Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
+      <div class="frame" id="pattern-frame">
+        <div class="bar"><i></i><i></i><i></i><span>Pattern record · what each insurer reverses</span></div>
+        <div class="body">
+          <div class="tabs" role="group" aria-label="Choose an insurer"></div>
+          <div class="axis" aria-hidden="true"><span>Shortfall pattern</span><span>Share of disputes reversed</span><span style="text-align:right">Reversed</span></div>
+          <div class="rows" role="list"></div>
+          <div class="detail" aria-live="polite"></div>
+          <table class="sr"><caption>Share of disputes reversed, by insurer and pattern (sample, synthetic data)</caption><thead><tr><th>Insurer</th><th>Pattern</th><th>Reversed</th><th>Disputes</th><th>Median days to payment</th></tr></thead><tbody></tbody></table>
+          <div class="foot"><span>tap a pattern to see what it takes</span><span>sample · synthetic data</span></div>
+        </div>
+      </div>
     </section>
 
     <section class="reveal" id="admin-note">
@@ -1297,6 +1338,60 @@
       addEventListener('scroll', req, { passive: true });
       addEventListener('resize', req);
       update();
+    })();
+  </script>
+  <script>
+    (function () {
+      var root = document.getElementById('pattern-frame'); if (!root) return;
+      var P = [
+        { k: 'fee', name: 'Fee schedule paid light', takes: "Your contract's fee exhibit and the paid line, side by side.", doc: 'Provider agreement, fee exhibit' },
+        { k: 'em', name: 'Office visit paid a level down', takes: "The visit note and the insurer's coding policy for that date.", doc: 'Office visit coding policy' },
+        { k: 'bundle', name: 'Injection bundled into the visit', takes: "The insurer's bundling policy version for that date, plus how the claim was coded.", doc: 'Bundling policy' },
+        { k: 'auth', name: 'Authorization on file, denied anyway', takes: 'The authorization number and its approval date.', doc: 'Prior authorization requirements' },
+        { k: 'tf', name: 'Late-filing denial, proof on file', takes: 'The acceptance report showing the claim went in on time.', doc: 'Provider manual, claim filing section' },
+        { k: 'mpr', name: 'Second procedure cut twice', takes: "The contract's multiple-procedure terms and the paid lines.", doc: 'Provider agreement, multiple-procedure terms' }
+      ];
+      var D = {
+        'Insurer A': { eff: '3/1/2025', d: { fee: [42, 46, 31], em: [37, 50, 45], bundle: [27, 33, 38], auth: [19, 20, 24], tf: [15, 17, 29], mpr: [10, 16, 52] } },
+        'Insurer B': { eff: '1/15/2025', d: { fee: [29, 37, 40], em: [22, 42, 61], bundle: [18, 26, 47], auth: [18, 20, 27], tf: [13, 14, 22], mpr: [5, 11, 70] } },
+        'Insurer C': { eff: '4/1/2025', d: { fee: [31, 37, 35], em: [19, 31, 55], bundle: [12, 21, 58], auth: [12, 14, 30], tf: [8, 10, 33], mpr: [12, 17, 44] } }
+      };
+      var names = Object.keys(D), cur = names[0], sel = null;
+      var tabs = root.querySelector('.tabs'), rows = root.querySelector('.rows'), det = root.querySelector('.detail'), tb = root.querySelector('tbody');
+      function pct(a) { return Math.round(a[0] / a[1] * 100); }
+      function mk(tag, cls, txt) { var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+      names.forEach(function (nm) {
+        var b = mk('button', null, nm); b.type = 'button';
+        b.addEventListener('click', function () { cur = nm; sel = null; draw(); });
+        tabs.appendChild(b);
+        P.forEach(function (p) { var a = D[nm].d[p.k], tr = document.createElement('tr');
+          [nm, p.name, pct(a) + '%', a[1], a[2]].forEach(function (v) { tr.appendChild(mk('td', null, String(v))); }); tb.appendChild(tr); });
+      });
+      function show(p) {
+        var a = D[cur].d[p.k]; det.textContent = '';
+        det.appendChild(mk('div', 'dv', pct(a) + '% reversed'));
+        det.appendChild(mk('div', 'dn', p.name + ' · ' + cur + ' · ' + a[0] + ' of ' + a[1] + ' disputes · median ' + a[2] + ' days to payment'));
+        var t = mk('p'); t.appendChild(mk('b', null, 'What it takes: ')); t.appendChild(document.createTextNode(p.takes)); det.appendChild(t);
+        var c = mk('p'); c.appendChild(mk('b', null, 'Cited: ')); c.appendChild(document.createTextNode(cur + ', ' + p.doc + ', version in effect on the date of service (sample: effective ' + D[cur].eff + ')')); det.appendChild(c);
+        [].forEach.call(rows.children, function (r) { r.classList.toggle('sel', r.dataset.k === p.k); });
+      }
+      function draw() {
+        [].forEach.call(tabs.children, function (b) { b.setAttribute('aria-pressed', b.textContent === cur ? 'true' : 'false'); });
+        var list = P.slice().sort(function (x, y) { return pct(D[cur].d[y.k]) - pct(D[cur].d[x.k]); });
+        rows.textContent = '';
+        list.forEach(function (p) {
+          var a = D[cur].d[p.k], r = mk('div', 'prow'); r.dataset.k = p.k; r.setAttribute('role', 'listitem'); r.tabIndex = 0;
+          r.setAttribute('aria-label', p.name + ': ' + pct(a) + '% reversed, ' + a[0] + ' of ' + a[1] + ' disputes');
+          r.appendChild(mk('div', 'pname', p.name));
+          var tr = mk('div', 'ptrack'), br = mk('div', 'pbar'); tr.appendChild(br); r.appendChild(tr);
+          var v = mk('div', 'pval', pct(a) + '%'); v.appendChild(mk('small', null, a[0] + ' of ' + a[1])); r.appendChild(v);
+          ['mouseenter', 'focus', 'click'].forEach(function (ev) { r.addEventListener(ev, function () { sel = p.k; show(p); }); });
+          rows.appendChild(r);
+          requestAnimationFrame(function () { requestAnimationFrame(function () { br.style.width = pct(a) + '%'; }); });
+        });
+        show(P.filter(function (p) { return p.k === (sel || list[0].k); })[0]);
+      }
+      draw();
     })();
   </script>
 </body>

@@ -685,61 +685,84 @@
     .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
     .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
     @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
-    /* transparency block (#transparency) */
+    /* expertise band (#expertise): ink panel, clay heatmap */
+    .ink-band { background: var(--ink); color: var(--panel-text); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); padding-top: clamp(2.8rem, 6vw, 4rem); padding-bottom: clamp(2.8rem, 6vw, 4rem); }
+    #expertise .xgrid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.6rem, 4vw, 3rem); align-items: start; }
+    @media (max-width: 860px) { #expertise .xgrid { grid-template-columns: 1fr; } }
+    #expertise .xkicker { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay); margin: 0 0 0.6rem; }
+    #expertise h2 { color: var(--panel-text); text-align: left; margin-bottom: 0.9rem; }
+    #expertise .xcopy > p { color: var(--panel-text); opacity: 0.88; margin: 0 0 1.2rem; max-width: 46ch; }
+    #expertise .xpoints { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.85rem; }
+    #expertise .xpoints li { border-left: 2px solid var(--clay); padding: 0.1rem 0 0.1rem 0.9rem; font-size: 0.95rem; color: var(--panel-text); }
+    #expertise .xpoints b { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.1rem; }
+    #pmx { background: #1C2029; border: 1px solid #2E3340; border-radius: 10px; padding: 1rem 1rem 0.9rem; position: relative; overflow: hidden; }
+    #pmx .mh { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.8rem; }
+    #pmx .mt { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #A9A397; }
+    #pmx .grid { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 4.2rem); gap: 4px; align-items: stretch; }
+    #pmx .ch { font-size: 0.7rem; color: #A9A397; text-align: center; padding-bottom: 0.25rem; }
+    #pmx .cat { grid-column: 1 / -1; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); padding: 0.55rem 0 0.15rem; }
+    #pmx .rn { font-size: 0.84rem; color: var(--panel-text); display: flex; align-items: center; padding-right: 0.4rem; line-height: 1.25; }
+    #pmx .cell { font: inherit; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.86rem; border: 0; border-radius: 4px; min-height: 2.5rem; cursor: pointer; transition: transform var(--dur-micro) var(--ease-standard), box-shadow var(--dur-micro) var(--ease-standard); }
+    #pmx .cell:hover { transform: translateY(-1px); }
+    #pmx .cell.sel { box-shadow: 0 0 0 2px var(--panel-text); }
+    #pmx .cell:focus-visible { outline: 2px solid var(--panel-text); outline-offset: 2px; }
+    #pmx .detail { margin-top: 0.9rem; background: #232835; border-radius: 8px; padding: 0.85rem 0.95rem; min-height: 7.2rem; }
+    #pmx .detail .dv { font-family: var(--serif); font-size: 1.45rem; line-height: 1.1; color: var(--panel-text); }
+    #pmx .detail .dn { font-size: 0.76rem; color: #A9A397; margin: 0.2rem 0 0.55rem; }
+    #pmx .detail p { margin: 0.25rem 0 0; font-size: 0.82rem; color: var(--panel-text); }
+    #pmx .detail b { font-weight: 600; color: var(--clay); }
+    #pmx .legend { display: flex; align-items: center; gap: 0.35rem; font-size: 0.66rem; color: #A9A397; white-space: nowrap; }
+    #pmx .legend i { width: 1.1rem; height: 0.55rem; border-radius: 2px; display: inline-block; }
+    #pmx .foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 0.7rem; font-size: 0.68rem; color: #A9A397; }
+    #pmx table.sr { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+    @media (max-width: 480px) { #pmx .grid { grid-template-columns: minmax(0, 1fr) repeat(3, 3.3rem); } #pmx .rn { font-size: 0.78rem; } #pmx .mh { flex-direction: column; } }
+
+    /* tracking dashboard (#transparency): light, friendly */
     #transparency .intro { max-width: 62ch; margin: 0 auto 1.2rem; text-align: center; }
-    #transparency .closer { text-align: center; font-family: var(--serif); font-size: 1.08rem; margin: 1.3rem auto 0; max-width: 62ch; }
-    #dash-frame { max-width: 900px; margin: 1.4rem auto 0; position: relative; }
-    #dash-frame .dgrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 0.9rem; }
-    @media (max-width: 720px) { #dash-frame .dgrid { grid-template-columns: 1fr; } }
-    #dash-frame .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.7rem; }
-    #dash-frame .chips button { font: inherit; font-size: 0.76rem; padding: 0.3rem 0.75rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
-    #dash-frame .chips button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
-    #dash-frame .chips button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    #dash-frame ul.feed { list-style: none; margin: 0; padding: 0; }
-    #dash-frame .feed li { display: grid; grid-template-columns: 4.6rem 1fr auto; gap: 0.7rem; align-items: start; padding: 0.6rem 0.2rem; border-top: 1px solid var(--hairline); }
-    #dash-frame .feed li:first-child { border-top: 0; }
-    #dash-frame .feed .when { font-size: 0.7rem; color: var(--muted); padding-top: 0.15rem; }
-    #dash-frame .feed .what { font-size: 0.84rem; color: var(--ink); line-height: 1.35; }
-    #dash-frame .feed .what small { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 0.15rem; }
-    #dash-frame .feed .amt { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.86rem; text-align: right; white-space: nowrap; }
-    #dash-frame .tag { display: inline-block; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--hairline); border-radius: 4px; padding: 0.05rem 0.35rem; margin-right: 0.35rem; color: var(--muted); background: var(--paper); }
-    #dash-frame .tag.paid { color: var(--accent); border-color: var(--accent); }
-    #dash-frame .mail { background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; padding: 0.8rem 0.9rem; font-size: 0.82rem; }
-    #dash-frame .mail .mh { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.15rem; }
-    #dash-frame .mail .ms { font-weight: 600; margin-bottom: 0.55rem; }
-    #dash-frame .mail p { margin: 0 0 0.45rem; line-height: 1.4; }
-    #dash-frame .mail p:last-child { margin-bottom: 0; color: var(--muted); font-size: 0.74rem; }
-    @media (max-width: 480px) { #dash-frame .feed li { grid-template-columns: 1fr auto; } #dash-frame .feed .when { grid-column: 1 / -1; padding: 0; } }
-    /* pattern record chart (#expertise) */
-    #pattern-frame { max-width: 780px; margin: 1.6rem auto 0; text-align: left; }
-    #pattern-frame .tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.9rem; }
-    #pattern-frame .tabs button { font: inherit; font-size: 0.78rem; padding: 0.35rem 0.8rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
-    #pattern-frame .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
-    #pattern-frame .tabs button:focus-visible, #pattern-frame .prow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    #pattern-frame .axis { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 4.2rem; gap: 0.8rem; font-size: 0.66rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 0.5rem 0.3rem; }
-    #pattern-frame .prow { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 4.2rem; gap: 0.8rem; align-items: center; padding: 0.5rem; border-radius: 6px; cursor: pointer; border-left: 3px solid transparent; }
-    #pattern-frame .prow:hover { background: var(--paper); }
-    #pattern-frame .prow.sel { background: var(--paper); border-left-color: var(--accent); }
-    #pattern-frame .pname { font-size: 0.86rem; color: var(--ink); line-height: 1.3; }
-    #pattern-frame .ptrack { position: relative; height: 12px; border-left: 1px solid var(--muted); background: repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), var(--hairline) calc(25% - 1px) 25%); }
-    #pattern-frame .pbar { height: 100%; width: 0; background: var(--accent); border-radius: 0 4px 4px 0; transition: width 650ms var(--ease-entrance); }
-    #pattern-frame .pval { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.9rem; color: var(--ink); }
-    #pattern-frame .pval small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--muted); }
-    #pattern-frame .detail { margin-top: 0.8rem; padding: 0.8rem 0.9rem; background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; min-height: 6.4rem; }
-    #pattern-frame .detail .dv { font-family: var(--serif); font-size: 1.35rem; line-height: 1.1; color: var(--ink); }
-    #pattern-frame .detail .dn { font-size: 0.78rem; color: var(--muted); margin: 0.15rem 0 0.5rem; }
-    #pattern-frame .detail p { margin: 0.2rem 0 0; font-size: 0.82rem; color: var(--ink); }
-    #pattern-frame .detail b { font-weight: 600; }
-    #pattern-frame { position: relative; }
-    #pattern-frame table.sr { position: absolute; left: 0; top: 0; width: 1px !important; min-width: 0 !important; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; margin: 0; }
-    #pattern-frame .foot { gap: 1rem; flex-wrap: wrap; }
-    #pattern-frame .foot span:last-child { margin-left: auto; }
-    @media (max-width: 600px) {
-      #pattern-frame .axis { display: none; }
-      #pattern-frame .prow { grid-template-columns: 1fr 3.6rem; grid-template-areas: "n v" "t t"; row-gap: 0.35rem; }
-      #pattern-frame .pname { grid-area: n; } #pattern-frame .pval { grid-area: v; } #pattern-frame .ptrack { grid-area: t; }
-    }
-    @media (prefers-reduced-motion: reduce) { #pattern-frame .pbar { transition: none; } }
+    #transparency .closer { text-align: center; font-family: var(--serif); font-size: 1.08rem; margin: 1.4rem auto 0; max-width: 62ch; }
+    #dash { max-width: 940px; margin: 1.4rem auto 0; background: #FFFEFB; border: 1px solid var(--hairline); border-radius: 14px; box-shadow: 0 24px 50px rgba(20,23,31,0.08), 0 2px 6px rgba(20,23,31,0.04); overflow: hidden; }
+    #dash .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--hairline); }
+    #dash .who { font-weight: 600; font-size: 0.95rem; }
+    #dash .who small { display: block; font-weight: 400; font-size: 0.72rem; color: var(--muted); }
+    #dash .live { font-size: 0.72rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+    #dash .live i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; }
+    #dash .inner { padding: 1.1rem 1.2rem 1.2rem; }
+    #dash .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-bottom: 1.1rem; }
+    #dash .tile { background: var(--canvas); border-radius: 10px; padding: 0.75rem 0.9rem; }
+    #dash .tile span { display: block; font-size: 0.74rem; color: var(--muted); }
+    #dash .tile b { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.55rem; line-height: 1.15; margin-top: 0.15rem; }
+    #dash .tile.you b { color: var(--accent); }
+    #dash .dg { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 1.1rem; }
+    @media (max-width: 760px) { #dash .dg { grid-template-columns: 1fr; } #dash .tiles { grid-template-columns: 1fr 1fr; } #dash .tile:first-child { grid-column: 1 / -1; } }
+    #dash .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.8rem; }
+    #dash .chips button { font: inherit; font-size: 0.8rem; padding: 0.35rem 0.85rem; border: 1px solid var(--hairline); border-radius: 999px; background: #FFFEFB; color: var(--ink); cursor: pointer; }
+    #dash .chips button[aria-pressed="true"] { background: var(--ink); color: var(--panel-text); border-color: var(--ink); }
+    #dash .chips button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    #dash ul.items { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+    #dash .item { border: 1px solid var(--hairline); border-radius: 10px; padding: 0.75rem 0.85rem 0.7rem; background: #FFFEFB; }
+    #dash .ir { display: flex; justify-content: space-between; gap: 0.8rem; align-items: baseline; }
+    #dash .it { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+    #dash .ia { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92rem; white-space: nowrap; }
+    #dash .is { font-size: 0.74rem; color: var(--muted); margin-top: 0.15rem; }
+    #dash .pill { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.04em; border-radius: 999px; padding: 0.12rem 0.55rem; margin-right: 0.45rem; vertical-align: 1px; background: var(--canvas); color: var(--muted); }
+    #dash .pill.you { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    #dash .pill.paid { background: var(--accent); color: var(--panel-text); }
+    #dash .trk { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 0.65rem; }
+    #dash .st { position: relative; font-size: 0.66rem; color: var(--muted); padding-top: 0.9rem; text-align: center; }
+    #dash .st::before { content: ""; position: absolute; top: 0.28rem; left: -50%; right: 50%; height: 2px; background: var(--hairline); }
+    #dash .st:first-child::before { display: none; }
+    #dash .st::after { content: ""; position: absolute; top: 0; left: 50%; margin-left: -0.32rem; width: 0.64rem; height: 0.64rem; border-radius: 50%; background: #FFFEFB; box-shadow: inset 0 0 0 2px var(--hairline); }
+    #dash .st.done::before, #dash .st.now::before { background: var(--accent); }
+    #dash .st.done::after { background: var(--accent); box-shadow: none; }
+    #dash .st.now::after { background: #FFFEFB; box-shadow: inset 0 0 0 3px var(--accent); }
+    #dash .st.now { color: var(--ink); font-weight: 600; }
+    #dash .mail { background: var(--canvas); border-radius: 10px; padding: 0.9rem 1rem; font-size: 0.84rem; align-self: start; }
+    #dash .mail .mh { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.2rem; }
+    #dash .mail .ms { font-weight: 600; margin-bottom: 0.6rem; }
+    #dash .mail p { margin: 0 0 0.5rem; line-height: 1.45; }
+    #dash .mail .cta { display: inline-block; margin-top: 0.2rem; font-size: 0.78rem; font-weight: 600; color: var(--panel-text); background: var(--accent); border-radius: 6px; padding: 0.4rem 0.75rem; }
+    #dash .mail .fine { color: var(--muted); font-size: 0.72rem; margin: 0.6rem 0 0; }
+    #dash .foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.7rem 1.2rem; border-top: 1px solid var(--hairline); font-size: 0.7rem; color: var(--muted); }
     #admin-note .pain { grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 720px) { #admin-note .pain { grid-template-columns: 1fr; } }
     #admin-note .intro, #expertise .intro { max-width: 62ch; margin: 0 auto 1.2rem; text-align: center; }
@@ -857,9 +880,9 @@
     </nav>
 
     <div class="hero">
-      <p class="eyebrow">Underpayment, denial and downcoding recovery for independent practices</p>
+      <p class="eyebrow">Denial, underpayment and downcoding recovery for independent practices</p>
       <h1>Recover the money you've earned.</h1>
-      <p class="lede">Insurers quietly underpay, downcode and deny claims your practice already earned. We find it in your payment records, file the appeals and follow every one to payment. Start to finish, without adding work for your team.</p>
+      <p class="lede">Insurers deny, downcode and quietly underpay claims your practice already earned. Our team finds them, files the appeals and follows every one to payment. Start to finish, without adding work for your staff.</p>
       <div class="cta-row" id="hero-cta">
         <a class="contact-btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
         <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
@@ -884,8 +907,8 @@
     <section class="reveal" id="pain">
       <h2>Three ways insurers keep your money</h2>
       <div class="pain">
-        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract <a href="/notes/zero-balance-problem/">still posts as paid</a>. No alert fires, so nobody looks.</p></div>
         <div><b>Denied for fixable reasons.</b><p>Missing information, an authorization that was on file, a <a href="/notes/denial-code-co-29-timely-filing/">timely-filing dispute with proof</a>. Correctable, rarely corrected.</p></div>
+        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract <a href="/notes/zero-balance-problem/">still posts as paid</a>. No alert fires, so nobody looks.</p></div>
         <div><b>Then the window closes.</b><p><a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days</a>. Whatever nobody chased is gone for good.</p></div>
       </div>
     </section>
@@ -895,8 +918,8 @@
 
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
-          <h3>Find the underpayments and denials.</h3>
-          <p>Our software checks <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contracted rate, then matches what it finds against our library of insurer behaviors: the light fee schedule, the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a>, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it. That's how one team can check what a billing office never has time to.</p>
+          <h3>Find the denials, and what's hiding behind them.</h3>
+          <p>Our team starts where it hurts: the denials piling up. The authorization that was on file, the late-filing denial you can prove, the bundling edit applied by mistake. Then we check the payments that looked fine, <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contract, because that's where underpayments and the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a> hide. Our analytics do the line-by-line work, so one confirmed shortfall leads us to the hundreds like it.</p>
         </div>
         <div>
           <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
@@ -961,18 +984,24 @@
       </div>
     </section>
 
-    <section class="reveal" id="expertise">
-      <h2>Expertise, with the citations to prove it.</h2>
-      <p class="intro">Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
-      <div class="frame" id="pattern-frame">
-        <div class="bar"><i></i><i></i><i></i><span>Pattern record · what each insurer reverses</span></div>
-        <div class="body">
-          <div class="tabs" role="group" aria-label="Choose an insurer"></div>
-          <div class="axis" aria-hidden="true"><span>Shortfall pattern</span><span>Share of disputes reversed</span><span style="text-align:right">Reversed</span></div>
-          <div class="rows" role="list"></div>
+    <section class="reveal ink-band" id="expertise">
+      <div class="xgrid">
+        <div class="xcopy">
+          <p class="xkicker">Our expertise</p>
+          <h2>Expertise, with the citations to prove it.</h2>
+          <p>Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
+          <ul class="xpoints">
+            <li><b>Dated to the day.</b>We cite the policy in effect on the date of service, not today's version.</li>
+            <li><b>Proven patterns.</b>We know which denials and shortfalls each insurer reverses, and what it takes.</li>
+            <li><b>Sharper with every claim.</b>Every win adds to the record, so the next appeal starts stronger.</li>
+          </ul>
+        </div>
+        <div id="pmx">
+          <div class="mh"><span class="mt">Pattern record · share of disputes reversed</span><span class="legend" aria-hidden="true"></span></div>
+          <div class="grid" role="grid" aria-label="Share of disputes reversed by pattern and insurer"></div>
           <div class="detail" aria-live="polite"></div>
-          <table class="sr"><caption>Share of disputes reversed, by insurer and pattern (sample, synthetic data)</caption><thead><tr><th>Insurer</th><th>Pattern</th><th>Reversed</th><th>Disputes</th><th>Median days to payment</th></tr></thead><tbody></tbody></table>
-          <div class="foot"><span>tap a pattern to see what it takes</span><span>sample · synthetic data</span></div>
+          <table class="sr"><caption>Share of disputes reversed by pattern and insurer (sample, synthetic data)</caption><thead><tr><th>Pattern</th><th>Insurer</th><th>Reversed</th><th>Disputes</th><th>Median days to payment</th></tr></thead><tbody></tbody></table>
+          <div class="foot"><span>tap any square to see what it takes</span><span>sample · synthetic data</span></div>
         </div>
       </div>
     </section>
@@ -991,26 +1020,32 @@
 
     <section class="reveal" id="transparency">
       <h2>You see everything. As it happens.</h2>
-      <p class="intro">Your own dashboard shows every finding, every appeal we file, every insurer response and every dollar that lands, with the paper trail behind each one. A short morning email flags anything that needs you. Nothing goes out that you can't see.</p>
-      <div class="frame" id="dash-frame">
-        <div class="bar"><i></i><i></i><i></i><span>Your dashboard · sample practice</span></div>
-        <div class="body">
-          <div class="dgrid">
+      <p class="intro">Your own dashboard shows every denial and shortfall we find, every appeal we file, every insurer response and every dollar that lands, with the paper trail behind each one. A short morning email flags anything that needs you. Nothing goes out that you can't see.</p>
+      <div id="dash">
+        <div class="top"><div class="who">Good morning, Dr. Rivera<small>Sample practice · your recovery dashboard</small></div><span class="live"><i></i>Updated 7:00 am</span></div>
+        <div class="inner">
+          <div class="tiles">
+            <div class="tile"><span>Recovered so far</span><b>$18,420</b></div>
+            <div class="tile"><span>Waiting on insurers</span><b>$9,310</b></div>
+            <div class="tile you"><span>Needs you</span><b>3 items</b></div>
+          </div>
+          <div class="dg">
             <div>
               <div class="chips" role="group" aria-label="Filter activity"></div>
-              <ul class="feed" aria-live="polite"></ul>
+              <ul class="items" aria-live="polite"></ul>
             </div>
             <div class="mail" aria-label="Sample morning email">
               <div class="mh">Morning email · 7:00 am</div>
-              <div class="ms">Clearia: 3 appeals · Needs input</div>
-              <p><b>Needs input:</b> 3 appeals, $1,240 at stake. The biggest: Insurer B, $612.</p>
-              <p><b>Ready:</b> 12 appeals, $8,930. Review and mark them final so we can send them.</p>
-              <p><b>Since yesterday:</b> 2 payments landed, $1,644 recovered.</p>
-              <p>This email never names a patient. Sign in to see the details.</p>
+              <div class="ms">3 appeals need you today</div>
+              <p><b>Needs you:</b> 3 appeals, $1,240 at stake. Confirm the visit notes and we'll file.</p>
+              <p><b>Ready to send:</b> 12 appeals, $8,930.</p>
+              <p><b>Since yesterday:</b> 2 payments landed, $1,644.</p>
+              <span class="cta">Open my dashboard</span>
+              <p class="fine">This email never names a patient.</p>
             </div>
           </div>
-          <div class="foot"><span>every line links to its paper trail</span><span>sample · synthetic data</span></div>
         </div>
+        <div class="foot"><span>every line links to its paper trail</span><span>sample · synthetic data</span></div>
       </div>
       <p class="closer">Most practices never see the work behind their collections. You'll see all of ours.</p>
     </section>
@@ -1393,83 +1428,89 @@
   </script>
   <script>
     (function () {
-      var root = document.getElementById('pattern-frame'); if (!root) return;
-      var P = [
-        { k: 'fee', name: 'Fee schedule paid light', takes: "Your contract's fee exhibit and the paid line, side by side.", doc: 'Provider agreement, fee exhibit' },
-        { k: 'em', name: 'Office visit paid a level down', takes: "The visit note and the insurer's coding policy for that date.", doc: 'Office visit coding policy' },
-        { k: 'bundle', name: 'Injection bundled into the visit', takes: "The insurer's bundling policy version for that date, plus how the claim was coded.", doc: 'Bundling policy' },
-        { k: 'auth', name: 'Authorization on file, denied anyway', takes: 'The authorization number and its approval date.', doc: 'Prior authorization requirements' },
-        { k: 'tf', name: 'Late-filing denial, proof on file', takes: 'The acceptance report showing the claim went in on time.', doc: 'Provider manual, claim filing section' },
-        { k: 'mpr', name: 'Second procedure cut twice', takes: "The contract's multiple-procedure terms and the paid lines.", doc: 'Provider agreement, multiple-procedure terms' }
-      ];
-      var D = {
-        'Insurer A': { eff: '3/1/2025', d: { fee: [42, 46, 31], em: [37, 50, 45], bundle: [27, 33, 38], auth: [19, 20, 24], tf: [15, 17, 29], mpr: [10, 16, 52] } },
-        'Insurer B': { eff: '1/15/2025', d: { fee: [29, 37, 40], em: [22, 42, 61], bundle: [18, 26, 47], auth: [18, 20, 27], tf: [13, 14, 22], mpr: [5, 11, 70] } },
-        'Insurer C': { eff: '4/1/2025', d: { fee: [31, 37, 35], em: [19, 31, 55], bundle: [12, 21, 58], auth: [12, 14, 30], tf: [8, 10, 33], mpr: [12, 17, 44] } }
-      };
-      var names = Object.keys(D), cur = names[0], sel = null;
-      var tabs = root.querySelector('.tabs'), rows = root.querySelector('.rows'), det = root.querySelector('.detail'), tb = root.querySelector('tbody');
-      function pct(a) { return Math.round(a[0] / a[1] * 100); }
       function mk(tag, cls, txt) { var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
-      names.forEach(function (nm) {
-        var b = mk('button', null, nm); b.type = 'button';
-        b.addEventListener('click', function () { cur = nm; sel = null; draw(); });
-        tabs.appendChild(b);
-        P.forEach(function (p) { var a = D[nm].d[p.k], tr = document.createElement('tr');
-          [nm, p.name, pct(a) + '%', a[1], a[2]].forEach(function (v) { tr.appendChild(mk('td', null, String(v))); }); tb.appendChild(tr); });
-      });
-      function show(p) {
-        var a = D[cur].d[p.k]; det.textContent = '';
-        det.appendChild(mk('div', 'dv', pct(a) + '% reversed'));
-        det.appendChild(mk('div', 'dn', p.name + ' · ' + cur + ' · ' + a[0] + ' of ' + a[1] + ' disputes · median ' + a[2] + ' days to payment'));
-        var t = mk('p'); t.appendChild(mk('b', null, 'What it takes: ')); t.appendChild(document.createTextNode(p.takes)); det.appendChild(t);
-        var c = mk('p'); c.appendChild(mk('b', null, 'Cited: ')); c.appendChild(document.createTextNode(cur + ', ' + p.doc + ', version in effect on the date of service (sample: effective ' + D[cur].eff + ')')); det.appendChild(c);
-        [].forEach.call(rows.children, function (r) { r.classList.toggle('sel', r.dataset.k === p.k); });
-      }
-      function draw() {
-        [].forEach.call(tabs.children, function (b) { b.setAttribute('aria-pressed', b.textContent === cur ? 'true' : 'false'); });
-        var list = P.slice().sort(function (x, y) { return pct(D[cur].d[y.k]) - pct(D[cur].d[x.k]); });
-        rows.textContent = '';
-        list.forEach(function (p) {
-          var a = D[cur].d[p.k], r = mk('div', 'prow'); r.dataset.k = p.k; r.setAttribute('role', 'listitem'); r.tabIndex = 0;
-          r.setAttribute('aria-label', p.name + ': ' + pct(a) + '% reversed, ' + a[0] + ' of ' + a[1] + ' disputes');
-          r.appendChild(mk('div', 'pname', p.name));
-          var tr = mk('div', 'ptrack'), br = mk('div', 'pbar'); tr.appendChild(br); r.appendChild(tr);
-          var v = mk('div', 'pval', pct(a) + '%'); v.appendChild(mk('small', null, a[0] + ' of ' + a[1])); r.appendChild(v);
-          ['mouseenter', 'focus', 'click'].forEach(function (ev) { r.addEventListener(ev, function () { sel = p.k; show(p); }); });
-          rows.appendChild(r);
-          requestAnimationFrame(function () { requestAnimationFrame(function () { br.style.width = pct(a) + '%'; }); });
+      /* expertise heatmap */
+      var root = document.getElementById('pmx');
+      if (root) {
+        var INS = ['Insurer A', 'Insurer B', 'Insurer C'], EFF = { 'Insurer A': '3/1/2025', 'Insurer B': '1/15/2025', 'Insurer C': '4/1/2025' };
+        var CATS = [
+          ['Denials', [
+            { k: 'auth', name: 'Authorization on file, denied anyway', takes: 'The authorization number and its approval date.', doc: 'Prior authorization requirements', d: [[19, 20, 24], [18, 20, 27], [12, 14, 30]] },
+            { k: 'tf', name: 'Late-filing denial, proof on file', takes: 'The acceptance report showing the claim went in on time.', doc: 'Provider manual, claim filing section', d: [[15, 17, 29], [13, 14, 22], [8, 10, 33]] },
+            { k: 'bundle', name: 'Injection bundled into the visit', takes: "The insurer's bundling policy for that date, plus how the claim was coded.", doc: 'Bundling policy', d: [[27, 33, 38], [18, 26, 47], [12, 21, 58]] }
+          ]],
+          ['Downcodes', [
+            { k: 'em', name: 'Office visit paid a level down', takes: "The visit note and the insurer's coding policy for that date.", doc: 'Office visit coding policy', d: [[37, 50, 45], [22, 42, 61], [19, 31, 55]] }
+          ]],
+          ['Underpayments', [
+            { k: 'fee', name: 'Fee schedule paid light', takes: "Your contract's fee exhibit and the paid line, side by side.", doc: 'Provider agreement, fee exhibit', d: [[42, 46, 31], [29, 37, 40], [31, 37, 35]] },
+            { k: 'mpr', name: 'Second procedure cut twice', takes: "The contract's multiple-procedure terms and the paid lines.", doc: 'Provider agreement, multiple-procedure terms', d: [[10, 16, 52], [5, 11, 70], [12, 17, 44]] }
+          ]]
+        ];
+        var RAMP = [[0, '#443633', '#F3EFE6'], [60, '#60483F', '#F3EFE6'], [70, '#7B5A4B', '#F3EFE6'], [80, '#9A6E58', '#F3EFE6'], [90, '#C08768', '#14171F']];
+        function step(v) { var r = RAMP[0]; RAMP.forEach(function (x) { if (v >= x[0]) r = x; }); return r; }
+        function pct(a) { return Math.round(a[0] / a[1] * 100); }
+        var lg = root.querySelector('.legend'); lg.appendChild(document.createTextNode('under 60%'));
+        RAMP.forEach(function (x) { var i = mk('i'); i.style.background = x[1]; lg.appendChild(i); }); lg.appendChild(document.createTextNode('90%+'));
+        var grid = root.querySelector('.grid'), det = root.querySelector('.detail'), tb = root.querySelector('tbody'), cells = [];
+        grid.appendChild(mk('span'));
+        INS.forEach(function (n) { grid.appendChild(mk('span', 'ch', n.replace('Insurer ', 'Ins. '))); });
+        function show(p, ii, btn) {
+          var a = p.d[ii]; det.textContent = '';
+          det.appendChild(mk('div', 'dv', pct(a) + '% reversed'));
+          det.appendChild(mk('div', 'dn', p.name + ' · ' + INS[ii] + ' · ' + a[0] + ' of ' + a[1] + ' disputes · median ' + a[2] + ' days to payment'));
+          var t = mk('p'); t.appendChild(mk('b', null, 'What it takes: ')); t.appendChild(document.createTextNode(p.takes)); det.appendChild(t);
+          var c = mk('p'); c.appendChild(mk('b', null, 'We cite: ')); c.appendChild(document.createTextNode(INS[ii] + ', ' + p.doc + ', the version in effect on the date of service (sample: effective ' + EFF[INS[ii]] + ')')); det.appendChild(c);
+          cells.forEach(function (x) { x.classList.toggle('sel', x === btn); });
+        }
+        var first = null;
+        CATS.forEach(function (cat) {
+          grid.appendChild(mk('div', 'cat', cat[0]));
+          cat[1].forEach(function (p) {
+            grid.appendChild(mk('div', 'rn', p.name));
+            p.d.forEach(function (a, ii) {
+              var v = pct(a), st = step(v), btn = mk('button', 'cell', v + '%');
+              btn.type = 'button'; btn.style.background = st[1]; btn.style.color = st[2];
+              btn.setAttribute('aria-label', p.name + ', ' + INS[ii] + ': ' + v + '% reversed, ' + a[0] + ' of ' + a[1] + ' disputes');
+              ['mouseenter', 'focus', 'click'].forEach(function (ev) { btn.addEventListener(ev, function () { show(p, ii, btn); }); });
+              grid.appendChild(btn); cells.push(btn);
+              if (!first) first = [p, ii, btn];
+              var tr = document.createElement('tr'); [p.name, INS[ii], v + '%', a[1], a[2]].forEach(function (x) { tr.appendChild(mk('td', null, String(x))); }); tb.appendChild(tr);
+            });
+          });
         });
-        show(P.filter(function (p) { return p.k === (sel || list[0].k); })[0]);
+        show(first[0], first[1], first[2]);
       }
-      draw();
-    })();
-  </script>
-  <script>
-    (function () {
-      var root = document.getElementById('dash-frame'); if (!root) return;
-      var F = [
-        { t: 'paid', when: 'Today 9:12', tag: 'Paid', what: 'Insurer A paid the corrected amount', sub: 'Fee schedule paid light · 14 claims', amt: '+$1,232' },
-        { t: 'you', when: 'Today 7:00', tag: 'Needs you', what: 'Confirm the visit notes for 3 appeals', sub: 'Office visit paid a level down · Insurer B', amt: '$1,240' },
-        { t: 'filed', when: 'Yesterday', tag: 'Filed', what: 'Appeal sent to Insurer C', sub: 'Authorization on file, denied anyway · 6 claims', amt: '$2,180' },
-        { t: 'paid', when: 'Yesterday', tag: 'Paid', what: 'Insurer B reversed a late-filing denial', sub: 'Acceptance report cited · 1 claim', amt: '+$412' },
-        { t: 'found', when: 'Mon', tag: 'Found', what: 'New pattern: injection bundled into the visit', sub: 'Insurer A · 22 claims, policy version cited', amt: '$3,960' },
-        { t: 'filed', when: 'Mon', tag: 'Filed', what: 'Reconsideration sent to Insurer A', sub: 'Second procedure cut twice · 4 claims', amt: '$1,870' }
-      ];
-      var C = [['all', 'All'], ['you', 'Needs you'], ['found', 'Found'], ['filed', 'Filed'], ['paid', 'Paid']], cur = 'all';
-      var chips = root.querySelector('.chips'), feed = root.querySelector('.feed');
-      function mk(tag, cls, txt) { var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
-      C.forEach(function (c) { var b = mk('button', null, c[1]); b.type = 'button'; b.dataset.k = c[0]; b.addEventListener('click', function () { cur = c[0]; draw(); }); chips.appendChild(b); });
-      function draw() {
-        [].forEach.call(chips.children, function (b) { b.setAttribute('aria-pressed', b.dataset.k === cur ? 'true' : 'false'); });
-        feed.textContent = '';
-        F.filter(function (f) { return cur === 'all' || f.t === cur; }).forEach(function (f) {
-          var li = mk('li'); li.appendChild(mk('span', 'when', f.when));
-          var w = mk('span', 'what'); w.appendChild(mk('span', 'tag' + (f.t === 'paid' ? ' paid' : ''), f.tag)); w.appendChild(document.createTextNode(f.what)); w.appendChild(mk('small', null, f.sub)); li.appendChild(w);
-          li.appendChild(mk('span', 'amt', f.amt)); feed.appendChild(li);
-        });
+      /* tracking dashboard */
+      var dash = document.getElementById('dash');
+      if (dash) {
+        var STEPS = ['Found', 'Filed', 'Insurer reviewing', 'Paid'];
+        var F = [
+          { t: 'you', pill: 'Needs you', what: 'Confirm the visit notes for 3 appeals', sub: 'Office visit paid a level down · Insurer B', amt: '$1,240', at: 0 },
+          { t: 'paid', pill: 'Paid', what: 'Insurer A paid the corrected amount', sub: 'Fee schedule paid light · 14 claims · today', amt: '+$1,232', at: 3 },
+          { t: 'paid', pill: 'Paid', what: 'Insurer B reversed a late-filing denial', sub: 'Acceptance report cited · 1 claim · yesterday', amt: '+$412', at: 3 },
+          { t: 'progress', pill: 'Filed', what: 'Appeal sent to Insurer C', sub: 'Authorization on file, denied anyway · 6 claims', amt: '$2,180', at: 1 },
+          { t: 'progress', pill: 'Reviewing', what: 'Insurer A is reviewing our reconsideration', sub: 'Second procedure cut twice · 4 claims', amt: '$1,870', at: 2 },
+          { t: 'found', pill: 'Found', what: 'New pattern: injection bundled into the visit', sub: 'Insurer A · 22 claims · policy version cited', amt: '$3,960', at: 0 }
+        ];
+        var C = [['all', 'All'], ['you', 'Needs you'], ['progress', 'In progress'], ['paid', 'Paid'], ['found', 'Found']], cur = 'all';
+        var chips = dash.querySelector('.chips'), list = dash.querySelector('.items');
+        C.forEach(function (c) { var b = mk('button', null, c[1]); b.type = 'button'; b.dataset.k = c[0]; b.addEventListener('click', function () { cur = c[0]; draw(); }); chips.appendChild(b); });
+        function draw() {
+          [].forEach.call(chips.children, function (b) { b.setAttribute('aria-pressed', b.dataset.k === cur ? 'true' : 'false'); });
+          list.textContent = '';
+          F.filter(function (f) { return cur === 'all' || f.t === cur; }).forEach(function (f) {
+            var li = mk('li', 'item'), r = mk('div', 'ir'), w = mk('div', 'it');
+            w.appendChild(mk('span', 'pill' + (f.t === 'you' ? ' you' : f.t === 'paid' ? ' paid' : ''), f.pill)); w.appendChild(document.createTextNode(f.what));
+            r.appendChild(w); r.appendChild(mk('span', 'ia', f.amt)); li.appendChild(r);
+            li.appendChild(mk('div', 'is', f.sub));
+            var tk = mk('div', 'trk'); tk.setAttribute('aria-label', 'Step ' + (f.at + 1) + ' of 4: ' + STEPS[f.at]);
+            STEPS.forEach(function (s, k) { tk.appendChild(mk('span', 'st' + (k < f.at || (k === f.at && f.at === 3) ? ' done' : k === f.at ? ' now' : ''), s)); });
+            li.appendChild(tk); list.appendChild(li);
+          });
+        }
+        draw();
       }
-      draw();
     })();
   </script>
 </body>

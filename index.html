@@ -685,6 +685,31 @@
     .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
     .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
     @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
+    /* transparency block (#transparency) */
+    #transparency .intro { max-width: 62ch; margin: 0 auto 1.2rem; text-align: center; }
+    #transparency .closer { text-align: center; font-family: var(--serif); font-size: 1.08rem; margin: 1.3rem auto 0; max-width: 62ch; }
+    #dash-frame { max-width: 900px; margin: 1.4rem auto 0; position: relative; }
+    #dash-frame .dgrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 0.9rem; }
+    @media (max-width: 720px) { #dash-frame .dgrid { grid-template-columns: 1fr; } }
+    #dash-frame .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.7rem; }
+    #dash-frame .chips button { font: inherit; font-size: 0.76rem; padding: 0.3rem 0.75rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
+    #dash-frame .chips button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+    #dash-frame .chips button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    #dash-frame ul.feed { list-style: none; margin: 0; padding: 0; }
+    #dash-frame .feed li { display: grid; grid-template-columns: 4.6rem 1fr auto; gap: 0.7rem; align-items: start; padding: 0.6rem 0.2rem; border-top: 1px solid var(--hairline); }
+    #dash-frame .feed li:first-child { border-top: 0; }
+    #dash-frame .feed .when { font-size: 0.7rem; color: var(--muted); padding-top: 0.15rem; }
+    #dash-frame .feed .what { font-size: 0.84rem; color: var(--ink); line-height: 1.35; }
+    #dash-frame .feed .what small { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 0.15rem; }
+    #dash-frame .feed .amt { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.86rem; text-align: right; white-space: nowrap; }
+    #dash-frame .tag { display: inline-block; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--hairline); border-radius: 4px; padding: 0.05rem 0.35rem; margin-right: 0.35rem; color: var(--muted); background: var(--paper); }
+    #dash-frame .tag.paid { color: var(--accent); border-color: var(--accent); }
+    #dash-frame .mail { background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; padding: 0.8rem 0.9rem; font-size: 0.82rem; }
+    #dash-frame .mail .mh { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.15rem; }
+    #dash-frame .mail .ms { font-weight: 600; margin-bottom: 0.55rem; }
+    #dash-frame .mail p { margin: 0 0 0.45rem; line-height: 1.4; }
+    #dash-frame .mail p:last-child { margin-bottom: 0; color: var(--muted); font-size: 0.74rem; }
+    @media (max-width: 480px) { #dash-frame .feed li { grid-template-columns: 1fr auto; } #dash-frame .feed .when { grid-column: 1 / -1; padding: 0; } }
     /* pattern record chart (#expertise) */
     #pattern-frame { max-width: 780px; margin: 1.6rem auto 0; text-align: left; }
     #pattern-frame .tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.9rem; }
@@ -962,6 +987,32 @@
         <div><b>Bring expertise to the hardest claims to win back.</b><p>Your contract, the fee schedule and the insurer's own policy, cited in every dispute.</p></div>
       </div>
       <p class="more"><a href="/who-we-serve/#administrator">What it takes from your team →</a></p>
+    </section>
+
+    <section class="reveal" id="transparency">
+      <h2>You see everything. As it happens.</h2>
+      <p class="intro">Your own dashboard shows every finding, every appeal we file, every insurer response and every dollar that lands, with the paper trail behind each one. A short morning email flags anything that needs you. Nothing goes out that you can't see.</p>
+      <div class="frame" id="dash-frame">
+        <div class="bar"><i></i><i></i><i></i><span>Your dashboard · sample practice</span></div>
+        <div class="body">
+          <div class="dgrid">
+            <div>
+              <div class="chips" role="group" aria-label="Filter activity"></div>
+              <ul class="feed" aria-live="polite"></ul>
+            </div>
+            <div class="mail" aria-label="Sample morning email">
+              <div class="mh">Morning email · 7:00 am</div>
+              <div class="ms">Clearia: 3 appeals · Needs input</div>
+              <p><b>Needs input:</b> 3 appeals, $1,240 at stake. The biggest: Insurer B, $612.</p>
+              <p><b>Ready:</b> 12 appeals, $8,930. Review and mark them final so we can send them.</p>
+              <p><b>Since yesterday:</b> 2 payments landed, $1,644 recovered.</p>
+              <p>This email never names a patient. Sign in to see the details.</p>
+            </div>
+          </div>
+          <div class="foot"><span>every line links to its paper trail</span><span>sample · synthetic data</span></div>
+        </div>
+      </div>
+      <p class="closer">Most practices never see the work behind their collections. You'll see all of ours.</p>
     </section>
 
     <section class="reveal" id="numbers">
@@ -1390,6 +1441,33 @@
           requestAnimationFrame(function () { requestAnimationFrame(function () { br.style.width = pct(a) + '%'; }); });
         });
         show(P.filter(function (p) { return p.k === (sel || list[0].k); })[0]);
+      }
+      draw();
+    })();
+  </script>
+  <script>
+    (function () {
+      var root = document.getElementById('dash-frame'); if (!root) return;
+      var F = [
+        { t: 'paid', when: 'Today 9:12', tag: 'Paid', what: 'Insurer A paid the corrected amount', sub: 'Fee schedule paid light · 14 claims', amt: '+$1,232' },
+        { t: 'you', when: 'Today 7:00', tag: 'Needs you', what: 'Confirm the visit notes for 3 appeals', sub: 'Office visit paid a level down · Insurer B', amt: '$1,240' },
+        { t: 'filed', when: 'Yesterday', tag: 'Filed', what: 'Appeal sent to Insurer C', sub: 'Authorization on file, denied anyway · 6 claims', amt: '$2,180' },
+        { t: 'paid', when: 'Yesterday', tag: 'Paid', what: 'Insurer B reversed a late-filing denial', sub: 'Acceptance report cited · 1 claim', amt: '+$412' },
+        { t: 'found', when: 'Mon', tag: 'Found', what: 'New pattern: injection bundled into the visit', sub: 'Insurer A · 22 claims, policy version cited', amt: '$3,960' },
+        { t: 'filed', when: 'Mon', tag: 'Filed', what: 'Reconsideration sent to Insurer A', sub: 'Second procedure cut twice · 4 claims', amt: '$1,870' }
+      ];
+      var C = [['all', 'All'], ['you', 'Needs you'], ['found', 'Found'], ['filed', 'Filed'], ['paid', 'Paid']], cur = 'all';
+      var chips = root.querySelector('.chips'), feed = root.querySelector('.feed');
+      function mk(tag, cls, txt) { var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+      C.forEach(function (c) { var b = mk('button', null, c[1]); b.type = 'button'; b.dataset.k = c[0]; b.addEventListener('click', function () { cur = c[0]; draw(); }); chips.appendChild(b); });
+      function draw() {
+        [].forEach.call(chips.children, function (b) { b.setAttribute('aria-pressed', b.dataset.k === cur ? 'true' : 'false'); });
+        feed.textContent = '';
+        F.filter(function (f) { return cur === 'all' || f.t === cur; }).forEach(function (f) {
+          var li = mk('li'); li.appendChild(mk('span', 'when', f.when));
+          var w = mk('span', 'what'); w.appendChild(mk('span', 'tag' + (f.t === 'paid' ? ' paid' : ''), f.tag)); w.appendChild(document.createTextNode(f.what)); w.appendChild(mk('small', null, f.sub)); li.appendChild(w);
+          li.appendChild(mk('span', 'amt', f.amt)); feed.appendChild(li);
+        });
       }
       draw();
     })();

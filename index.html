@@ -5,11 +5,11 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clearia: underpayment, denial and downcoding recovery</title>
-  <meta name="description" content="Clearia recovers what insurers owe independent practices: underpayments, administrative denials and downcoding. Free diagnostic, paid only on recovery.">
+  <meta name="description" content="Clearia recovers what insurers owe independent practices: underpayments, administrative denials and downcoding. We find it, file the appeals, follow up.">
   <link rel="canonical" href="https://cleariagroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Underpayment, denial and downcoding recovery for independent practices | Clearia">
-  <meta property="og:description" content="Recover the money your payers kept. Underpaid and downcoded claims close at zero balance and look paid. Clearia finds them and gets the money back. Paid only from what we recover.">
+  <meta property="og:description" content="Recover the money you've earned. Underpaid and downcoded claims close at zero balance and look paid. We find them, file the appeals and follow every one to payment.">
   <meta property="og:url" content="https://cleariagroup.com/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -685,6 +685,10 @@
     .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
     .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
     @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
+    #admin-note .pain { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 720px) { #admin-note .pain { grid-template-columns: 1fr; } }
+    #admin-note .intro, #expertise .intro { max-width: 62ch; margin: 0 auto 1.2rem; text-align: center; }
+    #admin-note .more { text-align: center; margin: 1.2rem auto 0; }
     .row .txt h3 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); }
     .row .txt p { font-size: 1rem; }
     .row { margin-top: 1.6rem; }
@@ -798,9 +802,9 @@
     </nav>
 
     <div class="hero">
-      <p class="eyebrow">Underpayment and denial recovery for independent practices</p>
+      <p class="eyebrow">Underpayment, denial and downcoding recovery for independent practices</p>
       <h1>Recover the money you've earned.</h1>
-      <p class="lede">Insurers quietly underpay, downcode and deny claims your practice already earned. Clearia finds it in your remittance data, and gets it back. No upfront fee. Paid only from what we recover.</p>
+      <p class="lede">Insurers quietly underpay, downcode and deny claims your practice already earned. We find it in your payment records, file the appeals and follow every one to payment. Start to finish, without adding work for your team.</p>
       <div class="cta-row" id="hero-cta">
         <a class="contact-btn" href="/the-diagnostic/#request">Request your free diagnostic</a>
         <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
@@ -837,7 +841,7 @@
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
           <h3>Find the underpayments and denials.</h3>
-          <p>We check <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contracted rate, then match what we find against our library of insurer behaviors: the light fee schedule, the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a>, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it.</p>
+          <p>Our software checks <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contracted rate, then matches what it finds against our library of insurer behaviors: the light fee schedule, the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a>, the misapplied bundling edit, the authorization that was on file. One confirmed shortfall usually points to hundreds like it. That's how one team can check what a billing office never has time to.</p>
         </div>
         <div>
           <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
@@ -881,7 +885,7 @@
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
           <h3>Conquer the systemic, persistent trends.</h3>
-          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account.</p>
+          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account. Our people build every case, file it and follow it to a decision.</p>
           <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
         </div>
         <div>
@@ -900,6 +904,23 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="reveal" id="expertise">
+      <h2>Expertise, with the citations to prove it.</h2>
+      <p class="intro">Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
+    </section>
+
+    <section class="reveal" id="admin-note">
+      <h2>Practice administrator? The work comes off your plate.</h2>
+      <p class="intro">About an hour of your time, once. After that, the work is ours, and you see everything that goes out.</p>
+      <div class="pain">
+        <div><b>Hand off the appeals nobody has time to write.</b><p>We build each case file, draft the appeal and file it as your authorized representative.</p></div>
+        <div><b>Clear the backlog of paperwork denials.</b><p>While there's still time to appeal them. We work the administrative denials inside each insurer's window.</p></div>
+        <div><b>Find the underpaid claims that never show up in your AR.</b><p>They closed at zero balance and look paid. We check them line by line.</p></div>
+        <div><b>Bring expertise to the hardest claims to win back.</b><p>Your contract, the fee schedule and the insurer's own policy, cited in every dispute.</p></div>
+      </div>
+      <p class="more"><a href="/who-we-serve/#administrator">What it takes from your team →</a></p>
     </section>
 
     <section class="reveal" id="numbers">

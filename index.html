@@ -685,6 +685,16 @@
     .pain b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.4rem; }
     .pain p { margin: 0; font-size: 0.95rem; color: var(--ink); }
     @media (max-width: 720px) { .pain { grid-template-columns: 1fr; } }
+    .pain.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) { .pain.four { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .pain.four { grid-template-columns: 1fr; } }
+    #how .pain > div { background: var(--canvas); }
+    #how .pain { margin-bottom: 2.2rem; }
+    .pain .k { display: block; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.45rem; }
+    .benefit-line { font-family: var(--serif); font-size: 1.05rem; margin: 1.5rem auto 0; max-width: 46ch; }
+    .hero .benefit-line + .cta-row { margin-top: 1.1rem; }
+    .scope-note { font-size: 0.92rem; color: var(--muted); margin: 1.1rem 0 0; }
+    .js .reveal.in-view .pain > div:nth-child(4) { transition-delay: 330ms; }
     /* expertise band (#expertise): ink panel, clay heatmap */
     .ink-band { background: var(--ink); color: var(--panel-text); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); padding-top: clamp(2.8rem, 6vw, 4rem); padding-bottom: clamp(2.8rem, 6vw, 4rem); }
     #expertise .xgrid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.6rem, 4vw, 3rem); align-items: start; }
@@ -882,7 +892,8 @@
     <div class="hero">
       <p class="eyebrow">Revenue recovery for independent medical practices</p>
       <h1>Recover the money you've earned.</h1>
-      <p class="lede">Insurers deny, downcode and quietly underpay claims your medical practice already earned. Our team finds them, builds the appeals and follows every one to payment. We work alongside your billing team.</p>
+      <p class="lede">Clearia gets independent medical practices paid in full by their insurers. Our system models what every claim should have paid. Our team gets the difference paid: denied claims, underpayments and downcoded visits. Your billing stays with you.</p>
+      <p class="benefit-line">Get paid more. Get paid faster. No new hire. See everything.</p>
       <div class="cta-row" id="hero-cta">
         <a class="contact-btn" href="/the-diagnostic/#request">Request your diagnostic</a>
         <span class="cta-alt">or call <a href="tel:+17867057865">(786) 705-7865</a></span>
@@ -904,21 +915,50 @@
       </div>
     </div>
 
+    <section class="reveal" id="benefits">
+      <h2>What you get</h2>
+      <div class="pain four">
+        <div><b>Get paid more.</b><p>We find and pursue what insurers denied, paid short or downcoded. Money you earned and would not have collected.</p></div>
+        <div><b>Get paid faster.</b><p>We see every denial within a day and work it inside the insurer's deadline. <a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days</a>. Nothing waits in a pile.</p></div>
+        <div><b>No new hire.</b><p>Our team does the work. Yours approves it. About an hour to start, with nothing to install.</p></div>
+        <div><b>See everything.</b><p>Every claim on your own dashboard, from found to paid, with the paper trail behind it.</p></div>
+      </div>
+    </section>
+
     <section class="reveal" id="pain">
-      <h2>Three ways insurers keep your money</h2>
+      <h2>What we take on</h2>
       <div class="pain">
-        <div><b>Denied for fixable reasons.</b><p>Missing information, an authorization that was on file, a <a href="/notes/denial-code-co-29-timely-filing/">timely-filing dispute with proof</a>. Correctable, rarely corrected.</p></div>
-        <div><b>Paid short, closed as paid.</b><p>A claim paid under contract <a href="/notes/zero-balance-problem/">still posts as paid</a>. No alert fires, so nobody looks.</p></div>
-        <div><b>Then the window closes.</b><p><a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days</a>. Whatever nobody chased is gone for good.</p></div>
+        <div><b>Denied claims that can be fixed.</b><p>Missing information, an authorization that was on file, <a href="/notes/denial-code-co-29-timely-filing/">a filing deadline you can prove you met</a>.</p></div>
+        <div><b>Claims paid below your contract.</b><p>They <a href="/notes/zero-balance-problem/">post as paid</a>, so no alert fires. We check every line against your contracted rate.</p></div>
+        <div><b>Visits paid at a lower level than you billed.</b><p>No denial is issued. We catch <a href="/notes/downcoding-99214-paid-as-99213/">the downcode</a> and dispute it.</p></div>
+      </div>
+      <p class="scope-note">Disputes over medical necessity are a different job. Those stay with your clinical team.</p>
+    </section>
+
+    <section class="reveal" id="numbers">
+      <div class="kpis">
+        <div><span class="val num">19%</span><span class="sub">of a well-run Miami orthopedic practice's insurance revenue, paid short or denied the first time</span></div>
+        <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
+        <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
+      </div>
+      <div class="case reveal">
+        <p class="case-k">Measured at a real practice</p>
+        <p><b>An orthopedic practice in Miami.</b> Hand and upper-extremity surgery, its own billing team, a typical mix of commercial and workers' comp insurers. We read every line of every insurance payment against contract, $565,779 of insurance revenue in all. The insurers got $107,394 wrong. That's 19 percent of the practice's insurance revenue, paid short or denied the first time. The practice's own billers had already reworked about half of it, which is their job done well. The rest was sitting in claims that looked closed.</p>
       </div>
     </section>
 
     <section class="reveal band" id="how">
-      <h2>What we do</h2>
+      <h2>How it works</h2>
+      <div class="pain four">
+        <div><span class="k">Step 1</span><b>Connect.</b><p>About an hour, once. We sign a privacy agreement, connect read-only to the payment data your clearinghouse already holds, and you share your contracts. Nothing to install.</p></div>
+        <div><span class="k">Step 2</span><b>Find.</b><p>Every denial, and every paid line against your contract. You get the result in dollars, and you decide what we pursue.</p></div>
+        <div><span class="k">Step 3</span><b>File.</b><p>We build each case with the contract clause, the policy page and the proof, ready to file under your practice's name. One insurer pattern is pursued as one case.</p></div>
+        <div><span class="k">Step 4</span><b>Collect.</b><p>Each insurer pays you directly. We follow every case to a decision, and you see each dollar land.</p></div>
+      </div>
 
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
-          <h3>Find the denials, and what's hiding behind them.</h3>
+          <h3>Find: the denials, and what's hiding behind them.</h3>
           <p>Our team starts where it hurts: the denials piling up. The authorization that was on file, the late-filing denial you can prove, the bundling edit applied by mistake. Then we check the payments that looked fine, <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contract, because that's where underpayments and the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a> hide. Our analytics do the line-by-line work, so one confirmed shortfall leads us to the hundreds like it.</p>
         </div>
         <div>
@@ -946,7 +986,7 @@
 
       <div class="row flip reveal">
         <div class="txt" data-plx="0.03">
-          <h3>Show you the number.</h3>
+          <h3>The result, in dollars.</h3>
           <p>Which insurer, which codes, how much, and what's still inside the dispute window. You decide what we pursue.</p>
         </div>
         <div class="frame" data-plx="-0.05" aria-label="Sample diagnostic: where the recoverable dollars come from">
@@ -962,8 +1002,8 @@
 
       <div class="row reveal">
         <div class="txt" data-plx="0.03">
-          <h3>Conquer the systemic, persistent trends.</h3>
-          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account. Our people build every case, file it and follow it to a decision.</p>
+          <h3>File and collect: one pattern, one case.</h3>
+          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account. Our people build every case and follow it to a decision.</p>
           <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
         </div>
         <div>
@@ -989,7 +1029,7 @@
         <div class="xcopy">
           <p class="xkicker">Our expertise</p>
           <h2>Expertise, with the citations to prove it.</h2>
-          <p>Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
+          <p>Our system models what every claim should have paid, under the contract in force on the date of service, and flags the gap. No billing team has the hours for that. Our team takes it from there. Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
           <ul class="xpoints">
             <li><b>Dated to the day.</b>We cite the policy in effect on the date of service, not today's version.</li>
             <li><b>Proven patterns.</b>We know which denials and shortfalls each insurer reverses, and what it takes.</li>
@@ -1007,8 +1047,8 @@
     </section>
 
     <section class="reveal" id="admin-note">
-      <h2>Practice administrator? The work comes off your plate.</h2>
-      <p class="intro">About an hour of your time, once. After that, the work is ours, and you see everything that goes out.</p>
+      <h2>Practice administrator? No new hire. The work comes off your plate.</h2>
+      <p class="intro">About an hour of your time, once. After that, our team does the work, yours approves it, and you see everything that goes out.</p>
       <div class="pain">
         <div><b>Hand off the appeals nobody has time to write.</b><p>We build each case file and draft the appeal, ready to file under your practice's name.</p></div>
         <div><b>Clear the backlog of paperwork denials.</b><p>While there's still time to appeal them. We work the administrative denials inside each insurer's window.</p></div>
@@ -1050,25 +1090,15 @@
       <p class="closer">Most practices never see the work behind their collections. You'll see all of ours.</p>
     </section>
 
-    <section class="reveal" id="numbers">
-      <div class="kpis">
-        <div><span class="val num">19%</span><span class="sub">of a well-run Miami orthopedic practice's insurance revenue, paid short or denied the first time</span></div>
-        <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
-        <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
-      </div>
-      <div class="case reveal">
-        <p class="case-k">Measured at a real practice</p>
-        <p><b>An orthopedic practice in Miami.</b> Hand and upper-extremity surgery, its own billing team, a typical mix of commercial and workers' comp insurers. We read every line of every insurance payment against contract, $565,779 of insurance revenue in all. The insurers got $107,394 wrong. That's 19 percent of the practice's insurance revenue, paid short or denied the first time. The practice's own billers had already reworked about half of it, which is their job done well. The rest was sitting in claims that looked closed.</p>
-      </div>
-    </section>
-
     <section class="reveal" id="faq">
       <h2>Questions we get</h2>
       <div class="faq">
-        <details><summary>What is denial recovery?</summary><p>Getting paid on claims an insurer denied for a reason that can be fixed: missing information, an authorization that was on file, a timely-filing dispute you can prove. We build the corrected claim or the appeal, it goes back through the insurer's own process, and the money posts to your account. Clinical denials, where the insurer disputes medical necessity, are a different job and mostly not ours. <a href="/notes/what-is-denial-recovery/">Which denials are worth chasing, and which aren't</a>.</p></details>
+        <details><summary>What is denial recovery?</summary><p>Getting paid on claims an insurer denied for a reason that can be fixed: missing information, an authorization that was on file, a timely-filing dispute you can prove. We build the corrected claim or the appeal, it goes back through the insurer's own process, and the money posts to your account. Clinical denials, where the insurer disputes medical necessity, are a different job and not ours. <a href="/notes/what-is-denial-recovery/">Which denials are worth chasing, and which aren't</a>.</p></details>
         <details><summary>Why don't billing teams make more effort to recover denials?</summary><p>Because their day is keeping new claims moving, and a denied or short-paid claim looks finished. Working one $180 shortfall takes an hour and never pays for itself. It only pays when someone finds the four hundred claims that share the pattern and pursues them together. Most independent practices don't staff that job, and honestly it wouldn't make sense to. <a href="/notes/zero-balance-problem/">Why a short payment looks paid</a>.</p></details>
         <details><summary>What does it cost?</summary><p>Nothing upfront. We work on contingency: our fee is a percentage of what actually arrives, set in the engagement letter, so we only do well when you do. The diagnostic is complimentary for qualifying practices, and if it finds nothing, you've confirmed from your own data that your insurers are paying your contracts. That's worth knowing.</p></details>
         <details><summary>Does anything change for my billing team?</summary><p>Very little. We work from read-only access to your remittances under a signed business associate agreement. Once you approve the findings, our team prepares each appeal and reconsideration for the insurer's own dispute process, under your practice's name. Nothing goes out that you haven't seen. Your billing itself doesn't change, and insurers keep paying you exactly as they do today. We never receive or hold your money.</p></details>
+        <details><summary>How quickly do you see a denial?</summary><p>Within a day. We connect read-only to the payment data your clearinghouse already holds, so a denial reaches us soon after it reaches you, and we work it inside the insurer's deadline.</p></details>
+        <details><summary>Do we need to hire or train anyone?</summary><p>No. Our team does the work and yours approves it. Setup takes about an hour of your administrator's time.</p></details>
         <details><summary>Is this a collections agency?</summary><p>No. Nothing we do touches patients or patient balances. We work on the insurer side only, through the reconsideration and appeal processes your contracts already provide. We don't practice law.</p></details>
         <details><summary>Why haven't I heard of you?</summary><p>Because we're a concierge firm. We work in the background for a small number of practices we choose carefully, and we grow by referral from the physicians we already work with. The complimentary diagnostic is how we decide, together, whether yours should be one of them.</p></details>
         <details><summary>Who do I actually deal with?</summary><p>The same two or three people from the first call through the last dollar. No ticket queue. Clearia, Inc. is a Delaware corporation based in Miami.</p></details>

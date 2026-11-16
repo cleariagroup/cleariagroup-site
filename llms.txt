@@ -5,8 +5,8 @@
 Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cleariagroup/ · Phone: (786) 705-7865 · Email: contact@cleariagroup.com · Address: 1000 Brickell Ave Ste 715-5077, Miami, FL 33131
 
 ## Pages
-- [Home](https://cleariagroup.com/): what Clearia does, the complimentary diagnostic, FAQ
-- [How it works](https://cleariagroup.com/how-it-works/): diagnostic, findings, recovery, with sample reports
+- [Home](https://cleariagroup.com/): Clearia gets independent medical practices paid in full by their insurers (denied claims, underpayments, downcoded visits); what you get, what we take on, the complimentary diagnostic, FAQ
+- [How it works](https://cleariagroup.com/how-it-works/): four steps (connect, find, file, collect), with sample reports
 - [Who we serve](https://cleariagroup.com/who-we-serve/): independent practices and surgery centers, across specialties
 - [The diagnostic](https://cleariagroup.com/the-diagnostic/): what the diagnostic covers and how to request it
 - [About](https://cleariagroup.com/about/): the firm, how it works, incentive structure

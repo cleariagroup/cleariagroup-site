@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://cleariagroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Clearia: revenue recovery for medical practices. Underpayments, denials and downcoding.">
-  <meta property="og:description" content="Recover the money you've earned. Underpaid and downcoded claims close at zero balance and look paid. We find them, build the appeals and follow every one to payment.">
+  <meta property="og:description" content="We recover the money you've earned. Underpaid and downcoded claims close at zero balance and look paid. We find them, build the appeals and follow every one to payment.">
   <meta property="og:url" content="https://cleariagroup.com/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F7F4ED">
@@ -694,6 +694,21 @@
     .benefit-line { font-family: var(--serif); font-size: 1.05rem; margin: 1.5rem auto 0; max-width: 46ch; }
     .hero .benefit-line + .cta-row { margin-top: 1.1rem; }
     .scope-note { font-size: 0.92rem; color: var(--muted); margin: 1.1rem 0 0; }
+    .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+    #benefits { padding-top: clamp(1.6rem, 4vw, 2.4rem); }
+    .row.benefit .txt h3 { font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.7rem); line-height: 1.1; margin-bottom: 0.8rem; }
+    .benefit .txt p { font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.12rem); max-width: 34ch; }
+    .benefit .txt .bk { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.7rem; }
+    .row .txt h2 { text-align: left; margin-bottom: 1rem; }
+    .row .txt ul.take { list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
+    .take li { padding: 0.85rem 0; border-top: 1px solid var(--hairline); font-size: 0.95rem; }
+    .take li:last-child { border-bottom: 1px solid var(--hairline); }
+    .take b { display: block; font-family: var(--serif); font-size: 1.12rem; margin-bottom: 0.2rem; }
+    .take a { color: inherit; text-decoration: underline; text-decoration-color: var(--hairline); text-underline-offset: 3px; }
+    .take a:hover { text-decoration-color: var(--accent); }
+    #transparency h2 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.5rem); margin-bottom: 0.7rem; }
+    #numbers .case p { max-width: none; }
+    #how .more { text-align: center; margin: 0 auto; }
     .js .reveal.in-view .pain > div:nth-child(4) { transition-delay: 330ms; }
     /* expertise band (#expertise): ink panel, clay heatmap */
     .ink-band { background: var(--ink); color: var(--panel-text); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); padding-top: clamp(2.8rem, 6vw, 4rem); padding-bottom: clamp(2.8rem, 6vw, 4rem); }
@@ -891,8 +906,8 @@
 
     <div class="hero">
       <p class="eyebrow">Revenue recovery for independent medical practices</p>
-      <h1>Recover the money you've earned.</h1>
-      <p class="lede">Clearia gets independent medical practices paid in full by their insurers. Our system models what every claim should have paid. Our team gets the difference paid: denied claims, underpayments and downcoded visits. Your billing stays with you.</p>
+      <h1>We recover the money you've earned.</h1>
+      <p class="lede">Insurers deny, underpay and downcode claims you already earned. Our system finds every one. Our team gets them paid. Your billing stays with you.</p>
       <p class="benefit-line">Get paid more. Get paid faster. No new hire. See everything.</p>
       <div class="cta-row" id="hero-cta">
         <a class="contact-btn" href="/the-diagnostic/#request">Request your diagnostic</a>
@@ -915,96 +930,15 @@
       </div>
     </div>
 
+
     <section class="reveal" id="benefits">
-      <h2>What you get</h2>
-      <div class="pain four">
-        <div><b>Get paid more.</b><p>We find and pursue what insurers denied, paid short or downcoded. Money you earned and would not have collected.</p></div>
-        <div><b>Get paid faster.</b><p>We see every denial within a day and work it inside the insurer's deadline. <a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days</a>. Nothing waits in a pile.</p></div>
-        <div><b>No new hire.</b><p>Our team does the work. Yours approves it. About an hour to start, with nothing to install.</p></div>
-        <div><b>See everything.</b><p>Every claim on your own dashboard, from found to paid, with the paper trail behind it.</p></div>
-      </div>
-    </section>
+      <h2 class="vh">What you get</h2>
 
-    <section class="reveal" id="pain">
-      <h2>What we take on</h2>
-      <div class="pain">
-        <div><b>Denied claims that can be fixed.</b><p>Missing information, an authorization that was on file, <a href="/notes/denial-code-co-29-timely-filing/">a filing deadline you can prove you met</a>.</p></div>
-        <div><b>Claims paid below your contract.</b><p>They <a href="/notes/zero-balance-problem/">post as paid</a>, so no alert fires. We check every line against your contracted rate.</p></div>
-        <div><b>Visits paid at a lower level than you billed.</b><p>No denial is issued. We catch <a href="/notes/downcoding-99214-paid-as-99213/">the downcode</a> and dispute it.</p></div>
-      </div>
-      <p class="scope-note">Disputes over medical necessity are a different job. Those stay with your clinical team.</p>
-    </section>
-
-    <section class="reveal" id="numbers">
-      <div class="kpis">
-        <div><span class="val num">19%</span><span class="sub">of a well-run Miami orthopedic practice's insurance revenue, paid short or denied the first time</span></div>
-        <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
-        <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
-      </div>
-      <div class="case reveal">
-        <p class="case-k">Measured at a real practice</p>
-        <p><b>An orthopedic practice in Miami.</b> Hand and upper-extremity surgery, its own billing team, a typical mix of commercial and workers' comp insurers. We read every line of every insurance payment against contract, $565,779 of insurance revenue in all. The insurers got $107,394 wrong. That's 19 percent of the practice's insurance revenue, paid short or denied the first time. The practice's own billers had already reworked about half of it, which is their job done well. The rest was sitting in claims that looked closed.</p>
-      </div>
-    </section>
-
-    <section class="reveal band" id="how">
-      <h2>How it works</h2>
-      <div class="pain four">
-        <div><span class="k">Step 1</span><b>Connect.</b><p>About an hour, once. We sign a privacy agreement, connect read-only to the payment data your clearinghouse already holds, and you share your contracts. Nothing to install.</p></div>
-        <div><span class="k">Step 2</span><b>Find.</b><p>Every denial, and every paid line against your contract. You get the result in dollars, and you decide what we pursue.</p></div>
-        <div><span class="k">Step 3</span><b>File.</b><p>We build each case with the contract clause, the policy page and the proof, ready to file under your practice's name. One insurer pattern is pursued as one case.</p></div>
-        <div><span class="k">Step 4</span><b>Collect.</b><p>Each insurer pays you directly. We follow every case to a decision, and you see each dollar land.</p></div>
-      </div>
-
-      <div class="row reveal">
+      <div class="row reveal benefit">
         <div class="txt" data-plx="0.03">
-          <h3>Find: the denials, and what's hiding behind them.</h3>
-          <p>Our team starts where it hurts: the denials piling up. The authorization that was on file, the late-filing denial you can prove, the bundling edit applied by mistake. Then we check the payments that looked fine, <a href="/notes/what-is-an-835-remittance/">every remittance line</a> against your contract, because that's where underpayments and the <a href="/notes/downcoding-99214-paid-as-99213/">habitual downcode</a> hide. Our analytics do the line-by-line work, so one confirmed shortfall leads us to the hundreds like it.</p>
-        </div>
-        <div>
-          <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
-            <div class="bar"><i></i><i></i><i></i><span>Remittance check · Coastal Health Plan · Q2</span></div>
-            <div class="body">
-              <div class="tbl">
-              <table>
-                <thead><tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr></thead>
-                <tbody>
-                <tr class="flag"><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg"><span>$232</span></td></tr>
-                <tr class="flag"><td>99214</td><td class="diff">99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg"><span>$44</span></td></tr>
-                <tr class="flag"><td>20610 + 99213</td><td class="diff">bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg"><span>$168</span></td></tr>
-                <tr class="flag"><td>23430</td><td class="diff">denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg"><span>$2,140</span></td></tr>
-                <tr><td>27447</td><td>27447</td><td class="r num">$1,860</td><td class="r num">$1,860</td><td class="r num">$0</td></tr>
-                </tbody>
-              </table>
-              <div class="scan" aria-hidden="true"></div>
-              </div>
-              <div class="foot"><span><span class="num" data-to="412">0</span> lines checked · <span class="num" data-to="47">0</span> flagged</span><span>sample · synthetic data</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row flip reveal">
-        <div class="txt" data-plx="0.03">
-          <h3>The result, in dollars.</h3>
-          <p>Which insurer, which codes, how much, and what's still inside the dispute window. You decide what we pursue.</p>
-        </div>
-        <div class="frame" data-plx="-0.05" aria-label="Sample diagnostic: where the recoverable dollars come from">
-          <div class="bar"><i></i><i></i><i></i><span>Diagnostic report · where the dollars come from</span></div>
-          <div class="body">
-            <div class="flow-wrap">
-              <svg id="site-flow" viewBox="0 0 720 380" role="img" aria-label="Flow of $247,800 recoverable: underpayments $162,300 and non-clinical denials $85,500, splitting into six payer-behavior reasons"></svg>
-            </div>
-            <div class="foot"><span>every dollar traced to the reason it went unpaid</span><span>sample · synthetic data</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row reveal">
-        <div class="txt" data-plx="0.03">
-          <h3>File and collect: one pattern, one case.</h3>
-          <p>We know which patterns each insurer reverses, and what it takes: the contract clause, the policy page, the proof. We <a href="/notes/how-to-appeal-an-underpaid-claim/">pursue each pattern as one case</a> through the insurer's own process, and the money lands in your account. Our people build every case and follow it to a decision.</p>
-          <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
+          <p class="bk">What you get · 1</p>
+          <h3>Get paid more.</h3>
+          <p>We find what insurers denied, paid short or downcoded. Then we pursue it.</p>
         </div>
         <div>
           <div class="frame" data-plx="-0.05" aria-label="Sample recovery: monthly deposits and the cumulative total">
@@ -1022,45 +956,67 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="reveal ink-band" id="expertise">
-      <div class="xgrid">
-        <div class="xcopy">
-          <p class="xkicker">Our expertise</p>
-          <h2>Expertise, with the citations to prove it.</h2>
-          <p>Our system models what every claim should have paid, under the contract in force on the date of service, and flags the gap. No billing team has the hours for that. Our team takes it from there. Behind every dispute is our proprietary library of insurer rules: contracts, fee schedules and payer policies, each dated to the day it applied. Add a growing record of which shortfalls each insurer reverses, and what it takes. It's built claim by claim, payer by payer. And it gets sharper with every claim we win.</p>
-          <ul class="xpoints">
-            <li><b>Dated to the day.</b>We cite the policy in effect on the date of service, not today's version.</li>
-            <li><b>Proven patterns.</b>We know which denials and shortfalls each insurer reverses, and what it takes.</li>
-            <li><b>Sharper with every claim.</b>Every win adds to the record, so the next appeal starts stronger.</li>
-          </ul>
+      <div class="row flip reveal benefit">
+        <div class="txt" data-plx="0.03">
+          <p class="bk">What you get · 2</p>
+          <h3>Get paid faster.</h3>
+          <p>We see every denial within a day and work it inside the insurer's deadline.</p>
+          <p class="more"><a href="/notes/florida-payer-appeal-deadlines/">Dispute rights run 90 to 180 days →</a></p>
         </div>
-        <div id="pmx">
-          <div class="mh"><span class="mt">Pattern record · share of disputes reversed</span><span class="legend" aria-hidden="true"></span></div>
-          <div class="grid" role="grid" aria-label="Share of disputes reversed by pattern and insurer"></div>
-          <div class="detail" aria-live="polite"></div>
-          <table class="sr"><caption>Share of disputes reversed by pattern and insurer (sample, synthetic data)</caption><thead><tr><th>Pattern</th><th>Insurer</th><th>Reversed</th><th>Disputes</th><th>Median days to payment</th></tr></thead><tbody></tbody></table>
-          <div class="foot"><span>tap any square to see what it takes</span><span>sample · synthetic data</span></div>
+        <div class="frame" data-plx="-0.05" aria-label="Sample deadline tracker: open denials and the days left to dispute each one">
+          <div class="bar"><i></i><i></i><i></i><span>Deadline tracker · open denials</span></div>
+          <div class="body">
+            <div class="tbl">
+            <table>
+              <thead><tr><th>Denial</th><th>Seen</th><th>Status</th><th class="r">Days left</th></tr></thead>
+              <tbody>
+              <tr><td>23430 · authorization on file</td><td>Day 1</td><td><span class="tag">Appeal ready</span></td><td class="r num">178</td></tr>
+              <tr><td>20610 · bundled in error</td><td>Day 1</td><td><span class="tag">Sent</span></td><td class="r num">171</td></tr>
+              <tr><td>99214 · paid as 99213</td><td>Day 1</td><td><span class="tag">Sent</span></td><td class="r num">88</td></tr>
+              <tr><td>29827 · filed on time, proof on file</td><td>Day 1</td><td><span class="tag">Insurer reviewing</span></td><td class="r num">64</td></tr>
+              <tr class="flag"><td>27447 · missing information</td><td>Day 1</td><td><span class="tag hot">Needs you</span></td><td class="r num neg"><span>12</span></td></tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="foot"><span>5 open · nearest deadline in 12 days</span><span>sample · synthetic data</span></div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="reveal" id="admin-note">
-      <h2>Practice administrator? No new hire. The work comes off your plate.</h2>
-      <p class="intro">About an hour of your time, once. After that, our team does the work, yours approves it, and you see everything that goes out.</p>
-      <div class="pain">
-        <div><b>Hand off the appeals nobody has time to write.</b><p>We build each case file and draft the appeal, ready to file under your practice's name.</p></div>
-        <div><b>Clear the backlog of paperwork denials.</b><p>While there's still time to appeal them. We work the administrative denials inside each insurer's window.</p></div>
-        <div><b>Find the underpaid claims that never show up in your AR.</b><p>They closed at zero balance and look paid. We check them line by line.</p></div>
-        <div><b>Bring expertise to the hardest claims to win back.</b><p>Your contract, the fee schedule and the insurer's own policy, cited in every dispute.</p></div>
+      <div class="row reveal benefit">
+        <div class="txt" data-plx="0.03">
+          <p class="bk">What you get · 3</p>
+          <h3>No new hire.</h3>
+          <p>Our team does the work. Yours approves it. About an hour to start, nothing to install.</p>
+          <p class="more"><a href="/who-we-serve/#administrator">What it takes from your team →</a></p>
+        </div>
+        <div>
+          <div class="frame" data-plx="-0.05" aria-label="Sample setup checklist: your team's part">
+            <div class="bar"><i></i><i></i><i></i><span>Your team's part</span></div>
+            <div class="body">
+              <div class="tbl">
+              <table>
+                <thead><tr><th>Step</th><th class="r">Status</th></tr></thead>
+                <tbody>
+                <tr><td>Sign the privacy agreement</td><td class="r"><span class="tag">Done</span></td></tr>
+                <tr><td>Connect read-only payment data</td><td class="r"><span class="tag">Done</span></td></tr>
+                <tr><td>Share your insurer contracts</td><td class="r"><span class="tag">Done</span></td></tr>
+                <tr class="flag"><td>Approve what goes out</td><td class="r"><span class="tag hot">3 waiting</span></td></tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="foot"><span>about an hour to start</span><span>sample · synthetic data</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="more"><a href="/who-we-serve/#administrator">What it takes from your team →</a></p>
     </section>
 
     <section class="reveal" id="transparency">
-      <h2>You see everything. As it happens.</h2>
-      <p class="intro">Your own dashboard shows every denial and shortfall we find, every appeal that goes out, every insurer response and every dollar that lands, with the paper trail behind each one. A short morning email flags anything that needs you. Nothing goes out that you can't see.</p>
+      <p class="bk" style="text-align:center;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin:0 0 0.7rem;">What you get · 4</p>
+      <h2>See everything.</h2>
+      <p class="intro">Every claim on your own dashboard, from found to paid. Nothing goes out that you can't see.</p>
       <div id="dash">
         <div class="top"><div class="who">Good morning, Dr. Rivera<small>Sample practice · your recovery dashboard</small></div><span class="live"><i></i>Updated 7:00 am</span></div>
         <div class="inner">
@@ -1087,7 +1043,86 @@
         </div>
         <div class="foot"><span>every line links to its paper trail</span><span>sample · synthetic data</span></div>
       </div>
-      <p class="closer">Most practices never see the work behind their collections. You'll see all of ours.</p>
+    </section>
+
+    <section class="reveal band" id="pain">
+      <div class="row reveal">
+        <div class="txt" data-plx="0.03">
+          <h2>What we take on</h2>
+          <ul class="take">
+            <li><b>Denied claims that can be fixed.</b>Missing information, an authorization on file, <a href="/notes/denial-code-co-29-timely-filing/">a deadline you can prove you met</a>.</li>
+            <li><b>Claims paid below your contract.</b>They <a href="/notes/zero-balance-problem/">post as paid</a>, so no alert fires.</li>
+            <li><b>Visits paid at a lower level than you billed.</b><a href="/notes/downcoding-99214-paid-as-99213/">The downcode</a>, with no denial issued.</li>
+          </ul>
+          <p class="scope-note">Medical necessity disputes stay with your clinical team.</p>
+        </div>
+        <div>
+          <div class="frame" data-plx="-0.05" aria-label="Sample remittance check">
+            <div class="bar"><i></i><i></i><i></i><span>Remittance check · Coastal Health Plan · Q2</span></div>
+            <div class="body">
+              <div class="tbl">
+              <table>
+                <thead><tr><th>Code</th><th>Paid as</th><th class="r">Contract</th><th class="r">Paid</th><th class="r">Short</th></tr></thead>
+                <tbody>
+                <tr class="flag"><td>29827</td><td>29827</td><td class="r num">$1,412</td><td class="r num">$1,180</td><td class="r num neg"><span>$232</span></td></tr>
+                <tr class="flag"><td>99214</td><td class="diff">99213</td><td class="r num">$142</td><td class="r num">$98</td><td class="r num neg"><span>$44</span></td></tr>
+                <tr class="flag"><td>20610 + 99213</td><td class="diff">bundled</td><td class="r num">$168</td><td class="r num">$0</td><td class="r num neg"><span>$168</span></td></tr>
+                <tr class="flag"><td>23430</td><td class="diff">denied CO-197</td><td class="r num">$2,140</td><td class="r num">$0</td><td class="r num neg"><span>$2,140</span></td></tr>
+                <tr><td>27447</td><td>27447</td><td class="r num">$1,860</td><td class="r num">$1,860</td><td class="r num">$0</td></tr>
+                </tbody>
+              </table>
+              <div class="scan" aria-hidden="true"></div>
+              </div>
+              <div class="foot"><span><span class="num" data-to="412">0</span> lines checked · <span class="num" data-to="47">0</span> flagged</span><span>sample · synthetic data</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="numbers">
+      <div class="kpis">
+        <div><span class="val num">19%</span><span class="sub">of a well-run Miami orthopedic practice's insurance revenue, paid short or denied the first time</span></div>
+        <div><span class="val num">1–3%</span><span class="sub">what the industry average says commercial insurers underpay</span></div>
+        <div><span class="val num">90–180 days</span><span class="sub">until an underpaid claim can no longer be disputed</span></div>
+      </div>
+      <div class="case reveal">
+        <p class="case-k">Measured at a real practice</p>
+        <p><b>An orthopedic practice in Miami, with its own billing team.</b> We read every line of every insurance payment: $565,779 in all. The insurers got $107,394 wrong, paid short or denied the first time. Its billers had already reworked about half. The rest sat in claims that looked closed.</p>
+      </div>
+    </section>
+
+    <section class="reveal band" id="how">
+      <h2>How it works</h2>
+      <div class="pain four">
+        <div><span class="k">Step 1</span><b>Connect.</b><p>About an hour, once. Read-only access to the payment data your clearinghouse already holds.</p></div>
+        <div><span class="k">Step 2</span><b>Find.</b><p>Every denial, and every paid line against your contract. You get the result in dollars.</p></div>
+        <div><span class="k">Step 3</span><b>File.</b><p>Each case built with the contract clause and the proof, ready to file under your practice's name.</p></div>
+        <div><span class="k">Step 4</span><b>Collect.</b><p>Each insurer pays you directly. You see each dollar land.</p></div>
+      </div>
+      <p class="more"><a href="/how-it-works/">How it works, step by step →</a></p>
+    </section>
+
+    <section class="reveal ink-band" id="expertise">
+      <div class="xgrid">
+        <div class="xcopy">
+          <p class="xkicker">Our expertise</p>
+          <h2>Expertise, with the citations to prove it.</h2>
+          <p>Our system models what every claim should have paid, under the contract in force on the date of service. Behind it is our library of insurer rules, each dated to the day it applied, and a record of which shortfalls each insurer reverses.</p>
+          <ul class="xpoints">
+            <li><b>Dated to the day.</b>We cite the policy in effect on the date of service, not today's version.</li>
+            <li><b>Proven patterns.</b>We know which denials and shortfalls each insurer reverses, and what it takes.</li>
+            <li><b>Sharper with every claim.</b>Every win adds to the record, so the next appeal starts stronger.</li>
+          </ul>
+        </div>
+        <div id="pmx">
+          <div class="mh"><span class="mt">Pattern record · share of disputes reversed</span><span class="legend" aria-hidden="true"></span></div>
+          <div class="grid" role="grid" aria-label="Share of disputes reversed by pattern and insurer"></div>
+          <div class="detail" aria-live="polite"></div>
+          <table class="sr"><caption>Share of disputes reversed by pattern and insurer (sample, synthetic data)</caption><thead><tr><th>Pattern</th><th>Insurer</th><th>Reversed</th><th>Disputes</th><th>Median days to payment</th></tr></thead><tbody></tbody></table>
+          <div class="foot"><span>tap any square to see what it takes</span><span>sample · synthetic data</span></div>
+        </div>
+      </div>
     </section>
 
     <section class="reveal" id="faq">

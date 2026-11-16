@@ -494,9 +494,16 @@
       background: #FBF9F2; border: 1px solid var(--hairline); border-radius: 2px;
     }
     .field input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+    .field select {
+      width: 100%; min-height: 50px; padding: 0.6rem 0.95rem;
+      font: inherit; color: var(--ink);
+      background: #FBF9F2; border: 1px solid var(--hairline); border-radius: 2px;
+    }
+    .field select:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
     .diag-form .contact-btn { width: 100%; border: 0; cursor: pointer; font-family: var(--sans); }
     .hp { position: absolute; left: -9999px; top: -9999px; }
     .form-note { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .form-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
     .form-success { font-weight: 600; font-size: 1.05rem; margin: 1.4rem 0 0; }
 
     .closing { padding-bottom: 1rem; }
@@ -688,6 +695,20 @@
             <label for="f-email">Email</label>
             <input id="f-email" name="email" type="email" required autocomplete="email">
           </div>
+        </div>
+        <div class="field">
+          <label for="f-found">How did you hear about us? <span class="opt">(optional)</span></label>
+          <select id="f-found" name="how_found">
+            <option value="">Choose one</option>
+            <option>A colleague or referral</option>
+            <option>My billing company or accountant</option>
+            <option>A medical society or association</option>
+            <option>Google search</option>
+            <option>ChatGPT or another AI assistant</option>
+            <option>LinkedIn</option>
+            <option>Mail or a visit from your team</option>
+            <option>Other</option>
+          </select>
         </div>
         <button class="contact-btn" type="submit">Request your diagnostic</button>
         <p class="form-note">No cost, no obligation. We reply within one business day. Prefer email? <a href="mailto:contact@cleariagroup.com">contact@cleariagroup.com</a></p>

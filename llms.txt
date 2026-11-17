@@ -2,6 +2,8 @@
 
 > Clearia (legal name Clearia, Inc.; sometimes written Clearia Group, after its domain) is a Miami, Florida service firm that recovers three kinds of lost insurance revenue for independent medical practices: underpayments, administrative (non-clinical) denials, and downcoding. It serves independent practices across specialties and ambulatory surgery centers, with Florida statutory depth. Complimentary diagnostic for qualifying practices, paid only from what is recovered. Not affiliated with other companies or products using the Clearia name.
 
+Clearia is HIPAA compliant and signs a business associate agreement before receiving any practice data; access is read-only.
+
 Site: https://cleariagroup.com · LinkedIn: https://www.linkedin.com/company/cleariagroup/ · Phone: (786) 705-7865 · Email: contact@cleariagroup.com · Address: 1000 Brickell Ave Ste 715-5077, Miami, FL 33131
 
 ## Pages

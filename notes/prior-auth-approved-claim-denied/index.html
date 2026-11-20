@@ -36,7 +36,7 @@
     "headline": "They approved the prior auth. Then they didn't pay the claim.",
     "description": "Prior authorization approval is not payment: the two-gate problem, the MA rule that forbids taking back an approval, and Florida's 120-day tripwire.",
     "datePublished": "2026-08-12",
-    "dateModified": "2026-08-12",
+    "dateModified": "2026-11-20",
     "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/prior-auth-approved-claim-denied/"
@@ -44,6 +44,46 @@
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "Prior auth approved, claim denied: what to do", "item": "https://cleariagroup.com/notes/prior-auth-approved-claim-denied/"}]}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can insurance deny a claim after the prior authorization was approved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Authorization and payment are two separate gates, run by different systems on different rules, and the authorization letter usually says approval is not a guarantee of payment. A claim can still be denied or reduced when it's processed, through bundling, downcoding, documentation demands or payment below the contracted rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a Medicare Advantage plan deny a claim it already approved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for lack of medical necessity. Under CMS's 2024 rule, once a Medicare Advantage plan has approved a prior authorization, it may not later deny coverage of that service on the basis of lack of medical necessity. A retroactive denial or recoupment on a service the plan itself pre-authorized deserves a challenge, essentially every time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Florida deadlines help if an authorized claim isn't paid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for Florida-regulated commercial and HMO plans, because once the service is rendered the claims statutes govern it, not the authorization file. An insurer that fails to pay or deny a clean electronic claim within 120 days of receipt creates an uncontestable obligation to pay it. Claims paid short can be pursued for 12 months after payment, with 12% simple interest on overdue amounts, while self-funded employer plans follow ERISA instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stop losing money on authorized procedures?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Match every authorized case against its paid claims once a month. Most practices file the approval and never compare it to what was ultimately paid, and that one report surfaces the gap. Never write off an authorized service without reading the denial reason."
+      }
+    }
+  ]
+}
   </script>
   <style>
     :root {
@@ -111,6 +151,8 @@
     .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
     .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
     .share a { color: var(--ink); }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
 </head>
 <body>
@@ -171,6 +213,17 @@
       <h2>Sources</h2>
       <p>Payer CMS-0057-F prior authorization disclosures (CY2025), as extracted in <a href="/notes/florida-prior-authorization-scorecard/">our Florida scorecard</a> · <a href="https://www.kff.org/patient-consumer-protections/claims-denials-and-appeals-in-aca-marketplace-plans-in-2024/">KFF, Claims Denials and Appeals in ACA Marketplace Plans</a> · CMS final rule CMS-4201-F and its FAQ guidance; 42 CFR 422.138(c) · §627.6131 and §641.3155, Florida Statutes (prompt pay, underpayment, and recoupment provisions; text via <a href="https://www.flsenate.gov/Laws/Statutes/2025/627.6131">Online Sunshine / flsenate.gov</a>). Statutory provisions described apply to Florida-regulated insurers and HMOs; self-funded employer plans follow ERISA instead. Figures retrieved August 2026.</p>
 
+<section class="qa">
+<h2>Questions people ask</h2>
+<h3>Can insurance deny a claim after the prior authorization was approved?</h3>
+<p>Yes. Authorization and payment are two separate gates, run by different systems on different rules, and the authorization letter usually says approval is not a guarantee of payment. A claim can still be denied or reduced when it's processed, through bundling, downcoding, documentation demands or payment below the contracted rate.</p>
+<h3>Can a Medicare Advantage plan deny a claim it already approved?</h3>
+<p>Not for lack of medical necessity. Under CMS's 2024 rule, once a Medicare Advantage plan has approved a prior authorization, it may not later deny coverage of that service on the basis of lack of medical necessity. A retroactive denial or recoupment on a service the plan itself pre-authorized deserves a challenge, essentially every time.</p>
+<h3>Do Florida deadlines help if an authorized claim isn't paid?</h3>
+<p>Yes, for Florida-regulated commercial and HMO plans, because once the service is rendered the claims statutes govern it, not the authorization file. An insurer that fails to pay or deny a clean electronic claim within 120 days of receipt creates an uncontestable obligation to pay it. Claims paid short can be pursued for 12 months after payment, with 12% simple interest on overdue amounts, while self-funded employer plans follow ERISA instead.</p>
+<h3>How do I stop losing money on authorized procedures?</h3>
+<p>Match every authorized case against its paid claims once a month. Most practices file the approval and never compare it to what was ultimately paid, and that one report surfaces the gap. Never write off an authorized service without reading the denial reason.</p>
+</section>
       <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/prior-auth-approved-claim-denied/">Copy link</a> · <a href="mailto:?subject=They%20approved%20the%20prior%20auth.%20Then%20they%20didn%27t%20pay%20the%20claim.&body=Worth%20a%20read%3A%20They%20approved%20the%20prior%20auth.%20Then%20they%20didn%27t%20pay%20the%20claim.%0Ahttps%3A//cleariagroup.com/notes/prior-auth-approved-claim-denied/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fprior-auth-approved-claim-denied%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
         <p>Related notes</p>

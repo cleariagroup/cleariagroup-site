@@ -36,7 +36,7 @@
     "headline": "The zero-balance problem: why underpaid claims look paid",
     "description": "A claim paid below contract still posts to a zero balance. No alert fires. Here is why that happens, what a zero-balance review is, and how to run one without new software.",
     "datePublished": "2026-09-15",
-    "dateModified": "2026-10-19",
+    "dateModified": "2026-11-20",
     "author": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "url": "https://cleariagroup.com" },
     "publisher": { "@type": "Organization", "@id": "https://cleariagroup.com/#org", "name": "Clearia", "legalName": "Clearia, Inc.", "url": "https://cleariagroup.com" },
     "mainEntityOfPage": "https://cleariagroup.com/notes/zero-balance-problem/"
@@ -44,6 +44,46 @@
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleariagroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://cleariagroup.com/notes/"}, {"@type": "ListItem", "position": 3, "name": "The zero-balance problem: underpaid claims that look paid", "item": "https://cleariagroup.com/notes/zero-balance-problem/"}]}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does a zero balance mean the insurer paid correctly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A zero balance is evidence the posting workflow finished, not that the claim was paid at your contracted rate. A claim paid short closes in your billing system exactly the way a correctly paid claim does: balance zero, status paid, no flag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much revenue do practices lose to underpaid claims?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Independent practices lose 1 to 3 percent of net revenue this way on average. At one orthopedic practice in Miami, our team found $107,394 the insurers got wrong: 19 percent of the practice's insurance revenue, paid short or denied the first time. That practice had good billers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't my billing team catch underpayments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because billers are measured on claims moving, and checking paid claims is a different job from posting them. The shortfalls are small per line, like $44 on a $142 visit, and only matter across a year of volume. Most independent practices also don't have their contracted rates loaded anywhere a computer can compare them to what was paid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check my practice for underpaid claims?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare what each insurer allowed per code against your contracted rate for that code. You need 12 months of payment files from your clearinghouse or payer portals, your fee schedules, and a list of your top 20 codes by volume. Wherever the allowed amount is below contract, that's a finding: group the findings by payer and reason and pursue each group as one case."
+      }
+    }
+  ]
+}
   </script>
   <style>
     :root {
@@ -111,6 +151,8 @@
     .share { font-size: 0.85rem; color: var(--muted); margin: 2.2rem 0 0; }
     .share span { font-weight: 600; color: var(--ink); margin-right: 0.35rem; }
     .share a { color: var(--ink); }
+    .qa h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.3rem; }
+    .qa p { margin-bottom: 0.6rem; }
   </style>
 </head>
 <body>
@@ -165,6 +207,17 @@
 
 <h2>The so-what</h2>
 <p>A zero balance is not evidence a claim was paid correctly. It's evidence the posting workflow finished. Until someone recomputes the line, you're taking the payer's word for your own contract. Once a year, for your top codes and top payers, is enough to know whether the word is good. If you'd rather not spend the afternoon, that recompute is exactly what Clearia's diagnostic does, on every line, at no cost.</p>
+<section class="qa">
+<h2>Questions people ask</h2>
+<h3>Does a zero balance mean the insurer paid correctly?</h3>
+<p>No. A zero balance is evidence the posting workflow finished, not that the claim was paid at your contracted rate. A claim paid short closes in your billing system exactly the way a correctly paid claim does: balance zero, status paid, no flag.</p>
+<h3>How much revenue do practices lose to underpaid claims?</h3>
+<p>Independent practices lose 1 to 3 percent of net revenue this way on average. At one orthopedic practice in Miami, our team found $107,394 the insurers got wrong: 19 percent of the practice's insurance revenue, paid short or denied the first time. That practice had good billers.</p>
+<h3>Why doesn't my billing team catch underpayments?</h3>
+<p>Because billers are measured on claims moving, and checking paid claims is a different job from posting them. The shortfalls are small per line, like $44 on a $142 visit, and only matter across a year of volume. Most independent practices also don't have their contracted rates loaded anywhere a computer can compare them to what was paid.</p>
+<h3>How do I check my practice for underpaid claims?</h3>
+<p>Compare what each insurer allowed per code against your contracted rate for that code. You need 12 months of payment files from your clearinghouse or payer portals, your fee schedules, and a list of your top 20 codes by volume. Wherever the allowed amount is below contract, that's a finding: group the findings by payer and reason and pursue each group as one case.</p>
+</section>
       <div class="share"><span>Pass it on</span> <a href="#" data-copy="https://cleariagroup.com/notes/zero-balance-problem/">Copy link</a> · <a href="mailto:?subject=The%20zero-balance%20problem%3A%20why%20underpaid%20claims%20look%20paid&body=Worth%20a%20read%3A%20The%20zero-balance%20problem%3A%20why%20underpaid%20claims%20look%20paid%0Ahttps%3A//cleariagroup.com/notes/zero-balance-problem/">Email this page</a> · <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleariagroup.com%2Fnotes%2Fzero-balance-problem%2F" target="_blank" rel="noopener">Share on LinkedIn</a></div>
 <div class="related">
         <p>Related notes</p>
